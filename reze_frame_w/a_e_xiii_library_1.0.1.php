@@ -13,5 +13,4 @@ include "content_section_image.php";
 include "image_long_block.php";
 include "long_block_image.php";
 include "block_image_block.php";
-include "buttons.php";
 ?>
