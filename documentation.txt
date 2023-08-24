@@ -1,0 +1,214 @@
+
+a_e_xiii_library_1.0.1.php
+==============================
+
+This is php functions created using php, html, css and js to make web development easy and faster;
+It uses only php functions which takes in an array argument or sometimes a function as an argument.
+
+
+HOW TO INCLUDE THE LIBRARY
+============================
+<?php
+    include 'path/a_e_xiii_library_1.0.1.php';
+?>
+
+
+
+FUNCTIONS AND THEIR USAGE
+==========================
+
+
+navbar(
+    [
+        "logo"=>"",                               //put the logo path of the navbar here
+        "title"=>"",                              //put the tilte of the navbar here
+        "titleBackgroundColor"=>"",               //change the background colour of the title
+        "titleTextColor"=>"",                     //change the color of the title
+        "backgroundColor"=>"",                    //change the entire background of the navbar
+        "tabNumber"=>3,                           //number of tabs on the navbar (maximum of 3)
+        "tabs"=>["tab name"=>"link",]             //create tab names and their page link
+        "textColor"=>"",                          //change the color of the texts in the tabs
+        "dropDownSwitch"=>"on/off",               //use to activate or deactivate dropdown menu
+        "dropDown"=>"",                           //use to name the dropdown
+        "dropDownTabsNumber"=>15,                  //number of dropdown list that can be created
+                                                    (maximum 15). In mobile view it forms part of the menu slider
+        "dropDownTabsColor"=>"",                  //change the color of the text in the dropdown menu only 
+                                                    in devices with width px above 700px and set the this color to
+                                                    tabs under menu drawer in width equal or less than 700px
+        "dropTabs"=>["name"=>"link",],            //sets the name of a dropdown menu list and their links
+
+    ]
+);
+
+
+home([
+    "backgroundColor"=>"",
+    "backgroundImage"=>"",
+    "title"=>"",                                  // this is the heading of the text
+    "titlesub"=>"",                               // this is the text under the heading
+    "titleColor"=>"",
+    "titlesubColor"=>"",
+    "image"=>"",
+    "buttonSwitch"=>"on or off",
+    "buttonName"=>"",
+    "buttonBackgroundColor"=>"#81007f",
+    "buttonTextColor"=>"",
+    "buttonLink"=>"",                      
+]);
+
+
+
+softcard(
+    [
+        "width"=>"",
+        "backgroundColor"=>"",
+        "title"=>"",
+        "titleColor"=>"",
+        "content"=>"",
+        "textColor"="",
+        "align"=>"",
+    ]
+);
+
+hardcard(
+    [
+        "width"=>"",
+        "backgroundColor"=>"teal",
+        "title"=>"Hello World",
+        "top"=>"",
+        "align"=>["left"=>"", "top"=>""],
+        "titleColor"=>"",
+        "textColor"="",
+    ]
+);
+
+
+Card container can hold both softcard and hardcard. These are passed as array , follow the example to get it 
+right
+
+
+card_container([
+    "backgroundColor"=>"",
+    "backgroundImage">"",
+    "padding"=>"",
+    "top"=>"",
+    "left"=>"",
+    "right"=>"",
+    "bottom"=>"",
+    "position"=>"",
+    "width"=>"",
+    "height"=>"",     // this is the least height you 
+                         can give to the card card_container. 
+                         It will increase when exceeded
+
+    "softcard([
+        align=>[lelft:50% + right:8%];  // use the array in the card function this way when it is inside
+                                           the container function
+        title=>Title,
+    ])",
+]);
+
+
+image_section_content([
+    "image"=>"",
+    "title"=>"",
+    "titlesub"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+]);
+
+
+section_content_image([
+    "image"=>"",
+    "title"=>"",
+    "titlesub"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+]);
+
+
+long_block_image.php([
+    "title"=>"",
+    "titleColor"=>"",
+    "content"=>"",
+    "textColor"=>"",
+    "animation"=>"",
+    "firstListNumber"=>"",
+    "secondListNumber"=>"",
+    "firstList{num}"="",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "secondList{num}"="",
+    "backgroundColor"=>"",
+    "ringColor"=>"",
+]);
+
+image_long_block.php([
+    "title"=>"",
+    "titleColor"=>"",
+    "content"=>"",
+    "textColor"=>"",
+    "animation"=>"",
+    "firstListNumber"=>"",
+    "secondListNumber"=>"",
+    "firstList{num}"="",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "secondList{num}"="",
+    "backgroundColor"=>"",
+    "ringColor"=>"",
+]);
+
+
+section3([
+    "title"=>"",
+    "title1"=>"",
+    "title2"=>"",
+    "title3"=>"",
+    "pic1"=>"",
+    "pic2"=>"",
+    "pic3"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "content3"=>"",
+    "backgroundColor"=>"",
+    "animation"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+]);
+
+
+section4([
+    "title"=>"",
+    "title1"=>"",
+    "title2"=>"",
+    "title3"=>"",
+    "title4"=>"",
+    "pic1"=>"",
+    "pic2"=>"",
+    "pic3"=>"",
+    "pic4"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "content3"=>"",
+    "content4"=>"",
+    "backgroundColor"=>"",
+    "animation"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+]);
+
+long_block_image([
+    "title1"=>"",
+    "title2"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "backgroundColor"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+])
+
+
+
+
+
