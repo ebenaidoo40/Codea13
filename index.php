@@ -24,7 +24,7 @@
         "tabNumber"=>3,
         "dropDownTabsNumber"=>5,
         "dropTabs"=>["SAT"=>"", "TOEFL"=>"", "IELTS"=>"", "GRE"=>"", "GMAT"=>"",],
-        "tabs"=>["Registration"=>"", "Finances"=>"", "About Us"=>""],
+        "tabs"=>["Registration"=>"", "Forms"=>"", "About Us"=>""],
        ]);
 
        home([
