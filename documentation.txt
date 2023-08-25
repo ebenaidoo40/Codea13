@@ -92,6 +92,7 @@ right
 
 card_container([
     "backgroundColor"=>"",
+    "backgroundFiguresColor"=>"",
     "backgroundImage">"",
     "padding"=>"",
     "top"=>"",
