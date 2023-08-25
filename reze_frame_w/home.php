@@ -109,6 +109,19 @@ function home(array $arr){
         .buttonpress'.$GLOBALS["firstcard"].':hover{
             background-color: '.$arr["buttonBackgroundColor"].';
         }
+
+        @media (max-width:600px){
+            .home'.$GLOBALS["firstcard"].'{
+                padding:20px;
+                gap:30px;
+            }
+        }
+
+        @media (max-width:400px){
+            .mainimg'.$GLOBALS["firstcard"].'{
+                border: 1px solid white;
+            }
+        }
     
             
     </style>
