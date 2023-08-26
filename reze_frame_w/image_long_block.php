@@ -87,22 +87,30 @@ labore sed, deserunt minima fugiat inventore expedita.";
         }
         .longunderpsub'.$GLOBALS["firstcard"].'{
             display:flex;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%, -50%);
+            
             font-weight:bolder;
             font-size:20px;
             text-shadow: 0 0 5px 5px green;
         }
         .longunderpinnerbullet'.$GLOBALS["firstcard"].'{
-            width:60px; 
+            width:60px;
             height:60px; 
             border-radius:50%; 
             background-color:white;
             position:relative;
             border:20px solid '.$arr["ringColor"].';
             border-right:none;
+        }
+
+        .allList'.$GLOBALS["firstcard"].'{
+            position:relative;
+            display:flex;
+            align-items:center;
+            gap:5px;
+        }
+        .allList'.$GLOBALS["firstcard"].'>*{
+            flex-grow:0;
+            min-width:60px;
         }
 
         @media (max-width:800px){
@@ -117,7 +125,9 @@ labore sed, deserunt minima fugiat inventore expedita.";
             .longblockmainchild'.$GLOBALS["firstcard"].':last-child{
                 max-width:50%
                 padding:5% 14%;
-            }         
+            }
+            
+           
         }
             
 
@@ -146,7 +156,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
                         $arr["firstList$ii"]="list 1 here";
                     }
 
-                    echo '<div style="position:relative" class="animation'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
+                    echo '<div class="allList'.$GLOBALS["firstcard"].' animation'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
                             <div class="longunderpinnerbullet'.$GLOBALS["firstcard"].'"><span class="center"></span></div>
                             <div class="longunderpsub'.$GLOBALS["firstcard"].'">'.$arr["firstList$ii"].'</div>  
                         </div><br>';
@@ -160,7 +170,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
                         $arr["secondList$ii"]="list 2 here";
                     }
 
-                    echo '<div style="position:relative" class="animation'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
+                    echo '<div class="allList'.$GLOBALS["firstcard"].' animation'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
                             <div class="longunderpinnerbullet'.$GLOBALS["firstcard"].'"><span class="center"></span></div>
                             <div class="longunderpsub'.$GLOBALS["firstcard"].'">'.$arr["secondList$ii"].'</div>  
                         </div><br>';
