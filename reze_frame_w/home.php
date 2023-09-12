@@ -125,7 +125,15 @@ function home(array $arr){
             }
         }
 
+<<<<<<< HEAD
         
+=======
+        @media (max-width:400px){
+            .mainimg'.$GLOBALS["firstcard"].'{
+                border: 1px solid white;
+            }
+        }
+>>>>>>> cc17910138f90d16582cd2bf0216035b764049c8
     
             
     </style>
