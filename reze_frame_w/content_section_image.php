@@ -31,13 +31,13 @@ function content_section_image(array $arr){
     <style>
         .home'.$GLOBALS["firstcard"].'{
             display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             background-color:'.$arr["backgroundColor"].';
             min-height:400px;
             padding:60px;
             gap:60px;
             justify-content:center;
-
+            align-items:center;
         }
 
         .initialpos'.$GLOBALS["firstcard"].'{
@@ -72,6 +72,18 @@ function content_section_image(array $arr){
                 padding:20px;
             }
             
+        }
+
+        @media (max-width:360px){
+            .home'.$GLOBALS["firstcard"].'{
+                display:grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                background-color:'.$arr["backgroundColor"].';
+                min-height:400px;
+                padding:60px 5%;
+                gap:60px;
+                justify-content:center;
+            }
         }
     
             

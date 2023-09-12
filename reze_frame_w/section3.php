@@ -106,9 +106,20 @@ echo '
     @media (max-width:700px){
         .section2'.$GLOBALS["firstcard"].'{
             min-height : 200px;
+            padding: 10px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            justify-content: center;
+            gap:30px;        
+        }
+    }
+
+    @media (max-width:360px){
+        .section2'.$GLOBALS["firstcard"].'{
+            min-height : 200px;
             padding: 10px 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             justify-content: center;
             gap:30px;        
         }

@@ -73,6 +73,10 @@ function hardcard(array $arr){
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="black";
     }
+    if(!isset($arr["titleAlign"])){
+        $arr["titleAlign"]="left";
+    }
+    
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
@@ -82,13 +86,25 @@ function hardcard(array $arr){
         $arr["width"]="calc(".$arr["width"]." - 20px)";
     }
 
+    if(!isset($arr["titleFontSize"])){
+        $arr["titleFontSize"]="22px";
+    }
+    if(!isset($arr["titleLineHeight"])){
+        $arr["titleLineHeight"]="30px";
+    }
+    
+    if(!isset($arr["titleFontFamily"])){
+        $arr["titleFontFamily"]="mainfont";
+    }
+
+
     echo '<style>
         .firstcard'.$GLOBALS["firstcard"].'{
             max-width:'.$arr["width"].';
             height:'.$arr["height"].';
             background-color:'.$arr["backgroundColor"].';
             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-            padding:20px;
+            padding:30px;
             box-sizing:border-box;
             display:flex;
             flex-direction:column;
@@ -119,7 +135,10 @@ function hardcard(array $arr){
 
         .card-h3'.$GLOBALS["firstcard"].'{
             color:'.$arr["titleColor"].';
-            font-size:22px;
+            font-size:'.$arr["titleFontSize"].';
+            line-height:'.$arr["titleLineHeight"].';
+            text-align:'.$arr["titleAlign"].';
+            font-family:'.$arr["titleFontFamily"].';
         }
 
             @media (max-width:600px){
@@ -131,6 +150,7 @@ function hardcard(array $arr){
     </style>';
     echo '<div class="firstcard'.$GLOBALS["firstcard"].'">
             <h3 class="card-h3'.$GLOBALS["firstcard"].'">'.$arr["title"].'</h3>
+            <div style="height:5px; background-color:purple; margin:5px 0"></div>
             <p>'.$arr["content"].'</p>
     </div>';
 

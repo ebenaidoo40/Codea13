@@ -27,15 +27,17 @@ labore sed, deserunt minima fugiat inventore expedita.";
         $arr["image"]="reze_frame_w/images/papairon.jpg";
     }
     if(!isset($arr["titleColor"])){
-        $arr["titleColor"]="black";
+        $arr["titleColor"]="white";
+    }
+    if(!isset($arr["animation"]) || $arr["animation"]=="on"){
+        $arr["animation"]="scale(0.5)";
+    }
+    if($arr["animation"]=="off"){
+        $arr["animation"]="scale(1)";
     }
 
     echo '
     <style>
-
-        .animation'.$GLOBALS["firstcard"].'{
-            transition: all 0.6s;
-        }
 
         
 
@@ -49,6 +51,10 @@ labore sed, deserunt minima fugiat inventore expedita.";
             background-color:'.$arr["backgroundColor"].';
             flex:1;
             padding:20px;
+        }
+
+        .initialpos'.$GLOBALS["firstcard"].'{
+            transform: '.$arr["animation"].';
         }
 
         .longunderp'.$GLOBALS["firstcard"].'{
@@ -86,6 +92,9 @@ labore sed, deserunt minima fugiat inventore expedita.";
         .longblockmainchild'.$GLOBALS["firstcard"].':last-child{
             align-self:center;
         }
+        .longblockmainchild'.$GLOBALS["firstcard"].':nth-child(2){
+            transition: all 0.6s;
+        }
 
         @media (max-width:660px){
             .longblockmain'.$GLOBALS["firstcard"].'{
@@ -102,20 +111,20 @@ labore sed, deserunt minima fugiat inventore expedita.";
     
     <div class="longblockmain'.$GLOBALS["firstcard"].'">
 
-        <div class="longblockmainchild'.$GLOBALS["firstcard"].'">
-            <h3 style="font-size:30px">'.$arr["title1"].'</h3><br>
+        <div class="longblockmainchild'.$GLOBALS["firstcard"].'" style="padding:50px">
+            <h3 style="font-size:30px; color:'.$arr["titleColor"].'; font-family:boldfont">'.$arr["title1"].'</h3><br>
 
             <p style="line-height:28px">
             '.$arr["content1"].'
-            </p><br><br>
+            </p>
 
         </div>
 
-        <div class="longblockmainchild'.$GLOBALS["firstcard"].'" ><img width="100%" height="100%" style="object-fit:cover" src="'.$arr["image"].'"></div>
+        <div class="longblockmainchild'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" ><img class="hometitlebk'.$GLOBALS["firstcard"].' "  width="100%" height="100%" style="object-fit:cover" src="'.$arr["image"].'"></div>
         
 
-        <div class="longblockmainchild'.$GLOBALS["firstcard"].'">
-            <h3 style="font-size:30px">'.$arr["title2"].'</h3><br>
+        <div class="longblockmainchild'.$GLOBALS["firstcard"].'" style="padding:50px">
+            <h3 style="font-size:30px; color:'.$arr["titleColor"].'; font-family:boldfont">'.$arr["title2"].'</h3><br>
 
             <p style="line-height:28px">
             '.$arr["content2"].'

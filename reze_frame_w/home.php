@@ -50,6 +50,14 @@ function home(array $arr){
     if(!isset($arr["buttonBackgroundColor"])){
         $arr["buttonBackgroundColor"]="none";
     }
+    if(!isset($arr["downloadSwitch"])){
+        $arr["downloadSwitch"]="";
+    }
+    if($arr["downloadSwitch"]=="on"){
+        $arr["downloadSwitch"]="Download";
+    }else{
+        $arr["downloadSwitch"]="";
+    }
     
 
     echo '
@@ -109,6 +117,15 @@ function home(array $arr){
         .buttonpress'.$GLOBALS["firstcard"].':hover{
             background-color: '.$arr["buttonBackgroundColor"].';
         }
+
+        @media (max-width:600px){
+            .home'.$GLOBALS["firstcard"].'{
+                padding:20px;
+                gap:30px;
+            }
+        }
+
+        
     
             
     </style>
@@ -118,7 +135,7 @@ function home(array $arr){
             <h1 style="font-size:40px;background-color:'.$arr["titleBackgroundColor"].'; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1>
             <span style="color:'.$arr["titlesubColor"].'; line-height:30px">'.$arr["titlesub"].'</span><br>';
             if($arr["buttonSwitch"]=="on"){
-                echo '<a href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
+                echo '<a href="'.$arr["buttonLink"].'" '.$arr["downloadSwitch"].'><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
             }else{}
             
         echo '</div>
