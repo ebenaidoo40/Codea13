@@ -128,7 +128,7 @@ function reversed_home(array $arr){
             <h1 style="font-size:40px;background-color:'.$arr["titleBackgroundColor"].'; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1>
             <span style="color:'.$arr["titlesubColor"].'; line-height:30px">'.$arr["titlesub"].'</span><br>';
             if($arr["buttonSwitch"]=="on"){
-                echo '<a href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
+                echo '<a style="max-width: 300px;" href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</button></div></a>';
             }else{}
             
         echo '</div>
