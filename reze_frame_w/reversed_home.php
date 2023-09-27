@@ -50,6 +50,9 @@ function reversed_home(array $arr){
     if(!isset($arr["buttonBackgroundColor"])){
         $arr["buttonBackgroundColor"]="none";
     }
+    if(!isset($arr["id"])){
+        $arr["id"]="";
+    }
     
 
     echo '
@@ -122,13 +125,13 @@ function reversed_home(array $arr){
             
     </style>
     
-    <div class="home'.$GLOBALS["firstcard"].'">
+    <div id="'.$arr["id"].'" class="home'.$GLOBALS["firstcard"].'">
     <img class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" width="100%" height="100%" src="'.$arr["image"].'" alt="image here">
         <div class="hometitlebk'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
             <h1 style="font-size:40px;background-color:'.$arr["titleBackgroundColor"].'; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1>
             <span style="color:'.$arr["titlesubColor"].'; line-height:30px">'.$arr["titlesub"].'</span><br>';
             if($arr["buttonSwitch"]=="on"){
-                echo '<a style="max-width: 300px;" href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</button></div></a>';
+                echo '<a style="max-width: 300px;" href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
             }else{}
             
         echo '</div>

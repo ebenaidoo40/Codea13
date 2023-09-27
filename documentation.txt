@@ -39,12 +39,14 @@ navbar(
                                                     in devices with width px above 700px and set the this color to
                                                     tabs under menu drawer in width equal or less than 700px
         "dropTabs"=>["name"=>"link",],            //sets the name of a dropdown menu list and their links
+        "homeLink"=>"";
 
     ]
 );
 
 
 home([
+    "id"="",
     "backgroundColor"=>"",
     "backgroundImage"=>"",
     "title"=>"",                                  // this is the heading of the text
@@ -56,7 +58,42 @@ home([
     "buttonName"=>"",
     "buttonBackgroundColor"=>"#81007f",
     "buttonTextColor"=>"",
-    "buttonLink"=>"",                      
+    "buttonLink"=>"",
+    "downloadSwitch"=>"on or off",                      
+]);
+
+reversed_home([
+    "id"="",
+    "backgroundColor"=>"",
+    "backgroundImage"=>"",
+    "title"=>"",                                  // this is the heading of the text
+    "titlesub"=>"",                               // this is the text under the heading
+    "titleColor"=>"",
+    "titlesubColor"=>"",
+    "image"=>"",
+    "buttonSwitch"=>"on or off",
+    "buttonName"=>"",
+    "buttonBackgroundColor"=>"#81007f",
+    "buttonTextColor"=>"",
+    "buttonLink"=>"",
+    "downloadSwitch"=>"on or off",                      
+]);
+
+home2([
+    "id"="",
+    "backgroundGradient"=>"",
+    "backgroundImage"=>"",
+    "title"=>"",                                  // this is the heading of the text
+    "titlesub"=>"",                               // this is the text under the heading
+    "titleColor"=>"",
+    "titlesubColor"=>"",
+    "image"=>"",
+    "buttonSwitch"=>"on or off",
+    "buttonName"=>"",
+    "buttonBackgroundColor"=>"#81007f",
+    "buttonTextColor"=>"",
+    "buttonLink"=>"",
+    "downloadSwitch"=>"on or off",                      
 ]);
 
 
@@ -81,7 +118,10 @@ hardcard(
         "top"=>"",
         "align"=>["left"=>"", "top"=>""],
         "titleColor"=>"",
-        "textColor"="",
+        "textColor"=>"",
+        "titleFontSize"=>"",
+        "titleLineHeight"=>"",
+        titleAlign=>"";
     ]
 );
 
@@ -92,7 +132,7 @@ right
 
 card_container([
     "backgroundColor"=>"",
-    "backgroundFiguresColor"=>"",
+    "backgroundFiguresColor"=>"pink",
     "backgroundImage">"",
     "padding"=>"",
     "top"=>"",
@@ -135,7 +175,7 @@ section_content_image([
 ]);
 
 
-long_block_image.php([
+long_block_image([
     "title"=>"",
     "titleColor"=>"",
     "content"=>"",
@@ -149,7 +189,7 @@ long_block_image.php([
     "ringColor"=>"",
 ]);
 
-image_long_block.php([
+image_long_block([
     "title"=>"",
     "titleColor"=>"",
     "content"=>"",
@@ -202,14 +242,49 @@ section4([
     "textColor"=>"",
 ]);
 
-long_block_image([
+block_image_block([
     "title1"=>"",
     "title2"=>"",
     "content1"=>"",
     "content2"=>"",
     "backgroundColor"=>"",
     "titleColor"=>"",
+])
+
+review([
+    "title"="",
+    "titleColor"="",
+    "titleBackgroundColor"="",
+    "textColor"="",
+    "backgroundColor"="",
+    "review"=array with keys. the key must be the name of client ,
+    "image"="",
+    "progressBarColor"=>"",
+    "loaderBackgroundColor"=>"",
+])
+
+footer([
+    "companyName"=>"",
+    "homeLink"=>"",
+    "aboutLink"=>"",
+    "contactLink"=>"",
+    "location"=>"",
+    "phone"=>"",
+    "email"=>"",
+    "aboutCompany"=>"",
+    "facebookLink"=>"",
+    "whatsappLink"=>"",
+    "twitterLink"=>"",
+    backgroundColor=>"",
+])
+
+experience([
+    "backgroundColor"=>"",
+    "badgeColor"=>"",
     "textColor"=>"",
+    "firstBadgeText"=>"",
+    "secondBadgeText"=>"",
+    "animation"="on or off",
 ])
 
 
