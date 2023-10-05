@@ -162,6 +162,15 @@ function navbar(array $arr){
             box-shadow: 0 1px 5px 2px '.$arr["backgroundColor"].';
             overflow-y:scroll;
         }
+        .menudrawer_transparent{
+            width:100%;
+            height: calc(var(--app-height) - 50px);
+            background-color:#00000000;
+            position:fixed;
+            top:50px;
+            left:0px;
+            z-index:998;
+        }
 
         .droptabs{
             width:100%;
@@ -354,6 +363,13 @@ for($z=0; $z<$arr["dropDownNumber"]; $z++){
     echo'</div>';
 
     echo '<script>
+
+    var menu_status="open";
+    var menudrawer = document.querySelector("#menudrawer");
+    var menucontroller = document.querySelector("#menucontroller");
+    var menudrawer_transparent = document.querySelector("#menudrawer_transparent");
+
+
             var drop_open="open";
             var dropdowntab'.$z.' = document.querySelector("#dropdown'.$z.'");
             var dropdownbk'.$z.' = document.querySelector("#dropdownbk'.$z.'");
@@ -362,17 +378,16 @@ for($z=0; $z<$arr["dropDownNumber"]; $z++){
                     dropdownbk'.$z.'.classList.remove("hiddenSlideUp");
                     drop_open="close";
                     document.querySelector("#dropdownArrow").innerHTML=\''.$arrowup_icon.'\';
+                    menudrawer_transparent.classList.remove("hidden");
                 }else{
                     dropdownbk'.$z.'.classList.add("hiddenSlideUp");
                     drop_open="open";
                     document.querySelector("#dropdownArrow").innerHTML=\''.$arrowdown_icon.'\';
+                    menudrawer_transparent.classList.add("hidden");
                 }
                 });
 
-            var menu_status="open";
-            var menudrawer = document.querySelector("#menudrawer");
-            var menucontroller = document.querySelector("#menucontroller");
-            var menudrawer_transparent = document.querySelector("#menudrawer_transparent");
+
   
             menucontroller.addEventListener("click", ()=>{
                 if(menu_status=="open"){
@@ -393,6 +408,12 @@ for($z=0; $z<$arr["dropDownNumber"]; $z++){
                     menu_status="open";
                     menudrawer.classList.remove("slide_left");
                     menudrawer_transparent.classList.add("hidden");
+
+                    dropdownbk'.$z.'.classList.add("hiddenSlideUp");
+                    drop_open="open";
+                    document.querySelector("#dropdownArrow").innerHTML=\''.$arrowdown_icon.'\';
+                    menudrawer_transparent.classList.add("hidden");
+
             });
 
             function dropDownbkpos(){

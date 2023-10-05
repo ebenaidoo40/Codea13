@@ -96,6 +96,17 @@ home2([
     "downloadSwitch"=>"on or off",                      
 ]);
 
+slant_home([
+    "title"=>"",
+    "titlesub"=>"",
+    "titleColor"="",
+    "textColor"=>"",
+    "outerPaddingColor"=>"",
+    "outerBorderColor"=>"",
+    "animation"=>"on/off",
+    "image"=>"",
+])
+
 
 
 softcard(
@@ -183,8 +194,8 @@ long_block_image([
     "animation"=>"",
     "firstListNumber"=>"",
     "secondListNumber"=>"",
-    "firstList{num}"="",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
-    "secondList{num}"="",
+    "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "secondList{num}"=>"",
     "backgroundColor"=>"",
     "ringColor"=>"",
 ]);

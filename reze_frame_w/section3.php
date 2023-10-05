@@ -7,13 +7,13 @@ function section3(array $arr){
         $arr["title"]="Three Section Block";
     }
     if(!isset($arr["pic1"])){
-        $arr["pic1"]="reze_frame_w/images/sectionimg1.jpg";
+        $arr["pic1"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["pic2"])){
-        $arr["pic2"]="reze_frame_w/images/sectionimg2.jpg";
+        $arr["pic2"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["pic3"])){
-        $arr["pic3"]="reze_frame_w/images/sectionimg3.jpg";
+        $arr["pic3"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["title1"])){
         $arr["title1"]="Title 1";
@@ -105,7 +105,51 @@ echo '
 
     @media (max-width:700px){
         .section2'.$GLOBALS["firstcard"].'{
-            min-height : 200px;
+            min-height:200px;
+            padding: 10px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            justify-content: center;
+            gap:30px;        
+        }
+    }
+
+    @media (max-width:650px){
+        .section2'.$GLOBALS["firstcard"].'{
+            min-height:200px;
+            padding: 10px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            justify-content: center;
+            gap:30px;        
+        }
+    }
+
+    @media (max-width:600px){
+        .section2'.$GLOBALS["firstcard"].'{
+            min-height:200px;
+            padding: 10px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            justify-content: center;
+            gap:30px;        
+        }
+    }
+
+    @media (max-width:550px){
+        .section2'.$GLOBALS["firstcard"].'{
+            min-height:200px;
+            padding: 10px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            justify-content: center;
+            gap:30px;        
+        }
+    }
+
+    @media (max-width:500px){
+        .section2'.$GLOBALS["firstcard"].'{
+            min-height:200px;
             padding: 10px 5%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -117,7 +161,7 @@ echo '
     @media (max-width:360px){
         .section2'.$GLOBALS["firstcard"].'{
             min-height : 200px;
-            padding: 10px 40px;
+            padding: 10px 10px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             justify-content: center;

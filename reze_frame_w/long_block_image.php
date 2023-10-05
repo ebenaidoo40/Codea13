@@ -1,6 +1,6 @@
 <?php
 function long_block_image(array $arr){
-    $lorem="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur exercitationem ipsa. 
+$lorem="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur exercitationem ipsa. 
 Facere mollitia maxime accusamus vero incidunt sit nulla sint odio delectus labore sed, deserunt 
 minima fugiat inventore expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur 
 exercitationem ipsa. Facere mollitia maxime accusamus vero incidunt sit nulla sint odio delectus 
@@ -38,6 +38,9 @@ labore sed, deserunt minima fugiat inventore expedita.";
         $arr["textColor"]="black";
     }if(!isset($arr["listColor"])){
         $arr["listColor"]="black";
+    }
+    if(!isset($arr["image"])){
+        $arr["image"]="reze_frame_w/images/codea13_2.png";
     }
     
 
@@ -97,7 +100,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         .longunderpinnerbullet'.$GLOBALS["firstcard"].'{
             width:60px;
             height:60px; 
-            border-radius:50%; 
+            border-radius:10%; 
             background-color:white;
             position:relative;
             border:20px solid '.$arr["ringColor"].';
@@ -175,7 +178,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
 
         </div>
 
-        <div class="longblockmainchild'.$GLOBALS["firstcard"].'"><img width="100%" height="100%" style="object-fit:cover" src="reze_frame_w/images/port2.jpg"></div>
+        <div class="longblockmainchild'.$GLOBALS["firstcard"].'"><img width="100%" height="100%" style="object-fit:cover" src="'.$arr["image"].'"></div>
         <div class="longblockmainchild'.$GLOBALS["firstcard"].'"></div>       
     </div>
     

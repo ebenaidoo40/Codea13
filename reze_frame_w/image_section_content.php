@@ -8,7 +8,7 @@ function image_section_content(array $arr){
         $arr["titlesub"]="Explore now for easy web development";
     }
     if(!isset($arr["image"])){
-        $arr["image"]="reze_frame_w/images/mystu2.jpg";
+        $arr["image"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#f0f0ff";
@@ -25,31 +25,43 @@ function image_section_content(array $arr){
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="purple";
     }
+    if(!isset($arr["rotate"])){
+        $arr["rotate"]="0deg";
+    }
     
 
     echo '
 
     <style>
-        .home'.$GLOBALS["firstcard"].'{
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            background-color:'.$arr["backgroundColor"].';
-            min-height:400px;
-            padding:60px;
-            gap:60px;
-            justify-content:center;
-            align-items:center;
+    .home'.$GLOBALS["firstcard"].'{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        min-height:400px;
+        padding:60px;
+        gap:60px;
+        justify-content:center;
+        align-items:center;
+        position:relative;
+        isolation:isolate;
+    }
 
+    .home'.$GLOBALS["firstcard"].'::after{
+        content:" ";
+        background-color:'.$arr["backgroundColor"].';
+        position:absolute;
+        inset:0;
+        transform: skewY('.$arr["rotate"].');
+        z-index:-1;
+    }
+
+        .initialpos'.$GLOBALS["firstcard"].'{
+            transform: '.$arr["animation"].';
         }
 
         .home'.$GLOBALS["firstcard"].'>*{
             background-color:white;
             opacity:1;
             transition: all 0.6s;
-        }
-
-        .initialpos'.$GLOBALS["firstcard"].'{
-            transform: '.$arr["animation"].';
         }
 
         .hometitlebk'.$GLOBALS["firstcard"].'{
@@ -66,13 +78,16 @@ function image_section_content(array $arr){
             max-height:400px;
             background-color:inherit;
         }
-        
+
+
+
         @media (max-width:700px){
             .hometitlebk'.$GLOBALS["firstcard"].'{
                 padding:20px;
             }
             
         }
+
         @media (max-width:360px){
             .home'.$GLOBALS["firstcard"].'{
                 display:grid;

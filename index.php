@@ -46,6 +46,8 @@
 
        block_image_block([]);
 
+       slant_home([]);
+
    ?> 
 
 </body>

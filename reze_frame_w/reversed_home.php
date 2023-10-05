@@ -8,7 +8,7 @@ function reversed_home(array $arr){
         $arr["titlesub"]="Explore now for easy web development";
     }
     if(!isset($arr["image"])){
-        $arr["image"]="reze_frame_w/images/home_background.jpg";
+        $arr["image"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["textColor"])){
         $arr["textColor"]="white";
@@ -32,7 +32,7 @@ function reversed_home(array $arr){
         $arr["titleBackgroundColor"]="none";
     }
     if(!isset($arr["backgroundImage"])){
-        $arr["backgroundImage"]="reze_frame_w/images/home_background.jpg";
+        $arr["backgroundImage"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["buttonName"])){
         $arr["buttonName"]="button";

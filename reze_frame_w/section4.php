@@ -7,16 +7,16 @@ function section4(array $arr){
         $arr["title"]="Four Section Block";
     }
     if(!isset($arr["pic1"])){
-        $arr["pic1"]="reze_frame_w/images/sectionimg4.jpg";
+        $arr["pic1"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["pic2"])){
-        $arr["pic2"]="reze_frame_w/images/sectionimg5.jpg";
+        $arr["pic2"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["pic3"])){
-        $arr["pic3"]="reze_frame_w/images/sectionimg6.jpg";
+        $arr["pic3"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["pic4"])){
-        $arr["pic4"]="reze_frame_w/images/sectionimg7.jpg";
+        $arr["pic4"]="reze_frame_w/images/codea13.png";
     }
     if(!isset($arr["title1"])){
         $arr["title1"]="Title 1";

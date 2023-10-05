@@ -37,6 +37,9 @@ labore sed, deserunt minima fugiat inventore expedita.";
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
+    if(!isset($arr["image"])){
+        $arr["image"]="reze_frame_w/images/codea13_2.png";
+    }
 
     echo '
     <style>
@@ -95,7 +98,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         .longunderpinnerbullet'.$GLOBALS["firstcard"].'{
             width:60px;
             height:60px; 
-            border-radius:50%; 
+            border-radius:10%; 
             background-color:white;
             position:relative;
             border:20px solid '.$arr["ringColor"].';
@@ -137,7 +140,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
     <div class="longblockmain'.$GLOBALS["firstcard"].'">
 
     <div class="longblockmainchild'.$GLOBALS["firstcard"].'"></div> 
-    <div class="longblockmainchild'.$GLOBALS["firstcard"].'"><img width="100%" height="100%" style="object-fit:cover" src="reze_frame_w/images/port.jpg"></div>
+    <div class="longblockmainchild'.$GLOBALS["firstcard"].'"><img width="100%" height="100%" style="object-fit:cover" src="'.$arr["image"].'"></div>
     
 
         <div class="longblockmainchild'.$GLOBALS["firstcard"].'">
