@@ -8,7 +8,7 @@ if(!isset($arr["content"])){
     $arr["content"]=$lorem;
 }
 if(!isset($arr["image"])){
-    $arr["image"]="reze_frame_w/images/reviewgif.gif";
+    $arr["image"]="reze_frame_w/images/codea13.png";
 }
 if(!isset($arr["review"])){
     $arr["review"]=["client 1"=>$lorem, "client 2"=>$lorem, "client 3"=>$lorem,];
@@ -32,7 +32,7 @@ if(!isset($arr["loaderBackgroundColor"])){
     $arr["loaderBackgroundColor"]="white";
 }
 if(!isset($arr["progressBarColor"])){
-    $arr["progressBarColor"]="#ccc";
+    $arr["progressBarColor"]="rgb(48, 20, 70)";
 }
     echo '
 

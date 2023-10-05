@@ -3,7 +3,7 @@ $firstcard=1;
 function navbar2(array $arr){
 
     if(!isset($arr["backgroundColor"])){
-        $arr["backgroundColor"]="tomato";
+        $arr["backgroundColor"]="purple";
     }
 
     if(!isset($arr["textColor"])){

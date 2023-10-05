@@ -13,7 +13,7 @@
    <?php 
         include "reze_frame_w/a_e_xiii_library_1.0.1.php";
         navbar2([]);
-      /* 
+      
 
        home([
         "buttonSwitch"=>"on",
@@ -22,6 +22,7 @@
        ]);
 
        card_container([
+        "backgroundColor"=>"#333",
           "hardcard([
             align=>left;
           ])",
@@ -30,7 +31,9 @@
           ])",
        ]); 
 
-       image_section_content([]);
+       home2([]);
+
+       reversed_home([]);
 
        long_block_image([]);
 
@@ -46,11 +49,17 @@
 
        block_image_block([]);
 
-       slant_home([]);*/
+       slant_home([]);
 
-       login([
-        "buttonBackgroundColor"=>"slateblue",
-       ]);
+       review([]);
+
+       slant_block([]);
+
+       experience([]);
+
+       footer([]);
+
+       //login([]);
 
    ?> 
 

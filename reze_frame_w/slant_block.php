@@ -10,7 +10,7 @@ function slant_block(array $arr){
         $arr["backgroundColor"]="#e6e6fa";
     }
     if(!isset($arr["titleColor"])){
-        $arr["titleColor"]="#e6e6fa";
+        $arr["titleColor"]="black";
     }
     if(!isset($arr["animation"]) || $arr["animation"]=="on"){
         $arr["animation"]="scale(0.5)";
