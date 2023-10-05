@@ -306,6 +306,19 @@ experience([
     "animation"="on or off",
 ])
 
+login([
+    "buttonBackgroundColor"=>"",     // this affects the title, the svg, the line, and lable text
+    "email_name"=>"",                     //this is the name of email passed to the backend 
+    "password_name=>"",                   // password name to be passed to the backend
+    "loginErrMsg"=>"",                   //message when login fail due to wrong input
+    "loginSuccessLink"=>"",               // redirect to this link when login is successful
+    "resetErrMsg"=>"Unknown email",       // message when reset email does not exist
+    "resetSuccessMsg"]=>"Email sent",      // message when email is sent
+    "loginFormTo"=>"",                    // file to submit login form to 
+    "resetFormTo"=>"",                    // file to submit reset form to
+    "buttonColor"=>"white",
+])
+
 
 
 
