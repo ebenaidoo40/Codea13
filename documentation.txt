@@ -107,6 +107,14 @@ slant_home([
     "image"=>"",
 ])
 
+slant_block([
+    "title"=>"",
+    "titleColor"="",
+    "outerPaddingColor"=>"",
+    "animation"=>"on/off",
+    "backgroundColor"=>"",
+])
+
 
 
 softcard(
@@ -208,8 +216,8 @@ image_long_block([
     "animation"=>"",
     "firstListNumber"=>"",
     "secondListNumber"=>"",
-    "firstList{num}"="",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
-    "secondList{num}"="",
+    "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "secondList{num}"=>"",
     "backgroundColor"=>"",
     "ringColor"=>"",
 ]);
@@ -263,13 +271,13 @@ block_image_block([
 ])
 
 review([
-    "title"="",
-    "titleColor"="",
-    "titleBackgroundColor"="",
-    "textColor"="",
-    "backgroundColor"="",
-    "review"=array with keys. the key must be the name of client ,
-    "image"="",
+    "title"=>"",
+    "titleColor"=>"",
+    "titleBackgroundColor"=>"",
+    "textColor"=>"",
+    "backgroundColor"=>"",
+    "review"=>array with keys. the key must be the name of client ,
+    "image"=>"",
     "progressBarColor"=>"",
     "loaderBackgroundColor"=>"",
 ])
