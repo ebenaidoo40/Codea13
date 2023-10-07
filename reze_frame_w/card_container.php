@@ -96,6 +96,4 @@ function card_container(array $arr){
 
     $GLOBALS["firstcard"]++;
 }
-
-
 ?>
