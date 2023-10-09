@@ -24,4 +24,6 @@ include "login.php";
 include "slant_home.php";
 include "circleimage.php";
 include "slant_block.php";
+include "mcurve_block.php";
+include "bcurve_block.php";
 ?>

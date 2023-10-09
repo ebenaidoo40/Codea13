@@ -1,6 +1,6 @@
 <?php
 
-function slant_block(array $arr){
+function mcurve_block(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="WELCOME TO USE EBEN'S FRAME WORK";
     }
@@ -88,11 +88,14 @@ function slant_block(array $arr){
             box-sizing:border-box;
         }
 
-        .bk2'.$GLOBALS["firstcard"].'{
+        .bk1'.$GLOBALS["firstcard"].', .bk2'.$GLOBALS["firstcard"].'{
             position:relative;
             background-color:'.$arr["backgroundColor"].';
-            height:100px;
-            -webkit-mask-image:url("reze_frame_w/assets/down_triangle.svg");
+            height:50px;
+            -webkit-mask-image:url("reze_frame_w/assets/mcurve.svg");
+        }
+        .bk1'.$GLOBALS["firstcard"].'{
+            transform:rotate(.5turn);
         }
 
         .contentblock'.$GLOBALS["firstcard"].'{
@@ -124,7 +127,7 @@ function slant_block(array $arr){
             
     </style>
     <div class="mainblock'.$GLOBALS["firstcard"].'">
-        
+        <div class="bk1'.$GLOBALS["firstcard"].'"></div>
         <div class="home'.$GLOBALS["firstcard"].'">';
 
         if($arr["flip"]=="yes"){

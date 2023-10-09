@@ -101,19 +101,23 @@ slant_home([
     "titlesub"=>"",
     "titleColor"="",
     "textColor"=>"",
-    "outerPaddingColor"=>"",
+    "innerBorderColor"=>"",
     "outerBorderColor"=>"",
     "animation"=>"on/off",
     "image"=>"",
 ])
 
 slant_block([
+    "image"=>"",
     "title"=>"",
-    "titleColor"="",
-    "outerPaddingColor"=>"",
-    "animation"=>"on/off",
+    "titlesub"=>"",
     "backgroundColor"=>"",
-])
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+    "flip"=>"yes/no",
+    "borderBackgroundColor"=>"",
+]);
 
 
 
@@ -180,6 +184,30 @@ image_section_content([
     "textColor"=>"",
     "titleColor"=>"",
     "animation"=>"",
+]);
+
+mcurve_block([
+    "image"=>"",
+    "title"=>"",
+    "titlesub"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+    "flip"=>"yes/no",
+    "borderBackgroundColor"=>"",
+]);
+
+bcurve_block([
+    "image"=>"",
+    "title"=>"",
+    "titlesub"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+    "flip"=>"yes/no",
+    "borderBackgroundColor"=>"",
 ]);
 
 

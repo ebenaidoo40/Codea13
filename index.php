@@ -14,6 +14,7 @@
         include "reze_frame_w/a_e_xiii_library_1.0.1.php";
         navbar2([]);
       
+        slant_home([]);
 
        home([
         "buttonSwitch"=>"on",
@@ -49,13 +50,30 @@
 
        block_image_block([]);
 
-       slant_home([]);
-
        review([]);
 
-       slant_block([]);
+       slant_block([
+        "borderBackgroundColor"=>"#f0f0ff",
+        "flip-horizontal"=>"yes",
+       ]);
 
        experience([]);
+
+       mcurve_block([
+        "flip-horizontal"=>"no",
+        "borderBackgroundColor"=>"#f0f0ff",
+       ]);
+
+       image_section_content([]);
+
+       bcurve_block([
+        "flip-horizontal"=>"no",
+        "borderBackgroundColor"=>"#f0f0ff",
+       ]);
+
+       image_section_content([]);
+
+
 
        footer([]);
 
