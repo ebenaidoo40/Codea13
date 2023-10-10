@@ -233,6 +233,7 @@ long_block_image([
     "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
     "secondList{num}"=>"",
     "backgroundColor"=>"",
+    "gradientColor"=>"",
     "ringColor"=>"",
 ]);
 
@@ -247,6 +248,7 @@ image_long_block([
     "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
     "secondList{num}"=>"",
     "backgroundColor"=>"",
+    "gradientColor"=>"",
     "ringColor"=>"",
 ]);
 

@@ -246,7 +246,7 @@ input[type=\'password\']{
 
 <script>
     
-    var imageloader = "loading ...";
+    var imageloader = "<span style=\"color:#ccc\">loading ...</span>";
     var form = document.querySelector("#form");
     form.addEventListener("submit", createaccountnow);
 

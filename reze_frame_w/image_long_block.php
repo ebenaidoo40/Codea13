@@ -9,7 +9,9 @@ labore sed, deserunt minima fugiat inventore expedita.";
     if(!isset($arr["content"])){
         $arr["content"]=$lorem;
     }
-
+    if(!isset($arr["gradientColor"])){
+        $arr["gradientColor"]="none";
+    }
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#d867ae";
     }
@@ -59,6 +61,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         }
         .longblockmain'.$GLOBALS["firstcard"].'>*{
             background-color:'.$arr["backgroundColor"].';
+            background-image:'.$arr["gradientColor"].';
             flex:1;
         }
         .longblockmainchild'.$GLOBALS["firstcard"].':last-child{
