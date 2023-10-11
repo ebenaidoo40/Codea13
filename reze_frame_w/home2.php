@@ -50,6 +50,9 @@ function home2(array $arr){
     if(!isset($arr["buttonBackgroundColor"])){
         $arr["buttonBackgroundColor"]="none";
     }
+    if(!isset($arr["buttonBackgroundHoverColor"])){
+        $arr["buttonBackgroundHoverColor"]=$arr["buttonBackgroundColor"];
+    }
     if(!isset($arr["backgroundGradient"])){
         $arr["backgroundGradient"]="linear-gradient(90deg, rgba(255,255,255,0.9023984593837535) 49%, rgba(150,235,242,0.4906337535014006) 75%, rgba(149,247,235,0.06766456582633051) 100%)";
     }
@@ -127,9 +130,10 @@ function home2(array $arr){
             cursor:pointer;
             color:'.$arr["buttonTextColor"].';
             border:1px solid white;
+            trasition:all 0.6s;
         }
         .buttonpress'.$GLOBALS["firstcard"].':hover{
-            background-color: '.$arr["buttonBackgroundColor"].';
+            background-color: '.$arr["buttonBackgroundHoverColor"].';
         }
 
         @media (max-width:600px){

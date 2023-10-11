@@ -50,6 +50,17 @@ function reversed_home(array $arr){
     if(!isset($arr["buttonBackgroundColor"])){
         $arr["buttonBackgroundColor"]="none";
     }
+    if(!isset($arr["buttonBackgroundHoverColor"])){
+        $arr["buttonBackgroundHoverColor"]=$arr["buttonBackgroundColor"];
+    }
+    if(!isset($arr["downloadSwitch"])){
+        $arr["downloadSwitch"]="";
+    }
+    if($arr["downloadSwitch"]=="on"){
+        $arr["downloadSwitch"]="Download";
+    }else{
+        $arr["downloadSwitch"]="";
+    }
     if(!isset($arr["id"])){
         $arr["id"]="";
     }
@@ -108,9 +119,10 @@ function reversed_home(array $arr){
             cursor:pointer;
             color:'.$arr["buttonTextColor"].';
             border:1px solid white;
+            transition: all 0.6s;
         }
         .buttonpress'.$GLOBALS["firstcard"].':hover{
-            background-color: '.$arr["buttonBackgroundColor"].';
+            background-color: '.$arr["buttonBackgroundHoverColor"].';
         }
 
         @media (max-width:600px){
@@ -131,7 +143,7 @@ function reversed_home(array $arr){
             <h1 style="font-size:40px;background-color:'.$arr["titleBackgroundColor"].'; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1>
             <span style="color:'.$arr["titlesubColor"].'; line-height:30px">'.$arr["titlesub"].'</span><br>';
             if($arr["buttonSwitch"]=="on"){
-                echo '<a style="max-width: 300px;" href="'.$arr["buttonLink"].'"><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
+                echo '<a style="max-width: 300px;" href="'.$arr["buttonLink"].'" '.$arr["downloadSwitch"].'><div class="buttonpressbk'.$GLOBALS["firstcard"].'"><button class="buttonpress'.$GLOBALS["firstcard"].'">'.$arr["buttonName"].'</botton></div></a>';
             }else{}
             
         echo '</div>
