@@ -132,7 +132,7 @@ function navbar(array $arr){
             position:fixed;
             top:55px;
             right:25%;
-            box-shadow: 0 0 25px 15px #333;
+            box-shadow: 0 0 8px 2px #333;
             display:flex;
             flex-direction:column;
             align-items:center;
