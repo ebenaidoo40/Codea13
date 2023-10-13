@@ -100,7 +100,7 @@ function contact_us(array $arr){
             <div class="firstblock1">
                 <h1 style="font-size:40px; color: brown">Get In Touch</h1>
                 <h1 style="font-size:22px; color:purple">Ask how we can help you.</h1>
-                <p style="margin-bottom:25px">Expect a response from us in no more than 48 hours. Send another email or give us a call if you haven not heard back from us after 48 hours.
+                <p style="margin-bottom:25px">Expect a response from us in no more than 48 hours. Send another email or give us a call if you have not heard back from us after 48 hours.
                 </p>
 
                 <h1 style="font-size:22px; color:purple">Are you confuse?</h1>
