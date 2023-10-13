@@ -73,7 +73,7 @@
 
        image_section_content([]);
 
-
+       contact_us([]);
 
        footer([]);
 

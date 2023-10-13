@@ -45,7 +45,7 @@ function slant_home(array $arr){
             position:relative;
             background-image:url("'.$arr["image"].'");
             background-size:cover;
-            background-position:20% 90%;
+            background-position:center;
         }
         .basediv'.$GLOBALS["firstcard"].'{
             box-sizing:border-box;

@@ -76,7 +76,7 @@ function home2(array $arr){
             background-image:url("'.$arr["backgroundImage"].'");
             background-color:'.$arr["backgroundColor"].';
             background-size:cover;
-            background-position:50% 30%;
+            background-position:center;
             min-height:500px;
         }
 
