@@ -103,10 +103,10 @@ function contact_us(array $arr){
                 <p style="margin-bottom:25px">Expect a response from us in no more than 48 hours. Send another email or give us a call if you have not heard back from us after 48 hours.
                 </p>
 
-                <h1 style="font-size:22px; color:purple">Are you confuse?</h1>
+                <h1 style="font-size:22px; color:purple">Are you confused?</h1>
                 <p>Ask us any questions you have regarding our competition. We are here to assist you.</p>
 
-                <h1 style="font-size:22px">We are bringing exciting entertainment to your door. Every talent will be captured soon.</h1>
+                <h1 style="font-size:22px">We are bringing exciting offers to your door.</h1>
                 
             </div>
 
