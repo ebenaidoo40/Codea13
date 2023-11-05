@@ -27,4 +27,5 @@ include "slant_block.php";
 include "mcurve_block.php";
 include "bcurve_block.php";
 include "contact_us.php";
+include "video_home.php";
 ?>

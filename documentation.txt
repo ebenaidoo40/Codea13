@@ -110,6 +110,15 @@ slant_home([
     "image"=>"",
 ])
 
+video_home([
+    "video"=>"",
+    "title"=>"",
+    "titleColor"=>"",
+    "innerColor"=>"",
+    "videoFrameBorderColor"=>"",
+    "backgroundColor"=>"",
+])
+
 slant_block([
     "image"=>"",
     "title"=>"",

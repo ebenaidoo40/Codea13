@@ -40,7 +40,7 @@ function slant_home(array $arr){
         .maindiv'.$GLOBALS["firstcard"].'{
             padding:100px 80px 200px 80px;
             box-sizing:border-box;
-            min-height:550px;
+            min-height:250px;
             isolation:isolate;
             position:relative;
             background-image:url("'.$arr["image"].'");

@@ -12,9 +12,12 @@
     
    <?php 
         include "reze_frame_w/a_e_xiii_library_1.0.1.php";
+        
         navbar2([]);
+
+        video_home([]);
       
-        slant_home([]);
+       slant_home([]);
 
        home([
         "buttonSwitch"=>"on",
@@ -77,7 +80,7 @@
 
        footer([]);
 
-       //login([]);
+       //login([]); 
 
    ?> 
 
