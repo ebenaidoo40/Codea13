@@ -23,8 +23,8 @@
 
         .firstgif'.$GLOBALS["firstcard"].'{
             width:250px; 
-            height:220px;
-            border-radius:45%; 
+            height:250px;
+            border-radius:50%; 
             position:absolute; 
             top:'.$arr["vertical"].'; 
             right:10%;

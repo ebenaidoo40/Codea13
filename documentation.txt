@@ -44,6 +44,26 @@ navbar(
     ]
 );
 
+navbar2(
+    [
+        "logo"=>"",                               //put the logo path of the navbar here
+        "backgroundColor"=>"",                    //change the entire background of the navbar
+        "tabNumber"=>3,                           //number of tabs on the navbar (maximum of 3)
+        "tabs"=>["tab name"=>"link",]             //create tab names and their page link
+        "textColor"=>"",                          //change the color of the texts in the tabs
+        "dropDownSwitch"=>"on/off",               //use to activate or deactivate dropdown menu
+        "dropDown"=>"",                           //use to name the dropdown
+        "dropDownTabsNumber"=>15,                  //number of dropdown list that can be created
+                                                    (maximum 15). In mobile view it forms part of the menu slider
+        "dropDownTabsColor"=>"",                  //change the color of the text in the dropdown menu only 
+                                                    in devices with width px above 700px and set the this color to
+                                                    tabs under menu drawer in width equal or less than 700px
+        "dropTabs"=>["name"=>"link",],            //sets the name of a dropdown menu list and their links
+        "homeLink"=>"";
+
+    ]
+);
+
 
 home([
     "id"="",
@@ -141,22 +161,30 @@ softcard(
         "titleColor"=>"",
         "content"=>"",
         "textColor"="",
-        "align"=>"",
+        "align"=>"", or 
+        "align"=>["left"=>"", "top"=>""],
     ]
 );
+
+circleImage([
+    "image"=>"",
+    "vertical"=>"",
+    "animation"=>"on or off",
+])
 
 hardcard(
     [
         "width"=>"",
         "backgroundColor"=>"teal",
         "title"=>"Hello World",
-        "top"=>"",
-        "align"=>["left"=>"", "top"=>""],
+        "align"=>"",
         "titleColor"=>"",
         "textColor"=>"",
         "titleFontSize"=>"",
         "titleLineHeight"=>"",
-        titleAlign=>"";
+        "titleAlign"=>"";
+        "titleFontFamily"=>"",
+        "lineColor"=>""
     ]
 );
 
@@ -183,7 +211,7 @@ card_container([
     "softcard([
         align=>[lelft:50% + right:8%];  // use the array in the card function this way when it is inside
                                            the container function
-        title=>Title,
+        title=>Title;
     ])",
 ]);
 
@@ -221,6 +249,8 @@ bcurve_block([
     "flip"=>"yes/no",
     "borderBackgroundColor"=>"",
 ]);
+
+
 
 
 section_content_image([

@@ -9,11 +9,17 @@ function contact_us(array $arr){
     if(!isset($arr["image"])){
         $arr["image"]="reze_frame_w/images/codea13.png";
     }
-    if(!isset($arr[""])){
-        $arr[""]="";
+    if(!isset($arr["name"])){
+        $arr["name"]="name";
     }
-    if(!isset($arr[""])){
-        $arr[""]="";
+    if(!isset($arr["email"])){
+        $arr["email"]="email";
+    }
+    if(!isset($arr["message"])){
+        $arr["message"]="message";
+    }
+    if(!isset($arr["formTo"])){
+        $arr["formTo"]="unknown.php";
     }
     echo '
     <style>
@@ -69,6 +75,52 @@ function contact_us(array $arr){
             border-radius:4px;
         }
 
+        .failedpop{
+            position: fixed;
+            top: -200px;
+            width: 100%;
+            background-color: #ffc1c1;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 10px;
+            opacity: 0;
+            transition: all 1s;
+            z-index: 1;
+            box-sizing:border-box;
+        }
+        
+        .successpop{
+            position: fixed;
+            top: -200px;
+            width: 100%;
+            background-color: #d7f8ed;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 10px;
+            opacity: 0;
+            transition: all 1s;
+            z-index: 1;
+            box-sizing:border-box;
+        }
+        
+        
+        .popnow{
+            top: 0;
+            opacity: 1;
+        }
+        
+        .popnow1{
+            top: 50px;
+            opacity: 1;
+        }
+        
+        .hidden{
+            display: none;
+        }
+        
+
         @media (max-width:680px){
             .secondblock{
                 min-height:400px;
@@ -89,6 +141,9 @@ function contact_us(array $arr){
 
 
         </style>
+
+        <div class="failedpop" id="failedpop">Wrong input of credentials</div>
+        <div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
 
         <div class="firstblock">
             <div class="contactus_main_title">'.$arr["title"].'</div>
@@ -112,29 +167,132 @@ function contact_us(array $arr){
 
 
             <div class="form_master_block">
-                <form class="contact-form">
+
+                <form class="contact-form"  id="form">
                     <h1 style="color:purple;">Send Us A Message</h1>
                     <div>
                         <label> Full Name:<label>
-                        <input class="input" type="text">
+                        <input id="name" name="'.$arr["name"].'" class="input" type="text" required>
                     </div>
 
                     <div>
                         <label> Your Email:<label>
-                        <input class="input" type="email">
+                        <input id="email" name="'.$arr["email"].'" class="input" type="email" required>
                     </div>
 
                     <div>
                         <label> Your Message:<label>
-                        <input class="input" type="email">
+                        <input id="message" name="'.$arr["message"].'" class="input" type="text" required>
                     </div>
 
-                    <button style="background-color:purple; width:100%; color:white; padding:10px;">Submit</button>
+                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; color:white; padding:10px;">Submit</button>
 
                 </form>
             </div>
 
         </div>
+
+
+
+
+        <script>
+    
+    var imageloader = \'<img  style="background:white; position:relative; top:2px; height:29px;  border-radius:50%; object-fit:contain" src="reze_frame_w/assets/Spinner-1s-200px.svg" alt="loading...">\';
+    
+    var form = document.querySelector("#form");
+    
+    form.addEventListener("submit", createaccountnow);
+
+    function createaccountnow(event){
+        
+        
+        $("input").blur();
+        document.querySelector("#loginbutton").innerHTML=imageloader;
+        document.querySelector("#loginbutton").setAttribute("type", "button");
+        event.preventDefault();
+
+        var name = document.querySelector("#name").value;
+        var email = document.querySelector("#email").value;
+        var message = document.querySelector("#message").value;
+
+        
+        $.ajax({
+            url: "'.$arr["formTo"].'",
+            method: "POST",
+            data: {
+                name: name,
+                email: email,
+                message: message,
+            },
+            success: function(res){
+
+                if(res=="Email sent"){
+                    setTimeout(() => {
+                        document.querySelector("#emailsentpop").classList.add("popnow1");
+                        document.querySelector("#emailsentpop").innerHTML="Message Sent";
+                        document.querySelector("#name").value=null;
+                        document.querySelector("#email").value=null;
+                        document.querySelector("#message").value=null;
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#emailsentpop").classList.remove("popnow1");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+                }else{
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.add("popnow1");
+                        document.querySelector("#failedpop").innerHTML="Failed";
+                        document.querySelector("#newPassword").value=null;
+                        document.querySelector("#oldPassword").value=null;
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.remove("popnow1");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+                }
+
+
+                if(res=="data lost"){
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.add("popnow1");
+                        document.querySelector("#failedpop").innerHTML="Poor connection";
+                        document.querySelector("#newPassword").value=null;
+                        document.querySelector("#oldPassword").value=null;
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.remove("popnow1");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+                }else{
+                    //document.querySelector("#userpglink").click();
+                }
+
+            },
+            error: function(res){
+                setTimeout(() => {
+                        document.querySelector("#failedpop").classList.add("popnow1");
+                        document.querySelector("#failedpop").innerHTML="Bad network";
+                        document.querySelector("#newPassword").value=null;
+                        document.querySelector("#oldPassword").value=null;
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.remove("popnow1");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+            }
+        })
+
+    }
+
+    </script>
 
 
     ';

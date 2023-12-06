@@ -21,6 +21,7 @@ include "reversed_home.php";
 include "home2.php";
 include "experience.php";
 include "login.php";
+include "a_login.php";
 include "slant_home.php";
 include "circleimage.php";
 include "slant_block.php";

@@ -1,6 +1,6 @@
 <?php 
 
-function login(array $arr){
+function a_login(array $arr){
     if(!isset($arr["email_name"])){
         $arr["email_name"]="email";
     }
@@ -20,7 +20,7 @@ function login(array $arr){
         $arr["resetSuccessMsg"]="Email sent";
     }
     if(!isset($arr["loginFormTo"])){
-        $arr["loginFormTo"]="unknownlogin.php";
+        $arr["loginFormTo"]="login.php";
     }
     if(!isset($arr["resetFormTo"])){
         $arr["resetFormTo"]="reset.php";
@@ -234,7 +234,7 @@ input[type=\'password\']{
 
     <div style="font-weight:bold; color: #5996f0; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
 
-    <div style="font-weight:bold; text-align:center">Do you want to partake in the audition? <a href="audition.php">Click here</a> to fill the form</div>
+    
 </form>
 
 

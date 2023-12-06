@@ -90,7 +90,7 @@ function navbar2(array $arr){
         .basenav{
             position:static;
             margin-right:0;
-            background-color:'.$arr["backgroundColor"].';
+            background-color:#00000000;
         }
 
         .logo-title{

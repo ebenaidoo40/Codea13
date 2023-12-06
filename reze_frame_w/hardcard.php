@@ -49,24 +49,11 @@ function hardcard(array $arr){
         }
         
         else if(is_array($arr["align"])){
-
-            if(!isset($arr["align"]["left"])){
-                $arr["left"]="none";
-            }else{$arr["left"]=$arr["align"]["left"]; }
-
-            if(!isset($arr["align"]["right"])){
-                $arr["right"]="none";
-            }else{$arr["right"]=$arr["align"]["right"];}
-
-            if(!isset($arr["align"]["top"])){
-                $arr["top"]="none";
-            }else{$arr["top"]=$arr["align"]["top"];}
-
-            if(!isset($arr["align"]["bottom"])){
-                $arr["bottom"]="none";
-            }else{$arr["bottom"]=$arr["align"]["bottom"];}
-            
             $arr["transform"]="none";
+            $arr["left"]="0px";
+            $arr["right"]="none";
+            $arr["top"]="0px";
+            $arr["bottom"]="none";
         }
     }
 
@@ -95,6 +82,9 @@ function hardcard(array $arr){
     
     if(!isset($arr["titleFontFamily"])){
         $arr["titleFontFamily"]="mainfont";
+    }
+    if(!isset($arr["lineColor"])){
+        $arr["lineColor"]="purple";
     }
 
 
@@ -150,7 +140,7 @@ function hardcard(array $arr){
     </style>';
     echo '<div class="firstcard'.$GLOBALS["firstcard"].'">
             <h3 class="card-h3'.$GLOBALS["firstcard"].'">'.$arr["title"].'</h3>
-            <div style="height:5px; background-color:purple; margin:5px 0"></div>
+            <div style="height:5px; background-color:'.$arr["lineColor"].'; margin:5px 0"></div>
             <p>'.$arr["content"].'</p>
     </div>';
 
