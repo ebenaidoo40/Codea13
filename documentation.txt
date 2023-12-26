@@ -64,6 +64,14 @@ navbar2(
     ]
 );
 
+title([
+    "title"=>"",
+    "titleColor"=>"",
+    "titleSize"=>"",
+    "titleWeight"=>"",
+    "titleAlignment"=>"",
+    "backgroundColor"=>"",
+])
 
 home([
     "id"="",
@@ -224,7 +232,36 @@ image_section_content([
     "textColor"=>"",
     "titleColor"=>"",
     "animation"=>"",
+    "rotate"=>"5deg",
+    "z-index"=>"",                    // the default index is -1 to prevent overlapping
+                                    // when the rotate property is used
+    "innerBackgroundColor"=>"",     
 ]);
+
+two_text([
+    "title1"=>"",
+    "title2"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+    "rotate"=>"5deg",
+    "z-index"=>"",                    // the default z-index is 0;
+    "innerBackgroundColor"=>"",  
+    "buttonSwitch1"=>"on or off",
+    "buttonSwitch2"=>"on or off",
+    "buttonName1"=>"",
+    "buttonName2"=>"",
+    "buttonBackgroundColor"=>"#81007f",
+    "buttonBackgroundHoverColor"=>"",
+    "buttonTextColor"=>"",
+    "buttonLink1"=>"",
+    "buttonLink2"=>"",
+    "downloadSwitch1"=>"on or off", 
+    "downloadSwitch2"=>"on or off",    
+])
 
 mcurve_block([
     "image"=>"",
@@ -253,7 +290,7 @@ bcurve_block([
 
 
 
-section_content_image([
+content_section_image([
     "image"=>"",
     "title"=>"",
     "titlesub"=>"",
@@ -261,6 +298,10 @@ section_content_image([
     "textColor"=>"",
     "titleColor"=>"",
     "animation"=>"",
+    "rotate"=>"5deg",
+    "z-index"=>"",                    // the default index is -1 to prevent overlapping
+                                    // when the rotate property is used
+    "innerBackgroundColor"=>"",   
 ]);
 
 
@@ -272,7 +313,7 @@ long_block_image([
     "animation"=>"",
     "firstListNumber"=>"",
     "secondListNumber"=>"",
-    "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "firstList{num}"=>"",      // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
     "secondList{num}"=>"",
     "backgroundColor"=>"",
     "gradientColor"=>"",
@@ -287,7 +328,7 @@ image_long_block([
     "animation"=>"",
     "firstListNumber"=>"",
     "secondListNumber"=>"",
-    "firstList{num}"=>"",               // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
+    "firstList{num}"=>"",      // state your list. Replace {num} with 1,2,3,.. limit is "firstListNumber" 
     "secondList{num}"=>"",
     "backgroundColor"=>"",
     "gradientColor"=>"",
@@ -389,9 +430,23 @@ login([
     "loginFormTo"=>"",                    // file to submit login form to 
     "resetFormTo"=>"",                    // file to submit reset form to
     "buttonColor"=>"white",
+    "clickHereText"=>"",
+    "clickHereLink"=>""
 ])
 
 
 
+
+
+slidepics([
+    "backgroundColor"=>"",
+    "backgroundImage"=>"",
+    "numOfPics"=>" at least 4",
+    "images"=>[one dimensional array containing the paths to the images],
+    "picBackground"=>"",
+    "mainPicBorder"=>"",
+    "dPicFit"=>""  // this is to set the css object fit for the image for desktops
+    "mPicFit"=>""  // this is to set the css object fit for the image for mobile
+])
 
 

@@ -29,4 +29,7 @@ include "mcurve_block.php";
 include "bcurve_block.php";
 include "contact_us.php";
 include "video_home.php";
+include "slidepics.php";
+include "two_text.php";
+include "title.php";
 ?>

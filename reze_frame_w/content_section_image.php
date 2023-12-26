@@ -13,6 +13,12 @@ function content_section_image(array $arr){
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#f0f0ff";
     }
+    if(!isset($arr["innerBackgroundColor"])){
+        $arr["innerBackgroundColor"]="none";
+    }
+    if(!isset($arr["index"])){
+        $arr["index"]="-1";
+    }
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
@@ -42,6 +48,8 @@ function content_section_image(array $arr){
         align-items:center;
         position:relative;
         isolation:isolate;
+        background-color:'.$arr["innerBackgroundColor"].';
+        z-index:'.$arr["z-index"].';
     }
 
     .home'.$GLOBALS["firstcard"].'::after{

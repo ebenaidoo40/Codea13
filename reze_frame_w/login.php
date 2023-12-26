@@ -31,6 +31,12 @@ function login(array $arr){
     if(!isset($arr["buttonColor"])){
         $arr["buttonColor"]="white";
     }
+    if(!isset($arr["clickHereText"])){
+        $arr["clickHereText"]="You have not registered for this yet?";
+    }
+    if(!isset($arr["clickHereLink"])){
+        $arr["clickHereLink"]="";
+    }
     
     echo '
     <style>
@@ -234,7 +240,7 @@ input[type=\'password\']{
 
     <div style="font-weight:bold; color: #5996f0; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
 
-    <div style="font-weight:bold; text-align:center">Do you want to partake in the audition? <a href="audition.php">Click here</a> to fill the form</div>
+    <div style="font-weight:bold; text-align:center">'.$arr["clickHereText"].' <a href="'.$arr["clickHereLink"].'">Click here </a> to start now</div>
 </form>
 
 
