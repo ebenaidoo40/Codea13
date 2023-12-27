@@ -27,7 +27,8 @@
         ]);
 
         title([
-            "titleColor"=>"white",
+            "titleColor"=>"black",
+            "backgroundColor"=>"#aaeebb"
         ]);
 
         two_text([

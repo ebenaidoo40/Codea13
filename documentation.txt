@@ -449,7 +449,7 @@ slidepics([
     "mPicFit"=>""  // this is to set the css object fit for the image for mobile
 ])
 
-achievements([
+split_block([
     "quoteColor"=>"",
     "badge1"=>"",
     "badge2"=>"",
@@ -471,6 +471,7 @@ achievements([
     "subContentColor"=>"",
     "image"=>"",
     "reviewText"=>"",
+    "reviewTextBackgroundColor"=>"",
     "reviewTextColor"=>"",
     "dividerColor"=>"",
     "imageBorderColor"=>"",

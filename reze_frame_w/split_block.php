@@ -93,6 +93,10 @@ function split_block(array $arr){
         $arr["reviewTextColor"]="black";
     }
 
+    if(!isset($arr["reviewTextBackgroundColor"])){
+        $arr["reviewTextBackgroundColor"]="white";
+    }
+
     if(!isset($arr["dividerColor"])){
         $arr["dividerColor"]="slateblue";
     }
@@ -108,25 +112,25 @@ function split_block(array $arr){
 
     echo '
         <style>
-            .mainblock{
+            .mainblock'.$GLOBALS["firstcard"].'{
                 width:100%;
                 min-height:300px;
                 background-color:white;
                 position:relative;
             }
-            .topblock{
+            .topblock'.$GLOBALS["firstcard"].'{
                 background-color:'.$arr["upperBackgroundColor"].';
                 min-height:100px;
                 padding:100px;
                 box-sizing:border-box;
                 padding:2% 10%;
             }
-            .middleblock{
+            .middleblock'.$GLOBALS["firstcard"].'{
                 min-height:200px;
                 background-color: white;
                 position:relative;
             }
-            .bottomblock{
+            .bottomblock'.$GLOBALS["firstcard"].'{
                 width:100%;
                 min-height:200px;
                 background-color:'.$arr["lowerBackgroundColor"].';
@@ -139,7 +143,7 @@ function split_block(array $arr){
                 align-items:center;
             }
 
-            .bottomblock>*{
+            .bottomblock'.$GLOBALS["firstcard"].'>*{
                 display:flex;
                 justify-content:center;
                 align-items:center;
@@ -147,14 +151,14 @@ function split_block(array $arr){
             }
 
 
-            .middleupperbk{
+            .middleupperbk'.$GLOBALS["firstcard"].'{
                 top:0; 
                 position:absolute; 
                 height:50%; 
                 width:100%; 
                 background-color:'.$arr["upperBackgroundColor"].';
             }
-            .middlelowerbk{
+            .middlelowerbk'.$GLOBALS["firstcard"].'{
                 bottom:0; 
                 position:absolute; 
                 height:50%; 
@@ -162,7 +166,7 @@ function split_block(array $arr){
                 background-color: '.$arr["lowerBackgroundColor"].';
             }
 
-            .middlebk{
+            .middlebk'.$GLOBALS["firstcard"].'{
                 width:80%;
                 height:100%;
                 background-color:'.$arr["middleBackgroundColor"].';
@@ -172,7 +176,7 @@ function split_block(array $arr){
                 display:flex;
                 border-radius:5px;
             }
-            .middlebk>*{
+            .middlebk'.$GLOBALS["firstcard"].'>*{
                 flex:1;
                 margin:10px 0;
                 min-height:250px;
@@ -184,27 +188,27 @@ function split_block(array $arr){
                 box-sizing:border-box;
             }
 
-            .middlebkchildren:first-child{
+            .middlebkchildren'.$GLOBALS["firstcard"].':first-child{
                 border-left:none;
             }
 
-            .middlebkchildren:last-child{
+            .middlebkchildren'.$GLOBALS["firstcard"].':last-child{
                 border-right:none;
             }
 
-            .middlebkchildren>*{
+            .middlebkchildren'.$GLOBALS["firstcard"].'>*{
                 margin:15px 0;
                 text-align:center;
             }
 
             @media (max-width:800px){
-                .middlebk{
+                .middlebk'.$GLOBALS["firstcard"].'{
                     flex-direction:column;
                 }
-                .bottomblock{
+                .bottomblock'.$GLOBALS["firstcard"].'{
                     flex-direction:column;
                 }
-                .middlebk>*{
+                .middlebk'.$GLOBALS["firstcard"].'>*{
                     margin:0 10px;
                     border-bottom:4px solid '.$arr["dividerColor"].';
                     border-top:4px solid '.$arr["dividerColor"].';
@@ -214,43 +218,43 @@ function split_block(array $arr){
                     flex-direction:column;
                     justify-content:center;
                 }
-                .middlebkchildren:first-child{
+                .middlebkchildren'.$GLOBALS["firstcard"].':first-child{
                     border-top:none;
                 }
     
-                .middlebkchildren:last-child{
+                .middlebkchildren'.$GLOBALS["firstcard"].':last-child{
                     border-bottom:none;
                 }
 
             }
         </style>
 
-        <div class="mainblock">
+        <div class="mainblock'.$GLOBALS["firstcard"].'">
 
-            <div class="topblock">
+            <div class="topblock'.$GLOBALS["firstcard"].'">
                 <h1 style="font-size:30px; font-weight:bold; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1><br>
                 <p style="width:min(100%, 700px); line-height:1.5; color:'.$arr["contentColor"].' ">'.$arr["content"].'</p>
             </div>
 
-            <div class="middleblock">
-                <div class="middleupperbk"></div>
-                <div class="middlelowerbk"></div>
+            <div class="middleblock'.$GLOBALS["firstcard"].'">
+                <div class="middleupperbk'.$GLOBALS["firstcard"].'"></div>
+                <div class="middlelowerbk'.$GLOBALS["firstcard"].'"></div>
                 
-                <div class="middlebk">
+                <div class="middlebk'.$GLOBALS["firstcard"].'">
 
-                    <div class="middlebkchildren">
+                    <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:30px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title1"].'</div>
                         <div style="color:'.$arr["subContentColor"].'">'.$arr["content1"].'</div>
                         <div >'.$arr["badge1"].'</div>
                     </div>
 
-                    <div class="middlebkchildren">
+                    <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:30px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title2"].'</div>
                         <div style="color:'.$arr["subContentColor"].'">'.$arr["content2"].'</div>
                         <div>'.$arr["badge2"].'</div>
                     </div>
 
-                    <div class="middlebkchildren">
+                    <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:25px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title3"].'</div>
                         <div style="color:'.$arr["subContentColor"].'">'.$arr["content3"].'</div>
                         <div>'.$arr["badge3"].'</div>
@@ -259,14 +263,16 @@ function split_block(array $arr){
                 </div>
             </div>
 
-            <div class="bottomblock">
+            <div class="bottomblock'.$GLOBALS["firstcard"].'">
                 <img style=" border:10px solid '.$arr["imageBorderColor"].'; border-radius:50%; width:200px; height:200px" src="'.$arr["image"].'">
                 '.$openquotes.'
-                <div style="width:min(90%, 500px); font-size:20px; background-color:white; padding:20px; border-radius:20px; color:'.$arr["reviewTextColor"].'">'.$arr["reviewText"].'</div>
+                <div style="width:min(90%, 500px); font-size:20px; background-color:'.$arr["reviewTextBackgroundColor"].'; padding:20px; border-radius:20px; color:'.$arr["reviewTextColor"].'">'.$arr["reviewText"].'</div>
                 '.$closequote.'
             </div>
         </div>
     ';
+
+    $GLOBALS["firstcard"]++;
 }
 
 ?>
