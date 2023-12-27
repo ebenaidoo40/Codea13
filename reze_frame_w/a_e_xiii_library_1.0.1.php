@@ -32,4 +32,5 @@ include "video_home.php";
 include "slidepics.php";
 include "two_text.php";
 include "title.php";
+include "split_block.php";
 ?>

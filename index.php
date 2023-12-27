@@ -38,6 +38,8 @@
             "buttonTextColor"=>"white",
         ]);
 
+        split_block([]);
+
         footer([]);
   
    ?> 

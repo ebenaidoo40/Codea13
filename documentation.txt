@@ -449,4 +449,31 @@ slidepics([
     "mPicFit"=>""  // this is to set the css object fit for the image for mobile
 ])
 
+achievements([
+    "quoteColor"=>"",
+    "badge1"=>"",
+    "badge2"=>"",
+    "badge3"=>"",
+    "title"=>"",
+    "title1"=>"",
+    "title2"=>"",
+    "title3"=>"",
+    "content"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "content3"=>"",
+    "titleColor"=>"",
+    "contentColor"=>"",
+    "middleBackgroundColor"=>"",
+    "lowerBackgroundColor"=>"",
+    "upperBackgroundColor"=>"",
+    "subTitleColor"=>"",
+    "subContentColor"=>"",
+    "image"=>"",
+    "reviewText"=>"",
+    "reviewTextColor"=>"",
+    "dividerColor"=>"",
+    "imageBorderColor"=>"",
+])
+
 
