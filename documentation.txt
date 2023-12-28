@@ -465,6 +465,7 @@ split_block([
     "titleColor"=>"",
     "contentColor"=>"",
     "middleBackgroundColor"=>"",
+    "middleBackgroundImage"=>"",
     "lowerBackgroundColor"=>"",
     "upperBackgroundColor"=>"",
     "subTitleColor"=>"",
@@ -475,6 +476,7 @@ split_block([
     "reviewTextColor"=>"",
     "dividerColor"=>"",
     "imageBorderColor"=>"",
+    "animation"=>"on or off",
 ])
 
 

@@ -77,12 +77,19 @@ function split_block(array $arr){
     }
 
     if(!isset($arr["subTitleColor"])){
-        $arr["subTitleColor"]="black";
+        $arr["subTitleColor"]="white";
+        $subTitleColor=false;
+    }else{
+        $subTitleColor=true;
     }
 
     if(!isset($arr["subContentColor"])){
-        $arr["subContentColor"]="black";
+        $arr["subContentColor"]="white";
+        $subContnentColor=false;
+    }else{
+        $subContnentColor=true;
     }
+
     if(!isset($arr["image"])){
         $arr["image"]="reze_frame_w/images/eben.webp";
     }
@@ -103,6 +110,34 @@ function split_block(array $arr){
     if(!isset($arr["imageBorderColor"])){
         $arr["imageBorderColor"]="white";
     }
+    if(!isset($arr["middleBackgroundImage"])){
+        $arr["middleBackgroundImage"]="url(reze_frame_w/images/blackStarBackground.webp)";
+        $master_middle_background_color_switcher="#00000020";
+    }else{
+        $arr["middleBackgroundImage"]="url(".$arr["middleBackgroundImage"].")";
+        $master_middle_background_color_switcher="#00000020";
+    }
+
+    if($arr["middleBackgroundImage"]=="none"){
+        $arr["middleBackgroundImage"]="none";
+        $master_middle_background_color_switcher="inherit";
+
+        if($subTitleColor==false){
+            $arr["subTitleColor"]="black";
+        }
+
+        if($subContnentColor==false){
+            $arr["subContentColor"]="black";
+        }
+    }
+
+    if(!isset($arr["animation"]) || $arr["animation"]=="on"){
+        $arr["animation"]="scale(0.5)";
+    }
+    if($arr["animation"]=="off"){
+        $arr["animation"]="scale(1)";
+    }
+
     
 
 
@@ -112,6 +147,10 @@ function split_block(array $arr){
 
     echo '
         <style>
+            .initialpos'.$GLOBALS["firstcard"].'{
+                transform: '.$arr["animation"].';
+            }
+
             .mainblock'.$GLOBALS["firstcard"].'{
                 width:100%;
                 min-height:300px;
@@ -170,17 +209,20 @@ function split_block(array $arr){
                 width:80%;
                 height:100%;
                 background-color:'.$arr["middleBackgroundColor"].';
+                background-image:'.$arr["middleBackgroundImage"].';
+                background-position:center;
                 position:relative;
                 margin:0 auto;
                 padding:20px;
                 display:flex;
                 border-radius:5px;
+                transition: all 0.6s;
             }
             .middlebk'.$GLOBALS["firstcard"].'>*{
                 flex:1;
                 margin:10px 0;
                 min-height:250px;
-                background-color:inherit;
+                background-color:'.$master_middle_background_color_switcher.';
                 border-left:4px solid '.$arr["dividerColor"].';
                 border-right:4px solid '.$arr["dividerColor"].';
                 border-radius:10px;
@@ -240,7 +282,7 @@ function split_block(array $arr){
                 <div class="middleupperbk'.$GLOBALS["firstcard"].'"></div>
                 <div class="middlelowerbk'.$GLOBALS["firstcard"].'"></div>
                 
-                <div class="middlebk'.$GLOBALS["firstcard"].'">
+                <div class="middlebk'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
 
                     <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:30px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title1"].'</div>
@@ -270,6 +312,27 @@ function split_block(array $arr){
                 '.$closequote.'
             </div>
         </div>
+
+
+        <script>
+    var observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.remove("initialpos'.$GLOBALS["firstcard"].'");
+            }else{
+                entry.target.classList.add("initialpos'.$GLOBALS["firstcard"].'");
+            }
+        });
+    },
+    {
+        threshold: 0.1,
+    }
+    );
+
+    var hiddenElements = document.querySelectorAll(".intersectionObserver'.$GLOBALS["firstcard"].'");
+    hiddenElements.forEach((el)=>observer.observe(el));
+
+    </script>
     ';
 
     $GLOBALS["firstcard"]++;

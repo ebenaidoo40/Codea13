@@ -21,7 +21,7 @@ function    slidepics(array $arr){
     }
 
     if(!isset($arr["backgroundImage"])){
-        $backgroundImageSlider = "url(\"reze_frame_w/images/codea13.png\")";
+        $backgroundImageSlider = "url(\"reze_frame_w/images/blackStarBackground.webp\")";
     }else{
         if($arr["backgroundImage"]=="none"){
             $backgroundImageSlider = "none";

@@ -14,6 +14,7 @@
         include "reze_frame_w/a_e_xiii_library_1.0.1.php";
         
         navbar2([]);
+        slant_home([]);
         home2([
             "buttonSwitch"=>"on",
         ]);
