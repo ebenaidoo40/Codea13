@@ -26,7 +26,7 @@ function parallax_effect_wrapper(array $arr){
     echo '
 
         <style>
-            .wrapper{
+            .wrapper'.$GLOBALS["firstcard"].'{
                 width: 100%;
                 height: '.$arr["height"].';
                 position: absolute;
@@ -38,5 +38,5 @@ function parallax_effect_wrapper(array $arr){
             }
         </style>
         
-        <div class="wrapper"></div>';
+        <div class="wrapper'.$GLOBALS["firstcard"].'"></div>';
 }

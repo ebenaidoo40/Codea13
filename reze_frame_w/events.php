@@ -38,7 +38,7 @@ function events(array $arr){
 
     echo '
         <style>
-            .eventblock{
+            .eventblock'.$GLOBALS["firstcard"].'{
                 width:100%;
                 min-height:200px;
                 background-color:'.$arr["backgroundColor"].';
@@ -55,11 +55,11 @@ function events(array $arr){
 
             
 
-            .eventblock::-webkit-scrollbar {
+            .eventblock'.$GLOBALS["firstcard"].'::-webkit-scrollbar {
                 display: none;
               }
 
-            .eventblockchild{
+            .eventblockchild'.$GLOBALS["firstcard"].'{
                 display:inline-block;
                 width:min(300px, 80%);
                 aspect-ratio:3/2;
@@ -71,7 +71,7 @@ function events(array $arr){
             }
         </style>
 
-        <div class="eventblock"><'.$arr["marquee"].' class="eventblock">';
+        <div class="eventblock'.$GLOBALS["firstcard"].'"><'.$arr["marquee"].' class="eventblock'.$GLOBALS["firstcard"].'">';
 
         $mykeys = array_keys($arr);
 
@@ -86,7 +86,7 @@ function events(array $arr){
                 $arr[$mykeys[$i]]["body"]="";
             }
             echo '
-            <div class="eventblockchild">
+            <div class="eventblockchild'.$GLOBALS["firstcard"].'">
                 <div style="font-size:22px; white-space:wrap; font-weight:bold; padding:10px; background-color:#00000020; color:'.$arr["titleColor"].'">'.$mykeys[$i].'</div><br>
                 <div style="white-space:wrap; color:'.$arr["ContentColor"].'">'.$arr[$mykeys[$i]]["body"].'</div><br>
                 <div style="white-space:wrap; font-weight:bold; color:'.$arr["dateColor"].'">Date:<br>'.$arr[$mykeys[$i]]["date"].'</div>
