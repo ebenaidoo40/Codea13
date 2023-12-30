@@ -1,14 +1,14 @@
 <?php
 
-function content_section_image(array $arr){
+function iframe_content(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="WELCOME TO USE EBEN'S FRAME WORK";
     }
     if(!isset($arr["titlesub"])){
         $arr["titlesub"]="Explore now for easy web development";
     }
-    if(!isset($arr["image"])){
-        $arr["image"]="reze_frame_w/images/codea13.png";
+    if(!isset($arr["video"])){
+        $arr["video"]="reze_frame_w/video/codea13.mp4";
     }
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#f0f0ff";
@@ -17,10 +17,10 @@ function content_section_image(array $arr){
         $arr["innerBackgroundColor"]="none";
     }
     if(!isset($arr["z-index"])){
-        $arr["z-index"]="-1";
+        $arr["z-index"]="0";
     }
     if(!isset($arr["textColor"])){
-        $arr["textColor"]="black";
+        $arr["textColor"]="white";
     }
     if(!isset($arr["animation"]) || $arr["animation"]=="on"){
         $arr["animation"]="scale(0.5)";
@@ -29,10 +29,23 @@ function content_section_image(array $arr){
         $arr["animation"]="scale(1)";
     }
     if(!isset($arr["titleColor"])){
-        $arr["titleColor"]="purple";
+        $arr["titleColor"]="white";
     }
     if(!isset($arr["rotate"])){
         $arr["rotate"]="0deg";
+    }
+    if(!isset($arr["flip"])){
+        $arr["flip"]="off";
+    }
+
+    if(!isset($arr["backgroundImage"])){
+        $backgroundImageSlider2 = "url(\"reze_frame_w/images/blackStarBackground.webp\")";
+    }else{
+        if($arr["backgroundImage"]=="none"){
+            $backgroundImageSlider2 = "none";
+        }else {
+            $backgroundImageSlider2="url(".$arr["backgroundImage"].")";
+        }
     }
 
     echo '
@@ -55,6 +68,9 @@ function content_section_image(array $arr){
     .home'.$GLOBALS["firstcard"].'::after{
         content:" ";
         background-color:'.$arr["backgroundColor"].';
+        background-image:'.$backgroundImageSlider2.';
+        background-position:center;
+        background-size:cover;
         position:absolute;
         inset:0;
         transform: skewY('.$arr["rotate"].');
@@ -81,9 +97,11 @@ function content_section_image(array $arr){
         }
 
         .mainimg'.$GLOBALS["firstcard"].'{
+            width:100%;
             object-fit:contain;
-            max-height:400px;
+            aspect-ratio:16/9;
             background-color:inherit;
+            
         }
 
 
@@ -110,16 +128,29 @@ function content_section_image(array $arr){
             
     </style>
     
-    <div class="home'.$GLOBALS["firstcard"].'">
-    
+    <div class="home'.$GLOBALS["firstcard"].'">';
+
+    if($arr["flip"]=="on"){
+        echo '        
         <div class="hometitlebk'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
             <h1 style="font-size:30px; font-weight:bolder;color:'.$arr["titleColor"].' ">'.$arr["title"].'</h1>
             <span style="line-height:30px">'.$arr["titlesub"].'</span>
         </div>
 
-        <img class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" width="100%" height="100%" src="'.$arr["image"].'" alt="image here">
+        <iframe class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'?controls=0" autoplay=1 mute=1></iframe>';
+    }else{
+        echo '
+        <iframe class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'?controls=0" autoplay=1 mute=1></iframe>
 
-    </div>
+        <div class="hometitlebk'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
+            <h1 style="font-size:30px; font-weight:bolder;color:'.$arr["titleColor"].' ">'.$arr["title"].'</h1>
+            <span style="line-height:30px">'.$arr["titlesub"].'</span>
+        </div>
+        ';
+    }
+    
+
+    echo '</div>
 
 
 

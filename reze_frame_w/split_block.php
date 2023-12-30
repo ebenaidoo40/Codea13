@@ -110,6 +110,9 @@ function split_block(array $arr){
     if(!isset($arr["imageBorderColor"])){
         $arr["imageBorderColor"]="white";
     }
+    if(!isset($arr["backgroundColor"])){
+        $arr["backgroundColor"]="white";
+    }
     if(!isset($arr["middleBackgroundImage"])){
         $arr["middleBackgroundImage"]="url(reze_frame_w/images/blackStarBackground.webp)";
         $master_middle_background_color_switcher="#00000020";
@@ -154,7 +157,7 @@ function split_block(array $arr){
             .mainblock'.$GLOBALS["firstcard"].'{
                 width:100%;
                 min-height:300px;
-                background-color:white;
+                background-color:'.$arr["backgroundColor"].';
                 position:relative;
             }
             .topblock'.$GLOBALS["firstcard"].'{
@@ -166,7 +169,7 @@ function split_block(array $arr){
             }
             .middleblock'.$GLOBALS["firstcard"].'{
                 min-height:200px;
-                background-color: white;
+                background-color: '.$arr["backgroundColor"].';
                 position:relative;
             }
             .bottomblock'.$GLOBALS["firstcard"].'{
@@ -308,7 +311,7 @@ function split_block(array $arr){
             <div class="bottomblock'.$GLOBALS["firstcard"].'">
                 <img style=" border:10px solid '.$arr["imageBorderColor"].'; border-radius:50%; width:200px; height:200px" src="'.$arr["image"].'">
                 '.$openquotes.'
-                <div style="width:min(90%, 500px); font-size:20px; background-color:'.$arr["reviewTextBackgroundColor"].'; padding:20px; border-radius:20px; color:'.$arr["reviewTextColor"].'">'.$arr["reviewText"].'</div>
+                <div style="width:min(90%, 500px);  background-color:'.$arr["reviewTextBackgroundColor"].'; padding:20px; border-radius:20px; color:'.$arr["reviewTextColor"].'">'.$arr["reviewText"].'</div>
                 '.$closequote.'
             </div>
         </div>

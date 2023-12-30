@@ -40,6 +40,7 @@ navbar(
                                                     tabs under menu drawer in width equal or less than 700px
         "dropTabs"=>["name"=>"link",],            //sets the name of a dropdown menu list and their links
         "homeLink"=>"";
+        "baseShadow"=>"",
 
     ]
 );
@@ -60,7 +61,7 @@ navbar2(
                                                     tabs under menu drawer in width equal or less than 700px
         "dropTabs"=>["name"=>"link",],            //sets the name of a dropdown menu list and their links
         "homeLink"=>"";
-
+        "baseShadow"=>"",
     ]
 );
 
@@ -81,6 +82,7 @@ home([
     "titlesub"=>"",                               // this is the text under the heading
     "titleColor"=>"",
     "titlesubColor"=>"",
+    "titleBlockBackgroundColor"=>"",
     "image"=>"",
     "buttonSwitch"=>"on or off",
     "buttonName"=>"",
@@ -99,6 +101,7 @@ reversed_home([
     "titlesub"=>"",                               // this is the text under the heading
     "titleColor"=>"",
     "titlesubColor"=>"",
+    "titleBlockBackgroundColor"=>"",
     "image"=>"",
     "buttonSwitch"=>"on or off",
     "buttonName"=>"",
@@ -117,6 +120,7 @@ home2([
     "titlesub"=>"",                               // this is the text under the heading
     "titleColor"=>"",
     "titlesubColor"=>"",
+    "titleBlockBackgroundColor"=>"",
     "image"=>"",
     "buttonSwitch"=>"on or off",
     "buttonName"=>"",
@@ -444,7 +448,7 @@ slidepics([
     "numOfPics"=>" at least 4",
     "images"=>[one dimensional array containing the paths to the images],
     "picBackground"=>"",
-    "mainPicBorder"=>"",
+    "mainPicBorder"=>"yes or no",
     "dPicFit"=>""  // this is to set the css object fit for the image for desktops
     "mPicFit"=>""  // this is to set the css object fit for the image for mobile
 ])
@@ -464,6 +468,7 @@ split_block([
     "content3"=>"",
     "titleColor"=>"",
     "contentColor"=>"",
+    "backgroundColor"=>"",
     "middleBackgroundColor"=>"",
     "middleBackgroundImage"=>"",
     "lowerBackgroundColor"=>"",
@@ -477,6 +482,39 @@ split_block([
     "dividerColor"=>"",
     "imageBorderColor"=>"",
     "animation"=>"on or off",
+])
+
+iframe_content([
+    "video"=>"",
+    "title"=>"",
+    "titlesub"=>"",
+    "backgroundColor"=>"",
+    "textColor"=>"",
+    "titleColor"=>"",
+    "animation"=>"",
+    "rotate"=>"5deg",
+    "z-index"=>"",                    // the default index is -1 to prevent overlapping
+                                    // when the rotate property is used
+    "innerBackgroundColor"=>"",
+    "backgroundImage"=>"",  
+    "flip"=>"on or off",  
+])
+
+events([
+    "EPL"=>["body"=>"The most thing has already happened", "date"=>"23rd Dec 2023"],
+    "backgroundColor"=>"",
+    "backgroundImage"=>"",
+    "titleColor"=>"",
+    "contentColor"=>"",
+    "dateColor"=>"",
+    "marquee"="yes or no",  // default value is yes
+])
+
+parallax_effect_wrapper([
+    "height"=>"",
+    "backgroundImage"=>"",
+    "backgroundSize"=>"",
+    "scaleNumber"=>"",
 ])
 
 

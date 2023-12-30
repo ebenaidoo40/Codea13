@@ -64,6 +64,9 @@ function reversed_home(array $arr){
     if(!isset($arr["id"])){
         $arr["id"]="";
     }
+    if(!isset($arr["titleBlockBackgroundColor"])){
+        $arr["titleBlockBackgroundColor"]="#00000000";
+    }
     
 
     echo '
@@ -95,7 +98,7 @@ function reversed_home(array $arr){
             flex-direction:column;
             justify-content:center;
             color:'.$arr["textColor"].';
-            background-color:inherit;
+            background-color:'.$arr["titleBlockBackgroundColor"].';
             padding:20px;
         }
 
@@ -103,7 +106,7 @@ function reversed_home(array $arr){
             max-height:100%;
             min-width:100%;
             object-fit:contain;
-            background-color: inherit;
+            background-color: '.$arr["titleBlockBackgroundColor"].';
         }
 
         .buttonpressbk'.$GLOBALS["firstcard"].'{

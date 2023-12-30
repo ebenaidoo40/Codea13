@@ -56,6 +56,10 @@ function navbar2(array $arr){
         $arr["homeLink"]="";
     }
 
+    if(!isset($arr["baseShadow"])){
+        $arr["baseShadow"]="black";
+    }
+
     $menu_icon='<svg id="mobilemenuopenid" class="mobilemenutab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" fill="rgba(36,30,31,1)"></path></svg>';
     $close_icon='<svg id="mobilemenucloseid" class="mobilemenutab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z" fill="rgba(0,0,0,1)"></path></svg>';
     $arrowup_icon="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\"><path d=\"M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z\" fill=\"".$arr["textColor"]."\"></path></svg>";
@@ -80,7 +84,7 @@ function navbar2(array $arr){
             color: '.$arr["textColor"].';
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0px 0px 5px 1px black;
+            box-shadow: 0px 0px 5px 1px '.$arr["baseShadow"].';
             box-sizing:bordor-box;
             font-size:16px;
             position:fixed;

@@ -16,6 +16,9 @@ function home(array $arr){
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#00000010";
     }
+    if(!isset($arr["titleBlockBackgroundColor"])){
+        $arr["titleBlockBackgroundColor"]="#00000000";
+    }
     if(!isset($arr["animation"]) || $arr["animation"]=="on"){
         $arr["animation"]="scale(0.5)";
     }
@@ -95,7 +98,7 @@ function home(array $arr){
             flex-direction:column;
             justify-content:center;
             color:'.$arr["textColor"].';
-            background-color:inherit;
+            background-color:'.$arr["titleBlockBackgroundColor"].';
             padding:20px;
         }
 
@@ -103,7 +106,7 @@ function home(array $arr){
             max-height:100%;
             min-width:100%;
             object-fit:contain;
-            background-color: inherit;
+            background-color: '.$arr["titleBlockBackgroundColor"].';
         }
 
         .buttonpressbk'.$GLOBALS["firstcard"].'{

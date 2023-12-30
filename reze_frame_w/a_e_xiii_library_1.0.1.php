@@ -33,4 +33,7 @@ include "slidepics.php";
 include "two_text.php";
 include "title.php";
 include "split_block.php";
+include "iframe_content.php";
+include "events.php";
+include "parallax_effect_wrapper.php";
 ?>
