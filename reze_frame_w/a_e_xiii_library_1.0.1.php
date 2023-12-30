@@ -1,4 +1,5 @@
 <?php
+$firstcard=1;
 echo "<script src=\"reze_frame_w/jquery-3.6.1.min.js\"></script>";
 include "universal.html";
 include "fxn.php";

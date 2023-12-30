@@ -10,13 +10,18 @@
 
 <body>
     
-   <?php 
-        include "reze_frame_w/a_e_xiii_library_1.0.1.php";
-        
-        navbar2([
-            "backgroundColor"=>"black",
-            "baseShadow"=>"#aaa",
-        ]);
+        <?php 
+                include "reze_frame_w/a_e_xiii_library_1.0.1.php";
+                
+                navbar2([
+                    "backgroundColor"=>"black",
+                    "baseShadow"=>"#aaa",
+                    "dropDownSwitch"=>"on",
+                ]);
+            ?>
+
+    <div class="codea13_body">
+        <?php
         home2([
             "buttonSwitch"=>"on",
         ]);
@@ -76,8 +81,13 @@
         ]);
 
         footer([]);
+        ?>
+
+    </div>
+
+
+
   
-   ?> 
 
 </body>
 

@@ -26,12 +26,12 @@ function events(array $arr){
     }
 
     if(!isset($arr["marquee"])){
-        $arr["marquee"]="marquee";
+        $arr["marquee"]="div";
     }else{
-        if($arr["marquee"]=="no"){
-            $arr["marquee"]="div";
-        }else{
+        if($arr["marquee"]=="yes"){
             $arr["marquee"]="marquee";
+        }else{
+            $arr["marquee"]="div";
         }
     }
 

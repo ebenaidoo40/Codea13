@@ -1,5 +1,5 @@
 <?php
-$firstcard=1;
+
 function navbar2(array $arr){
 
     if(!isset($arr["backgroundColor"])){
@@ -87,12 +87,11 @@ function navbar2(array $arr){
             box-shadow: 0px 0px 5px 1px '.$arr["baseShadow"].';
             box-sizing:bordor-box;
             font-size:16px;
-            position:sticky;
+            position:fixed;
             z-index:1000;
         }
 
         .basenav{
-            display:none;
             position:static;
             margin-right:0;
             background-color:#00000000;

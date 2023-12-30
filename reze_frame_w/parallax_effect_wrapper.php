@@ -2,7 +2,7 @@
 function parallax_effect_wrapper(array $arr){
 
     if(!isset($arr["height"])){
-        $arr["height"]="100dvh";
+        $arr["height"]="80dvh";
     }
     if(!isset($arr["backgroundImage"])){
         $backgroundImage4 = "url(\"reze_frame_w/images/eben.webp\")";
@@ -15,7 +15,7 @@ function parallax_effect_wrapper(array $arr){
     }
 
     if(!isset($arr["backgroundSize"])){
-        $arr["backgroundSize"]="contain";
+        $arr["backgroundSize"]="cover";
     }
 
     if(!isset($arr["scaleNumber"])){
@@ -30,7 +30,7 @@ function parallax_effect_wrapper(array $arr){
                 width: 100%;
                 height: '.$arr["height"].';
                 position: absolute;
-                background: '.$backgroundImage4.' top center;
+                background: '.$backgroundImage4.' no-repeat top center;
                 background-size: '.$arr["backgroundSize"].';
                 transform: translateZ(-1px) scale('.$arr["scaleNumber"].');
                 overflow: hidden;
