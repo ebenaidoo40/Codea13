@@ -88,12 +88,14 @@ function navbar(array $arr){
             box-shadow: 0px 0px 5px 1px '.$arr["baseShadow"].';
             box-sizing:bordor-box;
             font-size:16px;
-            position:fixed;
+            position:sticky;
             z-index:1000;
         }
 
         .basenav{
-            position:static;
+            display:none;
+            position:sticky;
+            top:0;
             margin-right:0;
             background-color:'.$arr["backgroundColor"].';
         }

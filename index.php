@@ -13,7 +13,7 @@
    <?php 
         include "reze_frame_w/a_e_xiii_library_1.0.1.php";
         
-        navbar([
+        navbar2([
             "backgroundColor"=>"black",
             "baseShadow"=>"#aaa",
         ]);
