@@ -119,6 +119,7 @@ function navbar(array $arr){
             margin-right:10px;
             padding: 3px 8px;
             font-weight:bold;
+            color: '.$arr["textColor"].';
         }
 
         .tabs>*:hover{
@@ -260,7 +261,7 @@ function navbar(array $arr){
 
     <div id="logo-title" class="logo-title">
         <img width="32px" height="32px" src="'.$arr["logo"].'" alt="logo">
-        <a href="'.$arr["homeLink"].'"><span>'.$arr["title"].'</span></a>
+        <a href="'.$arr["homeLink"].'"><span style="color:'.$arr["titleTextColor"].'">'.$arr["title"].'</span></a>
     </div>
 
     <div id="tabs" class="tabs">';
