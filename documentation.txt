@@ -451,6 +451,7 @@ slidepics([
     "mainPicBorder"=>"yes or no",
     "dPicFit"=>""  // this is to set the css object fit for the image for desktops
     "mPicFit"=>""  // this is to set the css object fit for the image for mobile
+    "speed"=>8,    // the defaut pic changer speed is 8 seconds;
 ])
 
 split_block([
@@ -510,11 +511,40 @@ events([
     "marquee"="yes or no",  // default value is yes
 ])
 
-parallax_effect_wrapper([
-    "height"=>"",
+parallax_constant([
     "backgroundImage"=>"",
     "backgroundSize"=>"",
-    "scaleNumber"=>"",
 ])
+
+image_image([
+    "title1"=>"",
+    "title2"=>"",
+    "pic1"=>"",
+    "pic2"=>"",
+    "content1"=>"",
+    "content2"=>"",
+    "backgroundColor"=>"",
+    "animation"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+])
+
+
+form([
+    "title"=>"REGISTER",
+    "titleColor"=>"white",
+    "labelColor"=>"yellow",
+    "linkColor"=>"white",
+    "agreement"=>"index.php",
+    "backgroundColor"=>"#000000aa",
+    "buttonBackgroundColor"=>"purple",
+    "buttonColor"=>"white",
+    "input1"=>["id"=>"firstname", "name"=>"Firstname", "type"=>"text", "required"=>"required"],
+    "input2"=>["id"=>"nationality", "name"=>"nationality", "required"=>"required"],
+    "input3"=>["id"=>"password", "name"=>"password", "type"=>"password", "required"=>"required"],
+    "input5"=>["id"=>"file", "name"=>"Image", "type"=>"file", "required"=>"required"],
+    "input4"=>["list", "Languages", "English", "French", "Chinese", "Spanish"],
+    "formTo"=>"",
+]);
 
 

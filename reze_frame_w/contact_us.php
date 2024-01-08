@@ -6,6 +6,9 @@ function contact_us(array $arr){
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="white";
     }
+    if(!isset($arr["subTitleColor"])){
+        $arr["subTitleColor"]="black";
+    }
     if(!isset($arr["image"])){
         $arr["image"]="reze_frame_w/images/codea13.png";
     }
@@ -21,6 +24,23 @@ function contact_us(array $arr){
     if(!isset($arr["formTo"])){
         $arr["formTo"]="unknown.php";
     }
+    if(!isset($arr["content"])){
+        $arr["content"]='<h1 style="font-size:40px; color: brown">Get In Touch</h1>
+        <h1 style="font-size:22px; color:purple">Ask how we can help you.</h1>
+        <p style="margin-bottom:25px">Expect a response from us in no more than 48 hours. Send another email or give us a call if you have not heard back from us after 48 hours.
+        </p>
+
+        <h1 style="font-size:22px; color:purple">Are you confused?</h1>
+        <p>Ask us any questions you have regarding our competition. We are here to assist you.</p>
+
+        <h1 style="font-size:22px">We are bringing exciting offers to your door.</h1>';
+    }
+
+    if(!isset($arr["subTitle"])){
+        $arr["subTitle"]="Let Us Start A Conversation";
+    }
+
+
     echo '
     <style>
         .firstblock{
@@ -116,6 +136,9 @@ function contact_us(array $arr){
             opacity: 1;
         }
         
+
+       
+        
         .hidden{
             display: none;
         }
@@ -145,25 +168,15 @@ function contact_us(array $arr){
         <div class="failedpop" id="failedpop">Wrong input of credentials</div>
         <div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
 
+
         <div class="firstblock">
             <div class="contactus_main_title">'.$arr["title"].'</div>
         </div>
 
-        <h1 style="padding:40px; text-align:center; font-size:30px; font:weight:bolder;">Let Us Start A Conversation</h1>
+        <h1 style="padding:40px; text-align:center; font-size:30px; font:weight:bolder; color:'.$arr["subTitleColor"].'">'.$arr["subTitle"].'</h1>
 
         <div class="secondblock">
-            <div class="firstblock1">
-                <h1 style="font-size:40px; color: brown">Get In Touch</h1>
-                <h1 style="font-size:22px; color:purple">Ask how we can help you.</h1>
-                <p style="margin-bottom:25px">Expect a response from us in no more than 48 hours. Send another email or give us a call if you have not heard back from us after 48 hours.
-                </p>
-
-                <h1 style="font-size:22px; color:purple">Are you confused?</h1>
-                <p>Ask us any questions you have regarding our competition. We are here to assist you.</p>
-
-                <h1 style="font-size:22px">We are bringing exciting offers to your door.</h1>
-                
-            </div>
+            <div class="firstblock1">'.$arr["content"].'</div>
 
 
             <div class="form_master_block">
@@ -225,6 +238,7 @@ function contact_us(array $arr){
                 message: message,
             },
             success: function(res){
+
 
                 if(res=="Email sent"){
                     setTimeout(() => {

@@ -18,10 +18,7 @@
                     "baseShadow"=>"#aaa",
                     "dropDownSwitch"=>"on",
                 ]);
-            ?>
-
-    <div class="codea13_body">
-        <?php
+            
         home2([
             "buttonSwitch"=>"on",
         ]);
@@ -58,6 +55,8 @@
             
         ]);
 
+        image_image([]);
+
         title([
             "title"=>"Upcoming Events >>",
             "titleColor"=>"white",
@@ -74,7 +73,7 @@
             "EPL"=>["body"=>"The most thing has already happened", "date"=>"23rd Dec 2023"], 
         ]);
 
-        parallax_effect_wrapper([]);
+        parallax_constant([]);
         iframe_content([
             "backgroundImage"=>"none",
             "backgroundColor"=>"#00aaee50",
@@ -82,8 +81,6 @@
 
         footer([]);
         ?>
-
-    </div>
 
 
 

@@ -45,7 +45,7 @@ function events(array $arr){
                 background-image:'.$backgroundImageSlider3.';
                 background-size:cover;
                 overflow-x:scroll;
-                padding:20px 0px;
+                padding:0px 0px;
                 position:relative;
                 white-space: nowrap;
                 -ms-overflow-style: none;  /* IE and Edge */

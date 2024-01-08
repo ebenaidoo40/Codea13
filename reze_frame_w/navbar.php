@@ -119,7 +119,6 @@ function navbar(array $arr){
             margin-right:10px;
             padding: 3px 8px;
             font-weight:bold;
-            color: '.$arr["textColor"].';
         }
 
         .tabs>*:hover{
@@ -261,7 +260,7 @@ function navbar(array $arr){
 
     <div id="logo-title" class="logo-title">
         <img width="32px" height="32px" src="'.$arr["logo"].'" alt="logo">
-        <a href="'.$arr["homeLink"].'"><span style="color:'.$arr["titleTextColor"].'">'.$arr["title"].'</span></a>
+        <a href="'.$arr["homeLink"].'"><span sytle="color:'.$arr["titleTextColor"].'">'.$arr["title"].'</span></a>
     </div>
 
     <div id="tabs" class="tabs">';
@@ -435,13 +434,7 @@ for($z=0; $z<$arr["dropDownNumber"]; $z++){
             dropDownbkpos();
             window.addEventListener("resize", dropDownbkpos);
 
-            // this function is to fix the ios error when  height is set to 100vh
-            const appHeight = () => {
-                const doc = document.documentElement;
-                doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-            }
-            window.addEventListener("resize", appHeight);
-            appHeight();    
+              
         </script>';
 }
 

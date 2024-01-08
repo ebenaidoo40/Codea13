@@ -40,6 +40,13 @@ function    slidepics(array $arr){
         }
     }
 
+    if(!isset($arr["speed"])){
+        $arr["speed"]=8;
+        $masterPicRotateSpeed = $arr["speed"] * 1000;
+    }else{
+        $masterPicRotateSpeed = $arr["speed"] * 1000;
+    }
+
     
     
     if(!isset($arr["picBackground"])){
@@ -152,7 +159,7 @@ function    slidepics(array $arr){
                 width:1%;
                 height:1vw;
                 background-color:'.$arr["picBackground"].';
-                transition: all 2s ease-in-out;
+                transition: all 1s ease-in-out;
                 z-index:-1;
                 object-fit:'.$arr["mPicFit"].';
             }
@@ -166,7 +173,7 @@ function    slidepics(array $arr){
                 top:0%;
                 left:0%;
                 transform:translate(0%, 0%);
-                transition: all 2s ease-in-out;
+                transition: all 1s ease-in-out;
                 z-index:1;
                 object-fit:'.$arr["mPicFit"].';
                 object-position: center;
@@ -182,7 +189,7 @@ function    slidepics(array $arr){
                 width:100%;
                 height:124vw;
                 background-color:'.$arr["picBackground"].';
-                transition: all 2s ease-in-out;
+                transition: all 1s ease-in-out;
                 z-index:0;
                 object-fit:'.$arr["mPicFit"].';
                 object-position: center;
@@ -236,7 +243,7 @@ function    slidepics(array $arr){
                     var right'.$GLOBALS["firstcard"].' = counter'.$GLOBALS["firstcard"].' + 1;
 
                     if(left'.$GLOBALS["firstcard"].'<0){
-                        left'.$GLOBALS["firstcard"].'=sizeOfBag'.$GLOBALS["firstcard"].'-1;
+                        left'.$GLOBALS["firstcard"].'=sizeOfBag'.$GLOBALS["firstcard"].' - 1;
                     }else{}
 
                     if(right'.$GLOBALS["firstcard"].' >= sizeOfBag'.$GLOBALS["firstcard"].'){
@@ -248,8 +255,8 @@ function    slidepics(array $arr){
                         picbag'.$GLOBALS["firstcard"].'[k].setAttribute("class", "active_img'.$GLOBALS["firstcard"].' img'.$GLOBALS["firstcard"].'");   
                     }
                     
-                    picbag'.$GLOBALS["firstcard"].'[counter'.$GLOBALS["firstcard"].'].setAttribute("class", "active_img'.$GLOBALS["firstcard"].' img1'.$GLOBALS["firstcard"].'");
                     picbag'.$GLOBALS["firstcard"].'[left'.$GLOBALS["firstcard"].'].setAttribute("class", "active_img'.$GLOBALS["firstcard"].' img0'.$GLOBALS["firstcard"].'");
+                    picbag'.$GLOBALS["firstcard"].'[counter'.$GLOBALS["firstcard"].'].setAttribute("class", "active_img'.$GLOBALS["firstcard"].' img1'.$GLOBALS["firstcard"].'");
                     picbag'.$GLOBALS["firstcard"].'[right'.$GLOBALS["firstcard"].'].setAttribute("class", "active_img'.$GLOBALS["firstcard"].' img2'.$GLOBALS["firstcard"].'");
 
                     counter'.$GLOBALS["firstcard"].'++;
@@ -260,7 +267,7 @@ function    slidepics(array $arr){
                 var observer'.$GLOBALS["firstcard"].' = new IntersectionObserver((entries)=>{
                     entries.forEach((entry) => {
                         if(entry.isIntersecting){
-                            setval'.$GLOBALS["firstcard"].' = setInterval(movepics'.$GLOBALS["firstcard"].', 8000);
+                            setval'.$GLOBALS["firstcard"].' = setInterval(movepics'.$GLOBALS["firstcard"].', '.$masterPicRotateSpeed.');
                         }else{
                             clearInterval(setval'.$GLOBALS["firstcard"].');
                         }

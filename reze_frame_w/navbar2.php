@@ -445,13 +445,7 @@ for($z=0; $z<$arr["dropDownNumber"]; $z++){
             dropDownbkpos();
             window.addEventListener("resize", dropDownbkpos);
 
-            // this function is to fix the ios error when  height is set to 100vh
-            const appHeight = () => {
-                const doc = document.documentElement;
-                doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-            }
-            window.addEventListener("resize", appHeight);
-            appHeight();    
+              
         </script>';
 }
 

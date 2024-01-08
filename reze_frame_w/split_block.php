@@ -278,7 +278,7 @@ function split_block(array $arr){
 
             <div class="topblock'.$GLOBALS["firstcard"].'">
                 <h1 style="font-size:30px; font-weight:bold; color:'.$arr["titleColor"].'">'.$arr["title"].'</h1><br>
-                <p style="width:min(100%, 700px); line-height:1.5; color:'.$arr["contentColor"].' ">'.$arr["content"].'</p>
+                <p style="width:min(100%, 700px); line-height:2; color:'.$arr["contentColor"].' ">'.$arr["content"].'</p>
             </div>
 
             <div class="middleblock'.$GLOBALS["firstcard"].'">
@@ -289,19 +289,19 @@ function split_block(array $arr){
 
                     <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:30px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title1"].'</div>
-                        <div style="color:'.$arr["subContentColor"].'">'.$arr["content1"].'</div>
+                        <div style="color:'.$arr["subContentColor"].'; line-height:2;">'.$arr["content1"].'</div>
                         <div >'.$arr["badge1"].'</div>
                     </div>
 
                     <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:30px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title2"].'</div>
-                        <div style="color:'.$arr["subContentColor"].'">'.$arr["content2"].'</div>
+                        <div style="color:'.$arr["subContentColor"].'; line-height:2;">'.$arr["content2"].'</div>
                         <div>'.$arr["badge2"].'</div>
                     </div>
 
                     <div class="middlebkchildren'.$GLOBALS["firstcard"].'">
                         <div style="font-size:25px; font-weight:bold; color:'.$arr["subTitleColor"].'">'.$arr["title3"].'</div>
-                        <div style="color:'.$arr["subContentColor"].'">'.$arr["content3"].'</div>
+                        <div style="color:'.$arr["subContentColor"].'; line-height:2;">'.$arr["content3"].'</div>
                         <div>'.$arr["badge3"].'</div>
                     </div>
 
@@ -309,7 +309,7 @@ function split_block(array $arr){
             </div>
 
             <div class="bottomblock'.$GLOBALS["firstcard"].'">
-                <img style=" border:10px solid '.$arr["imageBorderColor"].'; border-radius:50%; width:200px; height:200px" src="'.$arr["image"].'">
+                <img style=" border:10px solid '.$arr["imageBorderColor"].'; object-fit:contain; background-color:'.$arr["imageBorderColor"].'; border-radius:50%; width:200px; height:200px" src="'.$arr["image"].'">
                 '.$openquotes.'
                 <div style="width:min(90%, 500px);  background-color:'.$arr["reviewTextBackgroundColor"].'; padding:20px; border-radius:20px; color:'.$arr["reviewTextColor"].'">'.$arr["reviewText"].'</div>
                 '.$closequote.'

@@ -56,7 +56,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
 
         .longblockmain'.$GLOBALS["firstcard"].'{
             min-height:500px;
-            background-color:violet;
+            background-color:'.$arr["backgroundColor"].';
             display:flex;           
         }
         .longblockmain'.$GLOBALS["firstcard"].'>*{

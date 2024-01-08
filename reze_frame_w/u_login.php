@@ -1,6 +1,6 @@
 <?php 
 
-function a_login(array $arr){
+function login(array $arr){
     if(!isset($arr["email_name"])){
         $arr["email_name"]="email";
     }
@@ -20,7 +20,7 @@ function a_login(array $arr){
         $arr["resetSuccessMsg"]="Email sent";
     }
     if(!isset($arr["loginFormTo"])){
-        $arr["loginFormTo"]="login.php";
+        $arr["loginFormTo"]="unknownlogin.php";
     }
     if(!isset($arr["resetFormTo"])){
         $arr["resetFormTo"]="reset.php";
@@ -30,6 +30,12 @@ function a_login(array $arr){
     }
     if(!isset($arr["buttonColor"])){
         $arr["buttonColor"]="white";
+    }
+    if(!isset($arr["clickHereText"])){
+        $arr["clickHereText"]="You have not registered for this yet?";
+    }
+    if(!isset($arr["clickHereLink"])){
+        $arr["clickHereLink"]="";
     }
     
     echo '
@@ -88,7 +94,6 @@ function a_login(array $arr){
     top: 50px;
     opacity: 1;
 }
-
 
 
 .form{
@@ -192,6 +197,7 @@ input[type=\'password\']{
 
 
 
+
 .line{
     height: 5px;
     background-color: '.$arr["buttonBackgroundColor"].';
@@ -216,6 +222,10 @@ input[type=\'password\']{
 
 <form id="form" class="form" >
 
+<div class="failedpop" id="failedpop">Wrong input of credentials</div>
+<div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
+<a href="'.$arr["loginSuccessLink"].'"><div class="failedpop" id="userpglink">userpg link</div></a>
+
 
 <div style="font-size: 24px; text-align:center; font-weight:bold; margin-bottom:20px; color:'.$arr["buttonBackgroundColor"].'" id="form_heading">Log in</div>
     <div class="line"></div>
@@ -236,7 +246,7 @@ input[type=\'password\']{
 
     <div style="font-weight:bold; color: #5996f0; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
 
-    
+    <div style="font-weight:bold; text-align:center">'.$arr["clickHereText"].' <a href="'.$arr["clickHereLink"].'">Click here </a> to start now</div>
 </form>
 
 
