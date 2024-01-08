@@ -25,6 +25,9 @@ if(!isset($arr["buttonBackgroundColor"])){
 if(!isset($arr["labelColor"])){
     $arr["labelColor"]="#5996f0";
 }
+if(!isset($arr["callBack"])){
+    $arr["callBack"]="index.php";
+}
 
 
 echo '
@@ -246,7 +249,7 @@ input[type=\'password\']{
     
 <div class="failedpop" id="failedpop" style="background-color: #ffc1c1">Used Email</div>
 <div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>
-<a href="index.php"><div class="failedpop" id="homelink">store page link</div></a>
+<a href="'.$arr["callBack"].'"><div class="failedpop" id="homelink">s</div></a>
 
 <div class="formheader">
 <div style=" text-align:center; font-size:24px; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</div>

@@ -526,8 +526,7 @@ image_image([
     "backgroundColor"=>"",
     "animation"=>"",
     "titleColor"=>"",
-    "textColor"=>"",
-])
+    "textColor"=>"",)
 
 
 form([
@@ -545,6 +544,7 @@ form([
     "input5"=>["id"=>"file", "name"=>"Image", "type"=>"file", "required"=>"required"],
     "input4"=>["list", "Languages", "English", "French", "Chinese", "Spanish"],
     "formTo"=>"",
+    "callBack"=>"",
 ]);
 
 
