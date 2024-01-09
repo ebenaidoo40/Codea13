@@ -71,6 +71,7 @@ function a_login(array $arr){
     transition: all 1s;
     z-index: 1;
     box-sizing:border-box;
+    
 }
 
 .successpop{
