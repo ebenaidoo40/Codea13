@@ -39,8 +39,14 @@ labore sed, deserunt minima fugiat inventore expedita.";
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
+    if(!isset($arr["listColor"])){
+        $arr["listColor"]=$arr["textColor"];
+    }
     if(!isset($arr["image"])){
         $arr["image"]="reze_frame_w/images/codea13_2.png";
+    }
+    if(!isset($arr["pinRadius"])){
+        $arr["pinRadius"]="50%";
     }
 
     echo '
@@ -93,7 +99,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         }
         .longunderpsub'.$GLOBALS["firstcard"].'{
             display:flex;
-            
+            color:'.$arr["listColor"].';
             font-weight:bolder;
             font-size:20px;
             text-shadow: 0 0 5px 5px green;
@@ -101,7 +107,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         .longunderpinnerbullet'.$GLOBALS["firstcard"].'{
             width:60px;
             height:60px; 
-            border-radius:10%; 
+            border-radius:'.'.$arr["pinRadius"].'.'; 
             background-color:white;
             position:relative;
             border:20px solid '.$arr["ringColor"].';

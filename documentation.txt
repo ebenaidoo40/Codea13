@@ -322,6 +322,8 @@ long_block_image([
     "backgroundColor"=>"",
     "gradientColor"=>"",
     "ringColor"=>"",
+    "pinRadius"=>"",
+    "listColor"=>"",
 ]);
 
 image_long_block([
@@ -337,6 +339,8 @@ image_long_block([
     "backgroundColor"=>"",
     "gradientColor"=>"",
     "ringColor"=>"",
+    "pinRadius"=>"",
+    "listColor"=>"",
 ]);
 
 
@@ -526,7 +530,8 @@ image_image([
     "backgroundColor"=>"",
     "animation"=>"",
     "titleColor"=>"",
-    "textColor"=>"",)
+    "textColor"=>"",
+    ])
 
 
 form([

@@ -31,6 +31,16 @@ function a_login(array $arr){
     if(!isset($arr["buttonColor"])){
         $arr["buttonColor"]="white";
     }
+
+    if(!isset($arr["backgroundColor"])){
+        $arr["backgroundColor"]="#ffffff";
+    }
+    if(!isset($arr["labelColor"])){
+        $arr["labelColor"]="black";
+    }
+    if(!isset($arr["linkColor"])){
+        $arr["linkColor"]="#5996f0";
+    }
     
     echo '
     <style>
@@ -99,7 +109,8 @@ function a_login(array $arr){
     flex-direction: column;
     margin-top: 50px;
     max-width: 350px;
-    padding:0 40px;
+    padding:10px 40px;
+    background-color:'.$arr["backgroundColor"].';
 }
 
 a{
@@ -107,9 +118,9 @@ a{
 }
 
 form a {
-    color: #5996f0;
     font-weight: bold;
     cursor:pointer;
+    color: '.$arr["linkColor"].';
 }
 
 input:focus, select:focus{
@@ -169,6 +180,7 @@ label{
     transition: all 0.4s;
     color: gray;
     font-weight: bold;
+    color:'.$arr["labelColor"].';
 }
 
 .originallabel{
@@ -228,13 +240,13 @@ input[type=\'password\']{
 
 
     <div class="checkboxdiv" style="display:flex; align-items: start;">
-        <label id="showpasswordlabel" for="showpassword" class="marginleft_zero" style="margin-left:0px"><input type="checkbox" name="showpassword" id="showpassword" style="height:auto; position:relative; vertical-align: middle; top: 3px"> Show password</label>
+        <label id="showpasswordlabel" for="showpassword" class="marginleft_zero" style="margin-left:0px; color:'.$arr["linkColor"].'"><input type="checkbox" name="showpassword" id="showpassword" style="height:auto; position:relative; vertical-align: middle; top: 3px;"> Show password</label>
     </div>
     
 
     <button id="loginbutton" class="loginbutton" type="submit">Log in</button>
 
-    <div style="font-weight:bold; color: #5996f0; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
+    <div style="font-weight:bold; color:'.$arr["linkColor"].'; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
 
     
 </form>

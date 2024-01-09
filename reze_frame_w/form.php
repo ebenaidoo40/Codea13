@@ -22,6 +22,9 @@ if(!isset($arr["linkColor"])){
 if(!isset($arr["buttonBackgroundColor"])){
     $arr["buttonBackgroundColor"]="#5996f0";
 }
+if(!isset($arr["buttonColor"])){
+    $arr["buttonColor"]="white";
+}
 if(!isset($arr["labelColor"])){
     $arr["labelColor"]="#5996f0";
 }

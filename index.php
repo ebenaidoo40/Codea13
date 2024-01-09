@@ -55,6 +55,10 @@
             
         ]);
 
+        long_block_image([
+            "pinRadius"=>"50% 0 50% 0",
+        ]);
+
         image_image([]);
 
         title([
