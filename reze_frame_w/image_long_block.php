@@ -107,7 +107,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         .longunderpinnerbullet'.$GLOBALS["firstcard"].'{
             width:60px;
             height:60px; 
-            border-radius:'.'.$arr["pinRadius"].'.'; 
+            border-radius:'.$arr["pinRadius"].'; 
             background-color:white;
             position:relative;
             border:20px solid '.$arr["ringColor"].';
