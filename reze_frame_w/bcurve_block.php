@@ -93,6 +93,8 @@ function bcurve_block(array $arr){
             background-color:'.$arr["backgroundColor"].';
             height:50px;
             -webkit-mask-image:url("reze_frame_w/assets/bbcurve.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
         }
 
         .bk2'.$GLOBALS["firstcard"].'{
@@ -100,6 +102,9 @@ function bcurve_block(array $arr){
             background-color:'.$arr["backgroundColor"].';
             height:50px;
             -webkit-mask-image:url("reze_frame_w/assets/bcurve.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
+            border:none;
         }
 
         .contentblock'.$GLOBALS["firstcard"].'{

@@ -112,6 +112,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
             position:relative;
             border:20px solid '.$arr["ringColor"].';
             border-right:none;
+            margin-bottom:5px;
         }
         .allList'.$GLOBALS["firstcard"].'{
             position:relative;

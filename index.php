@@ -14,13 +14,13 @@
                 include "reze_frame_w/a_e_xiii_library_1.0.1.php";
                 
                 navbar2([
-                    "backgroundColor"=>"black",
+                    "backgroundColor"=>"purple",
                     "baseShadow"=>"#aaa",
                     "dropDownSwitch"=>"on",
                 ]);
             
-        home2([
-            "buttonSwitch"=>"on",
+        home([
+            //"buttonSwitch"=>"on",
         ]);
         
         slidepics([

@@ -93,6 +93,8 @@ function slant_block(array $arr){
             background-color:'.$arr["backgroundColor"].';
             height:100px;
             -webkit-mask-image:url("reze_frame_w/assets/down_triangle.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
         }
 
         .contentblock'.$GLOBALS["firstcard"].'{

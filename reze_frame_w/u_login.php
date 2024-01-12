@@ -7,15 +7,11 @@ function login(array $arr){
     if(!isset($arr["password_email"])){
         $arr["password_name"]="password";
     }
-    if(!isset($arr["loginErrMsg"])){
-        $arr["loginErrMsg"]="Wrong input of credentials";
-    }
+    
     if(!isset($arr["loginSuccessLink"])){
         $arr["loginSuccessLink"]="";
     }
-    if(!isset($arr["resetErrMsg"])){
-        $arr["resetErrMsg"]="Unknown email";
-    }
+    
     if(!isset($arr["resetSuccessMsg"])){
         $arr["resetSuccessMsg"]="Email sent";
     }
@@ -151,6 +147,7 @@ button{
     border: 1px solid '.$arr["buttonBackgroundColor"].';
     border-radius: 5px;
     color: '.$arr["buttonColor"].';
+    cursor:pointer;
 }
 
 label{
@@ -228,15 +225,12 @@ input[type=\'password\']{
 
 
 <div class="failedpop" id="failedpop">Wrong input of credentials</div>
+<div class="successpop" id="emailsentpop" style="background-color: #7bffd3">'.$arr["resetSuccessMsg"].'</div>
 <a href="'.$arr["loginSuccessLink"].'"><div class="failedpop" id="userpglink">userpg link</div></a>
-<div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
 
 
 <form id="form" class="form" >
 
-<div class="failedpop" id="failedpop">Wrong input of credentials</div>
-<div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
-<a href="'.$arr["loginSuccessLink"].'"><div class="failedpop" id="userpglink">userpg link</div></a>
 
 
 <div style="font-size: 24px;  text-align:center; font-weight:bold; margin-bottom:20px; color:'.$arr["buttonBackgroundColor"].'" id="form_heading">Log in</div>
@@ -292,27 +286,30 @@ input[type=\'password\']{
             },
             success: function(res){
 
-                if(res=="'.$arr["loginErrMsg"].'"){
+                if(res==null){
+                    res="Developer did not set response before terminating an operation.";
+                }else{}
+
+                if(res=="successful"){
+                    document.querySelector("#userpglink").click();
+                }else{
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="'.$arr["loginErrMsg"].'";
+                        document.querySelector("#failedpop").innerHTML=res;
                         document.querySelector("#password").value=null;
                     }, 50);
-
+    
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
                         document.querySelector("#loginbutton").innerHTML="submit";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
-                }else{
-                    document.querySelector("#userpglink").click();
                 }
-
             },
             error: function(res){
                 setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Poor network";
+                        document.querySelector("#failedpop").innerHTML="No Connection to Server";
                     }, 50);
 
                     setTimeout(() => {
@@ -330,9 +327,13 @@ input[type=\'password\']{
             data: {
                 email:email
             },
-            success: function(res){
+            success: function(res2){
 
-                if(res=="'.$arr["resetSuccessMsg"].'"){
+                if(res2==null){
+                    res2="Developer did not set response before terminating an operation.";
+                }else{}
+
+                if(res2=="successful"){
 
                 setTimeout(() => {
                         document.querySelector("#emailsentpop").classList.add("popnow1");
@@ -343,17 +344,15 @@ input[type=\'password\']{
                         document.querySelector("#emailsentpop").classList.remove("popnow1");
                         document.querySelector("#loginbutton").innerHTML="Reset password";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
-                        masterClick();
+                        masterResetAfterUsingResetPassword();
                     }, 3000);
    
-                }else{}
-
-
-                if(res=="data lost"){
-
+                }
+                // this control is to check if an error occurred as a result of no internet connection to email server
+                else if(res2.includes("Fatal error")){
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Poor network";
+                        document.querySelector("#failedpop").innerHTML="No or weak internet connection";
                     }, 50);
 
                     setTimeout(() => {
@@ -361,15 +360,11 @@ input[type=\'password\']{
                         document.querySelector("#loginbutton").innerHTML="Reset password";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
-       
-                }else{}
-
-
-                if(res=="'.$arr["resetErrMsg"].'"){
-
+                }
+                else{
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="'.$arr["resetErrMsg"].'";
+                        document.querySelector("#failedpop").innerHTML=res2;
                     }, 50);
 
                     setTimeout(() => {
@@ -377,16 +372,16 @@ input[type=\'password\']{
                         document.querySelector("#loginbutton").innerHTML="Reset password";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
-       
-                }else{}
-
+                }
 
             },
-            error: function(res){
+
+            
+            error: function(res2){
 
                 setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Poor network";
+                        document.querySelector("#failedpop").innerHTML="No Connection to Server";
                     }, 50);
 
                     setTimeout(() => {

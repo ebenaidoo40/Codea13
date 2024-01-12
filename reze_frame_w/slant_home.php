@@ -56,6 +56,8 @@ function slant_home(array $arr){
             height:200px;
             background-color:'.$arr["innerBorderColor"].';
             -webkit-mask-image:url("reze_frame_w/assets/scalene.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
         }
         .basediv1'.$GLOBALS["firstcard"].'{
             left:0;
@@ -66,6 +68,8 @@ function slant_home(array $arr){
             height:120px;
             background-color:'.$arr["outerBorderColor"].';
             -webkit-mask-image:url("reze_frame_w/assets/right_angle_triangle.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
         }
         .title'.$GLOBALS["firstcard"].'{
             max-width:500px;

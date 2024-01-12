@@ -93,6 +93,8 @@ function mcurve_block(array $arr){
             background-color:'.$arr["backgroundColor"].';
             height:50px;
             -webkit-mask-image:url("reze_frame_w/assets/mcurve.svg");
+            mask-repeat:no-repeat;
+            mask-size: 100% 100%;
         }
         .bk1'.$GLOBALS["firstcard"].'{
             transform:rotate(.5turn);

@@ -240,7 +240,7 @@ function contact_us(array $arr){
             success: function(res){
 
 
-                if(res=="Email sent"){
+                if(res=="successful"){
                     setTimeout(() => {
                         document.querySelector("#emailsentpop").classList.add("popnow1");
                         document.querySelector("#emailsentpop").innerHTML="Message Sent";

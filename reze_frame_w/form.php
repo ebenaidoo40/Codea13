@@ -31,6 +31,9 @@ if(!isset($arr["labelColor"])){
 if(!isset($arr["callBack"])){
     $arr["callBack"]="index.php";
 }
+if(!isset($arr["customSuccessMessage"])){
+    $arr["customSuccessMessage"]="Succesful";
+}
 
 
 echo '
@@ -398,57 +401,14 @@ form.addEventListener(\'submit\', createaccountnow);
             cache:false,
             success: function(res){
 
-                if(res=="data lost"){
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow");
-                        document.querySelector("#failedpop").innerHTML="Poor Connection";
-                    }, 50);
-
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
-                    }, 3000);
-                }else{}
-                
-                if(res=="nomination closed"){
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow");
-                        document.querySelector("#failedpop").innerHTML="Nomination Closed";
-                    }, 50);
-
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
-                    }, 3000);
+                if(res==null){
+                    res="Developer did not set response before terminating an operation.
                 }else{}
 
-
-                if(res=="used email or phone number or video link"){
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow");
-                        document.querySelector("#failedpop").innerHTML="This email or phone number or video link is already in our system";
-                    }, 50);
-
-                    setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
-                    }, 5000);
-                }else{
-                    //document.querySelector("#storepglink").click();
-                    //window.history.pushState({}, document.title,  "/" + "pg/store.php");
-                    //location.reload();
-                }
-
-
-                
-
-                if(res=="audition successful"){
+                if(res=="successful"){
                     setTimeout(() => {
                         document.querySelector("#successpop").classList.add("popnow");
-                        document.querySelector("#successpop").innerHTML="Audition Successful";
+                        document.querySelector("#successpop").innerHTML="'.$arr["customSuccessMessage"].'";
                     }, 50);
 
                     setTimeout(() => {
@@ -461,15 +421,23 @@ form.addEventListener(\'submit\', createaccountnow);
                         document.querySelector("#homelink").click();
                     }, 4000);
                 }else{
-                }
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.add("popnow");
+                        document.querySelector("#failedpop").innerHTML=res;
+                    }, 50);
 
-                
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.remove("popnow");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+                }
 
             },
             error: function(res){
                 setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow");
-                        document.querySelector("#failedpop").innerHTML="Bad network";
+                        document.querySelector("#failedpop").innerHTML="No Connection to Sever";
                     }, 50);
 
                     setTimeout(() => {
