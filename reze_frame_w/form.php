@@ -335,10 +335,11 @@ input[type=\'password\']{
                 </select>
             </div>';
         }else if(isset($arr[$numberOfElements[$i]]["caution"])){
+            $requriedHTML_builder="<span style=\"color: red\">*</span>";
             echo '<div>
                 <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["name"].$requriedHTML_builder.'</label>
-                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'>
-                <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; font-weight:bold; border:1px solid #33333350; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
+                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" required>
+                <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; border:1px solid '.$arr["labelColor"].'; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
                 <div style="height:10px;"></div>
                 
                 <div class="checkboxdiv" style="display: flex;">
