@@ -12,10 +12,14 @@
         navbar([]);
         
 
-        a_login([
+        form([
+            
             "backgroundColor"=>"#000000aa",
-            "labelColor"=>"blue",
+            "labelColor"=>"white",
             "buttonBackgroundColor"=>"gold",
+            "input1"=>["list", "Gender", "Male", "Female"],
+            "input2"=>["type"=>"email", "name"=>"Email", "caution"=>"You must not forget to fill this form"],
+            "input3"=>["name"=>"password", "type"=>"password", "id"=>"password"]
         ]);
     ?>
 </body>

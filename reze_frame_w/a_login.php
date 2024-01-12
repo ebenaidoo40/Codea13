@@ -29,7 +29,7 @@ function a_login(array $arr){
     }
 
     if(!isset($arr["backgroundColor"])){
-        $arr["backgroundColor"]="#ffffff";
+        $arr["backgroundColor"]="#00000000";
     }
     if(!isset($arr["labelColor"])){
         $arr["labelColor"]="black";

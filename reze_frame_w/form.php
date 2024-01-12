@@ -35,6 +35,15 @@ if(!isset($arr["customSuccessMessage"])){
     $arr["customSuccessMessage"]="Succesful";
 }
 
+if(!isset($arr["cautionColor"])){
+    $arr["cautionColor"]="slateblue";
+}
+
+if(!isset($arr["cautionCheckTextColor"])){
+    $arr["cautionCheckTextColor"]="red";
+}
+
+
 
 echo '
 <style>
@@ -325,6 +334,19 @@ input[type=\'password\']{
                     echo '
                 </select>
             </div>';
+        }else if(isset($arr[$numberOfElements[$i]]["caution"])){
+            echo '<div>
+                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["name"].$requriedHTML_builder.'</label>
+                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'>
+                <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; font-weight:bold; border:1px solid #33333350; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
+                <div style="height:10px;"></div>
+                
+                <div class="checkboxdiv" style="display: flex;">
+                    <input type="checkbox" name="showpasswordw" id="showpasswordw" required>
+                    <label id="showpasswordlabelw" for="showpasswordw" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
+                </div>
+        
+            </div>';
         }
         else{
             echo '
@@ -332,6 +354,7 @@ input[type=\'password\']{
                 <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["name"].$requriedHTML_builder.'</label>
                 <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'>
             </div>';
+            
         }
     }
    }
@@ -402,7 +425,7 @@ form.addEventListener(\'submit\', createaccountnow);
             success: function(res){
 
                 if(res==null){
-                    res="Developer did not set response before terminating an operation.
+                    res="Developer did not set response before terminating an operation.";
                 }else{}
 
                 if(res=="successful"){
