@@ -508,9 +508,11 @@ events([
     "backgroundColor"=>"",
     "backgroundImage"=>"",
     "titleColor"=>"",
+    "titleBackgroundColor"=>"",
     "contentColor"=>"",
     "dateColor"=>"",
     "marquee"="yes or no",  // default value is yes
+    "cardColor"=>"",
 ])
 
 parallax_constant([
@@ -519,6 +521,7 @@ parallax_constant([
 ])
 
 image_image([
+    "cardColor"=>"",
     "title1"=>"",
     "title2"=>"",
     "pic1"=>"",

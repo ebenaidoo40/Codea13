@@ -8,11 +8,17 @@ function events(array $arr){
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="black";
     }
-    if(!isset($arr["ContentColor"])){
-        $arr["ContentColor"]="black";
+    if(!isset($arr["titleBackgroundColor"])){
+        $arr["titleBackgroundColor"]="#00000020";
+    }
+    if(!isset($arr["contentColor"])){
+        $arr["contentColor"]="black";
     }
     if(!isset($arr["dateColor"])){
         $arr["dateColor"]="black";
+    }
+    if(!isset($arr["cardColor"])){
+        $arr["cardColor"]="white";
     }
 
     if(!isset($arr["backgroundImage"])){
@@ -67,7 +73,7 @@ function events(array $arr){
                 padding:20px;
                 border-radius:10px;
                 box-shadow: 0 0 8px 1px black;
-                background-color:white;
+                background-color:'.$arr["cardColor"].';
             }
         </style>
 
@@ -87,8 +93,8 @@ function events(array $arr){
             }
             echo '
             <div class="eventblockchild'.$GLOBALS["firstcard"].'">
-                <div style="font-size:22px; white-space:wrap; font-weight:bold; padding:10px; background-color:#00000020; color:'.$arr["titleColor"].'">'.$mykeys[$i].'</div><br>
-                <div style="white-space:wrap; color:'.$arr["ContentColor"].'">'.$arr[$mykeys[$i]]["body"].'</div><br>
+                <div style="font-size:22px; white-space:wrap; font-weight:bold; padding:10px; background-color:'.$arr["titleBackgroundColor"].'; color:'.$arr["titleColor"].'">'.$mykeys[$i].'</div><br>
+                <div style="white-space:wrap; color:'.$arr["contentColor"].'">'.$arr[$mykeys[$i]]["body"].'</div><br>
                 <div style="white-space:wrap; font-weight:bold; color:'.$arr["dateColor"].'">Date:<br>'.$arr[$mykeys[$i]]["date"].'</div>
             </div>';
             }

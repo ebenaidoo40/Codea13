@@ -59,7 +59,9 @@
             "pinRadius"=>"50% 0 50% 0",
         ]);
 
-        image_image([]);
+        image_image([
+            
+        ]);
 
         title([
             "title"=>"Upcoming Events >>",

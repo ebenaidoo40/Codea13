@@ -395,7 +395,7 @@ input[type=\'password\']{
     informWidth(); */
 
 
-var imageloader = "<img  style=\'height:29px; margin-top:-5px;  border-radius:50%; object-fit:contain\' src=\'reze_frame_w/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";
+var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'reze_frame_w/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";
 var form = document.querySelector("#accountform");
 form.addEventListener(\'submit\', createaccountnow);
 

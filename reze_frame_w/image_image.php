@@ -39,6 +39,9 @@ function image_image(array $arr){
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
+    if(!isset($arr["cardColor"])){
+        $arr["cardColor"]="#ffffff";
+    }
     
 
 echo '
@@ -74,7 +77,7 @@ echo '
 
     .section2'.$GLOBALS["firstcard"].'>*{   
         padding: 10px;
-        background-color: #ffffff;
+        background-color: '.$arr["cardColor"].';
         cursor: pointer;
         position: relative;
         margin: 20px;
@@ -166,13 +169,13 @@ echo '
 
 <div class="section2'.$GLOBALS["firstcard"].'">
 
-<div class="initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
+<div class="innerblock initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
     <div class="squarepic'.$GLOBALS["firstcard"].'"><img class="img'.$GLOBALS["firstcard"].'" width="100%" height="100%" src="'.$arr["pic1"].'" alt="image1 here"> </div><br>
     <h3 style="width:100%; text-align:center; font-size:22px; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title1"].'</h3>
     <p style="text-align:center; line-height:28px; color:'.$arr["textColor"].'">'.$arr["content1"].'</p>
 </div>
 
-<div class="initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
+<div class="innerblock initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
     <div class="squarepic'.$GLOBALS["firstcard"].'"><img class="img'.$GLOBALS["firstcard"].'" width="100%" height="100%" src="'.$arr["pic2"].'" alt="image2 here"> </div><br>
     <h3 style=" width:100%; text-align:center; font-size:22px; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title2"].'</h3>
     <p style="text-align:center; line-height:28px; color:'.$arr["textColor"].'">'.$arr["content2"].'</p>
