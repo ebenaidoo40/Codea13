@@ -39,4 +39,6 @@ include_once "events.php";
 include_once "parallax_constant.php";
 include_once "image_image.php";
 include_once "form.php";
+include_once "celebration.php";
+include_once "displaymsg.php";
 ?>

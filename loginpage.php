@@ -11,17 +11,11 @@
 
         navbar([]);
         
-
-        form([
-            
-            "backgroundColor"=>"#000000aa",
-            "labelColor"=>"white",
-            "buttonBackgroundColor"=>"gold",
-            "input1"=>["list", "Gender", "Male", "Female"],
-            "input2"=>["type"=>"email", "name"=>"Email", "caution"=>"You must not forget to fill this form else it is likely that the automated system will disqualify your hard word before submitting"],
-            "input3"=>["name"=>"password", "type"=>"password", "id"=>"password"],
-            "cautionColor"=>"white",
-        ]);
+        displayMsg([
+            "heading"=>"Completed",
+            "content"=>"We will call you soon",
+            "link"=>" "  // a link after clicking alright
+        ])
     ?>
 </body>
 </html>

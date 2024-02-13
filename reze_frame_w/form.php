@@ -1,6 +1,13 @@
 <?php
 function form(array $arr){
 
+    if(isset($_GET["listVal"])){
+        $listVal = $_GET["listVal"];
+        
+    }else{
+        $listVal="";
+    }
+
 if(!isset($arr["formTo"])){
     $arr["formTo"]="sign_up.php";
 }
@@ -32,7 +39,7 @@ if(!isset($arr["callBack"])){
     $arr["callBack"]="index.php";
 }
 if(!isset($arr["customSuccessMessage"])){
-    $arr["customSuccessMessage"]="Succesful";
+    $arr["customSuccessMessage"]="Successful";
 }
 
 if(!isset($arr["cautionColor"])){
@@ -328,12 +335,28 @@ input[type=\'password\']{
                 <select id="'.$arr[$numberOfElements[$i]][1].'" name="'.$arr[$numberOfElements[$i]][1].'" class="form-control masterinput" required>
                     <option value=""></option>';
 
-                    for($k=2; $k<sizeof($arr[$numberOfElements[$i]]) - 4; $k++){
-                        echo '<option value="'.$arr[$numberOfElements[$i]][$k].'">'.$arr[$numberOfElements[$i]][$k].'</option>';
+                    for($k=3; $k<sizeof($arr[$numberOfElements[$i]]) - 4; $k++){
+                        if($listVal==$arr[$numberOfElements[$i]][$k]){
+                            $selected="selected";
+                        }else{
+                            $selected="";
+                        }
+                        echo '<option value="'.$arr[$numberOfElements[$i]][$k].'" '.$selected.'>'.$arr[$numberOfElements[$i]][$k].'</option>';
                     }
                     echo '
-                </select>
-            </div>';
+                </select>';
+
+                if($arr[$numberOfElements[$i]][2]!=null){
+                    echo '
+                <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; border:1px solid '.$arr["labelColor"].'; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]][2].'</p>
+                <div style="height:10px;"></div>
+                
+                <div class="checkboxdiv" style="display: flex;">
+                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
+                    <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
+                </div>';
+                }
+            echo '</div>';
         }else if(isset($arr[$numberOfElements[$i]]["caution"])){
             $requriedHTML_builder="<span style=\"color: red\">*</span>";
             echo '<div>

@@ -549,7 +549,7 @@ form([
     "input3"=>["id"=>"password", "name"=>"password", "type"=>"password", "required"=>"required"],
     "input5"=>["id"=>"file", "name"=>"Image", "type"=>"file", "required"=>"required"],
     "input5"=>["id"=>"anyid", "name"=>"myname", "type"=>"text", "required"=>"required" "caution"=>""],
-    "input4"=>["list", "Languages", "English", "French", "Chinese", "Spanish"],
+    "input4"=>["list", "name-of-list", "caution" "list-1", "list-2", "list-3", "list-4"],
     "formTo"=>"",
     "callBack"=>"",
     "customSuccessMessage"=>"",   // the default is set to successful
