@@ -62,7 +62,7 @@
             <div class="displayinfobk">
                 <div class="realmsg">'.$arr["heading"].'</div>
                 <div style="margin-bottom:30px">'.$arr["content"].'</div>
-                <a href="'.$arr["link"].'"  style="padding:10px 20px; background-color:green; color:white; position:relative; z-index:9999; cursor:pointer;"><span>Alright</span></a>
+                <a href="'.$arr["link"].'"  style="padding:10px 20px; background-color:green; color:white; position:relative; z-index:9999; cursor:pointer; box-shadow: 0 0 5px 4px #334"><span>Alright</span></a>
             </div>';
     }
 ?>

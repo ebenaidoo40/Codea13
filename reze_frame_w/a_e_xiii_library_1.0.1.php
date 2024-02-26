@@ -41,4 +41,9 @@ include_once "image_image.php";
 include_once "form.php";
 include_once "celebration.php";
 include_once "displaymsg.php";
+include_once "pic_con_button.php";
+include_once "navbar3.php";
+include_once "textbox.php";
+include_once "space.php";
+include_once "rectcube.php";
 ?>

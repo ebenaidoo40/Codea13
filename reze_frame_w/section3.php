@@ -219,6 +219,6 @@ hiddenElements.forEach((el)=>observer.observe(el));
 </script>';
 
 $GLOBALS["firstcard"]++;
-}
 
+}
 ?>

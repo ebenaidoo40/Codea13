@@ -65,6 +65,29 @@ navbar2(
     ]
 );
 
+navbar3([
+    "homeLink"=>"",
+    "logo""=>"",
+    "tabs"=>["Tour With Us"=>"", "Accomodation Reservation"=>""],
+    "middleText""=>"",
+    "middleTextColor""=>"",
+    "topText""=>"",
+    "topTextColor""=>"",
+    "topBackgroundColor""=>"",
+    "middleBackgroundColor""=>"",
+    "bottomBackgroundColor""=>"",
+    "tabHoverBackgroundColor""=>"",
+    "tabHoverTextColor""=>"",
+    "tabTextColor""=>"",
+    "navImage"=>"on or off",
+    "image""=>"",
+    "menuButtonColor""=>"",
+    "dropDownTextColor""=>"",
+    "dropDownBackgroundColor""=>"",
+    "title""=>"",
+    "titleColor""=>"",
+])
+
 title([
     "title"=>"",
     "titleColor"=>"",
@@ -532,7 +555,18 @@ image_image([
     "animation"=>"",
     "titleColor"=>"",
     "textColor"=>"",
-    ])
+    "buttonSwitch1"=>"on or off",
+    "buttonSwitch2"=>"on or off",
+    "buttonName1"=>"",
+    "buttonName2"=>"",
+    "buttonBackgroundColor"=>"#81007f",
+    "buttonBackgroundHoverColor"=>"",
+    "buttonTextColor"=>"",
+    "buttonLink1"=>"",
+    "buttonLink2"=>"",
+    "downloadSwitch1"=>"on or off", 
+    "downloadSwitch2"=>"on or off",
+])
 
 
 form([
@@ -557,4 +591,55 @@ form([
     "cautionCheckTextColor"=>"red",
 ]);
 
+
+celebration() // this is calls the celebration function
+
+displayMsg([
+    "heading"=>"",
+    "content"=>"",
+    "link"=>"",
+])
+
+pic_con_button([
+    "image"=>"",
+    "title"=>"",
+    "content"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+    "mainBackgroundColor"=>"",
+    "backgroundBorderColor"=>"",
+    "backgroundColor"=>"",
+    "contentSub1"=>"",
+    "contentSub2"=>"",
+    "buttonSwitch"=>"on or off"
+    "buttonBackgroundColor"=>"",
+    "buttonHoverBackgroundColor"=>"",
+    "buttonTextColor"=>"",
+    "buttonHoverTextColor"=>"",
+    "buttonLink"=>"",
+    "downloadSwitch"=>"on or off",
+])
+
+
+space([
+    "height"=>"",
+    "width"=>"",
+    "backgroundColor"=>"",
+    "id"=>"",
+])
+
+textbox([
+    "title"=>"",
+    "titleColor"=>"",
+    "titleBackgroundColor"=>"",
+    "outerBackgroundColor"=>"",
+    "backgroundColor"=>"",
+    "content"=>"",
+])
+
+rectcube([
+    "id"=>"",
+    "top"=>"",
+    "content"=>"",
+])
 

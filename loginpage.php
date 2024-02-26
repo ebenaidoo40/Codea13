@@ -9,13 +9,24 @@
     <?php
         include_once "reze_frame_w/a_e_xiii_library_1.0.1.php";
 
-        navbar([]);
+        navbar3([
+            "tabs"=>["Tour with us"=>"", "Accomodation Reservation"=>"", "Car Rentals"=>"", "Airport Pickup"=>"", ],
+            "image"=>"../../myghtour/images/roadtrip2.webp",
+        ]);
         
-        displayMsg([
+        /*displayMsg([
             "heading"=>"Completed",
             "content"=>"We will call you soon",
             "link"=>" "  // a link after clicking alright
-        ])
+        ]) */
+
+        pic_con_button([
+            "backgroundColor"=>"#f0f0ff",
+            "backgroundBorderColor"=>"red",
+        ]);
+
+        pic_con_button([]);
+
     ?>
 </body>
 </html>
