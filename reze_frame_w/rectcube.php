@@ -10,21 +10,29 @@
             $arr["content"]="<div style=\"color:purple; font-size:30px; font-weight:bolder\">CODEA 13 CARD</div><img style=\"width:100%; object-fit:contain\" src=\"reze_frame_w/images/codea13.png\">";
         }
 
+        if(!isset($arr["boxShadow"])){
+            $arr["boxShadow"]="0 0 5px 3px #334";
+        }
+        if(!isset($arr["width"])){
+            $arr["width"]="25%";
+        }
+
         echo '
             <style>
                 .rect'.$GLOBALS["firstcard"].'{
-                    width: 25%;
+                    width: '.$arr["width"].';
                     min-height:150px;
                     background-color:#f0f0ff;
                     position:absolute;
                     top:100px;
                     right:40px;
-                    box-shadow: 0 0 5px 3px #334;
+                    box-shadow: '.$arr["boxShadow"].';
                     box-sizing:border-box;
                     display:flex;
                     flex-direction:column; 
                     justify-content:center;
                     align-items:center;
+                    z-index:5;
                 }
                 
 

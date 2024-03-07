@@ -83,6 +83,7 @@
                     flex-wrap:wrap;
                 }
                 .bottomnav{
+                    box-sizing:border-box;
                     min-height:50px;
                     background-color:'.$arr["bottomBackgroundColor"].';
                     display:flex;
@@ -90,6 +91,7 @@
                     position:sticky;
                     top:-1px;
                     z-index:99999;
+                    box-shadow: 0 0 2px 1px '.$arr["tabTextColor"].';
                 }
                 .middleDivToRight{
                     padding:10px 30px;

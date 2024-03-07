@@ -35,7 +35,7 @@ function video_home(array $arr){
         }
         .video'.$GLOBALS["firstcard"].'{
             top:2px;
-            width:min(500px, 98%);
+            width:min(550px, 98%);
             object-fit:contain;
             position:relative;
             left:50%;

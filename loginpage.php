@@ -20,12 +20,16 @@
             "link"=>" "  // a link after clicking alright
         ]) */
 
-        pic_con_button([
-            "backgroundColor"=>"#f0f0ff",
-            "backgroundBorderColor"=>"red",
-        ]);
+        
 
-        pic_con_button([]);
+
+        pic_home([
+            "backgroundColor"=>"#00aaee",
+            "entry1"=>["image"=>"../vdc/images/eben.webp", "textBackgroundColor"=>"green",],
+            "entry2"=>["image"=>"../vdc/images/eben.webp", "textBackgroundColor"=>"green",],
+            "entry3"=>["image"=>"../vdc/images/eben.webp", "textBackgroundColor"=>"green",],
+        ])
+
 
     ?>
 </body>

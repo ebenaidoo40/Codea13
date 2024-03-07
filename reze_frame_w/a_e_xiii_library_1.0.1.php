@@ -46,4 +46,8 @@ include_once "navbar3.php";
 include_once "textbox.php";
 include_once "space.php";
 include_once "rectcube.php";
+include_once "floatmenu.php";
+include_once "pic_home.php";
+include_once "infinite_pics.php";
+include_once "box_pics.php";
 ?>

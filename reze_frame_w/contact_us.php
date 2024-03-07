@@ -9,6 +9,9 @@ function contact_us(array $arr){
     if(!isset($arr["subTitleColor"])){
         $arr["subTitleColor"]="black";
     }
+    if(!isset($arr["backgroundColor"])){
+        $arr["backgroundColor"]="#f0f0ff";
+    }
     if(!isset($arr["image"])){
         $arr["image"]="reze_frame_w/images/codea13.png";
     }
@@ -45,7 +48,7 @@ function contact_us(array $arr){
     <style>
         .firstblock{
             width:100%;
-            min-height:400px;
+            min-height:250px;
             background-image:url("'.$arr["image"].'");
             background-position:center;
             display:flex;
@@ -66,11 +69,13 @@ function contact_us(array $arr){
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap:10px;
+            background-color:'.$arr["backgroundColor"].';
         }
         .secondblock>*{
             background-color:white;
             display:flex;
             padding:0 40px;
+            background-color:'.$arr["backgroundColor"].';
         }
         .firstblock1{
             flex-direction:column;
@@ -173,7 +178,7 @@ function contact_us(array $arr){
             <div class="contactus_main_title">'.$arr["title"].'</div>
         </div>
 
-        <h1 style="padding:40px; text-align:center; font-size:30px; font:weight:bolder; color:'.$arr["subTitleColor"].'">'.$arr["subTitle"].'</h1>
+        <h1 style="padding:40px; text-align:center; font-size:30px;background-color:'.$arr["backgroundColor"].'; font:weight:bolder; color:'.$arr["subTitleColor"].'">'.$arr["subTitle"].'</h1>
 
         <div class="secondblock">
             <div class="firstblock1">'.$arr["content"].'</div>

@@ -1,6 +1,7 @@
 <?php
 
 function content_section_image(array $arr){
+
     if(!isset($arr["title"])){
         $arr["title"]="WELCOME TO USE EBEN'S FRAME WORK";
     }
@@ -13,11 +14,9 @@ function content_section_image(array $arr){
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#f0f0ff";
     }
-    if(!isset($arr["innerBackgroundColor"])){
-        $arr["innerBackgroundColor"]="none";
-    }
+    
     if(!isset($arr["z-index"])){
-        $arr["z-index"]="-1";
+        $arr["z-index"]=-1;
     }
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
@@ -48,7 +47,7 @@ function content_section_image(array $arr){
         align-items:center;
         position:relative;
         isolation:isolate;
-        background-color:'.$arr["innerBackgroundColor"].';
+        background-color:'.$arr["backgroundColor"].';
         z-index:'.$arr["z-index"].';
     }
 
@@ -146,3 +145,5 @@ function content_section_image(array $arr){
 
     $GLOBALS["firstcard"]++;
 }
+
+?>

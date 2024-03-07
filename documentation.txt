@@ -261,8 +261,7 @@ image_section_content([
     "animation"=>"",
     "rotate"=>"5deg",
     "z-index"=>"",                    // the default index is -1 to prevent overlapping
-                                    // when the rotate property is used
-    "innerBackgroundColor"=>"",     
+                                    // when the rotate property is used     
 ]);
 
 two_text([
@@ -327,8 +326,7 @@ content_section_image([
     "animation"=>"",
     "rotate"=>"5deg",
     "z-index"=>"",                    // the default index is -1 to prevent overlapping
-                                    // when the rotate property is used
-    "innerBackgroundColor"=>"",   
+                                    // when the rotate property is used 
 ]);
 
 
@@ -435,9 +433,14 @@ footer([
     "phone"=>"",
     "email"=>"",
     "aboutCompany"=>"",
+    "facebook"=>"on or off",
+    "whatsapp"=>"on or off",
+    "twitter"=>"on or off",
+    "instagram"=>"on or off",
     "facebookLink"=>"",
     "whatsappLink"=>"",
     "twitterLink"=>"",
+    "instagramLink"=>"",
     backgroundColor=>"",
 ])
 
@@ -643,3 +646,56 @@ rectcube([
     "content"=>"",
 ])
 
+box_pics([
+    "titleColor"=>"",
+    "title"=>"",
+    "backgroundColor"=>"",
+    "content"=>"",
+    "textColor"=>"",
+    "buttonName"=>"",
+    "buttonTextColor"=>"",
+    "buttonSwitch"=>"",
+    "buttonLink"=>"",
+    "buttonBackgroundColor"=>"",
+    "buttonBackgroundHoverColor"=>"",
+    "buttonTextHoverColor"=>"",
+    "downloadSwitch"=>"",
+    "entry1"=>["image"=>"", "note"=>"", "textColor"=>"", "textBackgroundColor"=>""],
+])
+
+
+floatmenu([
+    "facebook"=>"on or off",
+    "whatsapp"=>"on or off",
+    "instagram"=>"on or off",
+    "twitter"=>"on or off",
+    "youtube"=>"on or off",
+    "tiktok"=>"on or off",
+    "facebookLink"=>"",
+    "whatsappLink"=>"",
+    "istagramLink"=>"",
+    "twitterLink"=>"",
+    "tiktokLink"=>"",
+    "youtubeLink"=>"",
+    "backgroundColor"=>"",
+])
+
+pic_home([
+    "image1"=>"",
+    "image2"=>"",
+    "image3"=>"",
+    "backgroundImage"=>"",
+    "backgroundColor"=>"",
+    "title"=>"",
+    "content"=>"",
+    "titleSize"=>"",
+    "titleColor"=>"",
+    "textColor"=>"",
+    "picRadius"=>"",
+    "flip"=>"on or off",
+])
+
+infinte_pics([
+    "backgroundColor"=>"",
+    "entry1"=>["image"=>"", "note"=>"", "textColor"=>"", "textBackgroundColor"=>""],
+])

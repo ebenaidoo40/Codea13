@@ -213,3 +213,5 @@ labore sed, deserunt minima fugiat inventore expedita.";
 
     $GLOBALS["firstcard"]++;
 }
+
+?>

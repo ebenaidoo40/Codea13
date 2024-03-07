@@ -103,5 +103,6 @@ function events(array $arr){
         echo '</'.$arr["marquee"].'></div>
 
     ';
+    $GLOBALS["firstcard"]++;
 }
 ?>
