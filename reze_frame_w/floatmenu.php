@@ -101,10 +101,10 @@ function floatmenu(array $arr){
         </style>
 
 
-        <div id="mediamenu" class="mediamenu'.$GLOBALS["firstcard"].'">
+        <div id="mediamenu" class="mediamenu'.$GLOBALS["firstcard"].' mediamenushift'.$GLOBALS["firstcard"].'">
 
             <div id="menuarrow" class="menuarrow'.$GLOBALS["firstcard"].'">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(127,97,97,1)"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(127,97,97,1)"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z"></path></svg>
             </div>
 
             <div id="floatmenu" class="floatmenu'.$GLOBALS["firstcard"].'">';
@@ -139,15 +139,15 @@ function floatmenu(array $arr){
 
             function openMenuAndClose(){
                 var mymenu = document.querySelector("#mediamenu");
-                if(arrowmasterchecker=="open"){
+                if(arrowmasterchecker=="closed"){
                     mymenu.classList.add("mediamenushift'.$GLOBALS["firstcard"].'");
                     mastermenuarrow.innerHTML=\'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(127,97,97,1)"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z"></path></svg>\';
-                    arrowmasterchecker="closed";
+                    arrowmasterchecker="open";
 
                 }else{
                     mymenu.classList.remove("mediamenushift'.$GLOBALS["firstcard"].'");
                     mastermenuarrow.innerHTML=\'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(127,97,97,1)"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z"></path></svg>\';
-                    arrowmasterchecker="open";
+                    arrowmasterchecker="closed";
                 }                
             }
 
