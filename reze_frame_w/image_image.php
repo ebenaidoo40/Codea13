@@ -42,6 +42,9 @@ function image_image(array $arr){
     if(!isset($arr["cardColor"])){
         $arr["cardColor"]="#ffffff";
     }
+    if(!isset($arr["imageHeight"])){
+        $arr["imageHeight"]="220px";
+    }
 
 
     if(!isset($arr["buttonName1"])){
@@ -136,12 +139,13 @@ echo '
     }
     .squarepic'.$GLOBALS["firstcard"].'{
         min-width:100%;
-        height:220px;
+        height:'.$arr["imageHeight"].';
         background:#f0f0ff;
     }
 
     .img'.$GLOBALS["firstcard"].'{
         object-fit:cover;
+        object-position: 50% 0;
     }
 
     .buttonpressbk'.$GLOBALS["firstcard"].'{

@@ -77,7 +77,7 @@ function hardcard(array $arr){
         $arr["titleFontSize"]="22px";
     }
     if(!isset($arr["titleLineHeight"])){
-        $arr["titleLineHeight"]="30px";
+        $arr["titleLineHeight"]="1.5";
     }
     
     if(!isset($arr["titleFontFamily"])){

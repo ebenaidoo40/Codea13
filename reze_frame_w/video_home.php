@@ -66,6 +66,7 @@ function video_home(array $arr){
     </style>
     
     <div class="mainhome'.$GLOBALS["firstcard"].'">
+    
         <video class="video'.$GLOBALS["firstcard"].'" playsinline preload="auto" autoplay muted loop>
             <source src="'.$arr["video"].'">
         </video>

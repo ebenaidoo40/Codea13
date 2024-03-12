@@ -682,6 +682,7 @@ floatmenu([
 
 pic_home([
     "image1"=>"",
+    "firstImageMobileVisibility"=>"on or off",
     "image2"=>"",
     "image3"=>"",
     "backgroundImage"=>"",

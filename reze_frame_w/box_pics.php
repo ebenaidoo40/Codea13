@@ -173,7 +173,7 @@ function box_pics(array $arr){
                 }
 
                 echo '
-                    <div class="rightsub'.$GLOBALS["firstcard"].'" style="background-image:url(\''.$arr[$mykeyss[$i]]["image"].'\')">
+                    <div class="rightsub'.$GLOBALS["firstcard"].'" style="background-position:50% 0; background-size:cover; background-image:url(\''.$arr[$mykeyss[$i]]["image"].'\')">
                         <div class="smallnote'.$GLOBALS["firstcard"].'" style="color:'.$arr[$mykeyss[$i]]["textColor"].'; background-color:'.$arr[$mykeyss[$i]]["textBackgroundColor"].'">'.$arr[$mykeyss[$i]]["note"].'</div>
                     </div>
                 ';

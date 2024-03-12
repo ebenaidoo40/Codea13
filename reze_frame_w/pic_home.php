@@ -43,6 +43,16 @@
                 $flipVal = "none";
             }
         }
+
+        if(isset($arr["firstImageMobileVisibility"])){
+            if($arr["firstImageMobileVisibility"]=="off"){
+                $firstImageMobileVisibility = "none";
+            }else{
+                $firstImageMobileVisibility = "block";
+            }
+        }else{
+            $firstImageMobileVisibility="block";
+        }
         echo '
         <style>
             .pichomeblock'.$GLOBALS["firstcard"].'{
@@ -96,7 +106,8 @@
             @media (max-width:850px){
                 .homechild'.$GLOBALS["firstcard"].':first-child{
                     align-self:flex-end;
-                    width:40%
+                    width:40%;
+                    display:'.$firstImageMobileVisibility.';
                 }
                 .homechild'.$GLOBALS["firstcard"].':nth-child(2){
                     width:80%;

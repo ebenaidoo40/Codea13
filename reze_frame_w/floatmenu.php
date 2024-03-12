@@ -25,7 +25,7 @@ function floatmenu(array $arr){
     if(!isset($arr["whatsappLink"])){
         $arr["whatsappLink"]="";
     }
-    if(!isset($arr["istagramLink"])){
+    if(!isset($arr["instagramLink"])){
         $arr["instagramLink"]="";
     }
     if(!isset($arr["twitterLink"])){
@@ -77,7 +77,7 @@ function floatmenu(array $arr){
                 background-color:'.$arr["backgroundColor"].';
                 box-shadow: 0 0 5px 3px #000000dd;
                 margin-left:10px;
-                height:300px;
+                max-height:300px;
                 overflow-y:auto;
                 justify-content:center;
                 align-items:center;

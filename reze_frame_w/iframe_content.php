@@ -98,10 +98,11 @@ function iframe_content(array $arr){
 
         .mainimg'.$GLOBALS["firstcard"].'{
             width:100%;
-            object-fit:contain;
+            object-fit:cover;
             aspect-ratio:16/9;
             background-color:inherit;
-            
+            border:1px solid white;
+            padding:2px;
         }
 
 
@@ -137,10 +138,15 @@ function iframe_content(array $arr){
             <span style="line-height:30px">'.$arr["titlesub"].'</span>
         </div>
 
-        <iframe class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'?controls=0" autoplay=1 mute=1></iframe>';
+        <video class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'" controls=1 playsinline preload="auto" autoplay muted>
+            <source src="'.$arr["video"].'">
+        </video>';
     }else{
         echo '
-        <iframe class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'?controls=0" autoplay=1 mute=1></iframe>
+        <video class="mainimg'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'" src="'.$arr["video"].'" controls=1 playsinline preload="auto" autoplay muted>
+            <source src="'.$arr["video"].'">
+        </video>
+        
 
         <div class="hometitlebk'.$GLOBALS["firstcard"].' initialpos'.$GLOBALS["firstcard"].' intersectionObserver'.$GLOBALS["firstcard"].'">
             <h1 style="font-size:30px; font-weight:bolder;color:'.$arr["titleColor"].' ">'.$arr["title"].'</h1>
@@ -170,6 +176,24 @@ function iframe_content(array $arr){
     );
 
     var hiddenElements = document.querySelectorAll(".intersectionObserver'.$GLOBALS["firstcard"].'");
+    hiddenElements.forEach((el)=>observer.observe(el));
+
+
+    var observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                
+            }else{
+                entry.target.pause();
+            }
+        });
+    },
+    {
+        threshold:0.1,
+    }
+    );
+
+    var hiddenElements = document.querySelectorAll("video");
     hiddenElements.forEach((el)=>observer.observe(el));
 
     </script>

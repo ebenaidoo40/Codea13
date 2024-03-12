@@ -170,6 +170,9 @@
 
 
                 @media (max-width:700px){
+                    .bottomnav{
+                        flex-direction:column;
+                    }
                     .tabblock{
                         display:none;
                     }
@@ -182,12 +185,17 @@
                     }
 
                     .dropdownblock{
-                        top:0px;
-                        right:110%;
-                        position:fixed;
+                        top:50px;
+                        right:0px;
+                        position:sticky;
                         display:flex;
+                        background-color:'.$arr["dropDownBackgroundColor"].';
                         flex-direction:column;
-                        height:0px;
+                        max-height:0px;
+                        z-index:-9;
+                        box-sizing:border-box;
+                        transition:max-height 0.3s ease-in-out;
+                        overflow:hidden;  
                     }
     
                     .dropdownblockopen{
@@ -201,6 +209,7 @@
                         max-height:350px;
                         overflow:scroll;
                         box-sizing:border-box;
+                        transition:max-height 0.5s ease-in-out;
                     }
                 }
 
@@ -215,7 +224,7 @@
 
             <div class="bottomnav">';
 
-            echo '<div id="menubkk" style="display:flex; margin: 0 5%; color:'.$arr["menuButtonColor"].' ">'.$menu_icon.'</div>';
+            echo '<div id="menubkk" style="display:flex; width:fit-content; height:50px; margin: 0 5%; color:'.$arr["menuButtonColor"].' ">'.$menu_icon.'</div>';
                 
                echo '<div class="tabblock">';
 
@@ -229,9 +238,9 @@
                 }
                     echo '
                 </div>
-            </div>
 
-            <div id="dropdownspecialblock" class="dropdownblock">';
+
+                <div id="dropdownspecialblock" class="dropdownblock">';
 
                 if(isset($arr["tabs"])){
                     $allkeys = array_keys($arr["tabs"]);
@@ -242,7 +251,11 @@
 
                 }
                 echo '
+            </div>
+
             </div>';
+
+
 
             if($arr["navImage"]=="on"){
                 echo '
@@ -277,4 +290,6 @@
             </script>
         ';
     }
+
+    
 ?>
