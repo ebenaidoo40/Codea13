@@ -35,5 +35,5 @@ function parallax_constant(array $arr){
             }
         </style>
         
-        <div class="wrapper'.$GLOBALS["firstcard"].'">asdfadf</div>';
+        <div class="wrapper'.$GLOBALS["firstcard"].'"></div>';
 }

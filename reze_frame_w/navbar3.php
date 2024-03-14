@@ -90,7 +90,7 @@
                     flex-wrap:wrap;
                     position:sticky;
                     top:-1px;
-                    z-index:99999;
+                    z-index:999;
                     box-shadow: 0 0 2px 1px '.$arr["tabTextColor"].';
                 }
                 .middleDivToRight{

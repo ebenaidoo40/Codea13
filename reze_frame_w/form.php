@@ -216,7 +216,7 @@ input[type=\'password\']{
     box-sizing:border-box;
     opacity: 0;
     transition: all 1s;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .successpop{
@@ -231,18 +231,20 @@ input[type=\'password\']{
     padding: 20px;
     opacity: 0;
     transition: all 1s;
-    z-index: 1;
+    z-index: 9999;
 }
 
 
 .popnow{
     top: 50px;
     opacity: 1;
+    z-index: 9999;
 }
 
 .popnow1{
     top: 60px;
     opacity: 1;
+    z-index: 9999;
 }
 
 .hidden{
