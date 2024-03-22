@@ -4,8 +4,8 @@ echo '
 
 <label style="position:relative; z-index:1" id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'"> '.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
     <div class="maintelNum">
-                
-        <select id="ctry_'.$i.'" style="position:absolute; width:20px; margin:7.5px; height:25px; box-sizing:border-box;"  class="allcountriesCode">
+    <label class="specialLabelCode" for="ctry_'.$i.'">Code <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 9 12 3 6 9H18ZM18 15 12 21 6 15H18Z"></path></svg></label>
+        <select id="ctry_'.$i.'" style="position:absolute;cursor:pointer; width:67px; opacity:0; padding:9px;  height:40px; box-sizing:border-box;"  class="allcountriesCode">
                 <option value=""></option>
                 <option value="+93 ">Afghanistan</option>
                 <option value="+358 (18) ">Åland Islands</option>
@@ -253,7 +253,7 @@ echo '
                 <option value="+263 ">Zimbabwe</option>
             </select>
 
-            <input onclick="updateInputValue(\''.$arr[$numberOfElements[$i]]["id"].'\')" oninput="updateInputValue(\''.$arr[$numberOfElements[$i]]["id"].'\')" class="form-control masterinput telInputOnly ctry_'.$i.'" style="padding-left:40px; width:100%" class="c_flags_input"  type="tel" id="'.$arr[$numberOfElements[$i]]["id"].'" name="'.$arr[$numberOfElements[$i]]["name"].'"  '.$arr[$numberOfElements[$i]]["required"].'>
+            <input onclick="updateInputValue(\''.$arr[$numberOfElements[$i]]["id"].'\')" oninput="updateInputValue(\''.$arr[$numberOfElements[$i]]["id"].'\')" class="form-control masterinput telInputOnly ctry_'.$i.'" style="padding-left:76px; width:100%" class="c_flags_input"  type="tel" id="'.$arr[$numberOfElements[$i]]["id"].'" name="'.$arr[$numberOfElements[$i]]["name"].'"  '.$arr[$numberOfElements[$i]]["required"].'>
     </div>';
 
     if(isset($arr[$numberOfElements[$i]]["caution"])){
@@ -263,7 +263,9 @@ echo '
         <div class="checkboxdiv" style="display: flex;">
             <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
             <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
-        </div>';
+        </div>
+        
+        ';
     }else{}
             
 echo '

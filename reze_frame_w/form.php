@@ -106,6 +106,7 @@ select{
 
 .maintelNum{
     display:flex;
+    position:relative;
 }
 
 
@@ -256,18 +257,37 @@ input[type=\'password\']{
     display: none;
 }
 
+.specialLabelCode{
+    display:flex; 
+    justify-content:center; 
+    align-items:center;
+    position:absolute; 
+    width:fit-content; 
+    margin:0px; 
+    background-color:'.$arr["backgroundColor"].'; 
+    top:7px; 
+    color:'.$arr["labelColor"].';
+    left:5px; 
+    border-radius:5px; 
+    height:26px; 
+    padding:0px 5px;
+}
+
 
     
 
     @media (max-width:600px) {
         .accountform{
-            width: 90%;
+            width: 85%;
         }
         .formheader{
-            width:90%;
+            width:85%;
         }
         input,select{
             height:45px;
+        }
+        .specialLabelCode{
+            height:31px;
         }
         
     }
