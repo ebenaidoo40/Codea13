@@ -8,8 +8,14 @@ function a_login(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="Login";
     }
+    if(!isset($arr["secondTitle"])){
+        $arr["secondTitle"]="Reset";
+    }
     if(!isset($arr["buttonName"])){
         $arr["buttonName"]="Login";
+    }
+    if(!isset($arr["secondButtonName"])){
+        $arr["secondButtonName"]="Reset";
     }
     if(!isset($arr["password_email"])){
         $arr["password_name"]="password";
@@ -31,6 +37,9 @@ function a_login(array $arr){
         $arr["secondLabelType"]="password";
     }
 
+    if(!isset($arr["note"])){
+        $arr["note"]="";
+    }
 
     if(!isset($arr["loginSuccessLink"])){
         $arr["loginSuccessLink"]="";
@@ -60,6 +69,12 @@ function a_login(array $arr){
     }
     if(!isset($arr["linkColor"])){
         $arr["linkColor"]="#5996f0";
+    }
+    if(!isset($arr["customSuccessMessage"])){
+        $arr["customSuccessMessage"]="Successful";
+    }
+    if(!isset($arr["customResetMessage"])){
+        $arr["customResetMessage"]="Successful";
     }
     
     echo '
@@ -110,7 +125,7 @@ function a_login(array $arr){
 
 
 .popnow{
-    top: 0;
+    top: 50px;
     opacity: 1;
 }
 
@@ -243,6 +258,7 @@ input[type=\'password\']{
 
 <div class="failedpop" id="failedpop">Wrong input of credentials</div>
 <div class="successpop" id="emailsentpop" style="background-color: #7bffd3">'.$arr["resetSuccessMsg"].'</div>
+<div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>
 <a href="'.$arr["loginSuccessLink"].'"><div class="failedpop" id="userpglink">userpg link</div></a>
 
 
@@ -272,13 +288,14 @@ input[type=\'password\']{
 
     if($arr["secondLabelType"]=="password"){
         echo '
-            <div style="font-weight:bold; color:'.$arr["linkColor"].'; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
+            <div style="font-weight:bold; width:fit-content; color:'.$arr["linkColor"].'; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
         ';
+    }else{
+        echo '<div style="font-weight:bold; width:fit-content; color:'.$arr["linkColor"].'; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">'.$arr["note"].'</div>';
     }
-    
 
-    
-echo '</form>
+    echo ' 
+</form>
 
 <svg style="position:absolute; top:0; right:0; width:20vw; height:20vw; z-index:-4; opacity:0.2" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0"><stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%"></stop><stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop></linearGradient></defs><path fill="'.$arr["buttonBackgroundColor"].'" d="M8.2,-12.2C14,-10.9,24.3,-15.4,27.8,-14.4C31.3,-13.3,27.9,-6.7,24.4,-2C21,2.7,17.5,5.4,14.7,7.7C12,10,9.9,11.8,7.6,18C5.3,24.2,2.6,34.7,0.9,33.1C-0.9,31.6,-1.8,18.1,-4.4,12.1C-7.1,6.1,-11.6,7.7,-13.4,6.9C-15.2,6.2,-14.3,3.1,-17.7,-2C-21.1,-7,-28.8,-14.1,-28.1,-16.7C-27.4,-19.3,-18.2,-17.5,-12.1,-18.7C-6.1,-19.8,-3,-23.9,-0.9,-22.3C1.2,-20.8,2.4,-13.5,8.2,-12.2Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>
 <svg style="position:absolute; top:0; width:100vw; height:100%; z-index:-4; opacity:0.2" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0"><stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%"></stop><stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="'.$arr["buttonBackgroundColor"].'" d="M11.4,-13.4C16.6,-9.2,24,-7.4,29.6,-1.4C35.3,4.6,39.2,14.7,34.8,17.9C30.4,21.1,17.6,17.3,8.1,19.6C-1.5,22,-7.8,30.5,-13.8,31.2C-19.9,32,-25.5,25,-26.3,18C-27,10.9,-22.8,3.8,-19.7,-1.7C-16.6,-7.2,-14.6,-11.1,-11.5,-15.6C-8.4,-20.2,-4.2,-25.4,-0.6,-24.7C3.1,-24.1,6.2,-17.5,11.4,-13.4Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;"></path></svg>
@@ -316,7 +333,24 @@ echo '</form>
 
                 if(res=="successful"){
                     document.querySelector("#userpglink").click();
-                }else{
+                }
+                else if(res=="success"){
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.add("popnow");
+                        document.querySelector("#successpop").innerHTML="'.$arr["customSuccessMessage"].'";
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.remove("popnow");
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["buttonName"].'";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+
+                    setTimeout(() => {
+                        document.querySelector("#userpglink").click();
+                    }, 4000);
+                }
+                else{
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
                         document.querySelector("#failedpop").innerHTML=res;
@@ -325,7 +359,7 @@ echo '</form>
     
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["buttonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
                 }
@@ -338,7 +372,7 @@ echo '</form>
 
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["buttonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
             }
@@ -366,7 +400,7 @@ echo '</form>
 
                     setTimeout(() => {
                         document.querySelector("#emailsentpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="Reset password";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["secondButtonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                         masterResetAfterUsingResetPassword();
                     }, 3000);
@@ -381,9 +415,24 @@ echo '</form>
 
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="Reset password";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["secondButtonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
+                }
+                else if(res2=="success"){
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.add("popnow");
+                        document.querySelector("#successpop").innerHTML="'.$arr["customResetMessage"].'";
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.remove("popnow");
+                    }, 3000);
+
+                    setTimeout(() => {
+                        document.querySelector("#forgot_password").click();
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 4000);
                 }
                 else{
                     setTimeout(() => {
@@ -393,7 +442,7 @@ echo '</form>
 
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="Reset password";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["secondButtonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
                 }
@@ -410,7 +459,7 @@ echo '</form>
 
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="Reset password";
+                        document.querySelector("#loginbutton").innerHTML="'.$arr["secondButtonName"].'";
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
 
@@ -514,26 +563,47 @@ forgotPassword.addEventListener("click", function(){
     if(toggleInput=="reset"){
     document.querySelector("#password").classList.add("hidden");
     document.querySelector("#passwordlabel").classList.add("hidden");
-    document.querySelector("#showpasswordlabel").classList.add("hidden");
+    if(document.querySelector("#showpasswordlabel")){
+        document.querySelector("#showpasswordlabel").classList.add("hidden");
+    }
+    
     document.querySelector("#password").removeAttribute("required");
+    if(document.querySelector("#showpassword")){
+        document.querySelector("#showpassword").classList.add("hidden");
+    }
 
-    document.querySelector("#showpassword").classList.add("hidden");
-    document.querySelector("#form_heading").innerText="Reset Password";
-    document.querySelector("#forgot_password").innerText="Log in";
-    document.querySelector("#loginbutton").innerText="Reset password";
+    if(getsecondinputtype=="password"){
+        document.querySelector("#form_heading").innerText="Reset Password";
+        document.querySelector("#forgot_password").innerText="Log in";
+        document.querySelector("#loginbutton").innerText="Reset password";
+    }else{
+        document.querySelector("#form_heading").innerText="'.$arr["secondTitle"].'";
+        document.querySelector("#forgot_password").innerText="'.$arr["buttonName"].'";
+        document.querySelector("#loginbutton").innerText="'.$arr["secondButtonName"].'";
+    }
 
 
     toggleInput="login";
     }else{
         document.querySelector("#password").classList.remove("hidden");
         document.querySelector("#passwordlabel").classList.remove("hidden");
-        document.querySelector("#showpasswordlabel").classList.remove("hidden");
+        var getsecondinputtype = document.querySelector("#password").getAttribute("type");
+        if(document.querySelector("#showpasswordlabel")){
+            document.querySelector("#showpasswordlabel").classList.remove("hidden");
+        }
         document.querySelector("#password").setAttribute("required", "");
-
-        document.querySelector("#showpassword").classList.remove("hidden");
-        document.querySelector("#form_heading").innerText="Log in";
-        document.querySelector("#forgot_password").innerText="Forgot password?";
-        document.querySelector("#loginbutton").innerText="Log in";
+        if(document.querySelector("#showpassword")){
+            document.querySelector("#showpassword").classList.remove("hidden");
+        }
+        if(getsecondinputtype=="password"){
+            document.querySelector("#form_heading").innerText="Log in";
+            document.querySelector("#forgot_password").innerText="Forgot password?";
+            document.querySelector("#loginbutton").innerText="Log in";
+        }else{
+            document.querySelector("#form_heading").innerText="'.$arr["title"].'";
+            document.querySelector("#forgot_password").innerText="'.$arr["note"].'";
+            document.querySelector("#loginbutton").innerText="'.$arr["buttonName"].'";
+        }
     
     toggleInput="reset"
     }

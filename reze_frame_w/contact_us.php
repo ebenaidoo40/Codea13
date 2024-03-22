@@ -200,10 +200,10 @@ function contact_us(array $arr){
 
                     <div>
                         <label> Your Message:<label>
-                        <input id="message" name="'.$arr["message"].'" class="input" type="text" required>
+                        <textarea style="height:120px; resize:none" id="message" name="'.$arr["message"].'" class="input" required></textarea>
                     </div>
 
-                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; color:white; padding:10px;">Submit</button>
+                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; cursor:pointer; color:white; padding:10px;">Submit</button>
 
                 </form>
             </div>

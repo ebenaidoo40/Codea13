@@ -161,9 +161,9 @@
                     display:none;
                 }
 
-                a[href^=tel] {
-                    text-decoration:inherit;
-                    color: '.$arr["middleTextColor"].';
+
+                .menubkk_class{
+                    display:none;
                 }
                 
 
@@ -205,11 +205,15 @@
                         background-color:'.$arr["dropDownBackgroundColor"].';
                         display:flex;
                         flex-direction:column;
-                        z-index:99999;
+                        z-index:9999;
                         max-height:350px;
                         overflow:scroll;
                         box-sizing:border-box;
                         transition:max-height 0.5s ease-in-out;
+                    }
+
+                    .menubkk_class{
+                        display:flex;
                     }
                 }
 
@@ -224,7 +228,7 @@
 
             <div class="bottomnav">';
 
-            echo '<div id="menubkk" style="display:flex; width:fit-content; height:50px; margin: 0 5%; color:'.$arr["menuButtonColor"].' ">'.$menu_icon.'</div>';
+            echo '<div id="menubkk" class="menubkk_class" style="width:fit-content; height:50px; margin: 0 5%; color:'.$arr["menuButtonColor"].' ">'.$menu_icon.'</div>';
                 
                echo '<div class="tabblock">';
 

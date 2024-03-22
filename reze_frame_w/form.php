@@ -20,12 +20,10 @@ if(!isset($arr["titleColor"])){
 if(!isset($arr["backgroundColor"])){
     $arr["backgroundColor"]="#f0f0ffaa";
 }
-if(!isset($arr["agreement"])){
-    $arr["agreement"]="";
+if(!isset($arr["titlesub"])){
+    $arr["titlesub"]="Proceeding with this form confirms your agreement to all our terms and conditions";
 }
-if(!isset($arr["linkColor"])){
-    $arr["linkColor"]="#00aaee";
-}
+
 if(!isset($arr["buttonBackgroundColor"])){
     $arr["buttonBackgroundColor"]="#5996f0";
 }
@@ -101,6 +99,13 @@ input, select{
     outline: black;
     border-radius: 5px;
     background-color: white;
+}
+select{
+    padding:2px;
+}
+
+.maintelNum{
+    display:flex;
 }
 
 
@@ -277,7 +282,7 @@ input[type=\'password\']{
 
 <div class="formheader">
 <div style=" text-align:center; font-size:24px; font-weight:bolder; color:'.$arr["titleColor"].'">'.$arr["title"].'</div>
-<div style="text-align: center; padding: 0 20px; font-weight:bold; color:'.$arr["labelColor"].'">Poceeding with this form confirms your agreement to all our <a href="'.$arr["agreement"].'" style="color: '.$arr["linkColor"].'; text-decoration:underline; cursor:pointer">terms and conditions</a></div>
+<div style="text-align: center; padding: 0 20px; font-weight:bold; color:'.$arr["labelColor"].'">'.$arr["titlesub"].'</div>
 </div> 
    
    <form id="accountform" class="accountform">';
@@ -292,6 +297,9 @@ input[type=\'password\']{
         }
         if(!isset($arr[$numberOfElements[$i]]["name"])){
             $arr[$numberOfElements[$i]]["name"]="name".$i;
+        }
+        if(!isset($arr[$numberOfElements[$i]]["label"])){
+            $arr[$numberOfElements[$i]]["label"]=$arr[$numberOfElements[$i]]["name"];
         }
         if(!isset($arr[$numberOfElements[$i]]["id"])){
             $arr[$numberOfElements[$i]]["id"]="input_id".$i;
@@ -312,19 +320,27 @@ input[type=\'password\']{
 
         if($arr[$numberOfElements[$i]]["type"]=="password"){
             echo '<div>
-                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">Password (six/more) '.$requriedHTML_builder.'</label>
-                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" pattern=".{6,}" title="Six or more characters" '.$arr[$numberOfElements[$i]]["required"].'>
+                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
+                <input class="masterinput password showpassword'.$i.'" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" pattern=".{6,}" title="Six or more characters" placeholder="6 characters or more" '.$arr[$numberOfElements[$i]]["required"].'>
 
                 <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpassword" id="showpassword">
-                    <label id="showpasswordlabel" for="showpassword" class="marginleft_zero" style="color:'.$arr["labelColor"].'">Show password</label>
+                    <input class="showpassword" type="checkbox" name="showpassword" id="showpassword'.$i.'">
+                    <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["labelColor"].'">Show '.$arr[$numberOfElements[$i]]["label"].'</label>
                 </div>
                 </div>
-                
                 ';
 
-                
-        }else if($arr[$numberOfElements[$i]]["name"]=="nationality"){
+        }else if($arr[$numberOfElements[$i]]["type"]=="textarea"){
+            echo '<div>
+                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
+                <textarea style="resize:none; height:150px; padding:8px; box-sizing:border-box; rows="6" maxlength="100" class="masterinput" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'></textarea>
+                </div>
+                ';
+                      
+        }else if($arr[$numberOfElements[$i]]["type"]=="tel"){
+            include "reze_frame_w/countries_with_codes.php";
+        }
+        else if($arr[$numberOfElements[$i]]["name"]=="nationality"){
             include_once "reze_frame_w/countries.php";
         }
         
@@ -333,11 +349,11 @@ input[type=\'password\']{
             
             echo '
             <div>
-            <label id="'.$arr[$numberOfElements[$i]][1].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]][1].'"> '.$arr[$numberOfElements[$i]][1].$requriedHTML_builder.'</label>
+            <label id="'.$arr[$numberOfElements[$i]][1].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]][1].'"> '.$arr[$numberOfElements[$i]][3].$requriedHTML_builder.'</label>
                 <select id="'.$arr[$numberOfElements[$i]][1].'" name="'.$arr[$numberOfElements[$i]][1].'" class="form-control masterinput" required>
                     <option value=""></option>';
 
-                    for($k=3; $k<sizeof($arr[$numberOfElements[$i]]) - 4; $k++){
+                    for($k=4; $k<sizeof($arr[$numberOfElements[$i]]) - 5; $k++){
                         if($listVal==$arr[$numberOfElements[$i]][$k]){
                             $selected="selected";
                         }else{
@@ -362,14 +378,14 @@ input[type=\'password\']{
         }else if(isset($arr[$numberOfElements[$i]]["caution"])){
             $requriedHTML_builder="<span style=\"color: red\">*</span>";
             echo '<div>
-                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["name"].$requriedHTML_builder.'</label>
+                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
                 <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" required>
                 <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; border:1px solid '.$arr["labelColor"].'; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
                 <div style="height:10px;"></div>
                 
                 <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpasswordw" id="showpasswordw" required>
-                    <label id="showpasswordlabelw" for="showpasswordw" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
+                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
+                    <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
                 </div>
         
             </div>';
@@ -377,7 +393,7 @@ input[type=\'password\']{
         else{
             echo '
             <div class="formchild">
-                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["name"].$requriedHTML_builder.'</label>
+                <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
                 <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'>
             </div>';
             
@@ -552,29 +568,61 @@ form.addEventListener(\'submit\', createaccountnow);
 
     
 // a function that shows and hidden password
-if(document.querySelector("#showpassword")){
-    var form_show_password = document.querySelector("#showpassword");
+if(document.querySelectorAll(".password")){
+    
+    var allpasswordlink = document.querySelectorAll(".password");
+    var allpasswordshow = document.querySelectorAll(".showpassword");
 
-    form_show_password.addEventListener("change", function () {
-        if(form_show_password.checked){
-            document.querySelector("#password").setAttribute("type","text");
-            if(document.querySelector(".passpasspassme")){
-                document.querySelector(".passpasspassme").setAttribute("type","text");
+    for(var iii=0; iii<allpasswordlink.length; iii++){
+        
+        allpasswordshow[iii].addEventListener("change", function(e) {
+            if(e.target.checked){
+                var myclassy = e.target.id;
+                
+                document.querySelectorAll("."+ myclassy)[0].setAttribute("type","text");
             }
-        }
-
-        else{
-            document.querySelector("#password").setAttribute("type","password");
-            if(document.querySelector(".passpasspassme")){
-                document.querySelector(".passpasspassme").setAttribute("type","password");
+            else{
+                var myclassy = e.target.id;
+                document.querySelectorAll("."+ myclassy)[0].setAttribute("type","password");
             }
-        }
-    })
+            
+        })
+    }
 }else{}
 
 
 
 
+// a function that shows and hidden password
+if(document.querySelectorAll(".telInputOnly")){
+    
+    var codeDropDown = document.querySelectorAll(".allcountriesCode");
+    var allTelInput = document.querySelectorAll(".telInputOnly");
+
+    for(var ii=0; ii<allTelInput.length; ii++){
+        
+        codeDropDown[ii].addEventListener("change", function(e) {
+            var myValval= e.target.value;
+            
+            if(myValval!=""){
+                var myclassy = e.target.id;
+                document.querySelectorAll("."+ myclassy)[0].value=myValval;
+                document.querySelectorAll("."+ myclassy)[0].click();
+            }
+            else{
+                var myclassy = e.target.id;
+                document.querySelectorAll("."+ myclassy)[0].value=myValval;
+            }
+            
+        })
+    }
+}else{}
+
+function updateInputValue(inputId) {
+    var input = document.querySelector("#"+inputId);
+        var valueWithPlus = input.value.slice(1);
+        input.value = "+" + valueWithPlus;
+      };
 
 
 

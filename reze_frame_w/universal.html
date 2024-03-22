@@ -1,65 +1,59 @@
 <style>
-
-@font-face {
+  @font-face {
     font-family: "mainfont";
     src: url(reze_frame_w/fonts/OpenSans-Medium.ttf);
-}
+  }
 
-@font-face {
+  @font-face {
     font-family: "boldfont";
     src: url(reze_frame_w/fonts/AlbertText-Bold.ttf);
-}
+  }
 
-:root {
+  :root {
     --app-height: 100%;
-    --app-menu-width:100%;
-}
+    --app-menu-width: 100%;
+  }
 
-*{
+  * {
     margin: 0px;
     padding: 0;
     font-family: "mainfont";
-    font-size:15px;
+    font-size: 15px;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: #00000000;
-}
+  }
 
-
-body{
+  body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-}
+  }
 
-
-.codea13_parallex_effect{
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: fit-content;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        perspective: 1px;
-        transform-style: preserve-3d;
-    }
-
+  .codea13_parallex_effect {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
 </style>
 
 <script>
-    // this function is to fix the ios error when  height is set to 100vh
-    const appHeight = () => {
-                const doc = document.documentElement;
-                doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-            }
-            window.addEventListener("resize", appHeight);
-            appHeight();  
+  // this function is to fix the ios error when  height is set to 100vh
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", appHeight);
+  appHeight();
 
-    // this functino
-    function masterResetAfterUsingResetPassword(){
-        document.querySelector("#forgot_password").click();
-    }
-
+  // this functino
+  function masterResetAfterUsingResetPassword() {
+    document.querySelector("#forgot_password").click();
+  }
 </script>
-
