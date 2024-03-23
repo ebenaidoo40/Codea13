@@ -92,10 +92,10 @@ function box_pics(array $arr){
             color:'.$arr["buttonTextHoverColor"].';
         }
 
-        .rightblock'.$GLOBALS["firstcard"].'{
+        .rightblock'.$GLOBALS["firstcard"]. '{
             display:flex;
             flex-wrap:wrap;
-            background-color:purple;
+            background-color:' . $arr["backgroundColor"] . ';
             flex-grow:1;
         }
 
@@ -114,7 +114,7 @@ function box_pics(array $arr){
             line-height:1.5;
         }
 
-        @media (max-width:600px){
+        @media (max-width:700px){
             .mainblock'.$GLOBALS["firstcard"].'{
                 flex-direction:column;
                 padding: 0 0 20px 0;
@@ -165,6 +165,12 @@ function box_pics(array $arr){
                 if(!isset($arr[$mykeyss[$i]]["textColor"])){
                     $arr[$mykeyss[$i]]["textColor"]="white";
                 }
+            if (!isset($arr[$mykeyss[$i]]["imageFit"])) {
+                $arr[$mykeyss[$i]]["imageFit"] = "cover";
+            }
+            if (!isset($arr[$mykeyss[$i]]["imagePosition"])) {
+                $arr[$mykeyss[$i]]["imagePosition"] = "50% 0";
+            }
                 if(!isset($arr[$mykeyss[$i]]["image"])){
                     $arr[$mykeyss[$i]]["image"]="reze_frame_w/codea13.png";
                 }
@@ -173,7 +179,7 @@ function box_pics(array $arr){
                 }
 
                 echo '
-                    <div class="rightsub'.$GLOBALS["firstcard"].'" style="background-position:50% 0; background-size:cover; background-image:url(\''.$arr[$mykeyss[$i]]["image"].'\')">
+                    <div class="rightsub'.$GLOBALS["firstcard"]. '" style="background-position:'. $arr[$mykeyss[$i]]["imagePosition"].'; background-repeat:no-repeat; background-color:#6FA28700;  background-size:'. $arr[$mykeyss[$i]]["imageFit"].'; background-image:url(\''.$arr[$mykeyss[$i]]["image"].'\')">
                         <div class="smallnote'.$GLOBALS["firstcard"].'" style="color:'.$arr[$mykeyss[$i]]["textColor"].'; background-color:'.$arr[$mykeyss[$i]]["textBackgroundColor"].'">'.$arr[$mykeyss[$i]]["note"].'</div>
                     </div>
                 ';

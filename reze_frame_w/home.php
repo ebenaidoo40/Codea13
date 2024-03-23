@@ -128,8 +128,36 @@ function home(array $arr){
             background-color: '.$arr["buttonBackgroundHoverColor"].';
         }
 
+        @media (max-width:700px){
+            .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            }
+        }
+
+        @media (max-width:650px){
+            .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            }
+        }
         @media (max-width:600px){
             .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            }
+        }
+        @media (max-width:550px){
+            .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+        @media (max-width:500px){
+            .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width:360px){
+            .home'.$GLOBALS["firstcard"].'{
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 padding:20px;
                 gap:30px;
             }
