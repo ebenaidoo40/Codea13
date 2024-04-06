@@ -348,7 +348,7 @@ input[type=\'password\']{
                     }, 3000);
    
                 }
-                // this control is to check if an error occurred as a result of no internet connection to email server
+                /* this control is to check if an error occurred as a result of no internet connection to email server */
                 else if(res2.includes("Fatal error")){
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow1");
@@ -399,11 +399,7 @@ input[type=\'password\']{
 
 
 
-    // this is to clear all parameters in the url to make it clean  "/"+"preptemy"+
-    //window.history.pushState({}, document.title,  "/" + "pg/loginpg.php");
-
-
-    // a function that shows and hidden password
+    /* a function that shows and hidden password */
 if(document.querySelector("#showpassword")){
     var form_show_password = document.querySelector("#showpassword");
 
@@ -425,7 +421,7 @@ if(document.querySelector("#showpassword")){
 }else{}
 
 
-// a function to move label of an input when input is focused for login page and forgot password page
+/* a function to move label of an input when input is focused for login page and forgot password page */
 if(document.querySelector("#emaillabel")){
     var passwordLabel=document.querySelector("#passwordlabel");
     var emailLabel=document.querySelector("#emaillabel");
@@ -458,7 +454,7 @@ if(document.querySelector("#emaillabel")){
 
 
 
-// this function is for moving the choose subject in payment.php file when it is active
+/* this function is for moving the choose subject in payment.php file when it is active */
 if(document.querySelector("#choosesubjectlabel")){
     var choosesubjectlabel = document.querySelector("#choosesubjectlabel");
     var choosesubject = document.querySelector("#choosesubject");
@@ -482,7 +478,7 @@ if(document.querySelector("#choosesubjectlabel")){
 
 
 if(document.querySelector("#forgot_password")){
-//when forgot password is clicked
+/*when forgot password is clicked */
 var forgotPassword = document.querySelector("#forgot_password");
 var toggleInput = "reset";
 forgotPassword.addEventListener("click", function(){

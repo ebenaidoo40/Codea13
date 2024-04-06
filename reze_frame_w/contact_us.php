@@ -289,7 +289,7 @@ function contact_us(array $arr){
                         document.querySelector("#loginbutton").setAttribute("type", "submit");
                     }, 3000);
                 }else{
-                    //document.querySelector("#userpglink").click();
+                    
                 }
 
             },

@@ -4,7 +4,7 @@ echo '
 
 <label style="position:relative; z-index:1" id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'"> '.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
     <div class="maintelNum">
-    <label class="specialLabelCode" for="ctry_'.$i.'">Code <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 9 12 3 6 9H18ZM18 15 12 21 6 15H18Z"></path></svg></label>
+        <label class="specialLabelCode" for="ctry_'.$i.'">Code <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 9 12 3 6 9H18ZM18 15 12 21 6 15H18Z"></path></svg></label>
         <select id="ctry_'.$i.'" style="position:absolute;cursor:pointer; width:67px; opacity:0; padding:9px;  height:40px; box-sizing:border-box;"  class="allcountriesCode">
                 <option value=""></option>
                 <option value="+93 ">Afghanistan</option>
@@ -178,7 +178,7 @@ echo '
                 <option value="+970 ">Palestine</option>
                 <option value="+507 ">Panama</option>
                 <option value="+675 ">Papua New Guinea</option>
-                <option value="+595 >Paraguay</option>
+                <option value="+595 ">Paraguay</option>
                 <option value="+51 ">Peru</option>
                 <option value="+63 ">Philippines</option>
                 <option value="+64 ">Pitcairn</option>

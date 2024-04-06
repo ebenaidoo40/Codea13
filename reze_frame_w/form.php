@@ -6,7 +6,7 @@ function form(array $arr){
         
     }else{
         $listVal="";
-    }
+    } 
 
 if(!isset($arr["formTo"])){
     $arr["formTo"]="sign_up.php";
@@ -52,12 +52,6 @@ if(!isset($arr["cautionCheckTextColor"])){
 
 echo '
 <style>
-/*
-    :root{
-        --app-formh:0px;
-        --app-formHeight: 0px
-    }
-    */
 
     .accountform{
         width: 70%;
@@ -168,7 +162,7 @@ label{
 
 .checkboxdiv input{
     height: 100%;
-    padding-bottom: 0
+    padding-bottom: 0;
 }
 
 .checkboxdiv label{
@@ -206,7 +200,7 @@ input[type=\'password\']{
 
 
 .submitanimation_padding_to_submit_button{
-    padding:2px
+    padding:2px;
 }
 
 
@@ -309,8 +303,8 @@ input[type=\'password\']{
 
   
 
-   $numberOfElements = array_keys($arr);
-   for($i=0; $i<sizeof($arr); $i++){
+$numberOfElements = array_keys($arr);
+for($i=0; $i<sizeof($arr); $i++){
     if(is_array($arr[$numberOfElements[$i]])){
         if(!isset($arr[$numberOfElements[$i]]["type"])){
             $arr[$numberOfElements[$i]]["type"]="text";
@@ -341,10 +335,10 @@ input[type=\'password\']{
         if($arr[$numberOfElements[$i]]["type"]=="password"){
             echo '<div>
                 <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
-                <input class="masterinput password showpassword'.$i.'" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" pattern=".{6,}" title="Six or more characters" placeholder="6 characters or more" '.$arr[$numberOfElements[$i]]["required"].'>
+                <input class="masterinput password showpassword'.$i.'" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" pattern=".{6,}" title="Six or more characters" placeholder="6 characters or more" '.$arr[$numberOfElements[$i]]["required"].'/>
 
                 <div class="checkboxdiv" style="display: flex;">
-                    <input class="showpassword" type="checkbox" name="showpassword" id="showpassword'.$i.'">
+                    <input class="showpassword" type="checkbox" name="showpassword" id="showpassword'.$i.'"/>
                     <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["labelColor"].'">Show '.$arr[$numberOfElements[$i]]["label"].'</label>
                 </div>
                 </div>
@@ -390,7 +384,7 @@ input[type=\'password\']{
                 <div style="height:10px;"></div>
                 
                 <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
+                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required/>
                     <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
                 </div>';
                 }
@@ -399,12 +393,12 @@ input[type=\'password\']{
             $requriedHTML_builder="<span style=\"color: red\">*</span>";
             echo '<div>
                 <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
-                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" required>
+                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" required/>
                 <p style="margin-top:-12px; color: '.$arr["cautionColor"].'; border:1px solid '.$arr["labelColor"].'; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
                 <div style="height:10px;"></div>
                 
                 <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
+                    <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required/>
                     <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
                 </div>
         
@@ -414,12 +408,12 @@ input[type=\'password\']{
             echo '
             <div class="formchild">
                 <label id="'.$arr[$numberOfElements[$i]]["id"].'label" class="masterlabel" for="'.$arr[$numberOfElements[$i]]["id"].'">'.$arr[$numberOfElements[$i]]["label"].$requriedHTML_builder.'</label>
-                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'>
+                <input class="masterinput" type="'.$arr[$numberOfElements[$i]]["type"].'" name="'.$arr[$numberOfElements[$i]]["name"].'" id="'.$arr[$numberOfElements[$i]]["id"].'" '.$arr[$numberOfElements[$i]]["required"].'/>
             </div>';
             
         }
     }
-   }
+}
         
 
        echo '         
@@ -438,23 +432,7 @@ input[type=\'password\']{
 <svg style="position:absolute; top:0; width:100vw; height:100%; z-index:-4; opacity:0.2" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0"><stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%"></stop><stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="'.$arr["backgroundColor"].'" d="M11.4,-13.4C16.6,-9.2,24,-7.4,29.6,-1.4C35.3,4.6,39.2,14.7,34.8,17.9C30.4,21.1,17.6,17.3,8.1,19.6C-1.5,22,-7.8,30.5,-13.8,31.2C-19.9,32,-25.5,25,-26.3,18C-27,10.9,-22.8,3.8,-19.7,-1.7C-16.6,-7.2,-14.6,-11.1,-11.5,-15.6C-8.4,-20.2,-4.2,-25.4,-0.6,-24.7C3.1,-24.1,6.2,-17.5,11.4,-13.4Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;"></path></svg>
 
 
-</body>
-
 <script>
-/*
-    var formbk = document.querySelector("#accountform");
-    function informWidth(){
-        var actualwidth = 250;
-        if(window.innerWidth < 600){
-            actualwidth = formbk.clientWidth - 20;
-        }else{}
-        formbk.style.setProperty("--app-formh", `${actualwidth}px`);
-        formbk.style.setProperty("--app-formHeight", `${formbk.clientHeight}px`);
-    }
-
-    window.addEventListener("resize", informWidth);
-    informWidth(); */
-
 
 var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'reze_frame_w/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";
 var form = document.querySelector("#accountform");
@@ -465,15 +443,6 @@ form.addEventListener(\'submit\', createaccountnow);
         document.querySelector("#loginbutton").innerHTML=imageloader;
         document.querySelector("#loginbutton").setAttribute("type", "button");
         event.preventDefault();
-
-        //var firstname = document.querySelector("#firstname").value;
-        //var othernames = document.querySelector("#othernames").value;
-        //var accountemail = document.querySelector("#accountemail").value;
-        //var currentTown = document.querySelector("#currentTown").value;
-        //var currentRegion = document.querySelector("#currentRegion").value;
-        //var country = document.querySelector("#country").value;
-        //var tel = document.querySelector("#tel").value;
-        //var link = document.querySelector("#agentcode").value;
 
         var formData = new FormData(this);
 
@@ -535,31 +504,11 @@ form.addEventListener(\'submit\', createaccountnow);
 
     }
     
+
+    /* a function to move label of an input when input is focused */
     
-// this function makes each input focus and not focus thereafter to move label if input has a value
-// purposely coded for when the back button is used
-    function clearInputs(){
-        var allinputs = document.querySelectorAll("input");
-        var allinputsnum = document.querySelectorAll("input").length;
-    
-        for(var i=0; i<allinputsnum; i++){
-            allinputs[i].focus();
-            document.activeElement.blur();
-        }
-        //document.querySelector("#country").focus();
-        //document.activeElement.blur();
-    }
-
-    window.addEventListener("pageshow", clearInputs);
-
-
-
-    // a function to move label of an input when input is focused
-
     var labelbag = document.querySelectorAll(".masterlabel");
     var inputbag = document.querySelectorAll(".masterinput");
-
-
     function moveA_label(){
 
         for(var i=0; i<labelbag.length; i++){
@@ -642,12 +591,9 @@ function updateInputValue(inputId) {
     var input = document.querySelector("#"+inputId);
         var valueWithPlus = input.value.slice(1);
         input.value = "+" + valueWithPlus;
-      };
-
-
+      }
 
 </script>';
-
 
 }
 

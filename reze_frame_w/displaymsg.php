@@ -7,6 +7,22 @@
             $arr["content"]="We will contact you soon";
         }
 
+        if(!isset($arr["shadowColor1"])){
+            $arr["shadowColor1"]="#00aaee";
+        }
+        if(!isset($arr["shadowColor2"])){
+            $arr["shadowColor2"]="brown";
+        }
+        if(!isset($arr["shadowColor3"])){
+            $arr["shadowColor3"]="red";
+        }
+        if(!isset($arr["shadowColor4"])){
+            $arr["shadowColor4"]="purple";
+        }
+        if(!isset($arr["shadowColor5"])){
+            $arr["shadowColor5"]="#00aaee";
+        }
+
         if(!isset($arr["link"])){
             $arr["link"]="";
         }
@@ -33,11 +49,11 @@
             }
 
             @keyframes displayInfo{
-                0% {border-radius:5% 50%; box-shadow: 0 0 50px 2px #00aaee; }
-                20% {border-radius:50% 10%; box-shadow: 0 0 50px 2px brown; }
-                40% {border-radius: 5%; box-shadow: 0 0 50px 2px red; }
-                60% {border-radius: 20%; box-shadow: 0 0 50px 2px purple; }
-                100% {border-radius: 5% 50%; box-shadow: 0 0 50px 2px #00aaee;}  
+                0% {border-radius:5% 50%; box-shadow: 0 0 50px 2px '.$arr["shadowColor1"].'; }
+                20% {border-radius:50% 10%; box-shadow: 0 0 50px 2px '.$arr["shadowColor2"].'; }
+                40% {border-radius: 5%; box-shadow: 0 0 50px 2px '.$arr["shadowColor3"].'; }
+                60% {border-radius: 20%; box-shadow: 0 0 50px 2px '.$arr["shadowColor4"].'; }
+                100% {border-radius: 5% 50%; box-shadow: 0 0 50px 2px '.$arr["shadowColor5"].';}  
             }
 
 

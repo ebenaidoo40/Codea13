@@ -37,6 +37,9 @@ function iframe_content(array $arr){
     if(!isset($arr["flip"])){
         $arr["flip"]="off";
     }
+    if(!isset($arr["videoFit"])){
+        $arr["videoFit"]="cover";
+    }
 
     if(!isset($arr["backgroundImage"])){
         $backgroundImageSlider2 = "url(\"reze_frame_w/images/blackStarBackground.webp\")";
@@ -98,7 +101,7 @@ function iframe_content(array $arr){
 
         .mainimg'.$GLOBALS["firstcard"].'{
             width:100%;
-            object-fit:cover;
+            object-fit:'.$arr["videoFit"].';
             aspect-ratio:16/9;
             background-color:inherit;
             border:1px solid white;

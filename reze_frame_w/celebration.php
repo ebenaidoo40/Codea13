@@ -20,7 +20,7 @@ function celebration(){
     <script>
     var retina = window.devicePixelRatio,
 
-    // Math shorthands
+    
     PI = Math.PI,
     sqrt = Math.sqrt,
     round = Math.round,
@@ -28,16 +28,14 @@ function celebration(){
     cos = Math.cos,
     sin = Math.sin,
 
-    // Local WindowAnimationTiming interface
+    
     rAF = window.requestAnimationFrame,
     cAF = window.cancelAnimationFrame || window.cancelRequestAnimationFrame,
     _now = Date.now || function () {return new Date().getTime();};
 
-// Local WindowAnimationTiming interface polyfill
+
 (function (w) {
-  /**
-				* Fallback implementation.
-				*/
+  
   var prev = _now();
   function fallback(fn) {
     var curr = _now();
@@ -47,9 +45,7 @@ function celebration(){
     return req;
   }
 
-  /**
-				* Cancel.
-				*/
+ 
   var cancel = w.cancelAnimationFrame
   || w.webkitCancelAnimationFrame
   || w.clearTimeout;

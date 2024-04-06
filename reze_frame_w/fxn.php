@@ -1,5 +1,5 @@
 <?php
-// this function converts a string "["left"=>"0px","right"=>"30px"]" to array ["left"=>"0px","right"=>"30px"]
+/* this function converts a string "["left"=>"0px","right"=>"30px"]" to array ["left"=>"0px","right"=>"30px"] */
 function eben_str_arr($string){
     $special_bag = explode("([", $string);
     $function_name= $special_bag[0];
@@ -31,7 +31,7 @@ function eben_str_arr($string){
 }
 
 
-// this function converts a string of the form "[left:0px + right:30px]" to array ["left"=>"0px","right"=>"30px"]
+/* this function converts a string of the form "[left:0px + right:30px]" to array ["left"=>"0px","right"=>"30px"] */
 function eben_str_arr2($string){
     $special_bag2 = explode("[", $string);
 
@@ -44,7 +44,7 @@ function eben_str_arr2($string){
     $counter2 = sizeof($parameter2);
     $keybag2=[];
     for($i=0; $i<$counter2; $i++){
-        $p1_2 = preg_replace('/\s+/', '', $parameter2[$i]);    // clearing all white spaces in the string $parameter2[$i] 
+        $p1_2 = preg_replace('/\s+/', '', $parameter2[$i]);    /* clearing all white spaces in the string $parameter2[$i] */
         $p2_2 = explode(":", $p1_2);
 
         if(isset($p1_2[$i])){
