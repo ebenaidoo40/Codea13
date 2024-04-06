@@ -122,7 +122,7 @@ function home(array $arr){
             cursor:pointer;
             color:'.$arr["buttonTextColor"].';
             border:1px solid white;
-            trasition: all 0.6s;
+            transition: all 0.6s;
         }
         .buttonpress'.$GLOBALS["firstcard"].':hover{
             background-color: '.$arr["buttonBackgroundHoverColor"].';

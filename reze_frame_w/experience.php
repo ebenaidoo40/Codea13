@@ -54,6 +54,7 @@ function experience(array $arr){
             .experience'.$GLOBALS["firstcard"].'{
                 flex-direction:column;
             }
+        }
     </style>
 
     <div class="experience'.$GLOBALS["firstcard"].'">

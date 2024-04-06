@@ -135,7 +135,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
             }
 
             .longblockmainchild'.$GLOBALS["firstcard"].':last-child{
-                max-width:50%
+                max-width:50%;
                 padding:5% 14%;
             }
             

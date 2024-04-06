@@ -166,7 +166,7 @@ function softcard(array $arr){
             @media (max-width:600px){
                 .firstcard'.$GLOBALS["firstcard"].'{
                     max-width: '.$arr["width"].';
-                }.
+                }
             }
 
     </style>';

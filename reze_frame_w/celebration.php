@@ -80,26 +80,26 @@ document.addEventListener("DOMContentLoaded", function() {
     this.x = _x, this.y = _y;
     this.Length = function() {
       return sqrt(this.SqrLength());
-    }
+    };
     this.SqrLength = function() {
       return this.x * this.x + this.y * this.y;
-    }
+    };
     this.Add = function(_vec) {
       this.x += _vec.x;
       this.y += _vec.y;
-    }
+    };
     this.Sub = function(_vec) {
       this.x -= _vec.x;
       this.y -= _vec.y;
-    }
+    };
     this.Div = function(_f) {
       this.x /= _f;
       this.y /= _f;
-    }
+    };
     this.Mul = function(_f) {
       this.x *= _f;
       this.y *= _f;
-    }
+    };
     this.Normalize = function() {
       var sqrLen = this.SqrLength();
       if (sqrLen != 0) {
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         this.x *= factor;
         this.y *= factor;
       }
-    }
+    };
     this.Normalized = function() {
       var sqrLen = this.SqrLength();
       if (sqrLen != 0) {
@@ -115,35 +115,35 @@ document.addEventListener("DOMContentLoaded", function() {
         return new Vector2(this.x * factor, this.y * factor);
       }
       return new Vector2(0, 0);
-    }
+    };
   }
   Vector2.Lerp = function(_vec0, _vec1, _t) {
     return new Vector2((_vec1.x - _vec0.x) * _t + _vec0.x, (_vec1.y - _vec0.y) * _t + _vec0.y);
-  }
+  };
   Vector2.Distance = function(_vec0, _vec1) {
     return sqrt(Vector2.SqrDistance(_vec0, _vec1));
-  }
+  };
   Vector2.SqrDistance = function(_vec0, _vec1) {
     var x = _vec0.x - _vec1.x;
     var y = _vec0.y - _vec1.y;
     return (x * x + y * y + z * z);
-  }
+  };
   Vector2.Scale = function(_vec0, _vec1) {
     return new Vector2(_vec0.x * _vec1.x, _vec0.y * _vec1.y);
-  }
+  };
   Vector2.Min = function(_vec0, _vec1) {
     return new Vector2(Math.min(_vec0.x, _vec1.x), Math.min(_vec0.y, _vec1.y));
-  }
+  };
   Vector2.Max = function(_vec0, _vec1) {
     return new Vector2(Math.max(_vec0.x, _vec1.x), Math.max(_vec0.y, _vec1.y));
-  }
+  };
   Vector2.ClampMagnitude = function(_vec0, _len) {
     var vecNorm = _vec0.Normalized;
     return new Vector2(vecNorm.x * _len, vecNorm.y * _len);
-  }
+  };
   Vector2.Sub = function(_vec0, _vec1) {
     return new Vector2(_vec0.x - _vec1.x, _vec0.y - _vec1.y, _vec0.z - _vec1.z);
-  }
+  };
 
   function EulerMass(_x, _y, _mass, _drag) {
     this.position = new Vector2(_x, _y);
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.velocity = new Vector2(0, 0);
     this.AddForce = function(_f) {
       this.force.Add(_f);
-    }
+    };
     this.Integrate = function(_dt) {
       var acc = this.CurrentForce(this.position);
       acc.Div(this.mass);
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
       acc.Mul(_dt);
       this.velocity.Add(acc);
       this.force = new Vector2(0, 0);
-    }
+    };
     this.CurrentForce = function(_pos, _vel) {
       var totalForce = new Vector2(this.force.x, this.force.y);
       var speed = this.velocity.Length();
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
       dragVel.Mul(this.drag * this.mass * speed);
       totalForce.Sub(dragVel);
       return totalForce;
-    }
+    };
   }
 
   function ConfettiPaper(_x, _y) {
@@ -198,13 +198,13 @@ document.addEventListener("DOMContentLoaded", function() {
       this.time += _dt;
       this.rotation += this.rotationSpeed * _dt;
       this.cosA = cos(DEG_TO_RAD * this.rotation);
-      this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt
+      this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt;
       this.pos.y += this.ySpeed * _dt;
       if (this.pos.y > ConfettiPaper.bounds.y) {
         this.pos.x = random() * ConfettiPaper.bounds.x;
         this.pos.y = 0;
       }
-    }
+    };
     this.Draw = function(_g) {
       if (this.cosA > 0) {
         _g.fillStyle = this.frontColor;
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       _g.closePath();
       _g.fill();
-    }
+    };
   }
   ConfettiPaper.bounds = new Vector2(0, 0);
 
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (this.position.y > ConfettiRibbon.bounds.y + this.particleDist * this.particleCount) {
         this.Reset();
       }
-    }
+    };
     this.Reset = function() {
       this.position.y = -random() * ConfettiRibbon.bounds.y;
       this.position.x = random() * ConfettiRibbon.bounds.x;
@@ -343,10 +343,10 @@ document.addEventListener("DOMContentLoaded", function() {
           _g.fill();
         }
       }
-    }
+    };
     this.Side = function(x1, y1, x2, y2, x3, y3) {
       return ((x1 - x2) * (y3 - y2) - (y1 - y2) * (x3 - x2));
-    }
+    };
   }
   ConfettiRibbon.bounds = new Vector2(0, 0);
   confetti = {};
@@ -377,15 +377,15 @@ document.addEventListener("DOMContentLoaded", function() {
       canvas.height = canvasHeight * retina;
       ConfettiPaper.bounds = new Vector2(canvasWidth, canvasHeight);
       ConfettiRibbon.bounds = new Vector2(canvasWidth, canvasHeight);
-    }
+    };
     this.start = function() {
-      this.stop()
+      this.stop();
       var context = this;
       this.update();
-    }
+    };
     this.stop = function() {
       cAF(this.interval);
-    }
+    };
     this.update = function() {
       var i = 0;
       context.clearRect(0, 0, canvas.width, canvas.height);
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function() {
       this.interval = rAF(function() {
         confetti.update();
       });
-    }
+    };
   };
   var confetti = new confetti.Context(\'confetti\');
   confetti.start();

@@ -58,7 +58,7 @@
 
 
             .realmsg{
-                align-text:center;
+                text-align:center;
                 font-size:35px;
                 font-weight:bold;
                 color:green;

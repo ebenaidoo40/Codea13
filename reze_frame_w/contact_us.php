@@ -178,7 +178,7 @@ function contact_us(array $arr){
             <div class="contactus_main_title">'.$arr["title"].'</div>
         </div>
 
-        <h1 style="padding:40px; text-align:center; font-size:30px;background-color:'.$arr["backgroundColor"].'; font:weight:bolder; color:'.$arr["subTitleColor"].'">'.$arr["subTitle"].'</h1>
+        <h1 style="padding:40px; text-align:center; font-size:30px;background-color:'.$arr["backgroundColor"].'; font-weight:bolder; color:'.$arr["subTitleColor"].'">'.$arr["subTitle"].'</h1>
 
         <div class="secondblock">
             <div class="firstblock1">'.$arr["content"].'</div>

@@ -60,6 +60,7 @@ function card_container(array $arr){
             .container'.$GLOBALS["firstcard"].'{
                 min-height:'.$arr["height"].';
             }
+        }
     </style>
 
 

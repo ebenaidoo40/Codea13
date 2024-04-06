@@ -90,6 +90,7 @@ function slant_home(array $arr){
             .maindiv'.$GLOBALS["firstcard"].'{
                 padding:60px 40px 200px 40px;
             }
+        }
     </style>
 
     <div class="maindiv'.$GLOBALS["firstcard"].'">

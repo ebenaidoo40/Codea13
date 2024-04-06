@@ -161,7 +161,7 @@ echo '
         cursor:pointer;
         color:'.$arr["buttonTextColor"].';
         border:1px solid white;
-        trasition: all 0.6s;
+        transition: all 0.6s;
         box-shadow: 0 0 2px 1px #334;
     }
 
