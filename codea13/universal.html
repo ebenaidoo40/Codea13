@@ -1,0 +1,61 @@
+<style>
+  @font-face {
+    font-family: "mainfont";
+    src: url(codea13/fonts/OpenSans-Medium.ttf);
+  }
+
+  @font-face {
+    font-family: "boldfont";
+    src: url(codea13/fonts/AlbertText-Bold.ttf);
+  }
+
+  :root {
+    --app-height: 100%;
+    --app-menu-width: 100%;
+  }
+
+  * {
+    margin: 0px;
+    padding: 0;
+    font-family: "mainfont", sans-serif;
+    font-size: 15px;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: #00000000;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .codea13_parallex_effect {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
+
+
+</style>
+
+<script>
+  /* this function is to fix the ios error when  height is set to 100vh */
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", appHeight);
+  appHeight();
+
+  /* this function */
+  function masterResetAfterUsingResetPassword() {
+    document.querySelector("#forgot_password").click();
+  }
+</script>
