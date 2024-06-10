@@ -7,6 +7,9 @@ function rectcube(array $arr)
     if (!isset($arr["topSpace"])) {
         $arr["topSpace"] = "0";
     }
+    if (!isset($arr["z-index"])) {
+        $arr["z-index"] = "0";
+    }
     if (!isset($arr["right"])) {
         $arr["right"] = "20px";
     }
@@ -43,7 +46,7 @@ function rectcube(array $arr)
                     flex-direction:column; 
                     justify-content:center;
                     align-items:center;
-                    z-index:5;
+                    z-index:'.$arr["z-index"].';
                 }
                 
 

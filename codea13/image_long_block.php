@@ -113,6 +113,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
 
         .allList' . $GLOBALS["firstcard"] . '{
             position:relative;
+            width:fit-content;
             display:flex;
             align-items:center;
             gap:5px;
@@ -137,6 +138,20 @@ labore sed, deserunt minima fugiat inventore expedita.";
             }
             
            
+        }
+
+        @media(max-width:400px){
+            .longunderp' . $GLOBALS["firstcard"] . '>*{
+                width:60%;
+                display:flex;
+                flex-direction:column;
+            }
+
+            .longunderpinnerbullet' . $GLOBALS["firstcard"] . '{
+                width:10px;
+                border:10px solid ' . $arr["ringColor"] . ';
+                border-right:none;
+            }
         }
             
 

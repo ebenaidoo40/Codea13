@@ -57,5 +57,30 @@ function eben_str_arr2($string){
     return $keybag2;
 }
 
+function set_height($parent, $child, $stretch){
+    echo '
+    <script>
+        function heightChanger'.$GLOBALS["firstcard"].'(){
+            var parent = document.querySelector("#'.$parent.'");
+            var child = document.querySelector("#'.$child.'");
+
+            var parentDimension = parent.getBoundingClientRect();
+            var newHeight = parentDimension.height + "px";
+            child.style.height = newHeight;
+
+            if(window.innerWidth < '.$stretch.'){
+                child.style.height="auto";
+            }else{
+                child.style.height= newHeight;
+            }
+        }
+
+        heightChanger'.$GLOBALS["firstcard"].'();
+        window.addEventListener("resize", heightChanger'.$GLOBALS["firstcard"].');
+        window.addEventListener("load", heightChanger'.$GLOBALS["firstcard"].');
+    </script>
+    ';
+}
+
 
 ?>

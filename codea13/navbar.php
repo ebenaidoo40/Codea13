@@ -125,6 +125,7 @@ function navbar(array $arr)
             margin-right:10px;
             padding: 3px 8px;
             font-weight:bold;
+            color: ' . $arr["textColor"] . ';
         }
 
         .tabs>*:hover{

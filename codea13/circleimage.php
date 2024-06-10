@@ -16,6 +16,9 @@ function circleImage(array $arr)
     if (!isset($arr["vertical"])) {
         $arr["vertical"] = "100px";
     }
+    if (!isset($arr["z-index"])) {
+        $arr["z-index"] = "0";
+    }
     if (!isset($arr["left"])) {
         $arr["left"] = "none";
     }
@@ -61,20 +64,22 @@ function circleImage(array $arr)
             left:' . $arr["left"] . ';
             box-shadow: 0 0 5px 1px #333;
             transition: all 0.6s;
+            z-index:'.$arr["z-index"].';
         }
 
         @media (max-width:' . $arr["setMiddleAtMax"] . 'px){
         
             .firstgif' . $GLOBALS["firstcard"] . '{
-                right:50%;
-                transform:translateX(50%);
+                right:none;
+                left:50%;
+                transform:translateX(-50%);
                 width:' . $arr["smallDeviceWidth"] . ';
-                height:' . $arr["smallDeviceWidth"] . '
+                height:' . $arr["smallDeviceWidth"] . ';
             }
             
         }
             
-        }
+
         </style>
 
             <img id="' . $arr["id"] . '" class="firstgif' . $GLOBALS["firstcard"] . ' initialpos' . $GLOBALS["firstcard"] . ' intersectionObserver' . $GLOBALS["firstcard"] . '" src="' . $arr["image"] . '" alt="" srcset="">
