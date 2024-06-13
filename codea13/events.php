@@ -4,7 +4,7 @@ function events(array $arr)
 {
 
     if (!isset($arr["backgroundColor"])) {
-        $arr["backgroundColor"] = "slateblue";
+        $arr["backgroundColor"] = "white";
     }
     if (!isset($arr["titleColor"])) {
         $arr["titleColor"] = "black";
@@ -23,7 +23,7 @@ function events(array $arr)
     }
 
     if (!isset($arr["backgroundImage"])) {
-        $backgroundImageSlider3 = "url(\"codea13/images/blackStarBackground.webp\")";
+        $backgroundImageSlider3 = "none";
     } else {
         if ($arr["backgroundImage"] == "none") {
             $backgroundImageSlider3 = "none";
@@ -33,12 +33,13 @@ function events(array $arr)
     }
 
     if (!isset($arr["marquee"])) {
-        $arr["marquee"] = "div";
+        $arr["marquee"] = "off";
+        $event_overflow = "scroll";
     } else {
-        if ($arr["marquee"] == "yes") {
-            $arr["marquee"] = "marquee";
+        if ($arr["marquee"] == "on") {
+            $event_overflow = "hidden";
         } else {
-            $arr["marquee"] = "div";
+            $event_overflow = "scroll";
         }
     }
 
@@ -51,7 +52,7 @@ function events(array $arr)
                 background-color:' . $arr["backgroundColor"] . ';
                 background-image:' . $backgroundImageSlider3 . ';
                 background-size:cover;
-                overflow-x:scroll;
+                overflow-x:'.$event_overflow.';
                 padding:0px 0px;
                 position:relative;
                 white-space: nowrap;
@@ -68,17 +69,19 @@ function events(array $arr)
 
             .eventblockchild' . $GLOBALS["firstcard"] . '{
                 display:inline-block;
-                width:min(300px, 80%);
+                vertical-align:middle;
+                width:min(250px, 70%);
                 aspect-ratio:3/2;
                 margin:20px;
                 padding:20px;
                 border-radius:10px;
                 box-shadow: 0 0 8px 1px black;
                 background-color:' . $arr["cardColor"] . ';
+                transition: all 0.9s linear;
             }
         </style>
 
-        <div class="eventblock' . $GLOBALS["firstcard"] . '"><' . $arr["marquee"] . ' class="eventblock' . $GLOBALS["firstcard"] . '">';
+        <div class="eventblock' . $GLOBALS["firstcard"] . '"><div class="eventblock' . $GLOBALS["firstcard"] . '">';
 
     $mykeys = array_keys($arr);
 
@@ -93,16 +96,86 @@ function events(array $arr)
                 $arr[$mykeys[$i]]["body"] = "";
             }
             echo '
-            <div class="eventblockchild' . $GLOBALS["firstcard"] . '">
-                <div style="font-size:22px; white-space:wrap; font-weight:bold; padding:10px; background-color:' . $arr["titleBackgroundColor"] . '; color:' . $arr["titleColor"] . '">' . $mykeys[$i] . '</div><br>
-                <div style="white-space:wrap; color:' . $arr["contentColor"] . '">' . $arr[$mykeys[$i]]["body"] . '</div><br>
-                <div style="white-space:wrap; font-weight:bold; color:' . $arr["dateColor"] . '">Date:<br>' . $arr[$mykeys[$i]]["date"] . '</div>
+            <div class="eventblockchild' . $GLOBALS["firstcard"] . ' codea_evyevy">
+                <div style="font-size:22px; white-space:normal; font-weight:bold; padding:10px; background-color:' . $arr["titleBackgroundColor"] . '; color:' . $arr["titleColor"] . '">' . $mykeys[$i] . '</div><br>
+                <div style="white-space:normal; color:' . $arr["contentColor"] . '">' . $arr[$mykeys[$i]]["body"] . '</div><br>
+                <div id="NanaYaa" style="white-space:normal; font-weight:bold; color:' . $arr["dateColor"] . '">Date:<br>' . $arr[$mykeys[$i]]["date"] . '</div>
             </div>';
         }
     }
 
-    echo '</' . $arr["marquee"] . '></div>
+    echo '</div></div>';
 
-    ';
+
+    if($arr["marquee"] == "on"){
+        echo '
+        <script>
+            var subEvents'.$GLOBALS["firstcard"].' = document.querySelectorAll(".eventblockchild'.$GLOBALS["firstcard"].'");
+            var lastEvent'.$GLOBALS["firstcard"].' = subEvents'.$GLOBALS["firstcard"].'[subEvents'.$GLOBALS["firstcard"].'.length - 1];
+            var firstEvent'.$GLOBALS["firstcard"].' = subEvents'.$GLOBALS["firstcard"].'[0];
+            var lastE'.$GLOBALS["firstcard"].' = lastEvent'.$GLOBALS["firstcard"].'.getBoundingClientRect();
+            var masterWidth'.$GLOBALS["firstcard"].' = lastE'.$GLOBALS["firstcard"].'.x +lastE'.$GLOBALS["firstcard"].'.width;
+            
+            var scrollValue'.$GLOBALS["firstcard"].'=0;
+            var changer'.$GLOBALS["firstcard"].'=-2;
+
+            var mykey'.$GLOBALS["firstcard"].'="firstchildfocus";
+
+            function scrollme'.$GLOBALS["firstcard"].'(){
+
+                var firstEventDim = firstEvent'.$GLOBALS["firstcard"].'.getBoundingClientRect();
+                var lastEventDim = lastEvent'.$GLOBALS["firstcard"].'.getBoundingClientRect();
+
+                scrollValue'.$GLOBALS["firstcard"].' = scrollValue'.$GLOBALS["firstcard"].' + changer'.$GLOBALS["firstcard"].';
+
+                for(var i=0; i<subEvents'.$GLOBALS["firstcard"].'.length; i++){
+                    subEvents'.$GLOBALS["firstcard"].'[i].style.transform="translateX(" +scrollValue'.$GLOBALS["firstcard"].' + "px)";
+                }
+
+                if(masterWidth'.$GLOBALS["firstcard"].' <window.innerWidth){
+                    if(mykey'.$GLOBALS["firstcard"].' == "firstchildfocus"){
+                        if(firstEventDim.x  < 0){
+                            changer'.$GLOBALS["firstcard"].' = 2;
+                            mykey'.$GLOBALS["firstcard"].' = "lastchildfocus";
+                        }else{
+                            
+                        }
+                    }else{
+                        if(lastEventDim.x + 20 + lastEventDim.width > window.innerWidth){
+                            changer'.$GLOBALS["firstcard"].' = -2;
+                            mykey'.$GLOBALS["firstcard"].' = "firstchildfocus";
+                        }else{
+                            
+                        }
+                    }
+                }else{
+                    if(mykey'.$GLOBALS["firstcard"].' == "firstchildfocus"){
+                        if(firstEventDim.x  < window.innerWidth - masterWidth'.$GLOBALS["firstcard"].' - (firstEventDim.width / 2)){
+                            changer'.$GLOBALS["firstcard"].' = 2;
+                            mykey'.$GLOBALS["firstcard"].' = "lastchildfocus";
+                        }else{
+                            
+                        }
+                    }else{
+                        if(firstEventDim.x > (firstEventDim.width / 2)){
+                            changer'.$GLOBALS["firstcard"].' = -2;
+                            mykey'.$GLOBALS["firstcard"].' = "firstchildfocus";
+                        }else{
+                            
+                        }
+                    }
+                }
+                    
+                
+                            
+            }
+            
+        
+            
+            setInterval(scrollme'.$GLOBALS["firstcard"].', 60);
+        </script>
+        ';
+    }
+    
     $GLOBALS["firstcard"]++;
 }
