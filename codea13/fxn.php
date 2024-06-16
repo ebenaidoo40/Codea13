@@ -7,7 +7,7 @@ function eben_str_arr($string){
 
     $parameter = explode("])", $function_name_parameter);
     $param = $parameter[0];
-    $parameter = explode(";", $param);
+    $parameter = explode(";;", $param);
 
     $counter = sizeof($parameter);
     $keybag=[];
