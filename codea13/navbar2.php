@@ -27,7 +27,7 @@ function navbar2(array $arr)
         $arr["logo"] = "";
     }
     if (!isset($arr["titleBackgroundColor"])) {
-        $arr["titleBackgroundColor"] = "black";
+        $arr["titleBackgroundColor"] = "transparent";
     }
     if (!isset($arr["dropDown"])) {
         $arr["dropDown"] = "Dropdown";
@@ -107,10 +107,11 @@ function navbar2(array $arr)
         .logo-title{
             margin-left: 50px;
             display:flex;
-            background:' . $arr["titleBackgroundColor"] . ';
+            background-color:' . $arr["titleBackgroundColor"] . ';
             align-items: center;
-            color:' . $arr["titleTextColor"] . ';
+            justify-content:center;
             font-weight:bolder;
+            box-sizing:border-box;
         }
         .logo-title>*{
             margin-right:15px;
@@ -211,6 +212,7 @@ function navbar2(array $arr)
             }
             .logo-title{
                 margin-left: 10px;
+             
             }
             .mobilemenutab{
                 display:' . $showthis . ';

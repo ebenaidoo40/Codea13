@@ -25,6 +25,7 @@ ob_start("sanitize_output");
 
 $firstcard = 1;
 echo "<script src=\"codea13/jquery-3.6.1.min.js\"></script>";
+
 include_once "universal.html";
 include_once "fxn.php";
 include_once "navbar.php";
@@ -35,6 +36,9 @@ include_once "card_container.php";
 include_once "section3.php";
 include_once "section4.php";
 include_once "home.php";
+include_once "navbar4.php";
+include_once "mobileDropDownMenu.php";
+include_once "slider_home.php";
 include_once "image_section_content.php";
 include_once "content_section_image.php";
 include_once "image_long_block.php";
@@ -72,5 +76,7 @@ include_once "space.php";
 include_once "rectcube.php";
 include_once "floatmenu.php";
 include_once "pic_home.php";
+include_once "content_slantPic.php";
+include_once "image_content.php";
 include_once "infinite_pics.php";
 include_once "box_pics.php";

@@ -22,6 +22,10 @@ function events(array $arr)
         $arr["cardColor"] = "white";
     }
 
+    if (!isset($arr["spaceAround"])) {
+        $arr["spaceAround"] = 0;
+    }
+
     if (!isset($arr["backgroundImage"])) {
         $backgroundImageSlider3 = "none";
     } else {
@@ -62,7 +66,6 @@ function events(array $arr)
             }
 
             
-
             .eventblock' . $GLOBALS["firstcard"] . '::-webkit-scrollbar {
                 display: none;
               }
@@ -78,6 +81,7 @@ function events(array $arr)
                 box-shadow: 0 0 8px 1px black;
                 background-color:' . $arr["cardColor"] . ';
                 transition: all 0.9s linear;
+                position:relative;
             }
         </style>
 
@@ -89,17 +93,22 @@ function events(array $arr)
     for ($i = 0; $i < sizeof($arr); $i++) {
 
         if (is_array($arr[$mykeys[$i]])) {
-            if (!isset($arr[$mykeys[$i]]["date"])) {
-                $arr[$mykeys[$i]]["date"] = "Coming Soon";
+
+            if (!isset($arr[$mykeys[$i]]["title"])) {
+                $arr[$mykeys[$i]]["title"] = "Title Here";
             }
+
             if (!isset($arr[$mykeys[$i]]["body"])) {
                 $arr[$mykeys[$i]]["body"] = "";
             }
+
+            if (!isset($arr[$mykeys[$i]]["titlePadding"])) {
+                $arr[$mykeys[$i]]["titlePadding"] = "10px";
+            }
             echo '
             <div class="eventblockchild' . $GLOBALS["firstcard"] . ' codea_evyevy">
-                <div style="font-size:22px; white-space:normal; font-weight:bold; padding:10px; background-color:' . $arr["titleBackgroundColor"] . '; color:' . $arr["titleColor"] . '">' . $mykeys[$i] . '</div><br>
+                <div style="font-size:22px; white-space:normal; font-weight:bold; padding:'.$arr[$mykeys[$i]]["titlePadding"].'; background-color:' . $arr["titleBackgroundColor"] . '; color:' . $arr["titleColor"] . '">' . $arr[$mykeys[$i]]["title"] . '</div><br>
                 <div style="white-space:normal; color:' . $arr["contentColor"] . '">' . $arr[$mykeys[$i]]["body"] . '</div><br>
-                <div id="NanaYaa" style="white-space:normal; font-weight:bold; color:' . $arr["dateColor"] . '">Date:<br>' . $arr[$mykeys[$i]]["date"] . '</div>
             </div>';
         }
     }
@@ -134,14 +143,14 @@ function events(array $arr)
 
                 if(masterWidth'.$GLOBALS["firstcard"].' <window.innerWidth){
                     if(mykey'.$GLOBALS["firstcard"].' == "firstchildfocus"){
-                        if(firstEventDim.x  < 0){
+                        if(firstEventDim.x - '.$arr["spaceAround"].'  < 0){
                             changer'.$GLOBALS["firstcard"].' = 2;
                             mykey'.$GLOBALS["firstcard"].' = "lastchildfocus";
                         }else{
                             
                         }
                     }else{
-                        if(lastEventDim.x + 20 + lastEventDim.width > window.innerWidth){
+                        if(lastEventDim.x + 20 + '.$arr["spaceAround"].' + lastEventDim.width > window.innerWidth){
                             changer'.$GLOBALS["firstcard"].' = -2;
                             mykey'.$GLOBALS["firstcard"].' = "firstchildfocus";
                         }else{
@@ -168,10 +177,7 @@ function events(array $arr)
                     
                 
                             
-            }
-            
-        
-            
+            }          
             setInterval(scrollme'.$GLOBALS["firstcard"].', 60);
         </script>
         ';

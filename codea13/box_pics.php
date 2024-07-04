@@ -28,6 +28,9 @@ function box_pics(array $arr)
     if (!isset($arr["buttonLink"])) {
         $arr["buttonLink"] = "";
     }
+    if (!isset($arr["mobileImageHeight"])) {
+        $arr["mobileImageHeight"] = "400px";
+    }
 
     if (!isset($arr["buttonBackgroundColor"])) {
         $arr["buttonBackgroundColor"] = "black";
@@ -128,7 +131,7 @@ function box_pics(array $arr)
                 background-color:' . $arr["backgroundColor"] . ';
             }
             .rightsub' . $GLOBALS["firstcard"] . '{
-                height:400px;
+                height:'.$arr["mobileImageHeight"].';
                 display:flex;
                 width:90%;
                 margin: 0 auto;
