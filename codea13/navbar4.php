@@ -34,8 +34,7 @@ function navbar4(array $arr){
     if(!isset($arr["seperatorColor"])){
         $arr["seperatorColor"]="#444444";
     }
-
-    
+     
     echo '
     <style>
     .screenHome{

@@ -48,6 +48,10 @@ function form(array $arr)
         $arr["cautionCheckTextColor"] = "red";
     }
 
+    if (!isset($arr["popMessageTopSpace"])) {
+        $arr["popMessageTopSpace"] = "50px";
+    }
+
 
 
     echo '
@@ -236,13 +240,13 @@ input[type=\'password\']{
 
 
 .popnow{
-    top: 50px;
+    top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
     z-index: 9999;
 }
 
 .popnow1{
-    top: 60px;
+    top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
     z-index: 9999;
 }

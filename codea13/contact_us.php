@@ -43,6 +43,9 @@ function contact_us(array $arr)
     if (!isset($arr["subTitle"])) {
         $arr["subTitle"] = "Let Us Start A Conversation";
     }
+    if (!isset($arr["popMessageTopSpace"])) {
+        $arr["popMessageTopSpace"] = "50px";
+    }
 
 
     echo '
@@ -138,7 +141,7 @@ function contact_us(array $arr)
         }
         
         .popnow1{
-            top: 50px;
+            top: '.$arr["popMessageTopSpace"].';
             opacity: 1;
         }
         

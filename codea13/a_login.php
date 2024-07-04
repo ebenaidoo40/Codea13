@@ -77,6 +77,9 @@ function a_login(array $arr)
     if (!isset($arr["customResetMessage"])) {
         $arr["customResetMessage"] = "Successful";
     }
+    if (!isset($arr["popMessageTopSpace"])) {
+        $arr["popMessageTopSpace"] = "50px";
+    }
 
     echo '
     <style>
@@ -126,12 +129,12 @@ function a_login(array $arr)
 
 
 .popnow{
-    top: 50px;
+    top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
 }
 
 .popnow1{
-    top: 50px;
+    top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
 }
 

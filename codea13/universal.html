@@ -12,6 +12,7 @@
   :root {
     --app-height: 100%;
     --app-menu-width: 100%;
+    --app-Width:100%;
   }
 
   * {
@@ -50,6 +51,7 @@
   const appHeight = () => {
     const doc = document.documentElement;
     doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+    doc.style.setProperty("--app-width", `${window.innerWidth}px`);
   };
   window.addEventListener("resize", appHeight);
   appHeight();

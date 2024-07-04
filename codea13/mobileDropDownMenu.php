@@ -36,20 +36,24 @@ function mobileDropDownMenu(array $arr){
     if(!isset($arr["sliderWidth"])){
         $arr["sliderWidth"]="250px";
     }
-    $sliderSubWidth = $arr["maxWidth"]."px";
+    if($arr["sliderWidth"]=="100%"){
+        $sliderSubWidth="var(--app-width)";
+    }else{
+        $sliderSubWidth = $arr["sliderWidth"];
+    }
     
-    $menu_icon = '<svg onclick="showSliderMenu()" id="mobilemenuopenid" class="mobilemenutab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" fill="'.$arr["buttonInnerColor"].'"></path></svg>';
-    $close_icon = '<svg onclick="hideSliderMenu()" id="mobilemenucloseid" class="mobilemenutab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z" fill="'.$arr["buttonInnerColor"].'"></path></svg>';
+    $menu_icon = '<svg onclick="showSliderMenu' . $GLOBALS["firstcard"] . '()" id="mobilemenuopenid' . $GLOBALS["firstcard"] . '" class="mobilemenutab' . $GLOBALS["firstcard"] . '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" fill="'.$arr["buttonInnerColor"].'"></path></svg>';
+    $close_icon = '<svg onclick="hideSliderMenu' . $GLOBALS["firstcard"] . '()" id="mobilemenucloseid' . $GLOBALS["firstcard"] . '" class="mobilemenutab' . $GLOBALS["firstcard"] . '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z" fill="'.$arr["buttonInnerColor"].'"></path></svg>';
     $arrowup_icon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\"><path d=\"M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z\" fill=\"" . $arr["textColor"] . "\"></path></svg>";
     $arrowdown_icon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\"><path d=\"M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z\" fill=\"" . $arr["textColor"] . "\"></path></svg>";
     echo '<style>
-        .mobilemenutab{
+        .mobilemenutab' . $GLOBALS["firstcard"] . '{
             background-color:'.$arr["buttonBackgroundColor"].'; 
             position:absolute;
             cursor:pointer;
             display:none;
         }
-        .mobilemenu{
+        .mobilemenu' . $GLOBALS["firstcard"] . '{
             width:32px;
             height:32px;
             position:fixed;
@@ -60,7 +64,7 @@ function mobileDropDownMenu(array $arr){
             display:none;
             transition: all 0.5s;
         }
-        .mobileDropdownbk{
+        .mobileDropdownbk' . $GLOBALS["firstcard"] . '{
             height:var(--app-height);
             width:100%;
             background-color:transparent;
@@ -71,7 +75,7 @@ function mobileDropDownMenu(array $arr){
             z-index:1000;
             overflow-x:hidden;
         }
-        .listContainer{
+        .listContainer' . $GLOBALS["firstcard"] . '{
             width:'.$arr["sliderWidth"].';
             height:var(--app-height);
             background-color:'.$arr["backgroundColor"].';
@@ -82,9 +86,8 @@ function mobileDropDownMenu(array $arr){
             z-index:1000;
             overflow-x:hidden;
             transition: all 0.5s;
-            padding-bottom:80px;
         }
-        .mobiletabchild{
+        .mobiletabchild' . $GLOBALS["firstcard"] . '{
             padding:15px 20px;
             overflow:hidden;
             border-bottom:1px solid '.$arr["tabsSeperatorColor"].';
@@ -92,13 +95,13 @@ function mobileDropDownMenu(array $arr){
             font-weight:bolder;
             color:'.$arr["textColor"].';
         }
-        .dropdownpull{
+        .dropdownpull' . $GLOBALS["firstcard"] . '{
             height:0px;
             width:'.$sliderSubWidth.';
             overflow:hidden;
             transition: height 0.5s;
         }
-        .pulllist{
+        .pulllist' . $GLOBALS["firstcard"] . '{
             padding:15px 20px 15px 40px;
             background-color:'.$arr["backgroundSubColor"].';
             border-bottom:1px solid '.$arr["tabsSubSeperatorColor"].';
@@ -106,21 +109,21 @@ function mobileDropDownMenu(array $arr){
         }
 
         @media (max-width:'.$arr["maxWidth"].'px){
-            .mobilemenutab, .mobilemenu, .listContainer, .mobileDropdownbk{
+            .mobilemenutab' . $GLOBALS["firstcard"] . ', .mobilemenu' . $GLOBALS["firstcard"] . ', .listContainer' . $GLOBALS["firstcard"] . ', .mobileDropdownbk' . $GLOBALS["firstcard"] . '{
                 display:block;
             }
             
         
-            .closemenu{
+            .closemenu' . $GLOBALS["firstcard"] . '{
                 width:0px;
             }
         }
         
     </style>
-    <div id="mobilemenu" class="mobilemenu">'.$menu_icon.'</div>
+    <div id="mobilemenu' . $GLOBALS["firstcard"] . '" class="mobilemenu' . $GLOBALS["firstcard"] . '">'.$menu_icon.'</div>
 
-    <div onclick="hideSliderMenu()" id="mobileDropdownbk" class="mobileDropdownbk closemenu"></div>
-    <div id="listContainer" class="listContainer closemenu">
+    <div onclick="hideSliderMenu' . $GLOBALS["firstcard"] . '()" id="mobileDropdownbk' . $GLOBALS["firstcard"] . '" class="mobileDropdownbk' . $GLOBALS["firstcard"] . ' closemenu' . $GLOBALS["firstcard"] . '"></div>
+    <div id="listContainer' . $GLOBALS["firstcard"] . '" class="listContainer' . $GLOBALS["firstcard"] . ' closemenu' . $GLOBALS["firstcard"] . '">
         <div style="position:sticky; z-index:1001;padding:10px 20px;box-sizing:border-box; display:flex; align-items:center; top:-2px; width:100%; height:70px; background-color:'.$arr["titleBackgroundColor"].';">'.$arr["title"].'</div>';
 
         for($i=0; $i < sizeof($arr); $i++){
@@ -145,34 +148,35 @@ function mobileDropDownMenu(array $arr){
                 if($arr[$screenHomeKeys[$i]]["type"]=="dropdown"){
                     $dropbag = $arr[$screenHomeKeys[$i]]["list"];
                     $dropbagKeys = array_keys($dropbag);
-                    echo '<div onclick="Droppy(\'screenHomeTabs'.$i.'pull\', \'pullarrow'.$i.'\')" " id="screenHomeTabs'.$i.'" class="mobiletabchild">'.$arr[$screenHomeKeys[$i]]["name"].' <span id="pullarrow'.$i.'" style="position:relative; top:3px">'.$arrowdown_icon.'<span></div>
-                        <div id="screenHomeTabs'.$i.'pull" class="dropdownpull">';
+                    echo '<div onclick="Droppy' . $GLOBALS["firstcard"] . '(\'screenHomeTabs'.$i.'pull\', \'pullarrow'.$i.'\')" " id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].' <span id="pullarrow'.$i.'" style="position:relative; top:3px">'.$arrowdown_icon.'<span></div>
+                        <div id="screenHomeTabs'.$i.'pull" class="dropdownpull' . $GLOBALS["firstcard"] . '">';
                             for($j=0; $j<sizeof($dropbag); $j++){
-                                echo '<a style="color:'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="pulllist">'.$dropbagKeys[$j].'</div></a>';
+                                echo '<a style="color:'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="pulllist' . $GLOBALS["firstcard"] . '">'.$dropbagKeys[$j].'</div></a>';
                             }
                         echo '</div>
                     ';
                     
                     
                 }else{
-                    echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                    echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
                 }
             }
         }
-    echo '</div>
+        
+    echo '<div style="height:150px; background-color:transparent"></div></div>
 
     <script>
-        function hideSliderMenu(){
-            document.querySelector("#mobileDropdownbk").classList.add("closemenu");
-            document.querySelector("#listContainer").classList.add("closemenu");
-            document.querySelector("#mobilemenu").innerHTML=\'' . $menu_icon . '\';
+        function hideSliderMenu' . $GLOBALS["firstcard"] . '(){
+            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.add("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#listContainer' . $GLOBALS["firstcard"] . '").classList.add("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#mobilemenu' . $GLOBALS["firstcard"] . '").innerHTML=\'' . $menu_icon . '\';
         }
-        function showSliderMenu(){
-            document.querySelector("#mobileDropdownbk").classList.remove("closemenu");
-            document.querySelector("#listContainer").classList.remove("closemenu");
-            document.querySelector("#mobilemenu").innerHTML=\'' . $close_icon . '\';
+        function showSliderMenu' . $GLOBALS["firstcard"] . '(){
+            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.remove("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#listContainer' . $GLOBALS["firstcard"] . '").classList.remove("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#mobilemenu' . $GLOBALS["firstcard"] . '").innerHTML=\'' . $close_icon . '\';
         }
-        function Droppy(id, arrowid){
+        function Droppy' . $GLOBALS["firstcard"] . '(id, arrowid){
             var item = document.querySelector("#"+id);
             var itemHeight = item.clientHeight;
 
@@ -197,6 +201,7 @@ function mobileDropDownMenu(array $arr){
 
     
     ';
+    $GLOBALS["firstcard"]++;
     
 }
 
