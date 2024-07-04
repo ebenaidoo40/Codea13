@@ -44,6 +44,9 @@ function login(array $arr)
     if (!isset($arr["linkColor"])) {
         $arr["linkColor"] = "#5996f0";
     }
+    if (!isset($arr["popMessageTopSpace"])) {
+        $arr["popMessageTopSpace"] = "50px";
+    }
 
     echo '
     <style>
@@ -98,7 +101,7 @@ function login(array $arr)
 }
 
 .popnow1{
-    top: 50px;
+    top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
 }
 
