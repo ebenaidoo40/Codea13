@@ -51,6 +51,12 @@ function form(array $arr)
     if (!isset($arr["popMessageTopSpace"])) {
         $arr["popMessageTopSpace"] = "50px";
     }
+    if (!isset($arr["redirectTime"])) {
+        $arr["redirectTime"] = "4000";
+    }
+    if (!isset($arr["onePage"])) {
+        $arr["onePage"] = "off";
+    }
 
 
 
@@ -293,18 +299,22 @@ input[type=\'password\']{
 
 
         
-    
+<a id="arrayLinkFromRes" href=""><div class="failedpop"></div></a>
 <div class="failedpop" id="failedpop" style="background-color: #ffc1c1">Used Email</div>
-<div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>
-<a href="' . $arr["callBack"] . '"><div class="failedpop" id="homelink">s</div></a>
+<div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>';
+if($arr["onePage"]=="on"){
+    echo '<div onclick="codea13SupperLoader(\'' . $arr["callBack"] . '\')" class="failedpop" id="homelink">s</div>';
+}else{
+    echo '<a href="' . $arr["callBack"] . '"><div class="failedpop" id="homelink">s</div></a>';
+}
 
+echo '
 <div class="formheader">
 <div style=" text-align:center; font-size:24px; font-weight:bolder; color:' . $arr["titleColor"] . '">' . $arr["title"] . '</div>
 <div style="text-align: center; padding: 0 20px; font-weight:bold; color:' . $arr["labelColor"] . '">' . $arr["titlesub"] . '</div>
 </div> 
    
-   <form id="accountform" class="accountform">';
-
+<form id="accountform" class="accountform" enctype="multipart/form-data">';
 
 
     $numberOfElements = array_keys($arr);
@@ -337,9 +347,14 @@ input[type=\'password\']{
 
 
             if ($arr[$numberOfElements[$i]]["type"] == "password") {
+                if(!isset($arr[$numberOfElements[$i]]["accept"])){
+                    $accept="";
+                }else{
+                    $accept = $arr[$numberOfElements[$i]]["accept"];
+                }
                 echo '<div>
                 <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
-                <input class="masterinput password showpassword' . $i . '" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" pattern=".{6,}" title="Six or more characters" placeholder="6 characters or more" ' . $arr[$numberOfElements[$i]]["required"] . '/>
+                <input class="masterinput password showpassword' . $i . '" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" pattern=".{6,}"  title="Six or more characters" placeholder="6 characters or more" '.$accept.' ' . $arr[$numberOfElements[$i]]["required"] . '/>
 
                 <div class="checkboxdiv" style="display: flex;">
                     <input class="showpassword" type="checkbox" name="showpassword" id="showpassword' . $i . '"/>
@@ -348,9 +363,14 @@ input[type=\'password\']{
                 </div>
                 ';
             } else if ($arr[$numberOfElements[$i]]["type"] == "textarea") {
+                if(!isset($arr[$numberOfElements[$i]]["accept"])){
+                    $accept="";
+                }else{
+                    $accept = $arr[$numberOfElements[$i]]["accept"];
+                }
                 echo '<div>
                 <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
-                <textarea style="resize:none; height:150px; padding:8px; box-sizing:border-box; rows="6" maxlength="100" class="masterinput" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" ' . $arr[$numberOfElements[$i]]["required"] . '></textarea>
+                <textarea style="resize:none; height:150px; padding:8px; box-sizing:border-box; rows="6" '.$accept.' class="masterinput" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" ' . $arr[$numberOfElements[$i]]["required"] . '></textarea>
                 </div>
                 ';
             } else if ($arr[$numberOfElements[$i]]["type"] == "tel") {
@@ -389,10 +409,15 @@ input[type=\'password\']{
                 }
                 echo '</div>';
             } else if (isset($arr[$numberOfElements[$i]]["caution"])) {
+                if(!isset($arr[$numberOfElements[$i]]["accept"])){
+                    $accept="";
+                }else{
+                    $accept = $arr[$numberOfElements[$i]]["accept"];
+                }
                 $requriedHTML_builder = "<span style=\"color: red\">*</span>";
                 echo '<div>
                 <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
-                <input class="masterinput" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" required/>
+                <input class="masterinput" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" '.$accept.' required />
                 <p style="margin-top:-12px; color: ' . $arr["cautionColor"] . '; border:1px solid ' . $arr["labelColor"] . '; border-top:none; padding:5px">' . $arr[$numberOfElements[$i]]["caution"] . '</p>
                 <div style="height:10px;"></div>
                 
@@ -403,10 +428,15 @@ input[type=\'password\']{
         
             </div>';
             } else {
+                if(!isset($arr[$numberOfElements[$i]]["accept"])){
+                    $accept="";
+                }else{
+                    $accept = $arr[$numberOfElements[$i]]["accept"];
+                }
                 echo '
             <div class="formchild">
                 <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
-                <input class="masterinput" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" ' . $arr[$numberOfElements[$i]]["required"] . '/>
+                <input class="masterinput" '.$accept.' type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" ' . $arr[$numberOfElements[$i]]["required"] . '/>
             </div>';
             }
         }
@@ -456,7 +486,15 @@ form.addEventListener(\'submit\', createaccountnow);
                     res="Developer did not set response before terminating an operation.";
                 }else{}
 
-                if(res=="successful"){
+                if(res.includes("successl@@k")){
+                    res = res.split("l@@k");
+                    document.querySelector("#arrayLinkFromRes").setAttribute("href", res[1]);
+
+                    setTimeout(() => {
+                        document.querySelector("#arrayLinkFromRes").click();
+                    }, 100);
+                }
+                else if(res=="successful"){
                     setTimeout(() => {
                         document.querySelector("#successpop").classList.add("popnow");
                         document.querySelector("#successpop").innerHTML="' . $arr["customSuccessMessage"] . '";
@@ -470,8 +508,9 @@ form.addEventListener(\'submit\', createaccountnow);
 
                     setTimeout(() => {
                         document.querySelector("#homelink").click();
-                    }, 4000);
+                    }, '.$arr["redirectTime"].');
                 }else{
+                
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow");
                         document.querySelector("#failedpop").innerHTML=res;

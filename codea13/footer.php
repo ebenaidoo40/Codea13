@@ -56,10 +56,9 @@ function footer(array $arr){
     if(!isset($arr["instagram"])){
         $arr["instagram"]="on";
     }
-    
-
-
-    
+    if(!isset($arr["onePage"])){
+        $arr["onePage"]="off";
+    }
 
     echo '
     <style>
@@ -118,11 +117,18 @@ function footer(array $arr){
             <div class="footer-links">
                 <div><span style="color:gold; font-size:20px; font-weight:bold">'.$arr["companyName"].'</span></div><br>
 
-                <div class="footerlinks">
-                    <a href="'.$arr["homeLink"].'" class="footer-link-1"><span>Home</span></a>
-                    <a href="'.$arr["aboutLink"].'"><span>About</span></a>
-                    <a href="'.$arr["contactLink"].'"><span>Contact</span></a>
-                </div><br>
+                <div class="footerlinks">';
+                    if($arr["onePage"]=="on"){
+                        echo '<span style="cursor:pointer" class="footer-link-1" onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')">Home</span>
+                        <span style="cursor:pointer" onclick="codea13SupperLoader(\''.$arr["aboutLink"].'\')">About</span>
+                        <span style="cursor:pointer" onclick="codea13SupperLoader(\''.$arr["contactLink"].'\')">Contact</span>';
+                    }else{
+                        echo '<a href="'.$arr["homeLink"].'" class="footer-link-1"><span>Home</span></a>
+                            <a href="'.$arr["aboutLink"].'"><span>About</span></a>
+                            <a href="'.$arr["contactLink"].'"><span>Contact</span></a>';
+                    }
+
+               echo ' </div><br>
 
                 <div>'.$arr["companyName"].' © '.date("Y").'</div>
 

@@ -6,6 +6,9 @@ function mobileDropDownMenu(array $arr){
     if(!isset($arr["buttonTop"])){
         $arr["buttonTop"]="19px";
     }
+    if(!isset($arr["onePage"])){
+        $arr["onePage"]="off";
+    }
     if(!isset($arr["textColor"])){
         $arr["textColor"]="black";
     }
@@ -35,6 +38,9 @@ function mobileDropDownMenu(array $arr){
     }
     if(!isset($arr["sliderWidth"])){
         $arr["sliderWidth"]="250px";
+    }
+    if(!isset($arr["sliderBorderShadow"])){
+        $arr["sliderBorderShadow"]="#00000000";
     }
     if($arr["sliderWidth"]=="100%"){
         $sliderSubWidth="var(--app-width)";
@@ -86,6 +92,7 @@ function mobileDropDownMenu(array $arr){
             z-index:1000;
             overflow-x:hidden;
             transition: all 0.5s;
+            box-shadow:inset 0 0 10px '.$arr["sliderBorderShadow"].';
         }
         .mobiletabchild' . $GLOBALS["firstcard"] . '{
             padding:15px 20px;
@@ -106,6 +113,7 @@ function mobileDropDownMenu(array $arr){
             background-color:'.$arr["backgroundSubColor"].';
             border-bottom:1px solid '.$arr["tabsSubSeperatorColor"].';
             font-weight:bold;
+            
         }
 
         @media (max-width:'.$arr["maxWidth"].'px){
@@ -151,14 +159,24 @@ function mobileDropDownMenu(array $arr){
                     echo '<div onclick="Droppy' . $GLOBALS["firstcard"] . '(\'screenHomeTabs'.$i.'pull\', \'pullarrow'.$i.'\')" " id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].' <span id="pullarrow'.$i.'" style="position:relative; top:3px">'.$arrowdown_icon.'<span></div>
                         <div id="screenHomeTabs'.$i.'pull" class="dropdownpull' . $GLOBALS["firstcard"] . '">';
                             for($j=0; $j<sizeof($dropbag); $j++){
-                                echo '<a style="color:'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="pulllist' . $GLOBALS["firstcard"] . '">'.$dropbagKeys[$j].'</div></a>';
+                                if($arr["onePage"]=="on"){
+                                    echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'\')" class="pulllist' . $GLOBALS["firstcard"] . '">'.$dropbagKeys[$j].'</div>';
+                                }else{
+                                    echo '<a style="color:'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="pulllist' . $GLOBALS["firstcard"] . '">'.$dropbagKeys[$j].'</div></a>';
+                                }
+                                
                             }
                         echo '</div>
                     ';
                     
                     
                 }else{
-                    echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                    if($arr["onePage"]=="on"){
+                        echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                    }else{
+                        echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                    }
+                    
                 }
             }
         }

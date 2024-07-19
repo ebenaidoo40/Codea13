@@ -47,6 +47,9 @@ function login(array $arr)
     if (!isset($arr["popMessageTopSpace"])) {
         $arr["popMessageTopSpace"] = "50px";
     }
+    if (!isset($arr["onePage"])) {
+        $arr["onePage"] = "off";
+    }
 
     echo '
     <style>
@@ -254,10 +257,14 @@ input[type=\'password\']{
 
     <button id="loginbutton" class="loginbutton" type="submit">Log in</button>
 
-    <div style="font-weight:bold; color: ' . $arr["linkColor"] . '; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>
-
-    <div style="font-weight:bold; text-align:center; color:' . $arr["labelColor"] . '">' . $arr["clickHereText"] . ' <a href="' . $arr["clickHereLink"] . '">Click here </a> to start now</div>
-</form>
+    <div style="font-weight:bold; color: ' . $arr["linkColor"] . '; text-align:center; margin-bottom:20px; cursor:pointer" id="forgot_password">forgot password ?</div>';
+    if($arr["onePage"]=="on"){
+        echo '<div style="font-weight:bold; text-align:center; color:' . $arr["labelColor"] . '">' . $arr["clickHereText"] . ' <a onclick ="codea13SupperLoader(\''.$arr["clickHereLink"].'\')" >Click here </a> to start now</div>';
+    }else{
+        echo '<div style="font-weight:bold; text-align:center; color:' . $arr["labelColor"] . '">' . $arr["clickHereText"] . ' <a href="' . $arr["clickHereLink"] . '">Click here </a> to start now</div>';
+    }
+    
+echo '</form>
 
 
 <svg style="position:absolute; top:0; right:0; width:20vw; height:20vw; z-index:-4; opacity:0.2" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0"><stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%"></stop><stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop></linearGradient></defs><path fill="' . $arr["buttonBackgroundColor"] . '" d="M8.2,-12.2C14,-10.9,24.3,-15.4,27.8,-14.4C31.3,-13.3,27.9,-6.7,24.4,-2C21,2.7,17.5,5.4,14.7,7.7C12,10,9.9,11.8,7.6,18C5.3,24.2,2.6,34.7,0.9,33.1C-0.9,31.6,-1.8,18.1,-4.4,12.1C-7.1,6.1,-11.6,7.7,-13.4,6.9C-15.2,6.2,-14.3,3.1,-17.7,-2C-21.1,-7,-28.8,-14.1,-28.1,-16.7C-27.4,-19.3,-18.2,-17.5,-12.1,-18.7C-6.1,-19.8,-3,-23.9,-0.9,-22.3C1.2,-20.8,2.4,-13.5,8.2,-12.2Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>

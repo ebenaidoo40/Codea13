@@ -43,10 +43,15 @@
     transform-style: preserve-3d;
   }
 
+  a{
+    text-decoration: none;
+  }
+
 
 </style>
 
 <script>
+  if(typeof appHeight != "function"){
   /* this function is to fix the ios error when  height is set to 100vh */
   const appHeight = () => {
     const doc = document.documentElement;
@@ -55,6 +60,7 @@
   };
   window.addEventListener("resize", appHeight);
   appHeight();
+}
 
   /* this function */
   function masterResetAfterUsingResetPassword() {

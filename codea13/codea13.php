@@ -24,8 +24,8 @@ function sanitize_output($buffer)
 ob_start("sanitize_output");
 
 $firstcard = 1;
-echo "<script src=\"codea13/jquery-3.6.1.min.js\"></script>";
-
+echo "<script src=\"codea13/jquery-3.7.1.min.js\"></script>";
+include_once "one_page.php";
 include_once "universal.html";
 include_once "fxn.php";
 include_once "navbar.php";
@@ -36,6 +36,7 @@ include_once "card_container.php";
 include_once "section3.php";
 include_once "section4.php";
 include_once "home.php";
+include_once "home3.php";
 include_once "navbar4.php";
 include_once "mobileDropDownMenu.php";
 include_once "slider_home.php";

@@ -5,7 +5,7 @@ function content_slantPic(array $arr){
         $arr["title"]="TITLE GOES HERE";
     }
     if(!isset($arr["image"])){
-        $arr["image"]="images/realestate.jpg";
+        $arr["image"]="codea13/images/codea13.png";
     }
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="purple";

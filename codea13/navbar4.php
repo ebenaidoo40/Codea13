@@ -1,6 +1,8 @@
 <?php
 function navbar4(array $arr){
-
+    if(!isset($arr["homeLink"])){
+        $arr["homeLink"]="/";
+    }
     if(!isset($arr["maxWidth"])){
         $arr["maxWidth"]="900";
     }
@@ -19,11 +21,14 @@ function navbar4(array $arr){
     if(!isset($arr["rightFirstTabLink"])){
         $arr["rightFirstTabLink"]="";
     }
-    if(!isset($arr["rightFirstTabLink"])){
-        $arr["rightFirstTabLink"]="";
+    if(!isset($arr["rightSecondTabLink"])){
+        $arr["rightSecondTabLink"]="";
     }
     if(!isset($arr["tabsBackgroundColor"])){
         $arr["tabsBackgroundColor"]="#242424";
+    }
+    if(!isset($arr["titleBackgroundColor"])){
+        $arr["titleBackgroundColor"]=$arr["tabsBackgroundColor"];
     }
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#181818";
@@ -33,6 +38,9 @@ function navbar4(array $arr){
     }
     if(!isset($arr["seperatorColor"])){
         $arr["seperatorColor"]="#444444";
+    }
+    if(!isset($arr["onePage"])){
+        $arr["onePage"]="off";
     }
      
     echo '
@@ -93,10 +101,14 @@ function navbar4(array $arr){
         text-decoration:underline; 
     }
     .logo{
-        width:100px;
+        width:fit-content;
         height:100%;
-        background-color:'.$arr["tabsBackgroundColor"].';
+        background-color:'.$arr["titleBackgroundColor"].';
         padding-left:15px;
+        padding-right:15px;
+        display:flex;
+        align-items:center;
+        cursor:pointer;
     }
     .logInOut{
         display:flex;
@@ -147,6 +159,7 @@ function navbar4(array $arr){
     .dropdownlistMenu:hover{
         background-color:'.$arr["tabsColor"].';
         color:'.$arr["tabsBackgroundColor"].';
+        cursor:pointer;
     }
 
     @media (max-width:'.$arr["maxWidth"].'px){
@@ -159,18 +172,24 @@ function navbar4(array $arr){
         .logInOut{
             display:none;
         }
-        .logo{
-            background-color:inherit
+        .navBar{
+            width:100%;
         }
+        
     }
     
     </style>
 
     <div class="screenHome">
 
-        <div id="navBar" class="navBar ">
-            <div class="logo">'.$arr["title"].'</div>
-            <div class="tabs">';
+        <div id="navBar" class="navBar ">';
+        if($arr["onePage"]=="on"){
+            echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
+        }else{
+            echo '<a style="height:100%;" href="'.$arr["homeLink"].'"><div class="logo">'.$arr["title"].'</div></a>';
+        }
+
+            echo '<div class="tabs">';
 
                 $screenHomeKeys = array_keys($arr);
 
@@ -193,7 +212,12 @@ function navbar4(array $arr){
                             echo '<div onmouseleave="hideDroppy(\'screenHomeTabs'.$i.'\')" onmouseover="dropMeDownNow(\'screenHomeTabs'.$i.'\')" id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
                             
                         }else{
-                            echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                            if($arr["onePage"]=="on"){
+                                echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                            }else{
+                                echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                            }
+                            
                         }
                     }
                 }
@@ -201,10 +225,19 @@ function navbar4(array $arr){
 
                 if($arr["rightTabSwitch"]=="on"){
                     
-                    echo '<div id="logInOut" class="logInOut">
-                            <a style="color:'.$arr["tabsColor"].'" href="'.$arr["rightFirstTabLink"].'"><div id="login" class="login">'.$arr["rightFirstTab"].'</div></a>
-                            <a style="color:'.$arr["tabsColor"].'" href="'.$arr["rightSecondTabLink"].'"><div id="logout" class="logout activelog">'.$arr["rightSecondTab"].'</div></a>
-                        </div>';
+                    echo '<div id="logInOut" class="logInOut">';
+
+                        if($arr["onePage"]=="on"){
+                            echo '
+                                <div onclick="codea13SupperLoader(\''.$arr["rightFirstTabLink"].'\')" id="login" class="login">'.$arr["rightFirstTab"].'</div>
+                                <div onclick="codea13SupperLoader(\''.$arr["rightFirstTabLink"].'\')"  id="logout" class="logout activelog">'.$arr["rightSecondTab"].'</div>
+                            ';
+                        }else{
+                            echo '<a style="text-decoration:none; color:'.$arr["tabsColor"].'" href="'.$arr["rightFirstTabLink"].'"><div id="login" class="login">'.$arr["rightFirstTab"].'</div></a>
+                            <a style="text-decoration:none; color:'.$arr["tabsColor"].'" href="'.$arr["rightSecondTabLink"].'"><div id="logout" class="logout activelog">'.$arr["rightSecondTab"].'</div></a>';
+                        }
+                            
+                        echo '</div>';
                 }
             
         echo '</div>
@@ -226,7 +259,12 @@ function navbar4(array $arr){
                 $dropbagKeys = array_keys($dropbag);
                 echo '<div onmouseleave="mymyhide(\'screenHomeTabs'.$i.'dropdown\')" onmouseover="showmeDroppy(\'screenHomeTabs'.$i.'dropdown\')" id="screenHomeTabs'.$i.'dropdown" class="dropDownMenus">';
                     for($j=0; $j<sizeof($dropbag); $j++){
-                        echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="dropdownlistMenu">'.$dropbagKeys[$j].'</div></a>';
+                        if($arr["onePage"]=="on"){
+                            echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'\')" class="dropdownlistMenu">'.$dropbagKeys[$j].'</div>';
+                        }else{
+                            echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["list"][$dropbagKeys[$j]].'"><div class="dropdownlistMenu">'.$dropbagKeys[$j].'</div></a>';
+                        }
+                        
                     }
 
                 echo '</div>';

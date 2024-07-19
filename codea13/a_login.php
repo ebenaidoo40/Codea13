@@ -80,6 +80,7 @@ function a_login(array $arr)
     if (!isset($arr["popMessageTopSpace"])) {
         $arr["popMessageTopSpace"] = "50px";
     }
+    
 
     echo '
     <style>

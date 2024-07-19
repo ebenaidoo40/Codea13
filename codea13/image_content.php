@@ -21,95 +21,92 @@ function image_content(array $arr){
     if(!isset($arr["image"])){
         $arr["image"]="codea13/images/eben.webp";
     }
+    if(!isset($arr["mobileImageHeight"])){
+        $arr["mobileImageHeight"]="400px";
+    }
     echo'
     <style>
-        .mainDiv' . $GLOBALS["firstcard"] . '{
-            min-height:300px;
+        .mainDiv'.$GLOBALS["firstcard"].'{
+            width:100%;
+            overflow:hidden;
             background-color:transparent;
             position:relative;
+            display:flex;
+            min-height:400px;
         }
-        .topdiv' . $GLOBALS["firstcard"] . '{
-            height:70px;
+        .mainDiv'.$GLOBALS["firstcard"].'>*{
+            background-color:'.$arr["backgroundColor"].';
+            flex:1;
+            display:flex;
+            flex-direction:column;
+            position:relative;
+        }
+        .topDiv1'.$GLOBALS["firstcard"].', .topDiv2'.$GLOBALS["firstcard"].'{
+            height:120px;
             background-color:'.$arr["topBackgroundColor"].';
         }
-        .bottomdiv' . $GLOBALS["firstcard"] . '{
-            background-color:'.$arr["backgroundColor"].';
-            min-height:230px;
-            padding:20px 10% 20px 20px;
-            padding-left: calc(10% + 400px);
+        .floatimage'.$GLOBALS["firstcard"].'{
+            position:absolute;
+            height:100%;
+            width:100%;
+            top:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .image'.$GLOBALS["firstcard"].'{
+            height:100%;
+            object-fit:contain;
+        }
+        .contentbk'.$GLOBALS["firstcard"].'{
+            background-color:transparent;
+            padding:20px 50px;
             display:flex;
             flex-direction:column;
             justify-content:center;
+            flex:1;
         }
-        .title' . $GLOBALS["firstcard"] . '{
+        .title'.$GLOBALS["firstcard"].'{
             font-size:35px;
             font-weight:bold;
             color:'.$arr["titleColor"].';
         }
-        .titleContent' . $GLOBALS["firstcard"] . '{
+        .content'.$GLOBALS["firstcard"].'{
             color:'.$arr["textColor"].';
+            line-height:1.8;
         }
-        .floatdiv' . $GLOBALS["firstcard"] . '{
-            position:absolute;
-            max-width:30%;
-            height:100%;
-            top:0;
-            background-color:transparent;
-            left:10%;
-            border-radius:30%;
-            overflow:hidden;
-        }
-        .image' . $GLOBALS["firstcard"] . '{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position: 50% 0;
-        }
-        @media (max-width: 800px){
-            .floatdiv' . $GLOBALS["firstcard"] . '{
-                max-height:400px;
-                max-width:80%;
-                left:50%;
-                transform:translateX(-50%);
+        @media (max-width:800px){
+            .topDiv2'.$GLOBALS["firstcard"].'{
+                display:none;
             }
-            .bottomdiv' . $GLOBALS["firstcard"] . '{
-                text-align:center;
-                justify-content:center;
+            .mainDiv'.$GLOBALS["firstcard"].'{
+                flex-direction:column;
             }
+            .firstchild'.$GLOBALS["firstcard"].'{
+                flex-basis:'.$arr["mobileImageHeight"].';
+            }
+        }
+        
+        
     </style>
-    
-    <div class="mainDiv' . $GLOBALS["firstcard"] . '">
-        <div class="topdiv' . $GLOBALS["firstcard"] . '"></div>
-        <div id="content' . $GLOBALS["firstcard"] . '" class="bottomdiv' . $GLOBALS["firstcard"] . '">
-            <div class="title' . $GLOBALS["firstcard"] . '">'.$arr["title"].'</div>
-            <div class="titleContent' . $GLOBALS["firstcard"] . '">'.$arr["content"].'</div>
+
+    <div class="mainDiv'.$GLOBALS["firstcard"].'">
+        <div class="firstchild'.$GLOBALS["firstcard"].'">
+            <div class="topDiv1'.$GLOBALS["firstcard"].'"></div>
+            <div class="floatimage'.$GLOBALS["firstcard"].'">
+                <img class="image'.$GLOBALS["firstcard"].'" src="'.$arr["image"].'" />
+            </div>
         </div>
-        <div id="floatimage' . $GLOBALS["firstcard"] . '" class="floatdiv' . $GLOBALS["firstcard"] . '">
-            <img class="image' . $GLOBALS["firstcard"] . '"  src="'.$arr["image"].'">
+        <div class="secondchild'.$GLOBALS["firstcard"].'">
+            <div class="topDiv2'.$GLOBALS["firstcard"].'"></div>
+            <div class="contentbk'.$GLOBALS["firstcard"].'">
+                <div class="title'.$GLOBALS["firstcard"].'">'.$arr["title"].'</div>
+                <div class="content'.$GLOBALS["firstcard"].'">'.$arr["content"].'</div>
+            </div>
         </div>
     </div>
+    
 
-    <script>
-        var content' . $GLOBALS["firstcard"] . ' = document.querySelector("#content' . $GLOBALS["firstcard"] . '");
-        function alterWidth' . $GLOBALS["firstcard"] . '(){
-            var floatdiv' . $GLOBALS["firstcard"] . ' = document.querySelector("#floatimage' . $GLOBALS["firstcard"] . '");
-            var floatDim' . $GLOBALS["firstcard"] . ' = floatdiv' . $GLOBALS["firstcard"] . '.getBoundingClientRect();
-            var floatDimX' . $GLOBALS["firstcard"] . ' = floatDim' . $GLOBALS["firstcard"] . '.x;
-            var floatDimWidth' . $GLOBALS["firstcard"] . ' = floatDim' . $GLOBALS["firstcard"] . '.width;
-            var floatDimHeight' . $GLOBALS["firstcard"] . ' = floatDim' . $GLOBALS["firstcard"] . '.height;
-            var totalspace' . $GLOBALS["firstcard"] . ' = floatDimX' . $GLOBALS["firstcard"] . ' + floatDimWidth' . $GLOBALS["firstcard"] . ';
-            if(window.innerWidth > 800){
-                content' . $GLOBALS["firstcard"] . '.style.paddingLeft=totalspace' . $GLOBALS["firstcard"] . ' + 20 + "px";
-                content' . $GLOBALS["firstcard"] . '.style.paddingTop="20px";
-            }else{
-                content' . $GLOBALS["firstcard"] . '.style.padding="30px";
-                content' . $GLOBALS["firstcard"] . '.style.paddingTop=floatDimHeight' . $GLOBALS["firstcard"] . ' - 70 +"px";
-            }
-        }
-        alterWidth' . $GLOBALS["firstcard"] . '();
-        window.addEventListener("resize", alterWidth' . $GLOBALS["firstcard"] . ');
-
-    </script>
     ';
 
     $GLOBALS["firstcard"]++;
