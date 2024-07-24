@@ -80,6 +80,9 @@ function a_login(array $arr)
     if (!isset($arr["popMessageTopSpace"])) {
         $arr["popMessageTopSpace"] = "50px";
     }
+    if (!isset($arr["onePage"])) {
+        $arr["onePage"] = "off";
+    }
     
 
     echo '
@@ -263,10 +266,15 @@ input[type=\'password\']{
 
 <div class="failedpop" id="failedpop">Wrong input of credentials</div>
 <div class="successpop" id="emailsentpop" style="background-color: #7bffd3">' . $arr["resetSuccessMsg"] . '</div>
-<div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>
-<a href="' . $arr["loginSuccessLink"] . '"><div class="failedpop" id="userpglink">userpg link</div></a>
+<div class="successpop" id="successpop" style="background-color: #98fb98">Used Email</div>';
 
+if($arr["onePage"]=="on"){
+    echo '<a onclick="codea13SupperLoader(\''.$arr["loginSuccessLink"].'\')"><div class="failedpop" id="userpglink">userpg link</div></a>';
+}else{
+    echo '<a href="' . $arr["loginSuccessLink"] . '"><div class="failedpop" id="userpglink">userpg link</div></a>';
+}
 
+echo '
 <form id="form" class="form" >
 
 

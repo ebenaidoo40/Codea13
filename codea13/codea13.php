@@ -26,6 +26,7 @@ ob_start("sanitize_output");
 $firstcard = 1;
 echo "<script src=\"codea13/jquery-3.7.1.min.js\"></script>";
 include_once "one_page.php";
+include_once "subOnePage.php";
 include_once "universal.html";
 include_once "fxn.php";
 include_once "navbar.php";

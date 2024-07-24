@@ -1,7 +1,14 @@
 <?php 
-    function one_page(){
+    function one_page(array $arr){
+        if(!isset($arr["homePage"])){
+            $arr["homePage"]="index.php";
+        }
+        if(!isset($arr["loaderColor"])){
+            $arr["loaderColor"]="#ffffffa0";
+        }
+        
     echo '
-        <div id="castyHouseLoader" style="position:fixed; display:none; justify-content:center; align-items:center; width:100vw; height:100vh; left:0; z-index:99999; top:0; background-color:#ffffffa0">
+        <div id="castyHouseLoader" style="position:fixed; display:none; justify-content:center; align-items:center; width:100vw; height:100vh; left:0; z-index:99999; top:0; background-color:'.$arr["loaderColor"].'">
             <img src="codea13/assets/Spinner-1s-200px.svg" alt="" srcset="">
         </div>
 
@@ -40,7 +47,7 @@
     }
 
     window.onload = function() {
-        codea13SupperLoader("'.$_SESSION["CastyHouseRefreshStay"].'");
+        codea13SupperLoader("'.$arr["homePage"].'");
     };
     </script>';
     }

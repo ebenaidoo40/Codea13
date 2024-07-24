@@ -57,6 +57,9 @@ function form(array $arr)
     if (!isset($arr["onePage"])) {
         $arr["onePage"] = "off";
     }
+    if (!isset($arr["inject"])) {
+        $arr["inject"] = "";
+    }
 
 
 
@@ -227,6 +230,7 @@ input[type=\'password\']{
     opacity: 0;
     transition: all 1s;
     z-index: 9999;
+    left:0;
 }
 
 .successpop{
@@ -242,6 +246,7 @@ input[type=\'password\']{
     opacity: 0;
     transition: all 1s;
     z-index: 9999;
+    left:0;
 }
 
 
@@ -249,12 +254,14 @@ input[type=\'password\']{
     top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
     z-index: 9999;
+    left:0;
 }
 
 .popnow1{
     top: '.$arr["popMessageTopSpace"].';
     opacity: 1;
     z-index: 9999;
+    left:0;
 }
 
 .hidden{
@@ -509,7 +516,39 @@ form.addEventListener(\'submit\', createaccountnow);
                     setTimeout(() => {
                         document.querySelector("#homelink").click();
                     }, '.$arr["redirectTime"].');
-                }else{
+                }else if(res=="success"){
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.add("popnow");
+                        document.querySelector("#successpop").innerHTML="' . $arr["customSuccessMessage"] . '";
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#successpop").classList.remove("popnow");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+
+                    setTimeout(() => {
+                        '.$arr["inject"].'
+                    }, '.$arr["redirectTime"].');
+                }
+                else if(res.includes("Fatal error")){
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.add("popnow");
+                        document.querySelector("#failedpop").innerHTML="Fatal Error";
+                    }, 50);
+
+                    setTimeout(() => {
+                        document.querySelector("#failedpop").classList.remove("popnow");
+                        document.querySelector("#loginbutton").innerHTML="submit";
+                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                    }, 3000);
+
+                    setTimeout(() => {
+                        '.$arr["inject"].'
+                    }, '.$arr["redirectTime"].');
+                }
+                else{
                 
                     setTimeout(() => {
                         document.querySelector("#failedpop").classList.add("popnow");
