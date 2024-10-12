@@ -258,14 +258,14 @@ echo '
 
     if(isset($arr[$numberOfElements[$i]]["caution"])){
         echo '<p style="margin-top:-12px; color: '.$arr["cautionColor"].'; border:1px solid '.$arr["labelColor"].'; border-top:none; padding:5px">'.$arr[$numberOfElements[$i]]["caution"].'</p>
-        <div style="height:10px;"></div>
+        <div style="height:10px;"></div>';
         
-        <div class="checkboxdiv" style="display: flex;">
+        if($arr[$numberOfElements[$i]]["cautionTick"]=="on"){
+        echo '<div class="checkboxdiv" style="display: flex;">
             <input type="checkbox" name="showpassword'.$i.'" id="showpassword'.$i.'" required>
             <label id="showpasswordlabel'.$i.'" for="showpassword'.$i.'" class="marginleft_zero" style="color:'.$arr["cautionCheckTextColor"].'; font-weight:bold;">I have read the note</label>
-        </div>
-        
-        ';
+        </div>';
+        }
     }else{}
             
 echo '

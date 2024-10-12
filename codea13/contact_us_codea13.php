@@ -144,6 +144,36 @@ function contact_us_codea13(array $arr)
             top: '.$arr["popMessageTopSpace"].';
             opacity: 1;
         }
+
+        .codeaSpecialLoadersub{
+            width:20px;
+            height:20px;
+            background-color:white;
+            border-radius:50%;
+            overflow:hidden;
+            border:5px dotted #909099;
+            animation: eben 5s linear infinite;
+            position:absolute;
+        }
+
+        @-webkit-keyframes eben {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes eben{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
         
 
        
@@ -207,7 +237,7 @@ function contact_us_codea13(array $arr)
                         <textarea style="height:120px; resize:none" id="message" name="' . $arr["message"] . '" class="input" required></textarea>
                     </div>
 
-                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; cursor:pointer; color:white; padding:10px;">Submit</button>
+                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; cursor:pointer; color:white; padding:10px; display:flex; justify-content:center; align-items:center;">Submit</button>
 
                 </form>
             </div>
@@ -219,14 +249,12 @@ function contact_us_codea13(array $arr)
 
         <script>
     
-    var imageloader = \'<img  style="background:white; position:relative; top:2px; height:29px;  border-radius:50%; object-fit:contain" src="codea13/assets/Spinner-1s-200px.svg" alt="loading...">\';
-    
+    /* var imageloader = \'<img  style="background:white; position:relative; top:2px; height:29px;  border-radius:50%; object-fit:contain" src="codea13/assets/Spinner-1s-200px.svg" alt="loading...">\'; */
+    var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
     var form = document.querySelector("#form");
-    
     form.addEventListener("submit", createaccountnow);
 
     function createaccountnow(event){
-        
         
         $("input").blur();
         document.querySelector("#loginbutton").innerHTML=imageloader;

@@ -161,6 +161,9 @@ button{
     border: 1px solid ' . $arr["buttonBackgroundColor"] . ';
     border-radius: 5px;
     color: white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 label{
@@ -268,6 +271,36 @@ input[type=\'password\']{
     display: none;
 }
 
+.codeaSpecialLoadersub{
+    width:20px;
+    height:20px;
+    background-color:white;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px dotted #909099;
+    animation: eben 5s linear infinite;
+    position:absolute;
+}
+
+@-webkit-keyframes eben {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes eben{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
 .specialLabelCode{
     display:flex; 
     justify-content:center; 
@@ -333,6 +366,9 @@ echo '
             if (!isset($arr[$numberOfElements[$i]]["name"])) {
                 $arr[$numberOfElements[$i]]["name"] = "name" . $i;
             }
+            if (!isset($arr[$numberOfElements[$i]]["cautionTick"])) {
+                $arr[$numberOfElements[$i]]["cautionTick"] = "on";
+            }
             if (!isset($arr[$numberOfElements[$i]]["label"])) {
                 $arr[$numberOfElements[$i]]["label"] = $arr[$numberOfElements[$i]]["name"];
             }
@@ -389,11 +425,11 @@ echo '
 
                 echo '
             <div>
-            <label id="' . $arr[$numberOfElements[$i]][1] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]][1] . '"> ' . $arr[$numberOfElements[$i]][3] . $requriedHTML_builder . '</label>
+            <label id="' . $arr[$numberOfElements[$i]][1] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]][1] . '"> ' . $arr[$numberOfElements[$i]][4] . $requriedHTML_builder . '</label>
                 <select id="' . $arr[$numberOfElements[$i]][1] . '" name="' . $arr[$numberOfElements[$i]][1] . '" class="form-control masterinput" required>
                     <option value=""></option>';
 
-                for ($k = 4; $k < sizeof($arr[$numberOfElements[$i]]) - 5; $k++) {
+                for ($k = 5; $k < sizeof($arr[$numberOfElements[$i]]) - 6; $k++) {
                     if ($listVal == $arr[$numberOfElements[$i]][$k]) {
                         $selected = "selected";
                     } else {
@@ -407,12 +443,15 @@ echo '
                 if ($arr[$numberOfElements[$i]][2] != null) {
                     echo '
                 <p style="margin-top:-12px; color: ' . $arr["cautionColor"] . '; border:1px solid ' . $arr["labelColor"] . '; border-top:none; padding:5px">' . $arr[$numberOfElements[$i]][2] . '</p>
-                <div style="height:10px;"></div>
+                <div style="height:10px;"></div>';
                 
-                <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpassword' . $i . '" id="showpassword' . $i . '" required/>
-                    <label id="showpasswordlabel' . $i . '" for="showpassword' . $i . '" class="marginleft_zero" style="color:' . $arr["cautionCheckTextColor"] . '; font-weight:bold;">I have read the note</label>
-                </div>';
+                if($arr[$numberOfElements[$i]][3]=="on"){
+                    echo '<div class="checkboxdiv" style="display: flex;">
+                            <input type="checkbox" name="showpassword' . $i . '" id="showpassword' . $i . '" required/>
+                            <label id="showpasswordlabel' . $i . '" for="showpassword' . $i . '" class="marginleft_zero" style="color:' . $arr["cautionCheckTextColor"] . '; font-weight:bold;">I have read the note</label>
+                        </div>';
+                }
+
                 }
                 echo '</div>';
             } else if (isset($arr[$numberOfElements[$i]]["caution"])) {
@@ -426,14 +465,17 @@ echo '
                 <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
                 <input class="masterinput" type="' . $arr[$numberOfElements[$i]]["type"] . '" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" '.$accept.' required />
                 <p style="margin-top:-12px; color: ' . $arr["cautionColor"] . '; border:1px solid ' . $arr["labelColor"] . '; border-top:none; padding:5px">' . $arr[$numberOfElements[$i]]["caution"] . '</p>
-                <div style="height:10px;"></div>
+                <div style="height:10px;"></div>';
+
+                if($arr[$numberOfElements[$i]]["cautionTick"]=="on"){
+                    echo '<div class="checkboxdiv" style="display: flex;">
+                            <input type="checkbox" name="showpassword' . $i . '" id="showpassword' . $i . '" required/>
+                            <label id="showpasswordlabel' . $i . '" for="showpassword' . $i . '" class="marginleft_zero" style="color:' . $arr["cautionCheckTextColor"] . '; font-weight:bold;">I have read the note</label>
+                        </div>';
+                }
                 
-                <div class="checkboxdiv" style="display: flex;">
-                    <input type="checkbox" name="showpassword' . $i . '" id="showpassword' . $i . '" required/>
-                    <label id="showpasswordlabel' . $i . '" for="showpassword' . $i . '" class="marginleft_zero" style="color:' . $arr["cautionCheckTextColor"] . '; font-weight:bold;">I have read the note</label>
-                </div>
         
-            </div>';
+            echo '</div>';
             } else {
                 if(!isset($arr[$numberOfElements[$i]]["accept"])){
                     $accept="";
@@ -452,7 +494,7 @@ echo '
 
     echo '         
 
-        <button id="loginbutton" class="loginbutton" type="submit" style="align-items:center; cursor:pointer; color:' . $arr["buttonColor"] . '">Submit</button>
+        <button id="loginbutton" class="loginbutton" type="submit" style=" cursor:pointer; color:' . $arr["buttonColor"] . '">Submit</button>
   
     </form>
 
@@ -468,7 +510,8 @@ echo '
 
 <script>
 
-var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";
+/*var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>"; */
+var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
 var form = document.querySelector("#accountform");
 form.addEventListener(\'submit\', createaccountnow);
 

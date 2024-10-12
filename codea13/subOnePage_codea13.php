@@ -8,11 +8,11 @@
         }
         
     echo '
-        <div id="castyHouseLoader2" style="position:absolute; display:none; justify-content:center; align-items:center; width:100%; height:100%; left:0; z-index:5; top:0; background-color:'.$arr["loaderColor"].'">
+        <div id="castyHouseLoader2" style="position:fixed; display:none; justify-content:center; align-items:center; width:100vw; height:100vh; left:0; z-index:5; top:0; background-color:'.$arr["loaderColor"].'">
             <img src="codea13/assets/Spinner-1s-200px.svg" alt="" srcset="">
         </div>
 
-        <div id="castyHouseLoaderError2" style="position:absolute;  display:none; justify-content:center; align-items:center; width:100%; height:100%; left:0; z-index:5; top:0; background-color:'.$arr["loaderColor"].'">
+        <div id="castyHouseLoaderError2" style="position:fixed;  display:none; justify-content:center; align-items:center; width:100vw; height:100vh; left:0; z-index:5; top:0; background-color:'.$arr["loaderColor"].'">
             <div style="background-color:black; color:white; font-weight:bolder; width:fit-content; border-radius:50px; padding:20px;">Network Error</div>
         </div>
     <div id="codea13MasterBody2"></div>

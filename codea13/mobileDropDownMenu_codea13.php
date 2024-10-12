@@ -89,6 +89,7 @@ function mobileDropDownMenu_codea13(array $arr){
             display:none;
             top:0px;
             left:0px;
+            transform:none;
             z-index:1000;
             overflow-x:hidden;
             transition: all 0.5s;
@@ -106,7 +107,7 @@ function mobileDropDownMenu_codea13(array $arr){
             height:0px;
             width:'.$sliderSubWidth.';
             overflow:hidden;
-            transition: height 0.5s;
+            transition: height 0.5s ;
         }
         .pulllist' . $GLOBALS["firstcard"] . '{
             padding:15px 20px 15px 40px;
@@ -123,6 +124,9 @@ function mobileDropDownMenu_codea13(array $arr){
             
         
             .closemenu' . $GLOBALS["firstcard"] . '{
+                transform:translateX(-'.$arr["sliderWidth"].');
+            }
+            .closemenuspirit' . $GLOBALS["firstcard"] . '{
                 width:0px;
             }
         }
@@ -130,7 +134,7 @@ function mobileDropDownMenu_codea13(array $arr){
     </style>
     <div id="mobilemenu' . $GLOBALS["firstcard"] . '" class="mobilemenu' . $GLOBALS["firstcard"] . '">'.$menu_icon.'</div>
 
-    <div onclick="hideSliderMenu' . $GLOBALS["firstcard"] . '()" id="mobileDropdownbk' . $GLOBALS["firstcard"] . '" class="mobileDropdownbk' . $GLOBALS["firstcard"] . ' closemenu' . $GLOBALS["firstcard"] . '"></div>
+    <div onclick="hideSliderMenu' . $GLOBALS["firstcard"] . '()" id="mobileDropdownbk' . $GLOBALS["firstcard"] . '" class="mobileDropdownbk' . $GLOBALS["firstcard"] . ' closemenuspirit' . $GLOBALS["firstcard"] . '"></div>
     <div id="listContainer' . $GLOBALS["firstcard"] . '" class="listContainer' . $GLOBALS["firstcard"] . ' closemenu' . $GLOBALS["firstcard"] . '">
         <div style="position:sticky; z-index:1001;padding:10px 20px;box-sizing:border-box; display:flex; align-items:center; top:-2px; width:100%; height:70px; background-color:'.$arr["titleBackgroundColor"].';">'.$arr["title"].'</div>';
 
@@ -185,12 +189,12 @@ function mobileDropDownMenu_codea13(array $arr){
 
     <script>
         function hideSliderMenu' . $GLOBALS["firstcard"] . '(){
-            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.add("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.add("closemenuspirit' . $GLOBALS["firstcard"] . '");
             document.querySelector("#listContainer' . $GLOBALS["firstcard"] . '").classList.add("closemenu' . $GLOBALS["firstcard"] . '");
             document.querySelector("#mobilemenu' . $GLOBALS["firstcard"] . '").innerHTML=\'' . $menu_icon . '\';
         }
         function showSliderMenu' . $GLOBALS["firstcard"] . '(){
-            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.remove("closemenu' . $GLOBALS["firstcard"] . '");
+            document.querySelector("#mobileDropdownbk' . $GLOBALS["firstcard"] . '").classList.remove("closemenuspirit' . $GLOBALS["firstcard"] . '");
             document.querySelector("#listContainer' . $GLOBALS["firstcard"] . '").classList.remove("closemenu' . $GLOBALS["firstcard"] . '");
             document.querySelector("#mobilemenu' . $GLOBALS["firstcard"] . '").innerHTML=\'' . $close_icon . '\';
         }

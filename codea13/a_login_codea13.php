@@ -190,6 +190,9 @@ button{
     border-radius: 5px;
     color: ' . $arr["buttonColor"] . ';
     cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 label{
@@ -261,6 +264,38 @@ input[type=\'password\']{
     display: none;
 }
 
+.codeaSpecialLoadersub{
+    width:20px;
+    height:20px;
+    background-color:white;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px dotted #909099;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation: eben 5s linear infinite;
+}
+
+@-webkit-keyframes eben {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes eben{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
 
 </style>
 
@@ -317,7 +352,8 @@ echo '
 
 <script>
     
-    var imageloader = "<img  style=\'background:white; position:relative; top:-5px; height:29px;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";
+    /*var imageloader = "<img  style=\'background:white; position:relative; top:-5px; height:29px;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>";*/
+    var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
     var form = document.querySelector("#form");
     form.addEventListener("submit", createaccountnow);
 
