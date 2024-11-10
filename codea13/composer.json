@@ -1,0 +1,12 @@
+{
+    "name": "codea13/codea13",
+    "description": "A set of PHP files to quickly build websites",
+    "type": "library",
+    "autoload": {
+      "psr-4": {
+        "YourNamespace\\": "src/codea13.php"
+      }
+    },
+    "require": {}
+  }
+  
