@@ -2,12 +2,13 @@
   "name": "codea13/codea13",
   "description": "A set of PHP files to quickly build websites",
   "type": "library",
-  "version": "1.0.0",  
-  "minimum-stability": "dev",  
-  "prefer-stable": true,  
+  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT", 
   "autoload": {
     "psr-4": {
-      "YourNamespace\\": "src/codea13/codea13.php"
+      "YourNamespace\\": "src/"
     }
   },
   "require": {}
