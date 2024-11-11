@@ -1,5 +1,5 @@
 {
-  "name": "rezenebe/codea13",
+  "name": "codea13/codea13",
   "description": "A set of PHP files to quickly build websites",
   "type": "library",
   "version": "1.0.0",
@@ -8,7 +8,7 @@
   "license": "MIT", 
   "autoload": {
     "psr-4": {
-      "rezenebe\\": "codea13/"
+      "codea13\\": "codea13/"
     }
   },
   "require": {}
