@@ -1,21 +1,52 @@
-MIT License
+Codea13 License
 
-Copyright (c) 2024 CODEA13
+Copyright (c) [Year] [Your Name or Organization]
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+The Software is provided under the following terms:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. **Free to Use**:  
+   The Software is free to use for personal, educational, and non-commercial purposes only. It may not be used for any commercial purposes such as selling, licensing, or using the Software as part of a commercial product.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. **No Modification**:  
+   You are not allowed to modify, adapt, reverse engineer, or create derivative works based on the Software. Any unauthorized modification of the Software is prohibited.
+
+3. **No Redistribution**:  
+   You are not permitted to redistribute, sublicense, sell, or share the Software, in whole or in part, whether in its original or modified form.
+
+4. **No Warranty**:  
+   The Software is provided "as-is," without warranty of any kind, express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.  
+   - **Important**: In no event shall the copyright holder be liable for any claims, damages, or other liabilities arising from the use of the Software. Users are advised to test the Software thoroughly before deploying it in any system.
+
+5. **Limitations on Liability**:  
+   The authors and copyright holders are not responsible for any damages (including, but not limited to, loss of data, business interruption, or any other direct or indirect damage) resulting from the use or inability to use the Software.
+
+6. **Intellectual Property**:  
+   All rights, title, and interest in the Software remain with the original author. The Software is protected by intellectual property laws and may not be used outside the terms of this license.
+
+7. **Updates and Support**:  
+   The Software is provided "as-is" without any guarantees of updates, support, or improvements. The author reserves the right to discontinue updates or support at any time without prior notice.
+
+8. **Non-transferable**:  
+   This license is non-transferable, and you may not assign or sublicense your rights to the Software to third parties.
+
+9. **Compliance with Local Laws**:  
+   Users are responsible for ensuring that their use of the Software complies with all applicable local laws and regulations. The author does not assume responsibility for any legal issues arising from the use of the Software.
+
+10. **Governing Law**:  
+    This license agreement is governed by the laws of [Your Country/Region], and any disputes will be resolved in accordance with the jurisdiction of [your local court or jurisdiction].
+
+---
+
+**Important Notes:**
+- **Testing and Verification**: Users are strongly encouraged to test the Software in a controlled environment before using it in a production setting. The author is not responsible for any issues caused by the Software’s use.
+- **No Commercial Redistribution**: Any use of the Software in a product that is sold or distributed commercially, or in any manner intended for profit, is explicitly prohibited by this license.
+- **No Reverse Engineering**: This includes, but is not limited to, decompiling, disassembling, or otherwise attempting to discover the source code or underlying structure of the Software.
+- **Support Disclaimer**: While the Software is offered freely, the author does not guarantee ongoing support or future updates.
+
+---
+
+### Steps to Use:
+
+1. **Place the File**: Save the above content as `LICENSE.txt` (or `LICENSE`) in the root directory of your project.
+2. **Composer Update**: Make sure to reference the license in your `composer.json` by adding `"license": "proprietary"` or `"license": "Codea13 License"`.
+
