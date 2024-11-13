@@ -4,7 +4,7 @@ function video_home_codea13(array $arr)
 {
 
     if (!isset($arr["video"])) {
-        $arr["video"] = "codea13/video/codea13.mp4";
+        $arr["video"] = "vendor/rezenebe/codea13/src/video/codea13.mp4";
     }
 
     if (!isset($arr["title"])) {

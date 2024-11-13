@@ -9,7 +9,7 @@ function video_content_codea13(array $arr)
         $arr["titlesub"] = "Explore now for easy web development";
     }
     if (!isset($arr["video"])) {
-        $arr["video"] = "codea13/video/codea13.mp4";
+        $arr["video"] = "vendor/rezenebe/codea13/src/video/codea13.mp4";
     }
     if (!isset($arr["backgroundColor"])) {
         $arr["backgroundColor"] = "#f0f0ff";

@@ -1,5 +1,5 @@
 <script>
-var url = "codea13/jquery-3.7.1.min.js";
+var url = "vendor/rezenebe/codea13/src/jquery-3.7.1.min.js";
 var script = document.createElement('script');
 script.src = url;
 script.onload = function() {
