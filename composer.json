@@ -7,9 +7,9 @@
   "prefer-stable": true,
   "license": "MIT", 
   "autoload": {
-    "psr-4": {
-      "rezenebe\\": "/"
-    }
+    "files": [
+      "src/codea13.php"
+    ]
   },
   "require": {}
 }
