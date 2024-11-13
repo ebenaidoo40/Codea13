@@ -9,7 +9,7 @@ function slant_block_codea13(array $arr)
         $arr["titlesub"] = "Explore now for easy web development";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["backgroundColor"])) {
         $arr["backgroundColor"] = "#d867ae";
@@ -93,7 +93,7 @@ function slant_block_codea13(array $arr)
             position:relative;
             background-color:' . $arr["backgroundColor"] . ';
             height:100px;
-            -webkit-mask-image:url("codea13/assets/down_triangle.svg");
+            -webkit-mask-image:url("vendor/rezenebe/codea13/src/assets/down_triangle.svg");
             mask-repeat:no-repeat;
             mask-size: 100% 100%;
         }

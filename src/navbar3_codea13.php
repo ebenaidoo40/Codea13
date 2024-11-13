@@ -36,7 +36,7 @@ function navbar3_codea13(array $arr)
         $arr["tabTextColor"] = "black";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["menuButtonColor"])) {
         $arr["menuButtonColor"] = "black";

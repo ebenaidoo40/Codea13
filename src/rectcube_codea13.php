@@ -17,7 +17,7 @@ function rectcube_codea13(array $arr)
         $arr["left"] = "none";
     }
     if (!isset($arr["content"])) {
-        $arr["content"] = "<div style=\"color:purple; font-size:30px; font-weight:bolder\">CODEA 13 CARD</div><img style=\"width:100%; object-fit:contain\" src=\"codea13/images/codea13.png\">";
+        $arr["content"] = "<div style=\"color:purple; font-size:30px; font-weight:bolder\">CODEA 13 CARD</div><img style=\"width:100%; object-fit:contain\" src=\"vendor/rezenebe/codea13/src/images/codea13.png\">";
     }
 
     if (!isset($arr["boxShadow"])) {

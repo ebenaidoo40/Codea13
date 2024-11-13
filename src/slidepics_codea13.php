@@ -11,7 +11,7 @@ function slidepics_codea13(array $arr)
         }
     }
 
-    $slk = "codea13/images/eben.webp";
+    $slk = "vendor/rezenebe/codea13/src/images/eben.webp";
 
     if (!isset($arr["images"])) {
         $arr["images"] = [$slk, $slk, $slk, $slk, $slk, $slk];
@@ -22,7 +22,7 @@ function slidepics_codea13(array $arr)
     }
 
     if (!isset($arr["backgroundImage"])) {
-        $backgroundImageSlider = "url(\"codea13/images/blackStarBackground.webp\")";
+        $backgroundImageSlider = "url(\"vendor/rezenebe/codea13/src/images/blackStarBackground.webp\")";
     } else {
         if ($arr["backgroundImage"] == "none") {
             $backgroundImageSlider = "none";

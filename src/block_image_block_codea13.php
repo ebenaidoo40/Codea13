@@ -28,7 +28,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         $arr["title2"] = "Heading two goes here";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13_2.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13_2.png";
     }
     if (!isset($arr["titleColor"])) {
         $arr["titleColor"] = "white";

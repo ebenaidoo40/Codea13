@@ -42,7 +42,7 @@ labore sed, deserunt minima fugiat inventore expedita.";
         $arr["listColor"] = $arr["textColor"];
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13_2.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13_2.png";
     }
     if (!isset($arr["pinRadius"])) {
         $arr["pinRadius"] = "50%";

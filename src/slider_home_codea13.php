@@ -2,13 +2,13 @@
 
 function slider_home_codea13(array $arr){
     if(!isset($arr["image1"])){
-        $arr["image1"]="codea13/images/codea13.png";
+        $arr["image1"]="vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if(!isset($arr["image2"])){
-        $arr["image2"]="codea13/images/codea13.png";
+        $arr["image2"]="vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if(!isset($arr["image3"])){
-        $arr["image3"]="codea13/images/codea13.png";
+        $arr["image3"]="vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if(!isset($arr["title1"])){
         $arr["title1"]="Enter First Title Here";
@@ -194,7 +194,7 @@ function slider_home_codea13(array $arr){
         for ($i = 0; $i < sizeof($arr); $i++) {
             if (is_array($arr[$mykeys[$i]])) {
                 if (!isset($arr[$mykeys[$i]]["image"])) {
-                    $arr[$mykeys[$i]]["image"] = "codea13/images/codea13.png";
+                    $arr[$mykeys[$i]]["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
                 }
                 if (!isset($arr[$mykeys[$i]]["title"])) {
                     $arr[$mykeys[$i]]["title"] = "New Title Here";

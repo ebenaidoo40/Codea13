@@ -32,7 +32,7 @@ function circleImage_codea13(array $arr)
         $arr["setMiddleAtMax"] = "450";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["animation"]) || $arr["animation"] == "on") {
         $arr["animation"] = "scale(0.5)";
@@ -41,7 +41,7 @@ function circleImage_codea13(array $arr)
         $arr["animation"] = "scale(1)";
     }
     if ($arr["image"] == "transparent") {
-        $arr["image"] = "codea13/images/transparent.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/transparent.png";
     }
 
 

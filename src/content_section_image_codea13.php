@@ -10,7 +10,7 @@ function content_section_image_codea13(array $arr)
         $arr["titlesub"] = "Explore now for easy web development";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["backgroundColor"])) {
         $arr["backgroundColor"] = "#f0f0ff";

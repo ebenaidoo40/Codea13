@@ -92,7 +92,7 @@ function split_block_codea13(array $arr)
     }
 
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/eben.webp";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/eben.webp";
     }
     if (!isset($arr["reviewText"])) {
         $arr["reviewText"] = "sadf asdf saf asf asdf asd asdf asfasf sadf asdf asdf asdf asdfasdfasfasf asd sdaf sadf asdf asdf as aslkd lksad fjlksdf lkjsdaf jlksad lksdf jklsdlk fjsdjlkf lksadf";
@@ -115,7 +115,7 @@ function split_block_codea13(array $arr)
         $arr["backgroundColor"] = "white";
     }
     if (!isset($arr["middleBackgroundImage"])) {
-        $arr["middleBackgroundImage"] = "url(codea13/images/blackStarBackground.webp)";
+        $arr["middleBackgroundImage"] = "url(vendor/rezenebe/codea13/src/images/blackStarBackground.webp)";
         $master_middle_background_color_switcher = "#00000020";
     } else {
         $arr["middleBackgroundImage"] = "url(" . $arr["middleBackgroundImage"] . ")";

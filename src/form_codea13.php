@@ -510,7 +510,7 @@ echo '
 
 <script>
 
-/*var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>"; */
+/*var imageloader = "<img  style=\'height:29px; margin-top:-5px; background-color:white;  border-radius:50%; object-fit:contain\' src=\'vendor/rezenebe/codea13/src/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>"; */
 var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
 var form = document.querySelector("#accountform");
 form.addEventListener(\'submit\', createaccountnow);

@@ -3,7 +3,7 @@ function pic_con_button_codea13(array $arr)
 {
 
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["buttonName"])) {
         $arr["buttonName"] = "Book Me";

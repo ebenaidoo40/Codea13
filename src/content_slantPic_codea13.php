@@ -5,7 +5,7 @@ function content_slantPic_codea13(array $arr){
         $arr["title"]="TITLE GOES HERE";
     }
     if(!isset($arr["image"])){
-        $arr["image"]="codea13/images/codea13.png";
+        $arr["image"]="vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if(!isset($arr["titleColor"])){
         $arr["titleColor"]="purple";
@@ -64,7 +64,7 @@ function content_slantPic_codea13(array $arr){
                 padding:0 10%;
             }
             .masterBlock' . $GLOBALS["firstcard"] . '{
-                background: url("codea13/images/bk'.$arr["bkType"].'.png");
+                background: url("vendor/rezenebe/codea13/src/images/bk'.$arr["bkType"].'.png");
             }
 
             .mainBlock' . $GLOBALS["firstcard"] . '{

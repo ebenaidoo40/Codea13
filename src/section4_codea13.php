@@ -7,16 +7,16 @@ function section4_codea13(array $arr)
         $arr["title"] = "Four Section Block";
     }
     if (!isset($arr["pic1"])) {
-        $arr["pic1"] = "codea13/images/codea13.png";
+        $arr["pic1"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["pic2"])) {
-        $arr["pic2"] = "codea13/images/codea13.png";
+        $arr["pic2"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["pic3"])) {
-        $arr["pic3"] = "codea13/images/codea13.png";
+        $arr["pic3"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["pic4"])) {
-        $arr["pic4"] = "codea13/images/codea13.png";
+        $arr["pic4"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["title1"])) {
         $arr["title1"] = "Title 1";

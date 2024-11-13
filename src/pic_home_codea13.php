@@ -2,13 +2,13 @@
 function pic_home_codea13(array $arr)
 {
     if (!isset($arr["image1"])) {
-        $arr["image1"] = "codea13/images/codea13.png";
+        $arr["image1"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["image2"])) {
-        $arr["image2"] = "codea13/images/codea13.png";
+        $arr["image2"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["image3"])) {
-        $arr["image3"] = "codea13/images/codea13.png";
+        $arr["image3"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["backgroundImage"])) {
         $arr["backgroundImage"] = "none";

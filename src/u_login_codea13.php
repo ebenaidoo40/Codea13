@@ -313,7 +313,7 @@ echo '</form>
 
 
 <script>
-    /*var imageloader = "<img  style=\'background:white; position:relative; top:-5px; height:29px;  border-radius:50%; object-fit:contain\' src=\'codea13/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>"; */
+    /*var imageloader = "<img  style=\'background:white; position:relative; top:-5px; height:29px;  border-radius:50%; object-fit:contain\' src=\'vendor/rezenebe/codea13/src/assets/Spinner-1s-200px.svg\' alt=\'loading...\'>"; */
     var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
     var form = document.querySelector("#form");
     form.addEventListener("submit", createaccountnow);

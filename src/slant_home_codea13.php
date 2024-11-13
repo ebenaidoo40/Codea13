@@ -3,7 +3,7 @@
 function slant_home_codea13(array $arr)
 {
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["innerBorderColor"])) {
         $arr["innerBorderColor"] = "orange";
@@ -56,7 +56,7 @@ function slant_home_codea13(array $arr)
             bottom:0px;
             height:200px;
             background-color:' . $arr["innerBorderColor"] . ';
-            -webkit-mask-image:url("codea13/assets/scalene.svg");
+            -webkit-mask-image:url("vendor/rezenebe/codea13/src/assets/scalene.svg");
             mask-repeat:no-repeat;
             mask-size: 100% 100%;
         }
@@ -68,7 +68,7 @@ function slant_home_codea13(array $arr)
             bottom:0px;
             height:120px;
             background-color:' . $arr["outerBorderColor"] . ';
-            -webkit-mask-image:url("codea13/assets/right_angle_triangle.svg");
+            -webkit-mask-image:url("vendor/rezenebe/codea13/src/assets/right_angle_triangle.svg");
             mask-repeat:no-repeat;
             mask-size: 100% 100%;
         }

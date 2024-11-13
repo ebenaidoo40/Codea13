@@ -9,7 +9,7 @@ Facere mollitia maxime accusamus vero incidunt sit.";
         $arr["content"] = $lorem;
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["review"])) {
         $arr["review"] = ["client 1" => $lorem, "client 2" => $lorem, "client 3" => $lorem,];

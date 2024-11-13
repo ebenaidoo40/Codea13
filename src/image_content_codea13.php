@@ -19,7 +19,7 @@ function image_content_codea13(array $arr){
         $arr["backgroundColor"]="blue";
     }
     if(!isset($arr["image"])){
-        $arr["image"]="codea13/images/eben.webp";
+        $arr["image"]="vendor/rezenebe/codea13/src/images/eben.webp";
     }
     if(!isset($arr["mobileImageHeight"])){
         $arr["mobileImageHeight"]="400px";

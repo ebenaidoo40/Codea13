@@ -9,7 +9,7 @@ function home2_codea13(array $arr)
         $arr["titlesub"] = "Explore now for easy web development";
     }
     if (!isset($arr["image"])) {
-        $arr["image"] = "codea13/images/codea13.png";
+        $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["textColor"])) {
         $arr["textColor"] = "white";
@@ -33,7 +33,7 @@ function home2_codea13(array $arr)
         $arr["titleBackgroundColor"] = "none";
     }
     if (!isset($arr["backgroundImage"])) {
-        $arr["backgroundImage"] = "codea13/images/codea13.png";
+        $arr["backgroundImage"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["buttonName"])) {
         $arr["buttonName"] = "button";

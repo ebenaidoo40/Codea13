@@ -43,7 +43,7 @@ function video_content_codea13(array $arr)
     }
 
     if (!isset($arr["backgroundImage"])) {
-        $backgroundImageSlider2 = "url(\"codea13/images/blackStarBackground.webp\")";
+        $backgroundImageSlider2 = "url(\"vendor/rezenebe/codea13/src/images/blackStarBackground.webp\")";
     } else {
         if ($arr["backgroundImage"] == "none") {
             $backgroundImageSlider2 = "none";

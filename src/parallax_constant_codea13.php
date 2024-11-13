@@ -4,10 +4,10 @@ function parallax_constant_codea13(array $arr)
 
 
     if (!isset($arr["backgroundImage"])) {
-        $backgroundImage4 = "url(\"codea13/images/eben.webp\")";
+        $backgroundImage4 = "url(\"vendor/rezenebe/codea13/src/images/eben.webp\")";
     } else {
         if ($arr["backgroundImage"] == "none") {
-            $backgroundImage4 = "url(\"codea13/images/eben.webp\")";
+            $backgroundImage4 = "url(\"vendor/rezenebe/codea13/src/images/eben.webp\")";
         } else {
             $backgroundImage4 = "url(" . $arr["backgroundImage"] . ")";
         }

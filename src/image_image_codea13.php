@@ -5,10 +5,10 @@ function image_image_codea13(array $arr)
 
 
     if (!isset($arr["pic1"])) {
-        $arr["pic1"] = "codea13/images/codea13.png";
+        $arr["pic1"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
     if (!isset($arr["pic2"])) {
-        $arr["pic2"] = "codea13/images/codea13.png";
+        $arr["pic2"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
 
     if (!isset($arr["title1"])) {
