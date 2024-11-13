@@ -54,6 +54,7 @@ function sanitize_output($buffer)
 
 ob_start("sanitize_output");
 
+global $firstcard;
 $firstcard = 1;
 /*-- jQuery v3.7.1 | (c) JS Foundation and other contributors | jquery.org/license */
 include_once "one_page_codea13.php";
