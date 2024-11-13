@@ -2,7 +2,7 @@
   "name": "rezenebe/codea13",
   "description": "A set of PHP files to quickly build websites",
   "type": "library",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "license": "MIT", 
