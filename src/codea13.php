@@ -58,11 +58,16 @@ global $firstcard;
 $firstcard = 1;
 /*-- jQuery v3.7.1 | (c) JS Foundation and other contributors | jquery.org/license */
 include_once "one_page_codea13.php";
+include_once "our_services_codea13.php";
+include_once "video_list.php";
+include_once "subscribe_codea13.php";
+include_once "pullNotification_codea13.php";
 include_once "subOnePage_codea13.php";
 include_once "universal.html";
 include_once "fxn.php";
 include_once "navbar_codea13.php";
 include_once "navbar2_codea13.php";
+include_once "navbar5_codea13.php";
 include_once "hardcard_codea13.php";
 include_once "softcard_codea13.php";
 include_once "card_container_codea13.php";

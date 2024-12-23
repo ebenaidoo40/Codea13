@@ -42,4 +42,6 @@ function title_codea13(array $arr)
 
         <div class="title' . $GLOBALS["firstcard"] . '">' . $arr["title"] . '</div>
     ';
+
+    $GLOBALS["firstcard"]++;
 }

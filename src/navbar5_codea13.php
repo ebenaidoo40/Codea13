@@ -1,5 +1,5 @@
 <?php
-function navbar4_codea13(array $arr){
+function navbar5_codea13(array $arr){
     if(!isset($arr["homeLink"])){
         $arr["homeLink"]="/";
     }
@@ -39,6 +39,9 @@ function navbar4_codea13(array $arr){
     if(!isset($arr["seperatorColor"])){
         $arr["seperatorColor"]="#444444";
     }
+    if(!isset($arr["navSeperatorColor"])){
+        $arr["navSeperatorColor"]="red";
+    }
     if(!isset($arr["onePage"])){
         $arr["onePage"]="off";
     }
@@ -51,9 +54,12 @@ function navbar4_codea13(array $arr){
         background-color:'.$arr["backgroundColor"].';
         height:70px;
         display:flex;
-        position:relative;
+        position:sticky;
+        top:0px;
+        z-index:999;
         padding:10px 80px 10px 80px;
         box-sizing:border-box;
+        box-shadow:2px 0 4px 2px '.$arr["navSeperatorColor"].';
     }
     .navBar{
         position:absolute;
@@ -174,7 +180,7 @@ function navbar4_codea13(array $arr){
             display:none;
         }
         .navBar{
-            width:100%;
+            width:calc(100% - 40px);
         }
         
     }
@@ -275,28 +281,7 @@ function navbar4_codea13(array $arr){
     echo '
 
     <script>
-    var observer = new IntersectionObserver((entries)=>{
-        entries.forEach((entry) => {
-            if(entry.isIntersecting){
-                document.querySelector("#navBar").classList.remove("tabview");
-                if(document.querySelector("#logInOut")){
-                    document.querySelector("#logInOut").classList.remove("shifter");
-                }
-            }else{
-                document.querySelector("#navBar").classList.add("tabview");
-                if(document.querySelector("#logInOut")){
-                    document.querySelector("#logInOut").classList.add("shifter");
-                }
-            }
-        });
-    },
-    {
-        threshold:0.1,
-    }
-    );
 
-    var hiddenElements = document.querySelectorAll(".specialline");
-    hiddenElements.forEach((el)=>observer.observe(el));
 
     function dropMeDownNow(id){
         var target = document.querySelector("#" + id);

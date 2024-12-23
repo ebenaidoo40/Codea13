@@ -82,7 +82,26 @@ function set_height($parent, $child, $stretch){
     ';
 }
 
-
-
-
 ?>
+
+
+<script>
+    function pullNotification_codea13(id, message, colors){
+        setTimeout(() => {
+            document.querySelector("#"+id).style.top="50%";
+            document.querySelector("#"+id).style.left="50%";
+            document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+            document.querySelector("#"+id).style.opacity="1";
+            document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
+            document.querySelector("#"+id+"notificationmessage").innerHTML=message;
+        }, 50);
+
+        setTimeout(() => {
+            document.querySelector("#"+id).style.top="-200px";
+            document.querySelector("#"+id).style.left="50%";
+            document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+            document.querySelector("#"+id).style.opacity="1";
+        }, 5000);
+
+    }
+</script>
