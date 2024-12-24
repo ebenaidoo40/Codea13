@@ -57,7 +57,7 @@ function eben_str_arr2($string){
     return $keybag2;
 }
 
-function set_height($parent, $child, $stretch){
+function set_height_codea13($parent, $child, $stretch){
     echo '
     <script>
         function heightChanger'.$GLOBALS["firstcard"].'(){

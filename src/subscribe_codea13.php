@@ -9,14 +9,23 @@ function subscribe_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){
         $arr["backgroundColor"]="#01796f";
     }
+    if(!isset($arr["inputType"])){
+        $arr["inputType"]="email";
+    }
+    if(!isset($arr["placeholder"])){
+        $arr["placeholder"]="Enter your email";
+    }
     if(!isset($arr["buttonBackgroundColor"])){
         $arr["buttonBackgroundColor"]="#1BC001";
     }
     if(!isset($arr["buttonColor"])){
         $arr["buttonColor"]="white";
     }
-    if(!isset($arr["emailBackgroundColor"])){
-        $arr["emailBackgroundColor"]="#007971";
+    if(!isset($arr["buttonHoverColor"])){
+        $arr["buttonHoverColor"]="white";
+    }
+    if(!isset($arr["inputBackgroundColor"])){
+        $arr["inputBackgroundColor"]="#007971";
     }
     if(!isset($arr["innerBackgroundColor"])){
         $arr["innerBackgroundColor"]="#016960";
@@ -27,6 +36,16 @@ function subscribe_codea13(array $arr){
     }
     if(!isset($arr["placeholderColor"])){
         $arr["placeholderColor"]="black";
+    }
+    if(!isset($arr["note"])){
+        $arr["note"]="Subscribe Now";
+    }
+    if(!isset($arr["buttonName"])){
+        $arr["buttonName"]="Subscribe";
+    }
+
+    if(!isset($arr["buttonBackgroundHoverColor"])){
+        $arr["buttonBackgroundHoverColor"]="#1BC001";
     }
 
     if(!isset($arr["injectSuccess"])){
@@ -93,6 +112,21 @@ function subscribe_codea13(array $arr){
                 animation: eben' . $GLOBALS["firstcard"] . ' 5s linear infinite;
                 position:absolute;
             }
+            .subscribeButton' . $GLOBALS["firstcard"] . '{
+                padding: 8px 55px; 
+                cursor:pointer; 
+                background-color:'.$arr["buttonBackgroundColor"].';
+                height:35px; 
+                display:flex; 
+                justify-content:center;
+                align-items:center; 
+                border-radius:5px; 
+                color:'.$arr["buttonColor"].';
+            }
+                .subscribeButton' . $GLOBALS["firstcard"] . ':hover{
+                background-color:'.$arr["buttonBackgroundHoverColor"].';
+                color:'.$arr["buttonHoverColor"].';
+            }
 
         @-webkit-keyframes eben' . $GLOBALS["firstcard"] . ' {
             0% {
@@ -118,10 +152,10 @@ function subscribe_codea13(array $arr){
             <div class="innerbk' . $GLOBALS["firstcard"] . '">
                 <div class="susimage' . $GLOBALS["firstcard"] . '"><img class="image' . $GLOBALS["firstcard"] . '" src="'.$arr["logo"].'" alt=""></div>
                 <div class="innerFormBk' . $GLOBALS["firstcard"] . '">
-                    <div style="font-weight:bold; color:white">Subscribe Now</div>
+                    <div style="font-weight:bold; color:white">'.$arr["note"].'</div>
                     <form id="subscribe_codea13' . $GLOBALS["firstcard"] . '" class="form' . $GLOBALS["firstcard"] . '" >
-                        <input id="subscribedEmailCodea13' . $GLOBALS["firstcard"] . '" style="background-color: '.$arr["emailBackgroundColor"].'; padding: 0 8px; height:35px; border:1px solid white; color:white" type="email" placeholder="Enter you Email" required>
-                        <button id="subscribebutton' . $GLOBALS["firstcard"] . '" style="padding: 8px 55px; cursor:pointer; background-color:'.$arr["buttonBackgroundColor"].';height:35px; display:flex; justify-content:center;align-items:center; border-radius:5px; color:'.$arr["buttonColor"].'">Subscribe</button>
+                        <input id="subscribedEmailCodea13' . $GLOBALS["firstcard"] . '" style="background-color: '.$arr["inputBackgroundColor"].'; padding: 0 8px; height:35px; border:1px solid white; color:white" type="'.$arr["inputType"].'" placeholder="'.$arr["placeholder"].'" required>
+                        <button id="subscribebutton' . $GLOBALS["firstcard"] . '" class="subscribeButton' . $GLOBALS["firstcard"] . '" >'.$arr["buttonName"].'</button>
                     </form>
                 </div>
             </div>
