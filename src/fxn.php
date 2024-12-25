@@ -82,6 +82,36 @@ function set_height_codea13($parent, $child, $stretch){
     ';
 }
 
+
+function input_handler_codea13(){
+    echo '<script>
+    let inputPosition = { top: 0, left: 0 };
+function checkAndFocusInput() {
+  const inputElement = document.querySelector("input");
+  
+  if (document.activeElement === inputElement) {
+    const rect = inputElement.getBoundingClientRect();
+    inputPosition = { top: rect.top, left: rect.left };
+    inputElement.scrollIntoView({ behavior: "smooth", block: "center"});
+  }
+}
+function restoreInputPosition() {
+  const inputElement = document.querySelector("input");
+  
+  if (inputElement) {
+    window.scrollBy({
+      top: inputPosition.top - inputElement.getBoundingClientRect().top,
+      left: inputPosition.left - inputElement.getBoundingClientRect().left,
+      behavior: "smooth"
+    });
+  }
+}
+const inputElement = document.querySelector("input");
+inputElement.addEventListener("focus", checkAndFocusInput);
+inputElement.addEventListener("blur", restoreInputPosition);
+    </script>';
+}
+
 ?>
 
 
@@ -104,4 +134,8 @@ function set_height_codea13($parent, $child, $stretch){
         }, 5000);
 
     }
+
+
+/* this is checking if input is focused or not so it can be brought to view and back to where it should be for a nice user experience */
+
 </script>

@@ -51,6 +51,12 @@ function section3_codea13(array $arr)
     if (!isset($arr["innerColor"])) {
         $arr["innerColor"] = "white";
     }
+    if (!isset($arr["objectFit"])) {
+        $arr["objectFit"] = "cover";
+    }
+    if (!isset($arr["objectPosition"])) {
+        $arr["objectPosition"] = "50% 0%";
+    }
 
 
     echo '
@@ -103,7 +109,8 @@ function section3_codea13(array $arr)
     }
 
     .img' . $GLOBALS["firstcard"] . '{
-        object-fit:cover;
+        object-fit:'.$arr["objectFit"].';
+        object-position:'.$arr["objectPosition"].';
     }
 
     @media (max-width:700px){

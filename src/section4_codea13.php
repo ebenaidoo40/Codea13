@@ -60,6 +60,12 @@ function section4_codea13(array $arr)
     if (!isset($arr["innerColor"])) {
         $arr["innerColor"] = "white";
     }
+    if (!isset($arr["objectFit"])) {
+        $arr["objectFit"] = "cover";
+    }
+    if (!isset($arr["objectPosition"])) {
+        $arr["objectPosition"] = "50% 0%";
+    }
 
 
     echo '
@@ -112,23 +118,30 @@ function section4_codea13(array $arr)
         background:#f0f0ff;
     }
     .img' . $GLOBALS["firstcard"] . '{
-        object-fit:cover;
+        object-fit:'.$arr["objectFit"].';
+        object-position:'.$arr["objectPosition"].';
     }
 
     @media (max-width:900px){
         .section2' . $GLOBALS["firstcard"] . '{
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));     
+            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));     
+        }
+        .squarepic' . $GLOBALS["firstcard"] . '{
+            height:300px;
         }
     }
 
     @media (max-width:700px){
         .section2' . $GLOBALS["firstcard"] . '{
             min-height : 200px;
-            padding: 10px 40px;
+            padding: 10px 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             justify-content: center;
             gap:30px;        
+        }
+        .squarepic' . $GLOBALS["firstcard"] . '{
+            height:350px;
         }
     }
 
@@ -140,7 +153,7 @@ function section4_codea13(array $arr)
 <div class="section2' . $GLOBALS["firstcard"] . '">
 
 <div class="initialpos' . $GLOBALS["firstcard"] . ' intersectionObserver' . $GLOBALS["firstcard"] . '">
-    <div class="squarepic' . $GLOBALS["firstcard"] . '"><img class="img' . $GLOBALS["firstcard"] . '" width="100%" height="100%" object-fit="contain" src="' . $arr["pic1"] . '" alt="image1 here"> </div><br>
+    <div class="squarepic' . $GLOBALS["firstcard"] . '"><img class="img' . $GLOBALS["firstcard"] . '" width="100%" height="100%"  src="' . $arr["pic1"] . '" alt="image1 here"> </div><br>
     <h3 style="width:100%; text-align:center; font-size:22px; font-weight:bolder; color:' . $arr["titleColor"] . '">' . $arr["title1"] . '</h3>
     <p style="text-align:center; line-height:28px; color:' . $arr["textColor"] . '">' . $arr["content1"] . '</p>
 </div>
