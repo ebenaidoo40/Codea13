@@ -32,6 +32,15 @@ function pullNotification_codea13(array $arr){
                 width:100%;
                 height: 300px;
             }
+
+            .masterCover' . $GLOBALS["firstcard"] . '{
+                position:fixed;
+                width:100%;
+                height:100%;
+                top:0;
+                background:#00000080;
+                display:none;
+            }
             
         </style>
 
@@ -41,6 +50,9 @@ function pullNotification_codea13(array $arr){
             </div>
             <div id="'.$arr["id"].'notificationmessage" style="display:flex; background-color:green; border-radius:20px; padding:10px; font-size:20px;color:white; flex:1; justify-content:center; align-items:center">Thank you for subscribing</div>
         </div>
+        <div id="'.$arr["id"].'masterCover" class="masterCover' . $GLOBALS["firstcard"] . '"></div>
     ';
+
+    $GLOBALS["firstcard"]++;
 }
 ?>

@@ -116,7 +116,8 @@ inputElement.addEventListener("blur", restoreInputPosition);
 
 
 <script>
-    function pullNotification_codea13(id, message, colors){
+    function pullNotification_codea13(id, message, colors, sec){
+        var timeme = sec * 1000;
         setTimeout(() => {
             document.querySelector("#"+id).style.top="50%";
             document.querySelector("#"+id).style.left="50%";
@@ -124,6 +125,7 @@ inputElement.addEventListener("blur", restoreInputPosition);
             document.querySelector("#"+id).style.opacity="1";
             document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
             document.querySelector("#"+id+"notificationmessage").innerHTML=message;
+            document.querySelector("#"+id+"masterCover").style.display="block";
         }, 50);
 
         setTimeout(() => {
@@ -131,7 +133,8 @@ inputElement.addEventListener("blur", restoreInputPosition);
             document.querySelector("#"+id).style.left="50%";
             document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
             document.querySelector("#"+id).style.opacity="1";
-        }, 5000);
+            document.querySelector("#"+id+"masterCover").style.display="none";
+        }, timeme);
 
     }
 
