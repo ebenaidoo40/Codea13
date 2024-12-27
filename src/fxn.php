@@ -118,25 +118,45 @@ inputElement.addEventListener("blur", restoreInputPosition);
 <script>
     function pullNotification_codea13(id, message, colors, sec){
         var timeme = sec * 1000;
-        setTimeout(() => {
-            document.querySelector("#"+id).style.top="50%";
-            document.querySelector("#"+id).style.left="50%";
-            document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
-            document.querySelector("#"+id).style.opacity="1";
-            document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
-            document.querySelector("#"+id+"notificationmessage").innerHTML=message;
-            document.querySelector("#"+id+"masterCover").style.display="block";
-        }, 50);
 
-        setTimeout(() => {
-            document.querySelector("#"+id).style.top="-200px";
-            document.querySelector("#"+id).style.left="50%";
-            document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
-            document.querySelector("#"+id).style.opacity="1";
-            document.querySelector("#"+id+"masterCover").style.display="none";
-        }, timeme);
+        var dataVal = document.querySelector("#"+id).dataset.value;
+        if(dataVal=="pullNotification"){
+            setTimeout(() => {
+                document.querySelector("#"+id).style.top="50%";
+                document.querySelector("#"+id).style.left="50%";
+                document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+                document.querySelector("#"+id).style.opacity="1";
+                document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
+                document.querySelector("#"+id+"notificationmessage").innerHTML=message;
+                document.querySelector("#"+id+"masterCover").style.display="block";
+            }, 50);
+
+            setTimeout(() => {
+                document.querySelector("#"+id).style.top="-200px";
+                document.querySelector("#"+id).style.left="50%";
+                document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+                document.querySelector("#"+id).style.opacity="1";
+                document.querySelector("#"+id+"masterCover").style.display="none";
+            }, timeme);
+        }else if(dataVal=="boxNotification"){
+            var topspace = document.querySelector("#"+id+"masterCover").dataset.value;
+            setTimeout(() => {
+                document.querySelector("#"+id).style.top=topspace;
+                document.querySelector("#"+id).style.opacity="1";
+                document.querySelector("#"+id).style.backgroundColor=colors;
+                document.querySelector("#"+id).innerHTML=message;
+                document.querySelector("#"+id+"masterCover").style.display="block";
+            }, 50);
+
+            setTimeout(() => {
+                document.querySelector("#"+id).style.top="-200px";
+                document.querySelector("#"+id).style.opacity="1";
+                document.querySelector("#"+id+"masterCover").style.display="none";
+            }, timeme);
+        }
 
     }
+
 
 
 /* this is checking if input is focused or not so it can be brought to view and back to where it should be for a nice user experience */

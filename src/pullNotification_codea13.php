@@ -6,6 +6,9 @@ function pullNotification_codea13(array $arr){
     if(!isset($arr["objectFit"])){
         $arr["objectFit"]="contain";
     }
+    if(!isset($arr["textColor"])){
+        $arr["textColor"]="white";
+    }
     if(!isset($arr["image"])){
         $arr["image"]="vendor/rezenebe/codea13/src/images/eben.webp";
     }
@@ -44,11 +47,11 @@ function pullNotification_codea13(array $arr){
             
         </style>
 
-        <div id="'.$arr["id"].'" class="mainblock' . $GLOBALS["firstcard"] . '">
+        <div id="'.$arr["id"].'" class="mainblock' . $GLOBALS["firstcard"] . '" data-value="pullNotification">
             <div class="imgframe' . $GLOBALS["firstcard"] . '">
                 <img width="100%" height="100%" style="object-fit: '.$arr["objectFit"].';" src="'.$arr["image"].'" alt="">
             </div>
-            <div id="'.$arr["id"].'notificationmessage" style="display:flex; background-color:green; border-radius:20px; padding:10px; font-size:20px;color:white; flex:1; justify-content:center; align-items:center">Thank you for subscribing</div>
+            <div id="'.$arr["id"].'notificationmessage" style="display:flex; background-color:green; border-radius:20px; padding:10px; font-size:20px;color:'.$arr["textColor"].'; flex:1; justify-content:center; align-items:center">Thank you for subscribing</div>
         </div>
         <div id="'.$arr["id"].'masterCover" class="masterCover' . $GLOBALS["firstcard"] . '"></div>
     ';
