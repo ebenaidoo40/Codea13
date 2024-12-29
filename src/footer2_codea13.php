@@ -25,8 +25,7 @@ function footer2_codea13(array $arr){
                 display: flex;
                 gap: 50px;
                 min-height: 100px;
-                padding: 40px;
-                padding-bottom: 50px;
+                padding: 0 40px;
                 flex-wrap: wrap;
                 background-color: '.$arr["backgroundColor"].';
                 justify-content: '.$arr["justifyContentDesktop"].';

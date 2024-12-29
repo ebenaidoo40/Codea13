@@ -101,6 +101,10 @@ function navbar4_codea13(array $arr){
     .tabchild:hover{
         text-decoration:underline; 
     }
+    .extratabchildprop:hover{
+        text-decoration:none;
+        cursor:default;
+    }
     .logo{
         width:fit-content;
         height:100%;
@@ -187,7 +191,11 @@ function navbar4_codea13(array $arr){
         if($arr["onePage"]=="on"){
             echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
         }else{
-            echo '<a style="height:100%;" href="'.$arr["homeLink"].'"><div class="logo">'.$arr["title"].'</div></a>';
+            if(!isset($arr["homeLink"])){
+                echo '<div class="logo" style="cursor:default">'.$arr["title"].'</div>';
+            }else{
+                echo '<a style="height:100%;" href="'.$arr["homeLink"].'"><div class="logo">'.$arr["title"].'</div></a>';
+            }
         }
 
             echo '<div class="tabs">';
@@ -205,20 +213,21 @@ function navbar4_codea13(array $arr){
                         if(!isset($arr[$screenHomeKeys[$i]]["name"])){
                             $arr[$screenHomeKeys[$i]]["name"]="Tab";
                         }
-                        if(!isset($arr[$screenHomeKeys[$i]]["link"])){
-                            $arr[$screenHomeKeys[$i]]["link"]="";
-                        }
+                        
 
                         if($arr[$screenHomeKeys[$i]]["type"]=="dropdown"){
                             echo '<div onmouseleave="hideDroppy(\'screenHomeTabs'.$i.'\')" onmouseover="dropMeDownNow(\'screenHomeTabs'.$i.'\')" id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
                             
                         }else{
-                            if($arr["onePage"]=="on"){
-                                echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                            if(!isset($arr[$screenHomeKeys[$i]]["link"])){
+                                echo '<div id="screenHomeTabs'.$i.'" class="tabchild extratabchildprop" >'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
                             }else{
-                                echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
-                            }
-                            
+                                if($arr["onePage"]=="on"){
+                                    echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                                }else{
+                                    echo '<a style="color:'.$arr["tabsColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="tabchild">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                                }
+                            }  
                         }
                     }
                 }

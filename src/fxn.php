@@ -117,6 +117,9 @@ inputElement.addEventListener("blur", restoreInputPosition);
 
 <script>
     function pullNotification_codea13(id, message, colors, sec){
+        if(sec==null){
+            sec=5;
+        }
         var timeme = sec * 1000;
 
         var dataVal = document.querySelector("#"+id).dataset.value;
@@ -138,6 +141,7 @@ inputElement.addEventListener("blur", restoreInputPosition);
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"masterCover").style.display="none";
             }, timeme);
+
         }else if(dataVal=="boxNotification"){
             var topspace = document.querySelector("#"+id+"masterCover").dataset.value;
             setTimeout(() => {

@@ -43,6 +43,21 @@ function contact_us2_codea13(array $arr){
     if(!isset($arr["buttonColor"])){
         $arr["buttonColor"]="white";
     }
+    if(!isset($arr["name"])){
+        $arr["name"]="name";
+    }
+    if(!isset($arr["email"])){
+        $arr["email"]="email";
+    }
+    if(!isset($arr["message"])){
+        $arr["message"]="message";
+    }
+    if(!isset($arr["buttonName"])){
+        $arr["buttonName"]="submit";
+    }
+    if(!isset($arr["shadowColor"])){
+        $arr["shadowColor"]="#656565";
+    }
     echo '
     <style>
     .mainbk' . $GLOBALS["firstcard"] . '{
@@ -60,7 +75,7 @@ function contact_us2_codea13(array $arr){
     .form' . $GLOBALS["firstcard"] . '{
         flex:1;
         background:'.$arr["formBackgroundColor"].';
-        box-shadow: 0 0 13px 4px #656565;
+        box-shadow: 0 0 13px 4px '.$arr["shadowColor"].';
         min-height:200px;
         min-width:40%;
         padding:30px;
@@ -156,8 +171,8 @@ function contact_us2_codea13(array $arr){
         <form id="form' . $GLOBALS["firstcard"] . '" class="form' . $GLOBALS["firstcard"] . '">
             <input id="name' . $GLOBALS["firstcard"] . '" name="name' . $GLOBALS["firstcard"] . '" placeholder="Name" required>
             <input id="email' . $GLOBALS["firstcard"] . '" name="email' . $GLOBALS["firstcard"] . '" type="email" placeholder="email" required>
-            <textarea id="message' . $GLOBALS["firstcard"] . '" name="message' . $GLOBALS["firstcard"] . '" placeholder="Name" required></textarea>
-            <button id="loginbutton' . $GLOBALS["firstcard"] . '" class="submitbutton' . $GLOBALS["firstcard"] . '">Submit</button>
+            <textarea id="message' . $GLOBALS["firstcard"] . '" name="message' . $GLOBALS["firstcard"] . '" placeholder="Enter message" required></textarea>
+            <button id="loginbutton' . $GLOBALS["firstcard"] . '" class="submitbutton' . $GLOBALS["firstcard"] . '">'.$arr["buttonName"].'</button>
         </form>
     </div>
 
@@ -182,9 +197,9 @@ function contact_us2_codea13(array $arr){
             url: "' . $arr["formTo"] . '",
             method: "POST",
             data: {
-                name: name,
-                email: email,
-                message: message,
+                '.$arr["name"].': name,
+                '.$arr["email"].': email,
+                '.$arr["message"].': message,
             },
             success: function(res){
 
@@ -200,6 +215,7 @@ function contact_us2_codea13(array $arr){
                         document.querySelector("#loginbutton' . $GLOBALS["firstcard"] . '").setAttribute("type", "submit");
                     }, 3000);
                 }else{
+                
                     '.$arr["injectFailure"].'
                     setTimeout(() => {
                         document.querySelector("#loginbutton' . $GLOBALS["firstcard"] . '").innerHTML="submit";

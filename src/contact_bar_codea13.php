@@ -43,7 +43,7 @@ function contact_bar_codea13(array $arr){
                 box-shadow: 0 0 5px 4px '.$arr["frameShadow"].';
                 position:relative;
                 margin-top:10px;
-                border-radius:10px;
+                border-radius:20px;
                 overflow:hidden;
             }
 

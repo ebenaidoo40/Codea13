@@ -3,6 +3,9 @@ function subscribe_codea13(array $arr){
     if(!isset($arr["formTo"])){
         $arr["formTo"]="";
     }
+    if(!isset($arr["email"])){
+        $arr["email"]="email";
+    }
     if(!isset($arr["logo"])){
         $arr["logo"]="vendor/rezenebe/codea13/src/images/eben.webp";
     }
@@ -183,7 +186,7 @@ function subscribe_codea13(array $arr){
             url: "' . $arr["formTo"] . '",
             method: "POST",
             data: {
-                email: email,
+                '.$arr["email"].': email,
             },
             success: function(res){
                 if(res=="success"){
