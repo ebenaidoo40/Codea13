@@ -1,4 +1,12 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * topSpace,
+ * textColor
+ * } $arr
+ */
+
 function boxNotification_codea13(array $arr){
     if(!isset($arr["id"])){
         $arr["id"]="";

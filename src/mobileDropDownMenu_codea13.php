@@ -1,4 +1,24 @@
 <?php
+/**
+ * @param array{
+ * maxWidth,
+ * onePage,
+ * sliderBorderShadow,
+ * buttonTop,
+ * textColor,
+ * title,
+ * backgroundColor,
+ * titleBackgroundColor,
+ * backgroundSubColor,
+ * buttonBackgroundColor,
+ * buttonInnerColor,
+ * tabsSeperatorColor,
+ * tabsSubSeperatorColor,
+ * sliderWidth,
+ * list1:[]
+ * } $arr
+ */
+
 function mobileDropDownMenu_codea13(array $arr){
     if(!isset($arr["maxWidth"])){
         $arr["maxWidth"]="900";

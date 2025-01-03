@@ -1,4 +1,18 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * markedId,
+ * content,
+ * topSpace,
+ * width,
+ * left,
+ * right,
+ * hideAtMaxWidth,
+ * z-index
+ * } $arr
+ */
+
 function rectcube_codea13(array $arr)
 {
     if (!isset($arr["id"])) {

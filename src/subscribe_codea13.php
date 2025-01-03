@@ -1,4 +1,28 @@
 <?php
+/**
+ * @param array{
+ * logo,
+ * email,
+ * backgroundColor,
+ * innerBackgroundColor,
+ * inputBackgroundColor,
+ * placeholder,
+ * placeholderColor,
+ * buttonBackgroundColor,
+ * buttonColor,
+ * buttonHoverColor,
+ * buttonBackgroundHoverColor,
+ * buttonName,
+ * note,
+ * inputType,
+ * injectSuccess,
+ * injectFailure,
+ * injectError,
+ * formTo,
+ * shadow
+ * } $arr
+ */
+
 function subscribe_codea13(array $arr){
     if(!isset($arr["formTo"])){
         $arr["formTo"]="";

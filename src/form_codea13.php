@@ -1,4 +1,26 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * onePage,
+ * titleColor,
+ * labelColor,
+ * titlesub,
+ * backgroundColor,
+ * buttonBackgroundColor,
+ * buttonColor,
+ * formTo,
+ * callBack,
+ * customSuccessMessage,
+ * cautionColor,
+ * cautionCheckTextColor,
+ * redirectTime,
+ * popMessageTopSpace,
+ * inject,
+ * input1:[]
+ * } $arr
+ */
+
 function form_codea13(array $arr)
 {
 

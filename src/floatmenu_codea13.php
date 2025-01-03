@@ -1,4 +1,21 @@
 <?php
+/**
+ * @param array{
+ * facebook,
+ * whatsapp,
+ * instagram,
+ * twitter,
+ * youtube,
+ * tiktok,
+ * facebookLink,
+ * whatsappLink,
+ * instagramLink,
+ * twitterLink,
+ * youtubeLink,
+ * tiktokLink,
+ * backgroundColor
+ * } $arr
+ */
 
 function floatmenu_codea13(array $arr){
     if(!isset($arr["facebook"])){

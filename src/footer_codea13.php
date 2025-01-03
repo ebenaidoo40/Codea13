@@ -1,4 +1,26 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * onepage,
+ * companyName,
+ * homeLink,
+ * aboutLink,
+ * contactLink,
+ * location,
+ * phone,
+ * email,
+ * aboutCompany,
+ * facebook,
+ * whatsapp,
+ * twitter,
+ * instagram,
+ * facebookLink,
+ * twitterLink,
+ * whatsappLink,
+ * instagramLink
+ * } $arr
+ */
 
 function footer_codea13(array $arr){
     $lorem="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur exercitationem ipsa. 

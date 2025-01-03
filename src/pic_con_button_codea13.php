@@ -1,4 +1,27 @@
 <?php
+/**
+ * @param array{
+ * image,
+ * title,
+ * content,
+ * titleColor,
+ * textColor,
+ * mainBackgroundColor,
+ * backgroundColor,
+ * backgroundBorderColor,
+ * contentSub1,
+ * contentSub2,
+ * buttonSwitch,
+ * buttonBackgroundColor,
+ * buttonHoverBackgroundColor,
+ * buttonName,
+ * buttonTextColor,
+ * buttonHoverTextColor,
+ * buttonLink,
+ * downloadSwitch
+ * } $arr
+ */
+
 function pic_con_button_codea13(array $arr)
 {
 

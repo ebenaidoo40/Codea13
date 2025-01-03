@@ -1,4 +1,19 @@
 <?php
+/**
+ * @param array{
+ * video,
+ * title,
+ * titlesub,
+ * titleColor,
+ * textColor,
+ * backgroundColor,
+ * innerBackgroundColor,
+ * backgroundImage,
+ * flip,
+ * rotate,
+ * animation
+ * } $arr
+ */
 
 function video_content_codea13(array $arr)
 {

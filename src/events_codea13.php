@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * backgroundImage,
+ * titleColor,
+ * titleBackgroundColor,
+ * contentColor,
+ * spaceAround:int,
+ * marquee,
+ * cardColor,
+ * entry1:[],
+ * } $arr
+ */
 
 function events_codea13(array $arr)
 {

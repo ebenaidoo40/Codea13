@@ -1,4 +1,14 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * justifyContent,
+ * frameBackgroundColor,
+ * frameShadow,
+ * textSize,
+ * entry1:[]
+ * } $arr
+ */
 
 function contact_bar_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){

@@ -1,4 +1,21 @@
 <?php
+/**
+ * @param array{
+ * width,
+ * height,
+ * backgroundColor,
+ * align,
+ * title,
+ * titleColor,
+ * titleFontSize,
+ * titleFontFamily,
+ * titleLineHeight,
+ * titleAlign,
+ * content,
+ * textColor,
+ * lineColor
+ * } $arr
+ */
 
 function hardcard_codea13(array $arr)
 {

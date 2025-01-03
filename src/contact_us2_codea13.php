@@ -1,4 +1,27 @@
 <?php
+/**
+ * @param array{
+ * formTo,
+ * name,
+ * email,
+ * message,
+ * title,
+ * titleColor,
+ * content,
+ * textColor,
+ * background,
+ * formBackgroundColor,
+ * placeholderColor,
+ * inputBackgroundColor,
+ * buttonBackgroundColor,
+ * buttonName,
+ * buttonColor,
+ * injectSuccess,
+ * injectFailure,
+ * injectError
+ * } $arr
+ */
+
 function contact_us2_codea13(array $arr){
     $lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nam sunt quaerat provident unde totam iusto officiis! Beatae quam, aspernatur sunt facere esse eum nulla hic cumque maxime eos blanditiis.";
     if(!isset($arr["formTo"])){

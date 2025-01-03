@@ -1,4 +1,25 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * backgroundColor,
+ * backgroundImage,
+ * title,
+ * titlesub,
+ * titleColor,
+ * titlesubColor,
+ * titleBlockBackgroundColor,
+ * image,
+ * buttonSwitch,
+ * buttonName,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor,
+ * buttonTextColor,
+ * buttonLink,
+ * downloadSwitch,
+ * animation
+ * } $arr
+ */
 
 function reversed_home_codea13(array $arr)
 {

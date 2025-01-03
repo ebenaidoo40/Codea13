@@ -1,4 +1,15 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * justifyContent,
+ * frameBackgroundColor,
+ * frameShadow,
+ * objectFit,
+ * titleColor,
+ * entry1:[],
+ * } $arr
+ */
 
 function our_services_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){

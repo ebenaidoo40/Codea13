@@ -1,4 +1,24 @@
 <?php
+/**
+ * @param array{
+ * homeLink,
+ * logo,
+ * title,
+ * titleBackgroundColor,
+ * titleTextColor,
+ * backgroundColor,
+ * textColor,
+ * tabNumber,
+ * tabs,
+ * dropDown,
+ * dropDownSwitch,
+ * dropDownTabsNumber,
+ * sliderColor,
+ * dropDownTabsColor,
+ * dropTabs,
+ * baseShadow
+ * } $arr
+ */
 
 function navbar_codea13(array $arr)
 {

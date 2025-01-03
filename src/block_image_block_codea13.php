@@ -1,4 +1,18 @@
 <?php
+/**
+ * @param array{
+ * title1,
+ * title2,
+ * content1,
+ * content2,
+ * image,
+ * backgroundColor,
+ * titleColor,
+ * textColor,
+ * animation
+ * } $arr
+ */
+
 function block_image_block_codea13(array $arr)
 {
     $lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur exercitationem ipsa. 

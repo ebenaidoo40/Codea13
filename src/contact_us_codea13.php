@@ -1,4 +1,21 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * sutTitle,
+ * popMessageTopSpace,
+ * titleColor,
+ * subTitleColor,
+ * image,
+ * backgroundColor,
+ * name,
+ * email,
+ * message,
+ * formTo,
+ * content
+ * } $arr
+ */
+
 function contact_us_codea13(array $arr)
 {
     if (!isset($arr["title"])) {

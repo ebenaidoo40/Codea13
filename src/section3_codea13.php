@@ -1,4 +1,25 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * pic1,
+ * pic2,
+ * pic3,
+ * title1,
+ * title2,
+ * title3,
+ * content1,
+ * content2,
+ * content3,
+ * objectFit,
+ * objectPosition,
+ * textColor,
+ * backgroundColor,
+ * innerColor,
+ * animation
+ * } $arr
+ */
 
 function section3_codea13(array $arr)
 {

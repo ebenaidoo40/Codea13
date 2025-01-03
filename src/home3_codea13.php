@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * titile,
+ * titleColor,
+ * content,
+ * textColor,
+ * backgroundColor,
+ * background,
+ * image,
+ * boxShadow
+ * } $arr
+ */
+
 function home3_codea13(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="TITLE HERE";

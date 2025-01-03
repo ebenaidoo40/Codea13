@@ -1,4 +1,23 @@
 <?php
+/**
+ * @param array{
+ * maxWidth,
+ * onePage,
+ * homeLink,
+ * title,
+ * rightTabSwitch,
+ * rightFristTab,
+ * rightSecondTab,
+ * rightFirstTabLink,
+ * rightSecondTabLink,
+ * tabsBackgroundColor,
+ * titleBackgroundColor,
+ * tabsColor,
+ * backgroundColor,
+ * seperatorColor,
+ * tab1:array{}
+ * } $arr
+ */
 function navbar5_codea13(array $arr){
     
     if(!isset($arr["maxWidth"])){

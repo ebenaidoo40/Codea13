@@ -1,4 +1,18 @@
 <?php
+/**
+ * @param array{
+ * heading,
+ * content,
+ * Link,
+ * animation,
+ * shadowColor1,
+ * shadowColor2,
+ * shadowColor3,
+ * shadowColor4,
+ * shadowColor5
+ * } $arr
+ */
+
 function displayMsg_codea13(array $arr)
 {
     if (!isset($arr["heading"])) {

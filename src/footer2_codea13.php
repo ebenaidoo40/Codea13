@@ -1,4 +1,16 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * titleColor,
+ * textColor,
+ * justifyContentDesktop,
+ * justifyContentMobile,
+ * maxWidth,
+ * column1: array{"this takes in list of values with the first value being the title"},
+ * } $arr
+ */
+
 
 function footer2_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){

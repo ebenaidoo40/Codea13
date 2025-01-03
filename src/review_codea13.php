@@ -1,4 +1,19 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * keyColor,
+ * titleBackgroundColor,
+ * textColor,
+ * backgroundColor,
+ * review,
+ * image,
+ * progressBarColor,
+ * loaderBackgroundColor
+ * } $arr
+ */
+
 $rvcounter = 0;
 function review_codea13(array $arr)
 {

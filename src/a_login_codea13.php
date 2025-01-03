@@ -1,4 +1,27 @@
 <?php
+/**
+ * @param array{
+ * buttonBackgroundColor,
+ * email_name,
+ * password_name,
+ * loginSuccessLink,
+ * buttonColor,
+ * loginFormTo,
+ * resetFormTo,
+ * firstLabel,
+ * secondLabel,
+ * firstLabelType,
+ * secondLabelType,
+ * title,
+ * buttonName,
+ * secondTitle,
+ * secondButtonName,
+ * customSuccessMessage,
+ * customResetMessage,
+ * note,
+ * popMessageTopSpace
+ * } $arr
+ */
 
 function a_login_codea13(array $arr)
 {

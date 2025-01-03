@@ -1,4 +1,15 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * badgeColor,
+ * textColor,
+ * firstBadgeText,
+ * secondBadgeColor,
+ * animation
+ * } $arr
+ */
+
 function experience_codea13(array $arr){
 
     if(!isset($arr["backgroundColor"])){

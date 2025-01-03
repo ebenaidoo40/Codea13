@@ -1,4 +1,11 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * entry1:[],
+ * } $arr
+ */
+
 function infinite_pics_codea13(array $arr)
 {
     if (!isset($arr["backgroundColor"])) {

@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * titlesub,
+ * textColor,
+ * image,
+ * backgroundColor,
+ * bottomBorderColor,
+ * flip,
+ * animation
+ * } $arr
+ */
 
 function slant_block_codea13(array $arr)
 {

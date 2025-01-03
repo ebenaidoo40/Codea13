@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * content,
+ * textColor,
+ * topBackgroundColor,
+ * backgroundColor,
+ * image,
+ * mobileImageHeight
+ * } $arr
+ */
+
 function image_content_codea13(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="Title Goes Here";

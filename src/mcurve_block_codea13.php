@@ -1,4 +1,18 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * titlesub,
+ * textColor,
+ * image,
+ * backgroundColor,
+ * topBorderColor,
+ * bottomBorderColor,
+ * flip,
+ * animation
+ * } $arr
+ */
 
 function mcurve_block_codea13(array $arr)
 {

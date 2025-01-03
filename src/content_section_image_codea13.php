@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * image,
+ * title,
+ * titlesub,
+ * titleColor,
+ * textColor,
+ * rotate,
+ * animation,
+ * z-index
+ * } $arr
+ */
 
 function content_section_image_codea13(array $arr)
 {

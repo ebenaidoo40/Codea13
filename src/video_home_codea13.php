@@ -1,4 +1,14 @@
 <?php
+/**
+ * @param array{
+ * video,
+ * title,
+ * titleColor,
+ * innerColor,
+ * backgroundColor,
+ * videoFrameBorderColor
+ * } $arr
+ */
 
 function video_home_codea13(array $arr)
 {

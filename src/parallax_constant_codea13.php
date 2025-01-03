@@ -1,4 +1,11 @@
 <?php
+/**
+ * @param array{
+ * backgroundImage,
+ * backgroundSize
+ * } $arr
+ */
+
 function parallax_constant_codea13(array $arr)
 {
 

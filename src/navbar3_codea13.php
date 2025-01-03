@@ -1,4 +1,29 @@
 <?php
+/**
+ * @param array{
+ * homeLink,
+ * logo,
+ * menuButtonColor,
+ * tabs,
+ * tabTextColor,
+ * tabHoverTextColor,
+ * tabHoverBackgroundColor,
+ * topText,
+ * middleText,
+ * topTextColor,
+ * middleTextColor,
+ * topBackgroundColor,
+ * middleBackgroundColor,
+ * bottomBackgroundColor,
+ * navImage,
+ * image,
+ * dropDownTextColor,
+ * dropDownBackgroundColor,
+ * title,
+ * titleColor
+ * } $arr
+ */
+
 function navbar3_codea13(array $arr)
 {
 

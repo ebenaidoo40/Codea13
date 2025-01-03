@@ -1,4 +1,21 @@
 <?php
+/**
+ * @param array{
+ * image1,
+ * firstImageMobileVisibility,
+ * image2,
+ * image3,
+ * backgroundImage,
+ * backgroundColor,
+ * title,
+ * content,
+ * titleSize,
+ * titleColor,
+ * picRadius,
+ * flip
+ * } $arr
+ */
+
 function pic_home_codea13(array $arr)
 {
     if (!isset($arr["image1"])) {

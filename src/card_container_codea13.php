@@ -1,4 +1,23 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * markedId,
+ * topSpace,
+ * width,
+ * height,
+ * backgroundColor,
+ * backgroundImage,
+ * position,
+ * padding,
+ * left,
+ * right,
+ * top,
+ * bottom,
+ * stretchAtMaxWidth
+ * functions([]),
+ * } $arr
+ */
 
 function card_container_codea13(array $arr)
 {

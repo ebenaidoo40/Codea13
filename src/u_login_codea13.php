@@ -1,4 +1,20 @@
 <?php
+/**
+ * @param array{
+ * buttonBackgroundColor,
+ * onePage,
+ * email_name,
+ * password_name,
+ * loginSuccessLink,
+ * resetSuccessMsg,
+ * loginFormTo,
+ * resetFormTo,
+ * buttonColor,
+ * clickHereText,
+ * clickHereLink,
+ * popMessageTopSpace
+ * } $arr
+ */
 
 function login_codea13(array $arr)
 {

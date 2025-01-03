@@ -1,4 +1,22 @@
 <?php
+/**
+ * @param array{
+ * image1,
+ * image2,
+ * image3,
+ * title1,
+ * title2,
+ * title3,
+ * loaderType,
+ * titleColor,
+ * backgroundColor,
+ * boxShadow,
+ * imageFit,
+ * imagePosition,
+ * mobileHeight,
+ * entry1:["image and title here"],
+ * } $arr
+ */
 
 function slider_home_codea13(array $arr){
     if(!isset($arr["image1"])){

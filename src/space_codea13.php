@@ -1,4 +1,13 @@
 <?php
+/**
+ * @param array{
+ * width,
+ * height,
+ * backgroundColor,
+ * id,
+ * } $arr
+ */
+
 function space_codea13(array $arr){
     if(!isset($arr["width"])){
         $arr["width"]="100%";

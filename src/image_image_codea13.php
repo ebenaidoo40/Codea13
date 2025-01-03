@@ -1,4 +1,30 @@
 <?php
+/**
+ * @param array{
+ * cardColor,
+ * title1,
+ * title2,
+ * pic1,
+ * pic2,
+ * content1,
+ * content2,
+ * backgroundColor,
+ * animation,
+ * titleColor,
+ * textColor,
+ * buttonSwitch1,
+ * buttonSwitch2,
+ * buttonName1,
+ * buttonName2,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor,
+ * buttonTextColor,
+ * buttonLink1,
+ * buttonLink2,
+ * downloadSwitch1,
+ * downloadSwitch2
+ * } $arr
+ */
 
 function image_image_codea13(array $arr)
 {

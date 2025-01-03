@@ -1,4 +1,16 @@
 <?php
+/**
+ * @param array{
+ * onePage,
+ * backgroundColor,
+ * frameBackgroundColor,
+ * justifyContent,
+ * frameShadow,
+ * objectFit,
+ * linkOnEach,
+ * input1:[]
+ * } $arr
+ */
 
 function pic_info_icon_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){

@@ -1,4 +1,36 @@
 <?php
+/**
+ * @param array{
+ * quoteColor,
+ * badge1,
+ * badge2,
+ * badge3,
+ * title,
+ * title1,
+ * title2,
+ * title3,
+ * content,
+ * content1,
+ * content2,
+ * content3,
+ * titleColor,
+ * contentColor,
+ * backgroundColor,
+ * middleBackgroundColor,
+ * middleBackgroundImage,
+ * lowerBackgroundColor,
+ * upperBackgroundColor,
+ * subTitleColor,
+ * subContentColor,
+ * image,
+ * reviewText,
+ * reviewTextBackgroundColor,
+ * reviewTextColor,
+ * dividerColor,
+ * imageBorderColor,
+ * animation
+ * } $arr
+ */
 
 function split_block_codea13(array $arr)
 {

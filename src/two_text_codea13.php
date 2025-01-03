@@ -1,4 +1,30 @@
 <?php
+/**
+ * @param array{
+ * title1,
+ * title2,
+ * content1,
+ * content2,
+ * backgroundColor,
+ * titleColor,
+ * textColor,
+ * animation,
+ * rotate,
+ * z-index,
+ * InnerBackgroundColor,
+ * buttonSwitch1,
+ * buttonSwitch2,
+ * buttonName1,
+ * buttonName2,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor,
+ * buttonTextColor,
+ * buttonLink1,
+ * buttonLink2,
+ * downloadSwitch1,
+ * downloadSwitch2
+ * } $arr
+ */
 
 function two_text_codea13(array $arr){
     if(!isset($arr["title1"])){

@@ -1,4 +1,16 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titlesub,
+ * titleColor,
+ * textColor,
+ * innerBorderColor,
+ * outerBorderColor,
+ * animation,
+ * image
+ * } $arr
+ */
 
 function slant_home_codea13(array $arr)
 {

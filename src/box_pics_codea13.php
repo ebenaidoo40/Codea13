@@ -1,4 +1,25 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * content,
+ * textColor,
+ * mobileImageHeight,
+ * buttonName,
+ * buttonTextColor,
+ * backgroundColor,
+ * buttonSwitch,
+ * buttonLink,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor,
+ * buttonTextHoverColor,
+ * downloadSwitch,
+ * mobileImageHeight,
+ * entry1:[]
+ * } $arr
+ */
+
 function box_pics_codea13(array $arr)
 {
     if (!isset($arr["backgroundColor"])) {

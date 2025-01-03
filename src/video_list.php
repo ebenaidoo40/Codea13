@@ -1,4 +1,16 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * frameBackgroundColor,
+ * justifyContent,
+ * numberBackgroundColor,
+ * numberColor,
+ * frameShadow,
+ * objectFit,
+ * video1:[],
+ * } $arr
+ */
 
 function video_list_codea13(array $arr){
     if(!isset($arr["backgroundColor"])){

@@ -1,4 +1,15 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * titleSize,
+ * titleWeight,
+ * titleAlignment,
+ * backgroundColor,
+ * padding
+ * } $arr
+ */
 
 function title_codea13(array $arr)
 {

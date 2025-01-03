@@ -1,4 +1,22 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * bigDeviceWidth,
+ * smallDeviceWidth,
+ * markedId,
+ * topSpace,
+ * vertical,
+ * left,
+ * right,
+ * setMiddleAtMax,
+ * backgroundColor,
+ * image,
+ * animation,
+ * transparent,
+ * z-index
+ * } $arr
+ */
 function circleImage_codea13(array $arr)
 {
     if (!isset($arr["id"])) {

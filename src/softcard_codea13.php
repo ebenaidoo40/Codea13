@@ -1,4 +1,20 @@
 <?php
+/**
+ * @param array{
+ * width, 
+ * height, 
+ * backgroundColor, 
+ * title, 
+ * titleColor, 
+ * content,
+ * textColor,
+ * id,
+ * markedId,
+ * topSpace,
+ * align,
+ * top
+ * } $arr
+ */
 
 function softcard_codea13(array $arr)
 {

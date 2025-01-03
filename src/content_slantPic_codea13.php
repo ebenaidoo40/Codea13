@@ -1,4 +1,22 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * backgroundColor,
+ * image,
+ * flip,
+ * bkType,
+ * content,
+ * animation,
+ * buttonSwitch,
+ * buttonName,
+ * buttonLink,
+ * buttonTextColor,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor
+ * } $arr
+ */
 
 function content_slantPic_codea13(array $arr){
     if(!isset($arr["title"])){

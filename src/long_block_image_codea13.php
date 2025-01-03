@@ -1,4 +1,22 @@
 <?php
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * content,
+ * textColor,
+ * animation,
+ * firstListNumber,
+ * SecondListNumber,
+ * firstList{num},
+ * secondList{num},
+ * backgroundColor,
+ * ringColor,
+ * listColor,
+ * pinRadius
+ * } $arr
+ */
+
 function long_block_image_codea13(array $arr)
 {
     $lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur exercitationem ipsa. 

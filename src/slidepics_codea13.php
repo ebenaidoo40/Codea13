@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * backgroundColor,
+ * bakcgroundImage,
+ * numOfPics,
+ * images,
+ * picBackground,
+ * mainPicBorder,
+ * dPicFit,
+ * mPicFit,
+ * speed
+ * } $arr
+ */
 
 function slidepics_codea13(array $arr)
 {

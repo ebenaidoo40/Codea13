@@ -1,4 +1,17 @@
 <?php
+/**
+ * @param array{
+ * image,
+ * background,
+ * objectFit,
+ * objectPosition,
+ * padding,
+ * title,
+ * titleColor,
+ * justifyContent,
+ * height
+ * } $arr
+ */
 
 function imgtxt_codea13(array $arr){
     if(!isset($arr["height"])){

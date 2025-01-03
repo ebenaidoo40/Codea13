@@ -1,6 +1,14 @@
 <?php
-
-
+/**
+ * @param array{
+ * title,
+ * titleColor,
+ * titleBackgroundColor,
+ * backgroundColor,
+ * outerBackgroundColor,
+ * content
+ * } $arr
+ */
 function textbox_codea13(array $arr){
     if(!isset($arr["title"])){
         $arr["title"]="Title Here";

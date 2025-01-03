@@ -1,4 +1,25 @@
 <?php
+/**
+ * @param array{
+ * id,
+ * backgroundColor,
+ * backgroundImage,
+ * title,
+ * titlesub,
+ * titleColor,
+ * titlesubColor,
+ * titleBlockBackgroundColor,
+ * image,
+ * buttonSwitch,
+ * buttonName,
+ * buttonBackgroundColor,
+ * buttonBackgroundHoverColor,
+ * buttonTextColor,
+ * buttonLink,
+ * downloadSwitch,
+ * animation
+ * } $arr
+ */
 
 function home_codea13(array $arr)
 {
