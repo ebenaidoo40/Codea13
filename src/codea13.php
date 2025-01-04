@@ -72,6 +72,7 @@ include_once "video_list.php";
 include_once "subscribe_codea13.php";
 include_once "pullNotification_codea13.php";
 include_once "boxNotification_codea13.php";
+include_once "schedule_codea13.php";
 include_once "footer2_codea13.php";
 include_once "subOnePage_codea13.php";
 include_once "universal.html";

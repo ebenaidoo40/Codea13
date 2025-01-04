@@ -6,6 +6,7 @@
  * email,
  * message,
  * title,
+ * formTitle,
  * titleColor,
  * content,
  * textColor,
@@ -16,6 +17,9 @@
  * buttonBackgroundColor,
  * buttonName,
  * buttonColor,
+ * verticalAlignment,
+ * padding,
+ * inputBottomLineColor,
  * injectSuccess,
  * injectFailure,
  * injectError
@@ -81,6 +85,18 @@ function contact_us2_codea13(array $arr){
     if(!isset($arr["shadowColor"])){
         $arr["shadowColor"]="#656565";
     }
+    if(!isset($arr["inputBottomLineColor"])){
+        $arr["inputBottomLineColor"]=$arr["inputBackgroundColor"];
+    }
+    if(!isset($arr["verticalAlignment"])){
+        $arr["verticalAlignment"]="flex-start";
+    }
+    if(!isset($arr["formTitle"])){
+        $arr["formTitle"]="";
+    }
+    if(!isset($arr["padding"])){
+        $arr["padding"]="30px";
+    }
     echo '
     <style>
     .mainbk' . $GLOBALS["firstcard"] . '{
@@ -94,6 +110,9 @@ function contact_us2_codea13(array $arr){
     .leftbk' . $GLOBALS["firstcard"] . '{
         flex:1;
         background:'.$arr["background"].';
+        display:flex;
+        flex-direction:column;
+        justify-content:'.$arr["verticalAlignment"].';
     }
     .form' . $GLOBALS["firstcard"] . '{
         flex:1;
@@ -101,7 +120,7 @@ function contact_us2_codea13(array $arr){
         box-shadow: 0 0 13px 4px '.$arr["shadowColor"].';
         min-height:200px;
         min-width:40%;
-        padding:30px;
+        padding:'.$arr["padding"].';
         border-radius:10px;
         display:flex;
         flex-direction:column;
@@ -113,6 +132,7 @@ function contact_us2_codea13(array $arr){
         height:35px;
         border-radius:4px;
         padding: 0 8px;
+        border-bottom:2px solid '.$arr["inputBottomLineColor"].';
     }
     .form' . $GLOBALS["firstcard"] . ' input::placeholder, .form' . $GLOBALS["firstcard"] . ' textarea::placeholder{
         color:'.$arr["placeholderColor"].';
@@ -124,10 +144,12 @@ function contact_us2_codea13(array $arr){
         border-radius:4px;
         padding: 8px;
         resize:none;
+        border-bottom:2px solid '.$arr["inputBottomLineColor"].';
     }
     .form' . $GLOBALS["firstcard"] . ' input:focus, .form' . $GLOBALS["firstcard"] . ' textarea:focus{
         outline:none;
         border:none;
+        border-bottom:2px solid '.$arr["inputBottomLineColor"].';
     }
 
     .submitbutton' . $GLOBALS["firstcard"] . '{
@@ -192,6 +214,7 @@ function contact_us2_codea13(array $arr){
 
 
         <form id="form' . $GLOBALS["firstcard"] . '" class="form' . $GLOBALS["firstcard"] . '">
+            <div style="color:'.$arr["titleColor"].'">'.$arr["formTitle"].'</div>
             <input id="name' . $GLOBALS["firstcard"] . '" name="name' . $GLOBALS["firstcard"] . '" placeholder="Name" required>
             <input id="email' . $GLOBALS["firstcard"] . '" name="email' . $GLOBALS["firstcard"] . '" type="email" placeholder="email" required>
             <textarea id="message' . $GLOBALS["firstcard"] . '" name="message' . $GLOBALS["firstcard"] . '" placeholder="Enter message" required></textarea>
