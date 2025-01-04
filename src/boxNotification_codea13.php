@@ -2,7 +2,7 @@
 /**
  * @param array{
  * id,
- * topSpace,
+ * topSpace:int,
  * textColor
  * } $arr
  */
@@ -12,7 +12,7 @@ function boxNotification_codea13(array $arr){
         $arr["id"]="";
     }
     if(!isset($arr["topSpace"])){
-        $arr["topSpace"]="50px";
+        $arr["topSpace"]=50;
     }
     if(!isset($arr["textColor"])){
         $arr["textColor"]="white";

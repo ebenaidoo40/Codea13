@@ -34,9 +34,9 @@ function pullNotification_codea13(array $arr){
                 top: -200px;
                 left:50%;
                 transform:translate(-50%, -50%);
-                transition: all 0.5s linear;
+                transition: all 1s linear;
                 opacity: 1;
-                z-index:50;
+                z-index:9999;
                 padding:20px;
             }
             .imgframe' . $GLOBALS["firstcard"] . '{

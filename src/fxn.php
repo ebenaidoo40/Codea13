@@ -125,9 +125,8 @@ inputElement.addEventListener("blur", restoreInputPosition);
         var dataVal = document.querySelector("#"+id).dataset.value;
         if(dataVal=="pullNotification"){
             setTimeout(() => {
-                document.querySelector("#"+id).style.top="50%";
                 document.querySelector("#"+id).style.left="50%";
-                document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+                document.querySelector("#"+id).style.transform="translate(-50%, 290px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
                 document.querySelector("#"+id+"notificationmessage").innerHTML=message;
@@ -135,17 +134,17 @@ inputElement.addEventListener("blur", restoreInputPosition);
             }, 50);
 
             setTimeout(() => {
-                document.querySelector("#"+id).style.top="-200px";
                 document.querySelector("#"+id).style.left="50%";
-                document.querySelector("#"+id).style.transform="translate(-50%, -50%)";
+                document.querySelector("#"+id).style.transform="translate(-50%, -250px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"masterCover").style.display="none";
             }, timeme);
 
         }else if(dataVal=="boxNotification"){
             var topspace = document.querySelector("#"+id+"masterCover").dataset.value;
+            topspace = Number(topspace) + 200;
             setTimeout(() => {
-                document.querySelector("#"+id).style.top=topspace;
+                document.querySelector("#"+id).style.transform="translateY("+topspace+"px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id).style.backgroundColor=colors;
                 document.querySelector("#"+id).innerHTML=message;
@@ -153,7 +152,7 @@ inputElement.addEventListener("blur", restoreInputPosition);
             }, 50);
 
             setTimeout(() => {
-                document.querySelector("#"+id).style.top="-200px";
+                document.querySelector("#"+id).style.transform="translateY(-200px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"masterCover").style.display="none";
             }, timeme);

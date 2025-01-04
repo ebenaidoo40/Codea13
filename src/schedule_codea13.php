@@ -81,7 +81,7 @@ function schedule_codea13(array $arr){
         .notetitle' . $GLOBALS["firstcard"] . '{
             position:absolute;
             top:'.$arr["rightTitleTop"].';
-            width:100px;
+            width:200px;
             padding:5px;
             background-color:'.$arr["rightTitleBackgroundColor"].';
             left:50%;
