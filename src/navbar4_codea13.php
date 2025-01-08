@@ -13,6 +13,7 @@
  * tabsBackgroundColor,
  * titleBackgroundColor,
  * tabsColor,
+ * tabsFontWeight,
  * backgroundColor,
  * seperatorColor,
  * navSeperatorColor,
@@ -63,6 +64,9 @@ function navbar4_codea13(array $arr){
     if(!isset($arr["onePage"])){
         $arr["onePage"]="off";
     }
+    if(!isset($arr["tabsFontWeight"])){
+        $arr["tabsFontWeight"]="400";
+    }
      
     echo '
     <style>
@@ -98,6 +102,7 @@ function navbar4_codea13(array $arr){
         align-items:center;
         display:flex;
         color:'.$arr["tabsColor"].';
+        font-weight:'.$arr["tabsFontWeight"].';
     }
     .tabview{
         position:fixed;
