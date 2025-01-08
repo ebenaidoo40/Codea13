@@ -15,14 +15,12 @@
  * tabsColor,
  * backgroundColor,
  * seperatorColor,
+ * navSeperatorColor,
  * tab1:array{}
  * } $arr
  */
 
 function navbar4_codea13(array $arr){
-    if(!isset($arr["homeLink"])){
-        $arr["homeLink"]="/";
-    }
     if(!isset($arr["maxWidth"])){
         $arr["maxWidth"]="900";
     }
@@ -59,6 +57,9 @@ function navbar4_codea13(array $arr){
     if(!isset($arr["seperatorColor"])){
         $arr["seperatorColor"]="#444444";
     }
+    if(!isset($arr["navSeperatorColor"])){
+        $arr["navSeperatorColor"]="red";
+    }
     if(!isset($arr["onePage"])){
         $arr["onePage"]="off";
     }
@@ -74,6 +75,7 @@ function navbar4_codea13(array $arr){
         position:relative;
         padding:10px 80px 10px 80px;
         box-sizing:border-box;
+        box-shadow:2px 0 4px 2px '.$arr["navSeperatorColor"].';
     }
     .navBar{
         position:absolute;
@@ -96,7 +98,6 @@ function navbar4_codea13(array $arr){
         align-items:center;
         display:flex;
         color:'.$arr["tabsColor"].';
-        font-weight:bold;
     }
     .tabview{
         position:fixed;
@@ -107,7 +108,7 @@ function navbar4_codea13(array $arr){
         background-color:'.$arr["backgroundColor"].';
         width:100%;
         border-radius:0;
-        box-shadow:2px 0px 2px 0px white;
+        box-shadow:2px 0 4px 2px '.$arr["navSeperatorColor"].';
         padding:10px 25px;
         box-sizing:border-box;        
     }
@@ -209,7 +210,11 @@ function navbar4_codea13(array $arr){
 
         <div id="navBar" class="navBar ">';
         if($arr["onePage"]=="on"){
-            echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
+            if(!isset($arr["homeLink"])){
+                echo '<div class="logo" style="cursor:default">'.$arr["title"].'</div>';
+            }else{
+                echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
+            }
         }else{
             if(!isset($arr["homeLink"])){
                 echo '<div class="logo" style="cursor:default">'.$arr["title"].'</div>';

@@ -15,6 +15,7 @@
  * tabsColor,
  * backgroundColor,
  * seperatorColor,
+ * navSeperatorColor,
  * tab1:array{}
  * } $arr
  */
@@ -110,7 +111,7 @@ function navbar5_codea13(array $arr){
         background-color:'.$arr["backgroundColor"].';
         width:100%;
         border-radius:0;
-        box-shadow:2px 0px 2px 0px white;
+        box-shadow:2px 0 4px 2px '.$arr["navSeperatorColor"].';
         padding:10px 25px;
         box-sizing:border-box;        
     }
@@ -201,7 +202,7 @@ function navbar5_codea13(array $arr){
             display:none;
         }
         .navBar{
-            width:calc(100% - 40px);
+            width:100%;
         }
         
     }
@@ -212,7 +213,12 @@ function navbar5_codea13(array $arr){
 
         <div id="navBar" class="navBar ">';
         if($arr["onePage"]=="on"){
-            echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
+            if(!isset($arr["homeLink"])){
+                echo '<div class="logo" style="cursor:default">'.$arr["title"].'</div>';
+            }else{
+                echo '<div onclick="codea13SupperLoader(\''.$arr["homeLink"].'\')" class="logo">'.$arr["title"].'</div>';
+            }
+            
         }else{
             if(!isset($arr["homeLink"])){
                 echo '<div class="logo" style="cursor:default">'.$arr["title"].'</div>';
