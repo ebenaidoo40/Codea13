@@ -67,7 +67,7 @@ function contact_us_codea13(array $arr)
 
     echo '
     <style>
-        .firstblock{
+        .firstblock'.$GLOBALS["firstcard"].'{
             width:100%;
             min-height:250px;
             background-image:url("' . $arr["image"] . '");
@@ -77,7 +77,7 @@ function contact_us_codea13(array $arr)
             justify-content:center;
 
         }
-        .contactus_main_title{
+        .contactus_main_title'.$GLOBALS["firstcard"].'{
             width:fit-content;
             font-size:34px;
             font-weight:bolder;
@@ -85,35 +85,35 @@ function contact_us_codea13(array $arr)
             background-color:#00000050;
             padding:20px;
         }
-        .secondblock{
+        .secondblock'.$GLOBALS["firstcard"].'{
             min-height:400px;
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap:10px;
             background-color:' . $arr["backgroundColor"] . ';
         }
-        .secondblock>*{
+        .secondblock'.$GLOBALS["firstcard"].'>*{
             background-color:white;
             display:flex;
             padding:0 40px;
             background-color:' . $arr["backgroundColor"] . ';
         }
-        .firstblock1{
+        .firstblock1'.$GLOBALS["firstcard"].'{
             flex-direction:column;
         }
-        .firstblock1>*{
+        .firstblock1'.$GLOBALS["firstcard"].'>*{
             margin-bottom:15px;
         }
 
         
-        .contact-form{
+        .contact-form'.$GLOBALS["firstcard"].'{
             width:100%;
             max-width:350px;
         }
-        .contact-form>*{
+        .contact-form'.$GLOBALS["firstcard"].'>*{
             margin-bottom:20px;
         }
-        .input{
+        .input'.$GLOBALS["firstcard"].'{
             box-sizing:border-box;
             width:100%;
             height:40px;
@@ -121,7 +121,7 @@ function contact_us_codea13(array $arr)
             border-radius:4px;
         }
 
-        .failedpop{
+        .failedpop'.$GLOBALS["firstcard"].'{
             position: fixed;
             top: -200px;
             width: 100%;
@@ -136,7 +136,7 @@ function contact_us_codea13(array $arr)
             box-sizing:border-box;
         }
         
-        .successpop{
+        .successpop'.$GLOBALS["firstcard"].'{
             position: fixed;
             top: -200px;
             width: 100%;
@@ -152,28 +152,28 @@ function contact_us_codea13(array $arr)
         }
         
         
-        .popnow{
+        .popnow'.$GLOBALS["firstcard"].'{
             top: 0;
             opacity: 1;
         }
         
-        .popnow1{
+        .popnow1'.$GLOBALS["firstcard"].'{
             top: '.$arr["popMessageTopSpace"].';
             opacity: 1;
         }
 
-        .codeaSpecialLoadersub{
+        .codeaSpecialLoadersub'.$GLOBALS["firstcard"].'{
             width:20px;
             height:20px;
             background-color:white;
             border-radius:50%;
             overflow:hidden;
             border:5px dotted #909099;
-            animation: eben 5s linear infinite;
+            animation: eben'.$GLOBALS["firstcard"].' 5s linear infinite;
             position:absolute;
         }
 
-        @-webkit-keyframes eben {
+        @-webkit-keyframes eben'.$GLOBALS["firstcard"].' {
             0% {
                 -webkit-transform: rotate(0deg);
             }
@@ -183,7 +183,7 @@ function contact_us_codea13(array $arr)
             }
         }
 
-        @keyframes eben{
+        @keyframes eben'.$GLOBALS["firstcard"].'{
             0%{
                 transform:rotate(0deg);
             }
@@ -201,7 +201,7 @@ function contact_us_codea13(array $arr)
         
 
         @media (max-width:680px){
-            .secondblock{
+            .secondblock'.$GLOBALS["firstcard"].'{
                 min-height:400px;
                 display:grid;
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -210,7 +210,7 @@ function contact_us_codea13(array $arr)
         }
 
         @media (max-width:440px){
-            .secondblock{
+            .secondblock'.$GLOBALS["firstcard"].'{
                 min-height:400px;
                 display:grid;
                 grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -221,40 +221,40 @@ function contact_us_codea13(array $arr)
 
         </style>
 
-        <div class="failedpop" id="failedpop">Wrong input of credentials</div>
-        <div class="successpop" id="emailsentpop" style="background-color: #7bffd3">Email sent</div>
+        <div class="failedpop'.$GLOBALS["firstcard"].'" id="failedpop'.$GLOBALS["firstcard"].'">Wrong input of credentials</div>
+        <div class="successpop'.$GLOBALS["firstcard"].'" id="emailsentpop'.$GLOBALS["firstcard"].'" style="background-color: #7bffd3">Email sent</div>
 
 
-        <div class="firstblock">
-            <div class="contactus_main_title">' . $arr["title"] . '</div>
+        <div class="firstblock'.$GLOBALS["firstcard"].'">
+            <div class="contactus_main_title'.$GLOBALS["firstcard"].'">' . $arr["title"] . '</div>
         </div>
 
         <h1 style="padding:40px; text-align:center; font-size:30px;background-color:' . $arr["backgroundColor"] . '; font-weight:bolder; color:' . $arr["subTitleColor"] . '">' . $arr["subTitle"] . '</h1>
 
-        <div class="secondblock">
-            <div class="firstblock1">' . $arr["content"] . '</div>
+        <div class="secondblock'.$GLOBALS["firstcard"].'">
+            <div class="firstblock1'.$GLOBALS["firstcard"].'">' . $arr["content"] . '</div>
 
 
-            <div class="form_master_block">
+            <div class="form_master_block'.$GLOBALS["firstcard"].'">
 
-                <form class="contact-form"  id="form">
+                <form class="contact-form'.$GLOBALS["firstcard"].'"  id="form'.$GLOBALS["firstcard"].'">
                     <h1 style="color:purple;">Send Us A Message</h1>
                     <div>
                         <label> Full Name:<label>
-                        <input id="name" name="' . $arr["name"] . '" class="input" type="text" required>
+                        <input id="name'.$GLOBALS["firstcard"].'" name="' . $arr["name"] . '" class="input'.$GLOBALS["firstcard"].'" type="text" required>
                     </div>
 
                     <div>
                         <label> Your Email:<label>
-                        <input id="email" name="' . $arr["email"] . '" class="input" type="email" required>
+                        <input id="email'.$GLOBALS["firstcard"].'" name="' . $arr["email"] . '" class="input'.$GLOBALS["firstcard"].'" type="email" required>
                     </div>
 
                     <div>
                         <label> Your Message:<label>
-                        <textarea style="height:120px; resize:none" id="message" name="' . $arr["message"] . '" class="input" required></textarea>
+                        <textarea style="height:120px; resize:none" id="message'.$GLOBALS["firstcard"].'" name="' . $arr["message"] . '" class="input'.$GLOBALS["firstcard"].'" required></textarea>
                     </div>
 
-                    <button id="loginbutton" style="height:50px; background-color:purple; width:100%; cursor:pointer; color:white; padding:10px; display:flex; justify-content:center; align-items:center;">Submit</button>
+                    <button id="loginbutton'.$GLOBALS["firstcard"].'" style="height:50px; background-color:purple; width:100%; cursor:pointer; color:white; padding:10px; display:flex; justify-content:center; align-items:center;">Submit</button>
 
                 </form>
             </div>
@@ -267,20 +267,20 @@ function contact_us_codea13(array $arr)
         <script>
     
     /* var imageloader = \'<img  style="background:white; position:relative; top:2px; height:29px;  border-radius:50%; object-fit:contain" src="vendor/rezenebe/codea13/src/assets/Spinner-1s-200px.svg" alt="loading...">\'; */
-    var imageloader = "<div class=\'codeaSpecialLoadersub\'></div>";
-    var form = document.querySelector("#form");
-    form.addEventListener("submit", createaccountnow);
+    var imageloader'.$GLOBALS["firstcard"].' = "<div class=\'codeaSpecialLoadersub'.$GLOBALS["firstcard"].'\'></div>";
+    var form'.$GLOBALS["firstcard"].' = document.querySelector("#form'.$GLOBALS["firstcard"].'");
+    form'.$GLOBALS["firstcard"].'.addEventListener("submit", createaccountnow'.$GLOBALS["firstcard"].');
 
-    function createaccountnow(event){
+    function createaccountnow'.$GLOBALS["firstcard"].'(event){
         
         $("input").blur();
-        document.querySelector("#loginbutton").innerHTML=imageloader;
-        document.querySelector("#loginbutton").setAttribute("type", "button");
+        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").innerHTML=imageloader'.$GLOBALS["firstcard"].';
+        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").setAttribute("type", "button");
         event.preventDefault();
 
-        var name = document.querySelector("#name").value;
-        var email = document.querySelector("#email").value;
-        var message = document.querySelector("#message").value;
+        var name = document.querySelector("#name'.$GLOBALS["firstcard"].'").value;
+        var email = document.querySelector("#email'.$GLOBALS["firstcard"].'").value;
+        var message = document.querySelector("#message'.$GLOBALS["firstcard"].'").value;
 
         
         $.ajax({
@@ -296,46 +296,46 @@ function contact_us_codea13(array $arr)
 
                 if(res=="successful"){
                     setTimeout(() => {
-                        document.querySelector("#emailsentpop").classList.add("popnow1");
-                        document.querySelector("#emailsentpop").innerHTML="Message Sent";
-                        document.querySelector("#name").value=null;
-                        document.querySelector("#email").value=null;
-                        document.querySelector("#message").value=null;
+                        document.querySelector("#emailsentpop'.$GLOBALS["firstcard"].'").classList.add("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#emailsentpop'.$GLOBALS["firstcard"].'").innerHTML="Message Sent";
+                        document.querySelector("#name'.$GLOBALS["firstcard"].'").value=null;
+                        document.querySelector("#email'.$GLOBALS["firstcard"].'").value=null;
+                        document.querySelector("#message'.$GLOBALS["firstcard"].'").value=null;
                     }, 50);
 
                     setTimeout(() => {
-                        document.querySelector("#emailsentpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                        document.querySelector("#emailsentpop'.$GLOBALS["firstcard"].'").classList.remove("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").innerHTML="submit";
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").setAttribute("type", "submit");
                     }, 3000);
                 }else{
                     setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Failed";
-                        document.querySelector("#newPassword").value=null;
-                        document.querySelector("#oldPassword").value=null;
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.add("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").innerHTML="Failed";
+                        document.querySelector("#newPassword'.$GLOBALS["firstcard"].'").value=null;
+                        document.querySelector("#oldPassword'.$GLOBALS["firstcard"].'").value=null;
                     }, 50);
 
                     setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.remove("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").innerHTML="submit";
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").setAttribute("type", "submit");
                     }, 3000);
                 }
 
 
                 if(res=="data lost"){
                     setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Poor connection";
-                        document.querySelector("#newPassword").value=null;
-                        document.querySelector("#oldPassword").value=null;
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.add("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").innerHTML="Poor connection";
+                        document.querySelector("#newPassword'.$GLOBALS["firstcard"].'").value=null;
+                        document.querySelector("#oldPassword'.$GLOBALS["firstcard"].'").value=null;
                     }, 50);
 
                     setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.remove("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").innerHTML="submit";
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").setAttribute("type", "submit");
                     }, 3000);
                 }else{
                     
@@ -344,16 +344,16 @@ function contact_us_codea13(array $arr)
             },
             error: function(res){
                 setTimeout(() => {
-                        document.querySelector("#failedpop").classList.add("popnow1");
-                        document.querySelector("#failedpop").innerHTML="Bad network";
-                        document.querySelector("#newPassword").value=null;
-                        document.querySelector("#oldPassword").value=null;
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.add("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").innerHTML="Bad network";
+                        document.querySelector("#newPassword'.$GLOBALS["firstcard"].'").value=null;
+                        document.querySelector("#oldPassword'.$GLOBALS["firstcard"].'").value=null;
                     }, 50);
 
                     setTimeout(() => {
-                        document.querySelector("#failedpop").classList.remove("popnow1");
-                        document.querySelector("#loginbutton").innerHTML="submit";
-                        document.querySelector("#loginbutton").setAttribute("type", "submit");
+                        document.querySelector("#failedpop'.$GLOBALS["firstcard"].'").classList.remove("popnow1'.$GLOBALS["firstcard"].'");
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").innerHTML="submit";
+                        document.querySelector("#loginbutton'.$GLOBALS["firstcard"].'").setAttribute("type", "submit");
                     }, 3000);
             }
         })
@@ -364,4 +364,5 @@ function contact_us_codea13(array $arr)
 
 
     ';
+    $GLOBALS["firstcard"]++;
 }
