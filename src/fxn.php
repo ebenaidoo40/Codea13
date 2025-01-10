@@ -48,12 +48,20 @@ function eben_str_arr2($string){
         $p2_2 = explode(":", $p1_2);
 
         if(isset($p1_2[$i])){
-            array_push($keybag2, $p2_2[0]);
-            $mkey2=$keybag2[$i];
-            $keybag2[$mkey2]=$p2_2[1];
+            /* the update v1.0.7 was done here. ther was no if condition. only the code in the else was in  this block */
+            if($p2_2[1]==null){
+                if($p2_2[0]=="null"){
+                    $p2_2[0]=null;
+                }else{}
+                array_push($keybag2, $p2_2[0]);
+                /* it ends here */
+            }else{
+                array_push($keybag2, $p2_2[0]);
+                $mkey2=$keybag2[$i];
+                $keybag2[$mkey2]=$p2_2[1];
+            }
         }
     }
-    
     return $keybag2;
 }
 
