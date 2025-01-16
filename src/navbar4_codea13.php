@@ -147,9 +147,11 @@ function navbar4_codea13(array $arr){
         padding: 0;
         position:absolute;
         right:0px;
-        border-radius:50px;
+        border-radius:60px;
+        box-sizing:border-box;
         height:50px;
         background-color:'.$arr["tabsBackgroundColor"].';
+        border:3px solid '.$arr["tabsBackgroundColor"].';
         justify-content:space-between;
         align-items:center;
     }
@@ -157,7 +159,7 @@ function navbar4_codea13(array $arr){
         right:20px
     }
     .login, .logout{
-        height:50px;
+        height:44px;
         display:flex;
         justify-content:center;
         align-items:center;
