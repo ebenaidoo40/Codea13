@@ -6,6 +6,7 @@
  * backgroundColor,
  * innerBackgroundColor,
  * inputBackgroundColor,
+ * inputColor,
  * placeholder,
  * placeholderColor,
  * buttonBackgroundColor,
@@ -53,6 +54,9 @@ function subscribe_codea13(array $arr){
     }
     if(!isset($arr["inputBackgroundColor"])){
         $arr["inputBackgroundColor"]="#007971";
+    }
+    if(!isset($arr["inputColor"])){
+        $arr["inputColor"]="black";
     }
     if(!isset($arr["innerBackgroundColor"])){
         $arr["innerBackgroundColor"]="#016960";
@@ -181,7 +185,7 @@ function subscribe_codea13(array $arr){
                 <div class="innerFormBk' . $GLOBALS["firstcard"] . '">
                     <div style="font-weight:bold; color:white">'.$arr["note"].'</div>
                     <form id="subscribe_codea13' . $GLOBALS["firstcard"] . '" class="form' . $GLOBALS["firstcard"] . '" >
-                        <input id="subscribedEmailCodea13' . $GLOBALS["firstcard"] . '" style="background-color: '.$arr["inputBackgroundColor"].'; padding: 0 8px; height:35px; border:1px solid white; color:white" type="'.$arr["inputType"].'" placeholder="'.$arr["placeholder"].'" required>
+                        <input id="subscribedEmailCodea13' . $GLOBALS["firstcard"] . '" style="background-color: '.$arr["inputBackgroundColor"].'; padding: 0 8px; height:35px; border:1px solid white; color:'.$arr["inputColor"].'" type="'.$arr["inputType"].'" placeholder="'.$arr["placeholder"].'" required>
                         <button id="subscribebutton' . $GLOBALS["firstcard"] . '" class="subscribeButton' . $GLOBALS["firstcard"] . '" >'.$arr["buttonName"].'</button>
                     </form>
                 </div>
