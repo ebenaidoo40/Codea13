@@ -32,7 +32,7 @@ function pullNotification_codea13(array $arr){
                 overflow: hidden;
                 box-shadow: 0 0 4px 3px #454545;
                 position: fixed;
-                top: -200px;
+                top: -300px;
                 left:50%;
                 transform:translate(-50%, -50%);
                 transition: all 1s linear;
