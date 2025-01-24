@@ -134,7 +134,7 @@ inputElement.addEventListener("blur", restoreInputPosition);
         if(dataVal=="pullNotification"){
             setTimeout(() => {
                 document.querySelector("#"+id).style.left="50%";
-                document.querySelector("#"+id).style.transform="translate(-50%, 290px)";
+                document.querySelector("#"+id).style.transform="translate(-50%, 390px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"notificationmessage").style.backgroundColor=colors;
                 document.querySelector("#"+id+"notificationmessage").innerHTML=message;
@@ -143,7 +143,7 @@ inputElement.addEventListener("blur", restoreInputPosition);
 
             setTimeout(() => {
                 document.querySelector("#"+id).style.left="50%";
-                document.querySelector("#"+id).style.transform="translate(-50%, -250px)";
+                document.querySelector("#"+id).style.transform="translate(-50%, -300px)";
                 document.querySelector("#"+id).style.opacity="1";
                 document.querySelector("#"+id+"masterCover").style.display="none";
             }, timeme);
