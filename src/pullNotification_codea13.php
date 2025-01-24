@@ -3,7 +3,8 @@
  * @param array{
  * id,
  * objectFit,
- * image
+ * image,
+ * textColor,
  * } $arr
  */
 
@@ -51,6 +52,7 @@ function pullNotification_codea13(array $arr){
                 top:0;
                 background:#00000080;
                 display:none;
+                z-index:9998;
             }
             
         </style>

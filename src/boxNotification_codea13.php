@@ -27,6 +27,7 @@ function boxNotification_codea13(array $arr){
                 top:0;
                 background:#00000080;
                 display:none;
+                z-index:9998;
             }
 
             .successpop' . $GLOBALS["firstcard"] . '{
