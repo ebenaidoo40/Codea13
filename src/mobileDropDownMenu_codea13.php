@@ -169,9 +169,7 @@ function mobileDropDownMenu_codea13(array $arr){
                 if(!isset($arr[$screenHomeKeys[$i]]["name"])){
                     $arr[$screenHomeKeys[$i]]["name"]="Tab";
                 }
-                if(!isset($arr[$screenHomeKeys[$i]]["link"])){
-                    $arr[$screenHomeKeys[$i]]["link"]="";
-                }
+                
 
                 if(!isset($arr[$screenHomeKeys[$i]]["list"])){
                     $arr[$screenHomeKeys[$i]]["list"]=["list1"=>"", "list2"=>"", "list3"=>"", "list4"=>"",];
@@ -196,9 +194,17 @@ function mobileDropDownMenu_codea13(array $arr){
                     
                 }else{
                     if($arr["onePage"]=="on"){
-                        echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                        if(!isset($arr[$screenHomeKeys[$i]]["link"])){
+                            echo '<div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                        }else{
+                            echo '<div onclick="codea13SupperLoader(\''.$arr[$screenHomeKeys[$i]]["link"].'\')" id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                        }
                     }else{
-                        echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                        if(!isset($arr[$screenHomeKeys[$i]]["link"])){
+                            echo '<div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div>';
+                        }else{
+                            echo '<a style="'.$arr["textColor"].'" href="'.$arr[$screenHomeKeys[$i]]["link"].'"><div id="screenHomeTabs'.$i.'" class="mobiletabchild' . $GLOBALS["firstcard"] . '">'.$arr[$screenHomeKeys[$i]]["name"].'</div></a>';
+                        }
                     }
                     
                 }

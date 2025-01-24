@@ -3,6 +3,7 @@
  * @param array{
  * title,
  * titleColor,
+ * image,
  * content,
  * textColor,
  * animation,
