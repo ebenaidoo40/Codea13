@@ -66,7 +66,7 @@
             async: true,
             success: function(response) {
                 $("#codea13MasterBody").html(response);
-                window.scrollTo(0,0);
+                window.scrollTo(0,-100);
                 document.querySelector("#castyHouseLoader").style.display = "none";
                 document.querySelector("#castyHouseLoaderError").style.display = "none";
             },
