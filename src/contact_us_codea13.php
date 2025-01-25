@@ -7,7 +7,10 @@
  * titleColor,
  * subTitleColor,
  * image,
+ * imagePosition,
+ * imageSize,
  * backgroundColor,
+ * titleBackgroundColor,
  * name,
  * email,
  * message,
@@ -30,6 +33,9 @@ function contact_us_codea13(array $arr)
     if (!isset($arr["backgroundColor"])) {
         $arr["backgroundColor"] = "#f0f0ff";
     }
+    if (!isset($arr["titleBackgroundColor"])) {
+        $arr["titleBackgroundColor"] = "#00000050";
+    }
     if (!isset($arr["image"])) {
         $arr["image"] = "vendor/rezenebe/codea13/src/images/codea13.png";
     }
@@ -43,7 +49,7 @@ function contact_us_codea13(array $arr)
         $arr["message"] = "message";
     }
     if (!isset($arr["formTo"])) {
-        $arr["formTo"] = "unknown.php";
+        $arr["formTo"] = "";
     }
     if (!isset($arr["content"])) {
         $arr["content"] = '<h1 style="font-size:40px; color: brown">Get In Touch</h1>
@@ -63,6 +69,12 @@ function contact_us_codea13(array $arr)
     if (!isset($arr["popMessageTopSpace"])) {
         $arr["popMessageTopSpace"] = "50px";
     }
+    if (!isset($arr["imagePosition"])) {
+        $arr["imagePosition"] = "center";
+    }
+    if (!isset($arr["imageSize"])) {
+        $arr["imageSize"] = "Cover";
+    }
 
 
     echo '
@@ -71,7 +83,8 @@ function contact_us_codea13(array $arr)
             width:100%;
             min-height:250px;
             background-image:url("' . $arr["image"] . '");
-            background-position:center;
+            background-position:'.$arr["imagePosition"].';
+            background-size:'.$arr["imageSize"].';
             display:flex;
             align-items:center;
             justify-content:center;
@@ -82,7 +95,7 @@ function contact_us_codea13(array $arr)
             font-size:34px;
             font-weight:bolder;
             color:' . $arr["titleColor"] . ';
-            background-color:#00000050;
+            background-color:'.$arr["titleBackgroundColor"].';
             padding:20px;
         }
         .secondblock'.$GLOBALS["firstcard"].'{
