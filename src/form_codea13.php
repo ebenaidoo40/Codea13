@@ -388,6 +388,9 @@ echo '
             if (!isset($arr[$numberOfElements[$i]]["name"])) {
                 $arr[$numberOfElements[$i]]["name"] = "name" . $i;
             }
+            if (!isset($arr[$numberOfElements[$i]]["build"])) {
+                $arr[$numberOfElements[$i]]["build"] = "build a custom input here";
+            }
             if (!isset($arr[$numberOfElements[$i]]["cautionTick"])) {
                 $arr[$numberOfElements[$i]]["cautionTick"] = "on";
             }
@@ -438,7 +441,13 @@ echo '
                 <textarea style="resize:none; height:150px; padding:8px; box-sizing:border-box; rows="6" '.$accept.' class="masterinput" name="' . $arr[$numberOfElements[$i]]["name"] . '" id="' . $arr[$numberOfElements[$i]]["id"] . '" ' . $arr[$numberOfElements[$i]]["required"] . '></textarea>
                 </div>
                 ';
-            } else if ($arr[$numberOfElements[$i]]["type"] == "tel") {
+            }else if($arr[$numberOfElements[$i]]["type"]=="custombuild"){
+                echo '
+            <div id="customdiv'.$i.'">
+                <label id="' . $arr[$numberOfElements[$i]]["id"] . 'label" class="masterlabel" for="' . $arr[$numberOfElements[$i]]["id"] . '">' . $arr[$numberOfElements[$i]]["label"] . $requriedHTML_builder . '</label>
+                '.$arr[$numberOfElements[$i]]["build"].'
+            </div>';
+            }else if ($arr[$numberOfElements[$i]]["type"] == "tel") {
                 include "vendor/rezenebe/codea13/src/countries_with_codes_codea13.php";
             } else if ($arr[$numberOfElements[$i]]["name"] == "nationality") {
                 include_once "vendor/rezenebe/codea13/src/countries_codea13.php";
@@ -451,7 +460,7 @@ echo '
                 <select id="' . $arr[$numberOfElements[$i]][1] . '" name="' . $arr[$numberOfElements[$i]][1] . '" class="form-control masterinput" required>
                     <option value=""></option>';
 
-                for ($k = 5; $k < sizeof($arr[$numberOfElements[$i]]) - 6; $k++) {
+                for ($k = 5; $k < sizeof($arr[$numberOfElements[$i]]) - 7; $k++) {
                     if ($listVal == $arr[$numberOfElements[$i]][$k]) {
                         $selected = "selected";
                     } else {
@@ -553,7 +562,6 @@ form.addEventListener(\'submit\', createaccountnow);
             processData:false,
             cache:false,
             success: function(res){
-
                 if(res==null){
                     res="Developer did not set response before terminating an operation.";
                 }else{}
