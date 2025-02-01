@@ -1,6 +1,7 @@
 <?php
 /**
  * @param array{
+ * title,
  * buttonBackgroundColor,
  * onePage,
  * email_name,
@@ -20,6 +21,9 @@ function login_codea13(array $arr)
 {
     if (!isset($arr["email_name"])) {
         $arr["email_name"] = "email";
+    }
+    if (!isset($arr["title"])) {
+        $arr["title"] = "Login";
     }
     if (!isset($arr["password_email"])) {
         $arr["password_name"] = "password";
@@ -296,7 +300,7 @@ echo '
 
 
 
-<div style="font-size: 24px;  text-align:center; font-weight:bold; margin-bottom:20px; color:' . $arr["buttonBackgroundColor"] . '" id="form_heading">Log in</div>
+<div style="font-size: 24px;  text-align:center; font-weight:bold; margin-bottom:20px; color:' . $arr["buttonBackgroundColor"] . '" id="form_heading">'.$arr["title"].'</div>
     <div class="line"></div>
 
     <label id="emaillabel" class="emaillabel" for="' . $arr["email_name"] . '">Email</label>
@@ -570,7 +574,7 @@ forgotPassword.addEventListener("click", function(){
         document.querySelector("#password").setAttribute("required", "");
 
         document.querySelector("#showpassword").classList.remove("hidden");
-        document.querySelector("#form_heading").innerText="Log in";
+        document.querySelector("#form_heading").innerText="'.$arr["title"].'";
         document.querySelector("#forgot_password").innerText="Forgot password?";
         document.querySelector("#loginbutton").innerText="Log in";
     
