@@ -132,6 +132,8 @@ function mobileDropDownMenu_codea13(array $arr){
         .pulllist' . $GLOBALS["firstcard"] . '{
             padding:15px 20px 15px 40px;
             background-color:'.$arr["backgroundSubColor"].';
+            border-right:5px solid '.$arr["backgroundColor"].';
+            border-left:5px solid '.$arr["backgroundColor"].';
             border-bottom:1px solid '.$arr["tabsSubSeperatorColor"].';
             font-weight:bold;
             
