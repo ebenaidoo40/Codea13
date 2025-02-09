@@ -122,6 +122,7 @@ function mobileDropDownMenu_codea13(array $arr){
             width:'.$sliderSubWidth.';
             font-weight:bolder;
             color:'.$arr["textColor"].';
+            font-size:14px;
         }
         .dropdownpull' . $GLOBALS["firstcard"] . '{
             height:0px;
@@ -134,7 +135,8 @@ function mobileDropDownMenu_codea13(array $arr){
             padding:15px 20px 15px 20px;
             background-color:'.$arr["backgroundSubColor"].';
             border-bottom:1px solid '.$arr["tabsSubSeperatorColor"].';
-            font-weight:bold;            
+            font-weight:bold;
+            font-size:13px;            
         }
 
         @media (max-width:'.$arr["maxWidth"].'px){
