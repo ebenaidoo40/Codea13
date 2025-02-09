@@ -130,13 +130,11 @@ function mobileDropDownMenu_codea13(array $arr){
             transition: height 0.5s ;
         }
         .pulllist' . $GLOBALS["firstcard"] . '{
-            padding:15px 20px 15px 40px;
+            margin:0 8px 0 8px;
+            padding:15px 20px 15px 20px;
             background-color:'.$arr["backgroundSubColor"].';
-            border-right:5px solid '.$arr["backgroundColor"].';
-            border-left:5px solid '.$arr["backgroundColor"].';
             border-bottom:1px solid '.$arr["tabsSubSeperatorColor"].';
-            font-weight:bold;
-            
+            font-weight:bold;            
         }
 
         @media (max-width:'.$arr["maxWidth"].'px){
